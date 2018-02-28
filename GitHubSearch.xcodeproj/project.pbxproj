@@ -12,6 +12,8 @@
 		AA6385082046FDAA005AAD29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA6385072046FDAA005AAD29 /* Assets.xcassets */; };
 		AA63850B2046FDAA005AAD29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6385092046FDAA005AAD29 /* LaunchScreen.storyboard */; };
 		AA63851620470166005AAD29 /* TabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA63851520470166005AAD29 /* TabBarController.xib */; };
+		AA63851B204705A7005AAD29 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA638519204705A7005AAD29 /* FavoritesViewController.swift */; };
+		AA63851C204705A7005AAD29 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA63851A204705A7005AAD29 /* FavoritesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		AA63850A2046FDAA005AAD29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA63850C2046FDAA005AAD29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA63851520470166005AAD29 /* TabBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarController.xib; sourceTree = "<group>"; };
+		AA638519204705A7005AAD29 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		AA63851A204705A7005AAD29 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 		AA63851820470542005AAD29 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				AA638519204705A7005AAD29 /* FavoritesViewController.swift */,
+				AA63851A204705A7005AAD29 /* FavoritesViewController.xib */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -165,6 +171,7 @@
 			files = (
 				AA63850B2046FDAA005AAD29 /* LaunchScreen.storyboard in Resources */,
 				AA63851620470166005AAD29 /* TabBarController.xib in Resources */,
+				AA63851C204705A7005AAD29 /* FavoritesViewController.xib in Resources */,
 				AA6385082046FDAA005AAD29 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA6385032046FDAA005AAD29 /* TabBarController.swift in Sources */,
+				AA63851B204705A7005AAD29 /* FavoritesViewController.swift in Sources */,
 				AA6385012046FDAA005AAD29 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
