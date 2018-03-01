@@ -12,8 +12,9 @@ private enum Constants {
     static let nibName = "TabBarController"
 }
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
 
+    // MARK: - ViewController's Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         

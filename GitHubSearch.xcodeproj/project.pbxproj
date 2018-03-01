@@ -62,6 +62,7 @@
 		AA6384FF2046FDAA005AAD29 /* GitHubSearch */ = {
 			isa = PBXGroup;
 			children = (
+				AA6385212047D889005AAD29 /* Cells */,
 				AA6385132046FFE2005AAD29 /* Controllers */,
 				AA6385142046FFF4005AAD29 /* Supporting Files */,
 				AA6385002046FDAA005AAD29 /* AppDelegate.swift */,
@@ -114,6 +115,13 @@
 				AA63851A204705A7005AAD29 /* FavoritesViewController.xib */,
 			);
 			path = Favorites;
+			sourceTree = "<group>";
+		};
+		AA6385212047D889005AAD29 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
