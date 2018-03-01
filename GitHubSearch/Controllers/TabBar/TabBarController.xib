@@ -12,14 +12,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabBarController" customModule="GitHubSearch" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tabBarController id="Z89-IP-spQ" customClass="TabBarController" customModule="GitHubSearch" customModuleProvider="target">
+        <tabBarController nibName="TabBarController" id="Z89-IP-spQ" customClass="TabBarController" customModule="GitHubSearch" customModuleProvider="target">
             <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IqN-Rm-baz">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             </tabBar>
             <viewControllers>
-                <viewController title="Search" id="xr0-c5-tfC">
+                <viewController title="Search" nibName="SearchViewController" id="xr0-c5-tfC" customClass="SearchViewController" customModule="GitHubSearch" customModuleProvider="target">
                     <view key="view" contentMode="scaleToFill" id="fUW-pP-Lj0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="ZGE-Vz-FPv"/>
                 </viewController>
-                <viewController title="Favorites" id="waG-BA-S6y">
+                <viewController title="Favorites" nibName="FavoritesViewController" id="waG-BA-S6y" customClass="FavoritesViewController" customModule="GitHubSearch" customModuleProvider="target">
                     <view key="view" contentMode="scaleToFill" id="9cS-zl-FKM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
