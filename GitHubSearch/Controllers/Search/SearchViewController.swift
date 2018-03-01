@@ -9,80 +9,58 @@
 import UIKit
 
 private enum Constants {
+    static let nibName = "SearchViewController"
     static let cellIdentifier = "SearchResultCell"
     static let searchBarPlaceholder = "Search Repositories"
 }
 
-final class SearchViewController: UITableViewController {
+final class SearchViewController: UIViewController {
+    
+    // MARK: - Outlets
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Properties
+//    fileprivate let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: - ViewController's Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        let nib = UINib(nibName: Constants.nibName, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: Constants.cellIdentifier)
     }
     
+    static func instantiateFromNib() -> SearchViewController {
+        let nib = UINib(nibName: Constants.nibName, bundle: nil)
+        let vc = nib.instantiate(withOwner: nil, options: nil).first as! SearchViewController
+        return vc
+    }
+
 }
 
 // MARK: - Table View Setup
-extension SearchViewController {
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier) as? SearchResultCell {
+//            cell.nameLabel?.text = "Tetris"
+//            cell.ownerLabel?.text = "PSNB92"
+//            cell.descriptionLabel?.text = "Tetris Project"
+//            return cell
+//        } else {
+//            print("Error occured")
+//        }
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
+        cell.textLabel?.text = "Test"
+        
         return cell
     }
-    */
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
 }
