@@ -8,6 +8,10 @@
 
 import UIKit
 
+private enum Constants {
+    static let nibName = "TabBarController"
+}
+
 class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
@@ -15,6 +19,15 @@ class TabBarController: UITabBarController {
         
     }
 
+}
 
+extension TabBarController {
+    
+    static func instantiateFromNib() -> TabBarController {
+        let nib = UINib(nibName: Constants.nibName, bundle: nil)
+        let vc = nib.instantiate(withOwner: nil, options: nil).first as! TabBarController
+        return vc
+    }
+    
 }
 
