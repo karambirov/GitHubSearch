@@ -69,8 +69,11 @@ extension SearchViewController {
     }
     
     fileprivate func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.placeholder = Constants.searchBarPlaceholder
     }
 }
 
