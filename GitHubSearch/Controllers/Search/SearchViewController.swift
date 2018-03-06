@@ -70,6 +70,7 @@ extension SearchViewController {
     
     fileprivate func setupSearchController() {
         searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
     }
 }
 
@@ -77,7 +78,7 @@ extension SearchViewController {
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 13
+        return 30
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
