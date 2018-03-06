@@ -74,6 +74,17 @@ extension SearchViewController {
     }
 }
 
+// MARK: - UISearchResultsUpdating Delegate
+extension SearchViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        print(searchBar.text!)
+        // TODO: - send network request here
+    }
+    
+}
+
 // MARK: - Table View Setup
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -81,6 +92,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return 30
     }
 
+    // TODO: - Fill in with actual data
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as? SearchResultCell {
             cell.nameLabel?.text = "Tetris"
