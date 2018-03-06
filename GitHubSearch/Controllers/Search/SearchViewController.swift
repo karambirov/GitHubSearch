@@ -29,7 +29,7 @@ final class SearchViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let nib = UINib(nibName: Constants.nibName, bundle: nil)
+        let nib = UINib(nibName: Constants.cellIdentifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: Constants.cellIdentifier)
     }
     
@@ -49,17 +49,17 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier) as? SearchResultCell {
-//            cell.nameLabel?.text = "Tetris"
-//            cell.ownerLabel?.text = "PSNB92"
-//            cell.descriptionLabel?.text = "Tetris Project"
-//            return cell
-//        } else {
-//            print("Error occured")
-//        }
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as? SearchResultCell {
+            cell.nameLabel?.text = "Tetris"
+            cell.ownerLabel?.text = "PSNB92"
+            cell.descriptionLabel?.text = "Tetris Project"
+            return cell
+        }
+        
+        print("Error occured")
         let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
         cell.textLabel?.text = "Test"
-        
+    
         return cell
     }
 

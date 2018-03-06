@@ -20,6 +20,10 @@
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Voi-c1-Z3P">
                         <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="-1" id="zTh-FZ-oI5"/>
+                            <outlet property="delegate" destination="-1" id="DDb-8d-dpS"/>
+                        </connections>
                     </tableView>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -32,7 +36,7 @@
                 <viewLayoutGuide key="safeArea" id="zEb-vN-a0J"/>
             </view>
             <connections>
-                <outlet property="tableView" destination="Voi-c1-Z3P" id="v3i-n6-KKp"/>
+                <outlet property="tableView" destination="Voi-c1-Z3P" id="cCp-lm-T9C"/>
             </connections>
             <point key="canvasLocation" x="33" y="-97"/>
         </viewController>

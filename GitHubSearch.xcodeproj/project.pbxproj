@@ -72,8 +72,8 @@
 				AA6385212047D889005AAD29 /* Cells */,
 				AA6385132046FFE2005AAD29 /* Controllers */,
 				AA6385292047E851005AAD29 /* Extensions */,
-				AA63850C2046FDAA005AAD29 /* Info.plist */,
 				AA6385142046FFF4005AAD29 /* Supporting Files */,
+				AA63850C2046FDAA005AAD29 /* Info.plist */,
 			);
 			path = GitHubSearch;
 			sourceTree = "<group>";
