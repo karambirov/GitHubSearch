@@ -11,7 +11,10 @@ import UIKit
 extension UIViewController {
     
     func embedInNavigationController() -> UINavigationController {
-        return UINavigationController(rootViewController: self)
+        let navigationController = UINavigationController(rootViewController: self)
+        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.navigationItem.largeTitleDisplayMode = .always
+        return navigationController
     }
     
     // TODO: - Add generic method "instantiateFromNib()"
