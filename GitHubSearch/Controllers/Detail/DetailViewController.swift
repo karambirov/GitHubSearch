@@ -95,7 +95,11 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as? DetailCell {
-            
+            cell.ownerNameLabel.text = ownerName
+            cell.ownerEmailLabel.text = ownerEmail
+            cell.repoFullNameLabel.text = repoFullName
+            cell.repoDescriptionLabel.text = repoDescription
+            return cell
         }
         
         print("Error occured")
