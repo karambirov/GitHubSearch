@@ -8,7 +8,12 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+private enum Constants {
+    static let nibName = "DetailViewController"
+    static let cellIdentifier = "DetailCell"
+}
+
+final class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

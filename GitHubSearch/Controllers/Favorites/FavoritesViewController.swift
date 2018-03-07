@@ -8,7 +8,13 @@
 
 import UIKit
 
-class FavoritesViewController: UITableViewController {
+private enum Constants {
+    static let nibName = "FavoritesViewController"
+    static let cellIdentifier = "FavoritesCell"
+    static let navigationTitle = "Favorites"
+}
+
+final class FavoritesViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
