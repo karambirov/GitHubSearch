@@ -79,6 +79,8 @@ extension DetailViewController {
     
     fileprivate func setupNavigationBar() {
         navigationItem.title = Constants.navigationTitle
+        // FIXME: - Add action to rightBarButtonItem
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: nil)
     }
     
 }
