@@ -16,6 +16,9 @@
 		AA63851C204705A7005AAD29 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA63851A204705A7005AAD29 /* FavoritesViewController.xib */; };
 		AA63851F204705D8005AAD29 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA63851D204705D8005AAD29 /* SearchViewController.swift */; };
 		AA638520204705D8005AAD29 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA63851E204705D8005AAD29 /* SearchViewController.xib */; };
+		AA6385252047DB36005AAD29 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6385232047DB36005AAD29 /* SearchResultCell.swift */; };
+		AA6385282047DCFD005AAD29 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6385272047DCFD005AAD29 /* SearchResultCell.xib */; };
+		AA63852B2047E87C005AAD29 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA63852A2047E87C005AAD29 /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		AA63851A204705A7005AAD29 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 		AA63851D204705D8005AAD29 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		AA63851E204705D8005AAD29 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		AA6385232047DB36005AAD29 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		AA6385272047DCFD005AAD29 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		AA63852A2047E87C005AAD29 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +68,11 @@
 		AA6384FF2046FDAA005AAD29 /* GitHubSearch */ = {
 			isa = PBXGroup;
 			children = (
-				AA6385132046FFE2005AAD29 /* Controllers */,
-				AA6385142046FFF4005AAD29 /* Supporting Files */,
 				AA6385002046FDAA005AAD29 /* AppDelegate.swift */,
+				AA6385212047D889005AAD29 /* Cells */,
+				AA6385132046FFE2005AAD29 /* Controllers */,
+				AA6385292047E851005AAD29 /* Extensions */,
+				AA6385142046FFF4005AAD29 /* Supporting Files */,
 				AA63850C2046FDAA005AAD29 /* Info.plist */,
 			);
 			path = GitHubSearch;
@@ -114,6 +122,31 @@
 				AA63851A204705A7005AAD29 /* FavoritesViewController.xib */,
 			);
 			path = Favorites;
+			sourceTree = "<group>";
+		};
+		AA6385212047D889005AAD29 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AA6385222047DB1B005AAD29 /* SearchResultCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		AA6385222047DB1B005AAD29 /* SearchResultCell */ = {
+			isa = PBXGroup;
+			children = (
+				AA6385232047DB36005AAD29 /* SearchResultCell.swift */,
+				AA6385272047DCFD005AAD29 /* SearchResultCell.xib */,
+			);
+			path = SearchResultCell;
+			sourceTree = "<group>";
+		};
+		AA6385292047E851005AAD29 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AA63852A2047E87C005AAD29 /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +212,7 @@
 				AA63851620470166005AAD29 /* TabBarController.xib in Resources */,
 				AA63851C204705A7005AAD29 /* FavoritesViewController.xib in Resources */,
 				AA638520204705D8005AAD29 /* SearchViewController.xib in Resources */,
+				AA6385282047DCFD005AAD29 /* SearchResultCell.xib in Resources */,
 				AA6385082046FDAA005AAD29 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +228,8 @@
 				AA63851B204705A7005AAD29 /* FavoritesViewController.swift in Sources */,
 				AA63851F204705D8005AAD29 /* SearchViewController.swift in Sources */,
 				AA6385012046FDAA005AAD29 /* AppDelegate.swift in Sources */,
+				AA63852B2047E87C005AAD29 /* UIViewController+Extensions.swift in Sources */,
+				AA6385252047DB36005AAD29 /* SearchResultCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
