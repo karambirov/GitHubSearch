@@ -92,6 +92,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="ownerEmailLabel" destination="8eb-G9-jqE" id="bBY-B8-4Qh"/>
+                <outlet property="ownerImage" destination="g04-it-aIM" id="D8x-pZ-rpn"/>
+                <outlet property="ownerNameLabel" destination="Cuc-oE-FFS" id="HLP-nZ-YWY"/>
+                <outlet property="repoDescriptionLabel" destination="0Ta-C2-SgP" id="lgq-RL-WpQ"/>
+                <outlet property="repoFullNameLabel" destination="jkp-DL-EGc" id="e1t-HP-Syj"/>
+            </connections>
             <point key="canvasLocation" x="26" y="138.5"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SearchResultCell" id="O0q-4e-7i1" customClass="SearchResultCell" customModule="GitHubSearch" customModuleProvider="target">

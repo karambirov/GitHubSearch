@@ -10,6 +10,12 @@ import UIKit
 
 final class DetailCell: UITableViewCell {
 
+    @IBOutlet weak var ownerImage: UIImageView!
+    @IBOutlet weak var ownerNameLabel: UILabel!
+    @IBOutlet weak var ownerEmailLabel: UILabel!
+    @IBOutlet weak var repoFullNameLabel: UILabel!
+    @IBOutlet weak var repoDescriptionLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
