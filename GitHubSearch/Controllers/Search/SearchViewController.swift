@@ -15,13 +15,21 @@ private enum Constants {
     static let navigationTitle = "Search"
 }
 
+struct Repository {
+    let repoFullName: String
+    let ownerName: String
+    let repoDescription: String
+    let ownerEmail: String
+}
+
 final class SearchViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var tableView: UITableView!
     
     // MARK: - Properties
     fileprivate let searchController = UISearchController(searchResultsController: nil)
+    let repositories = [Repository](repeating: Repository(repoFullName: "gena/repo", ownerName: "Gena", repoDescription: "My first repo", ownerEmail: "gena@gmail.com"), count: 30)
     
     // MARK: - ViewController's Life Cycle
     override func viewDidLoad() {
@@ -47,6 +55,7 @@ final class SearchViewController: UIViewController {
 
 }
 
+// MARK: - Setup
 extension SearchViewController {
     
     fileprivate func initialSetup() {
@@ -93,15 +102,15 @@ extension SearchViewController: UISearchResultsUpdating {
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return repositories.count
     }
 
     // TODO: - Fill in with actual data
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as? SearchResultCell {
-            cell.nameLabel?.text = "Tetris"
-            cell.ownerLabel?.text = "PSNB92"
-            cell.descriptionLabel?.text = "Tetris Project"
+            cell.nameLabel?.text = repositories[indexPath.row].repoFullName
+            cell.ownerLabel?.text = repositories[indexPath.row].ownerName
+            cell.descriptionLabel?.text = repositories[indexPath.row].repoDescription
             return cell
         }
         
@@ -111,5 +120,45 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detail = DetailViewController.instantiateFromNib()
+        detail.ownerName = repositories[indexPath.row].repoFullName
+        detail.ownerEmail = repositories[indexPath.row].ownerEmail
+        detail.repoFullName = repositories[indexPath.row].repoFullName
+        detail.repoDescription = repositories[indexPath.row].repoDescription
+        
+        navigationController?.pushViewController(detail, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
