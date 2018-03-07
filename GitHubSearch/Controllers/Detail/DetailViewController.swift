@@ -22,41 +22,21 @@ final class DetailViewController: UIViewController {
     @IBOutlet fileprivate weak var tableView: UITableView!
     
     // MARK: - Properties
-    fileprivate var ownerName: String
-    fileprivate var ownerEmail: String
-    fileprivate var repoFullName: String
-    fileprivate var repoDescription: String
+    var ownerName: String = "ownerName"
+    var ownerEmail: String = "ownerEmail"
+    var repoFullName: String = "repoFullName"
+    var repoDescription: String = "repoDescription"
     
     // MARK: - ViewController's Life Cycle
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        self.ownerName = "ownerName"
-        self.ownerEmail = "ownerEmail"
-        self.repoFullName = "repoFullName"
-        self.repoDescription = "repoDescription"
-        
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
-     convenience init(ownerName: String, ownerEmail: String, repoFullName: String, repoDescription: String) {
-        self.init(nibName: Constants.nibName, bundle: nil)
-        self.ownerName = ownerName
-        self.ownerEmail = ownerEmail
-        self.repoFullName = repoFullName
-        self.repoDescription = repoDescription
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        self.ownerName = "ownerName"
-        self.ownerEmail = "ownerEmail"
-        self.repoFullName = "repoFullName"
-        self.repoDescription = "repoDescription"
-        
-        super.init(coder: aDecoder)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
+    }
+    
+    static func instantiateFromNib() -> DetailViewController {
+        let nib = UINib(nibName: Constants.nibName, bundle: nil)
+        let vc = nib.instantiate(withOwner: nil, options: nil).first as! DetailViewController
+        return vc
     }
 
 }
@@ -73,7 +53,7 @@ extension DetailViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let nib = UINib(nibName: Constants.nibName, bundle: nil)
+        let nib = UINib(nibName: Constants.cellIdentifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: Constants.cellIdentifier)
     }
     
@@ -95,10 +75,13 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as? DetailCell {
+
+//            cell.ownerImage.image = UIImage()
             cell.ownerNameLabel.text = ownerName
             cell.ownerEmailLabel.text = ownerEmail
             cell.repoFullNameLabel.text = repoFullName
             cell.repoDescriptionLabel.text = repoDescription
+
             return cell
         }
         
