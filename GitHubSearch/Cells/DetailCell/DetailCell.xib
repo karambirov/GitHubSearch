@@ -22,17 +22,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qMj-B2-2eN" userLabel="Owner">
-                        <rect key="frame" x="15" y="15" width="290" height="75"/>
+                        <rect key="frame" x="15" y="15" width="290" height="79"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g04-it-aIM">
-                                <rect key="frame" x="0.0" y="5" width="65" height="65"/>
+                                <rect key="frame" x="0.0" y="7" width="65" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="g04-it-aIM" secondAttribute="height" multiplier="1:1" id="acF-r4-36N"/>
                                     <constraint firstAttribute="height" constant="65" id="udV-C3-FAT"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="EL5-NV-QPl" userLabel="Owner info">
-                                <rect key="frame" x="73" y="16.5" width="217" height="42.5"/>
+                                <rect key="frame" x="73" y="18.5" width="217" height="42.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cuc-oE-FFS">
                                         <rect key="frame" x="0.0" y="0.0" width="51.5" height="24"/>
@@ -56,8 +56,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eY-Zf-owf">
-                        <rect key="frame" x="15" y="110" width="82" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repo name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eY-Zf-owf">
+                        <rect key="frame" x="15" y="110" width="94.5" height="20.5"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -69,14 +69,14 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="owner/repo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkp-DL-EGc">
-                        <rect key="frame" x="101" y="110" width="87" height="20.5"/>
+                        <rect key="frame" x="113.5" y="110" width="87" height="20.5"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="9eY-Zf-owf" firstAttribute="top" secondItem="qMj-B2-2eN" secondAttribute="bottom" constant="20" id="0nx-1c-NtV"/>
+                    <constraint firstItem="9eY-Zf-owf" firstAttribute="top" secondItem="qMj-B2-2eN" secondAttribute="bottom" constant="16" id="0nx-1c-NtV"/>
                     <constraint firstItem="XD8-FH-m4h" firstAttribute="leading" secondItem="9eY-Zf-owf" secondAttribute="leading" id="1tY-LZ-iiN"/>
                     <constraint firstItem="qMj-B2-2eN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="2Og-Sc-b7m"/>
                     <constraint firstItem="0Ta-C2-SgP" firstAttribute="leading" secondItem="XD8-FH-m4h" secondAttribute="leading" id="3i1-tg-1Wb"/>

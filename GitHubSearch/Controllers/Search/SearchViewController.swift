@@ -18,7 +18,7 @@ private enum Constants {
 final class SearchViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var tableView: UITableView!
     
     // MARK: - Properties
     fileprivate let searchController = UISearchController(searchResultsController: nil)
@@ -47,6 +47,7 @@ final class SearchViewController: UIViewController {
 
 }
 
+// MARK: - Setup
 extension SearchViewController {
     
     fileprivate func initialSetup() {
