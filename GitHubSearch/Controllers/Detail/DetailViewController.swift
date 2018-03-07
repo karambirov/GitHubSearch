@@ -32,12 +32,6 @@ final class DetailViewController: UIViewController {
         super.viewDidLoad()
         initialSetup()
     }
-    
-    static func instantiateFromNib() -> DetailViewController {
-        let nib = UINib(nibName: Constants.nibName, bundle: nil)
-        let vc = nib.instantiate(withOwner: nil, options: nil).first as! DetailViewController
-        return vc
-    }
 
 }
 
@@ -61,6 +55,12 @@ extension DetailViewController {
         navigationItem.title = Constants.navigationTitle
         // FIXME: - Add action to rightBarButtonItem
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: nil)
+    }
+    
+    static func instantiateFromNib() -> DetailViewController {
+        let nib = UINib(nibName: Constants.nibName, bundle: nil)
+        let vc = nib.instantiate(withOwner: nil, options: nil).first as! DetailViewController
+        return vc
     }
     
 }

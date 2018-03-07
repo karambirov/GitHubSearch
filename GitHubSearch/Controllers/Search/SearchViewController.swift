@@ -46,12 +46,6 @@ final class SearchViewController: UIViewController {
         super.viewDidAppear(animated)
         navigationItem.hidesSearchBarWhenScrolling = true
     }
-    
-    static func instantiateFromNib() -> SearchViewController {
-        let nib = UINib(nibName: Constants.nibName, bundle: nil)
-        let vc = nib.instantiate(withOwner: nil, options: nil).first as! SearchViewController
-        return vc
-    }
 
 }
 
@@ -83,6 +77,12 @@ extension SearchViewController {
         searchController.dimsBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = Constants.searchBarPlaceholder
+    }
+    
+    static func instantiateFromNib() -> SearchViewController {
+        let nib = UINib(nibName: Constants.nibName, bundle: nil)
+        let vc = nib.instantiate(withOwner: nil, options: nil).first as! SearchViewController
+        return vc
     }
 }
 
