@@ -84,6 +84,7 @@ extension SearchViewController: UISearchResultsUpdating {
         let searchBar = searchController.searchBar
         print(searchBar.text!)
         // TODO: - send network request here
+        // send after a little delay from typing
     }
     
 }
