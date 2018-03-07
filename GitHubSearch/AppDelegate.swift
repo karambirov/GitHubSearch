@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
 //        window?.rootViewController = TabBarController.instantiateFromNib()
-        window?.rootViewController = SearchViewController.instantiateFromNib()
+        window?.rootViewController = SearchViewController.instantiateFromNib().embedInNavigationController()
         window?.makeKeyAndVisible()
         
         return true
