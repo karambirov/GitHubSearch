@@ -18,6 +18,10 @@
 		AA6385252047DB36005AAD29 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6385232047DB36005AAD29 /* SearchResultCell.swift */; };
 		AA6385282047DCFD005AAD29 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6385272047DCFD005AAD29 /* SearchResultCell.xib */; };
 		AA63852B2047E87C005AAD29 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA63852A2047E87C005AAD29 /* UIViewController+Extensions.swift */; };
+		AAA099AC2056449E005E7987 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA099AB2056449E005E7987 /* NetworkService.swift */; };
+		AAA099B0205645D5005E7987 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA099AF205645D5005E7987 /* SearchResult.swift */; };
+		AAA099B220564634005E7987 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA099B120564634005E7987 /* Item.swift */; };
+		AAA099B42056464B005E7987 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA099B32056464B005E7987 /* Owner.swift */; };
 		AAB0D970204FBE6900573079 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D96E204FBE6900573079 /* DetailViewController.swift */; };
 		AAB0D971204FBE6900573079 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAB0D96F204FBE6900573079 /* DetailViewController.xib */; };
 		AAB0D975204FC12500573079 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D973204FC12500573079 /* DetailCell.swift */; };
@@ -38,6 +42,10 @@
 		AA6385232047DB36005AAD29 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		AA6385272047DCFD005AAD29 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		AA63852A2047E87C005AAD29 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		AAA099AB2056449E005E7987 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		AAA099AF205645D5005E7987 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		AAA099B120564634005E7987 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		AAA099B32056464B005E7987 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		AAB0D96E204FBE6900573079 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AAB0D96F204FBE6900573079 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		AAB0D973204FC12500573079 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
@@ -59,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				AA6384FF2046FDAA005AAD29 /* GitHubSearch */,
+				AA63850C2046FDAA005AAD29 /* Info.plist */,
 				AA6384FE2046FDAA005AAD29 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,8 +87,9 @@
 				AA6385212047D889005AAD29 /* Cells */,
 				AA6385132046FFE2005AAD29 /* Controllers */,
 				AA6385292047E851005AAD29 /* Extensions */,
+				AA74CEB72052AB1500C34660 /* Models */,
+				AAA099AA2056447B005E7987 /* Networking */,
 				AA6385142046FFF4005AAD29 /* Supporting Files */,
-				AA63850C2046FDAA005AAD29 /* Info.plist */,
 			);
 			path = GitHubSearch;
 			sourceTree = "<group>";
@@ -154,6 +164,24 @@
 				AA63852A2047E87C005AAD29 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AA74CEB72052AB1500C34660 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AAA099AF205645D5005E7987 /* SearchResult.swift */,
+				AAA099B120564634005E7987 /* Item.swift */,
+				AAA099B32056464B005E7987 /* Owner.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AAA099AA2056447B005E7987 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AAA099AB2056449E005E7987 /* NetworkService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		AAB0D96D204FBE4600573079 /* Detail */ = {
@@ -251,9 +279,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA6385032046FDAA005AAD29 /* TabBarController.swift in Sources */,
+				AAA099B42056464B005E7987 /* Owner.swift in Sources */,
 				AA63851B204705A7005AAD29 /* FavoritesViewController.swift in Sources */,
+				AAA099B0205645D5005E7987 /* SearchResult.swift in Sources */,
 				AA63851F204705D8005AAD29 /* SearchViewController.swift in Sources */,
 				AA6385012046FDAA005AAD29 /* AppDelegate.swift in Sources */,
+				AAA099AC2056449E005E7987 /* NetworkService.swift in Sources */,
+				AAA099B220564634005E7987 /* Item.swift in Sources */,
 				AA63852B2047E87C005AAD29 /* UIViewController+Extensions.swift in Sources */,
 				AA6385252047DB36005AAD29 /* SearchResultCell.swift in Sources */,
 				AAB0D975204FC12500573079 /* DetailCell.swift in Sources */,
@@ -388,7 +420,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TDR3533VJS;
-				INFOPLIST_FILE = GitHubSearch/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.karambirov.GitHubSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -403,7 +435,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TDR3533VJS;
-				INFOPLIST_FILE = GitHubSearch/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.karambirov.GitHubSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
