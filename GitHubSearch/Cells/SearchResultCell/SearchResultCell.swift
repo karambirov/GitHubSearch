@@ -15,6 +15,14 @@ final class SearchResultCell: UITableViewCell {
     @IBOutlet weak var ownerLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    var repository: Repository? {
+        didSet {
+            nameLabel.text = repository?.fullName
+            ownerLabel.text = repository?.owner.login
+            descriptionLabel.text = repository?.description
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
