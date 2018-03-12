@@ -83,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				AA6384FF2046FDAA005AAD29 /* GitHubSearch */,
-				AA63850C2046FDAA005AAD29 /* Info.plist */,
 				AA6384FE2046FDAA005AAD29 /* Products */,
 				4BCA1A1D372BC04A17A2BD3C /* Pods */,
 				BAEC4D63C2D2FE0129FE88C3 /* Frameworks */,
@@ -134,6 +133,7 @@
 		AA6385142046FFF4005AAD29 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AA63850C2046FDAA005AAD29 /* Info.plist */,
 				AA6385072046FDAA005AAD29 /* Assets.xcassets */,
 				AA6385092046FDAA005AAD29 /* LaunchScreen.storyboard */,
 			);
@@ -179,8 +179,8 @@
 		AA6385292047E851005AAD29 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AA63852A2047E87C005AAD29 /* UIViewController+Extensions.swift */,
 				AA367C122056674400E86B1B /* String+Extensions.swift */,
+				AA63852A2047E87C005AAD29 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -188,8 +188,8 @@
 		AA74CEB72052AB1500C34660 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AAA099AF205645D5005E7987 /* SearchResults.swift */,
 				AAA099B120564634005E7987 /* Repository.swift */,
+				AAA099AF205645D5005E7987 /* SearchResults.swift */,
 				AAA099B32056464B005E7987 /* User.swift */,
 			);
 			path = Models;
@@ -510,7 +510,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TDR3533VJS;
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/GitHubSearch/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.karambirov.GitHubSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -526,7 +526,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TDR3533VJS;
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/GitHubSearch/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.karambirov.GitHubSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";

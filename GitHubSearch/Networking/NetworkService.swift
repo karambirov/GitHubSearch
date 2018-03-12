@@ -9,6 +9,8 @@
 import Foundation
 import Moya
 
+
+
 private enum Constants {
     static let baseURL = "https://api.github.com"
     static let repoSearchPath = "/search/repositories"
@@ -20,6 +22,8 @@ public enum NetworkService {
 
 // MARK: - TargetType Protocol Implementation
 extension NetworkService: TargetType {
+    
+    static let provider = MoyaProvider<NetworkService>()
     
     public var baseURL: URL {
         return URL(string: Constants.baseURL)!
