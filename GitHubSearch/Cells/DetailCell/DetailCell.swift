@@ -19,7 +19,8 @@ final class DetailCell: UITableViewCell {
     var repository: Repository? {
         didSet {
             ownerImage.image = UIImage()
-            ownerNameLabel.text = repository?.owner.name
+            // TODO: - Here should be owner's full name, not login
+            ownerNameLabel.text = repository?.owner.login
             ownerEmailLabel.text = repository?.owner.email
             repoFullNameLabel.text = repository?.fullName
             repoDescriptionLabel.text = repository?.description
