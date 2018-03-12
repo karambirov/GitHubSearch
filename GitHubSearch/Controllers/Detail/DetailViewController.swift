@@ -78,7 +78,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         
         print("Error occured")
         let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-        cell.textLabel?.text = "Test"
+        cell.textLabel?.text = "Error"
         
         return cell
     }

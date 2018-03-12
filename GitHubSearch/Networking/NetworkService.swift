@@ -9,6 +9,11 @@
 import Foundation
 import Moya
 
+private enum Constants {
+    static let baseURL = "https://api.github.com"
+    static let repoSearchPath = "/search/repositories"
+}
+
 public enum NetworkService {
     case repoSearch(query: String)
 }
@@ -17,13 +22,13 @@ public enum NetworkService {
 extension NetworkService: TargetType {
     
     public var baseURL: URL {
-        return URL(string: "https://api.github.com")!
+        return URL(string: Constants.baseURL)!
     }
     
     public var path: String {
         switch self {
         case .repoSearch(_):
-            return "/search/repositories"
+            return Constants.repoSearchPath
         }
     }
     
