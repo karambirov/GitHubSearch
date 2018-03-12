@@ -10,6 +10,34 @@ import Foundation
 
 final class NetworkService {
     
-    fileprivate var baseURL = URL(string: "https://api.github.com")
-    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

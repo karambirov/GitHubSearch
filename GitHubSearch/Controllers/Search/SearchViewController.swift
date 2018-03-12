@@ -15,12 +15,12 @@ private enum Constants {
     static let navigationTitle = "Search"
 }
 
-struct Repository {
-    let repoFullName: String
-    let ownerName: String
-    let repoDescription: String
-    let ownerEmail: String
-}
+//struct Repository {
+//    let repoFullName: String
+//    let ownerName: String
+//    let repoDescription: String
+//    let ownerEmail: String
+//}
 
 final class SearchViewController: UIViewController {
     
@@ -29,7 +29,7 @@ final class SearchViewController: UIViewController {
     
     // MARK: - Properties
     fileprivate let searchController = UISearchController(searchResultsController: nil)
-    let repositories = [Repository](repeating: Repository(repoFullName: "gena/repo", ownerName: "Gena", repoDescription: "My first repo", ownerEmail: "gena@gmail.com"), count: 30)
+    var searchResult: SearchResult!
     
     // MARK: - ViewController's Life Cycle
     override func viewDidLoad() {
@@ -94,6 +94,7 @@ extension SearchViewController: UISearchResultsUpdating {
         print(searchBar.text!)
         // TODO: - send network request here
         // send after a little delay from typing
+        
     }
     
 }
@@ -102,15 +103,15 @@ extension SearchViewController: UISearchResultsUpdating {
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repositories.count
+        return searchResult.items.count
     }
 
     // TODO: - Fill in with actual data
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as? SearchResultCell {
-            cell.nameLabel?.text = repositories[indexPath.row].repoFullName
-            cell.ownerLabel?.text = repositories[indexPath.row].ownerName
-            cell.descriptionLabel?.text = repositories[indexPath.row].repoDescription
+            cell.nameLabel?.text = searchResult.items[indexPath.row].fullName
+            cell.ownerLabel?.text = searchResult.items[indexPath.row].owner.login
+            cell.descriptionLabel?.text = searchResult.items[indexPath.row].description
             return cell
         }
         
@@ -123,10 +124,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detail = DetailViewController.instantiateFromNib()
-        detail.ownerName = repositories[indexPath.row].repoFullName
-        detail.ownerEmail = repositories[indexPath.row].ownerEmail
-        detail.repoFullName = repositories[indexPath.row].repoFullName
-        detail.repoDescription = repositories[indexPath.row].repoDescription
+        detail.ownerName = searchResult.items[indexPath.row].owner.login
+        detail.ownerEmail = "EMAIL"
+        detail.repoFullName = searchResult.items[indexPath.row].fullName
+        detail.repoDescription = searchResult.items[indexPath.row].description
         
         navigationController?.pushViewController(detail, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
