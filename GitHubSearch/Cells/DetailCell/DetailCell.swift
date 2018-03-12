@@ -16,6 +16,16 @@ final class DetailCell: UITableViewCell {
     @IBOutlet weak var repoFullNameLabel: UILabel!
     @IBOutlet weak var repoDescriptionLabel: UILabel!
     
+    var repository: Repository? {
+        didSet {
+            ownerImage.image = UIImage()
+            ownerNameLabel.text = repository?.owner.name
+            ownerEmailLabel.text = repository?.owner.email
+            repoFullNameLabel.text = repository?.fullName
+            repoDescriptionLabel.text = repository?.description
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
