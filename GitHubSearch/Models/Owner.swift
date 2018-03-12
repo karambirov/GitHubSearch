@@ -9,7 +9,8 @@
 import Foundation
 
 struct Owner: Codable {
-    let login, avatarURL: String
+    let login: String
+    let avatarURL: String?
     
     enum CodingKeys: String, CodingKey {
         case login
