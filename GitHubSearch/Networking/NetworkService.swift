@@ -9,8 +9,6 @@
 import Foundation
 import Moya
 
-
-
 private enum Constants {
     static let baseURL = "https://api.github.com"
     static let repoSearchPath = "/search/repositories"
@@ -59,7 +57,8 @@ extension NetworkService: TargetType {
     }
     
     public var task: Task {
-        return .requestPlain
+        guard let parameters = parameters else { return .requestPlain }
+        return .requestParameters(parameters: parameters, encoding: parameterEncoding)
     }
     
     public var headers: [String : String]? {

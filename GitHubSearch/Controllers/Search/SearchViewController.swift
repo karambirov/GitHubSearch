@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Moya
 
 private enum Constants {
     static let nibName = "SearchViewController"
@@ -74,6 +75,7 @@ extension SearchViewController {
         searchController.dimsBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = Constants.searchBarPlaceholder
+        searchController.searchBar.delegate = self
     }
     
     static func instantiateFromNib() -> SearchViewController {
@@ -83,27 +85,53 @@ extension SearchViewController {
     }
 }
 
+
+// MARK: - UISearchBar Delegate
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // TODO: - send network request here
+        // send after a little delay from typing
+        guard let query = searchBar.text else { return }
+        
+        NetworkService.provider.request(.repoSearch(query: query)) { result in
+            switch result {
+
+            case .success(let response):
+                let data = response.data
+                do {
+                    let repositories = try JSONDecoder().decode(SearchResults<Repository>.self, from: data)
+                    print(repositories.items)
+                    self.repositories = repositories.items
+                } catch let error {
+                    print("ERROR: \(error)")
+                }
+
+            case .failure(let error):
+                print("ERROR: \(error.errorDescription), REASON: \(error.failureReason)")
+            }
+        }
+    }
+    
+}
+
 // MARK: - UISearchResultsUpdating Delegate
 extension SearchViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
-        print(searchBar.text!)
-        // TODO: - send network request here
-        // send after a little delay from typing
-        
+//        print(searchBar.text!)
     }
     
 }
 
-// MARK: - Table View Setup
+// MARK: - Table View Delegate and Data Source
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return repositories.count
     }
 
-    // TODO: - Fill in with actual data
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as? SearchResultCell {
             cell.repository = repositories[indexPath.row]
@@ -112,7 +140,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         print("Error occured")
         let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-        cell.textLabel?.text = "Test"
+        cell.textLabel?.text = "Error"
     
         return cell
     }
