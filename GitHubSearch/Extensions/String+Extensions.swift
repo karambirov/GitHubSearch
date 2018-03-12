@@ -14,4 +14,8 @@ extension String {
         return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)!
     }
     
+    var utf8Encoded: Data {
+        return data(using: .utf8)!
+    }
+    
 }
