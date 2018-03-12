@@ -22,6 +22,7 @@
 		AAA099B0205645D5005E7987 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA099AF205645D5005E7987 /* SearchResult.swift */; };
 		AAA099B220564634005E7987 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA099B120564634005E7987 /* Item.swift */; };
 		AAA099B42056464B005E7987 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA099B32056464B005E7987 /* Owner.swift */; };
+		AAA099B62056494D005E7987 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA099B52056494D005E7987 /* Result.swift */; };
 		AAB0D970204FBE6900573079 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D96E204FBE6900573079 /* DetailViewController.swift */; };
 		AAB0D971204FBE6900573079 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAB0D96F204FBE6900573079 /* DetailViewController.xib */; };
 		AAB0D975204FC12500573079 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB0D973204FC12500573079 /* DetailCell.swift */; };
@@ -46,6 +47,7 @@
 		AAA099AF205645D5005E7987 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		AAA099B120564634005E7987 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		AAA099B32056464B005E7987 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		AAA099B52056494D005E7987 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		AAB0D96E204FBE6900573079 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AAB0D96F204FBE6900573079 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		AAB0D973204FC12500573079 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				AAA099AB2056449E005E7987 /* NetworkService.swift */,
+				AAA099B52056494D005E7987 /* Result.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA6385032046FDAA005AAD29 /* TabBarController.swift in Sources */,
+				AAA099B62056494D005E7987 /* Result.swift in Sources */,
 				AAA099B42056464B005E7987 /* Owner.swift in Sources */,
 				AA63851B204705A7005AAD29 /* FavoritesViewController.swift in Sources */,
 				AAA099B0205645D5005E7987 /* SearchResult.swift in Sources */,
