@@ -1,5 +1,5 @@
 //
-//  Owner.swift
+//  Item.swift
 //  GitHubSearch
 //
 //  Created by Eugene Karambirov on 12/03/2018.
@@ -8,12 +8,13 @@
 
 import Foundation
 
-struct Owner: Codable {
-    let login: String
-    let avatarURL: String?
+struct Repository: Codable {
+    let fullName: String
+    let owner: Owner
+    let description: String
     
     enum CodingKeys: String, CodingKey {
-        case login
-        case avatarURL = "avatar_url"
+        case fullName = "full_name"
+        case owner, description
     }
 }

@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct SearchResult: Codable {
-    let items: [Item]
+struct SearchResults<T: Codable>: Codable {
+    let items: [T]
 }
