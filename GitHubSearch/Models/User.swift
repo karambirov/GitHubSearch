@@ -10,12 +10,11 @@ import Foundation
 
 struct User: Codable {
     let login: String
-    let name: String
     let email: String?
     let avatarURL: String?
     
     enum CodingKeys: String, CodingKey {
-        case login, name, email
+        case login, email
         case avatarURL = "avatar_url"
     }
 }
