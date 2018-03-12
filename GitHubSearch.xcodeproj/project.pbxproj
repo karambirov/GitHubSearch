@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		449A74621521A7A64BEE8753 /* Pods_GitHubSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E518204C5DD734CE1E1701 /* Pods_GitHubSearch.framework */; };
+		AA367C132056674400E86B1B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA367C122056674400E86B1B /* String+Extensions.swift */; };
 		AA6385012046FDAA005AAD29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6385002046FDAA005AAD29 /* AppDelegate.swift */; };
 		AA6385032046FDAA005AAD29 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6385022046FDAA005AAD29 /* TabBarController.swift */; };
 		AA6385082046FDAA005AAD29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA6385072046FDAA005AAD29 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		1D2F3D2D72A9B4E701B2424F /* Pods-GitHubSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSearch/Pods-GitHubSearch.release.xcconfig"; sourceTree = "<group>"; };
 		70C383C869716CB2C712997E /* Pods-GitHubSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSearch/Pods-GitHubSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		82E518204C5DD734CE1E1701 /* Pods_GitHubSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA367C122056674400E86B1B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		AA6384FD2046FDAA005AAD29 /* GitHubSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6385002046FDAA005AAD29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA6385022046FDAA005AAD29 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				AA63852A2047E87C005AAD29 /* UIViewController+Extensions.swift */,
+				AA367C122056674400E86B1B /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA6385032046FDAA005AAD29 /* TabBarController.swift in Sources */,
+				AA367C132056674400E86B1B /* String+Extensions.swift in Sources */,
 				AAA099B42056464B005E7987 /* Owner.swift in Sources */,
 				AA63851B204705A7005AAD29 /* FavoritesViewController.swift in Sources */,
 				AAA099B0205645D5005E7987 /* SearchResult.swift in Sources */,
