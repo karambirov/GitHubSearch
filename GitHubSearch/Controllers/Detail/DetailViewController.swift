@@ -44,6 +44,8 @@ extension DetailViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.tableFooterView = UIView()
+        
         let nib = UINib(nibName: Constants.cellIdentifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: Constants.cellIdentifier)
     }
