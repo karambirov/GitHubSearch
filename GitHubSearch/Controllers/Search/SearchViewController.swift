@@ -106,9 +106,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     // TODO: - Fill in with actual data
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as? SearchResultCell {
-            cell.nameLabel?.text = repositories[indexPath.row].repoFullName
-            cell.ownerLabel?.text = repositories[indexPath.row].ownerName
-            cell.descriptionLabel?.text = repositories[indexPath.row].repoDescription
+            cell.repository = repositories[indexPath.row]
             return cell
         }
         
@@ -121,10 +119,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detail = DetailViewController.instantiateFromNib()
-        detail.ownerName = repositories[indexPath.row].ownerName
-        detail.ownerEmail = repositories[indexPath.row].ownerEmail
-        detail.repoFullName = repositories[indexPath.row].repoFullName
-        detail.repoDescription = repositories[indexPath.row].repoDescription
+        detail.repository = repositories[indexPath.row]
         
         navigationController?.pushViewController(detail, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)

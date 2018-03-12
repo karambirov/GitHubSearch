@@ -22,10 +22,7 @@ final class DetailViewController: UIViewController {
     @IBOutlet fileprivate weak var tableView: UITableView!
     
     // MARK: - Properties
-    var ownerName: String = "ownerName"
-    var ownerEmail: String = "ownerEmail"
-    var repoFullName: String = "repoFullName"
-    var repoDescription: String = "repoDescription"
+    var repository: Repository?
     
     // MARK: - ViewController's Life Cycle
     override func viewDidLoad() {
@@ -75,13 +72,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as? DetailCell {
-
-//            cell.ownerImage.image = UIImage()
-            cell.ownerNameLabel.text = ownerName
-            cell.ownerEmailLabel.text = ownerEmail
-            cell.repoFullNameLabel.text = repoFullName
-            cell.repoDescriptionLabel.text = repoDescription
-
+            cell.repository = repository
             return cell
         }
         
