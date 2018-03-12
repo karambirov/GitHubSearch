@@ -10,7 +10,7 @@ import Foundation
 
 struct Repository: Codable {
     let fullName: String
-    let owner: Owner
+    let owner: User
     let description: String
     
     enum CodingKeys: String, CodingKey {
