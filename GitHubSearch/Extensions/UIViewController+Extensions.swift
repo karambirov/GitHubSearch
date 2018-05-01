@@ -12,8 +12,6 @@ extension UIViewController {
     
     func embedInNavigationController() -> UINavigationController {
         let navigationController = UINavigationController(rootViewController: self)
-        navigationController.navigationBar.prefersLargeTitles = true
-        navigationController.navigationItem.largeTitleDisplayMode = .always
         return navigationController
     }
     

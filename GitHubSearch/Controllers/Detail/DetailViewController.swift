@@ -29,7 +29,7 @@ final class DetailViewController: UIViewController {
         super.viewDidLoad()
         initialSetup()
     }
-
+    
 }
 
 // MARK: - Setup
