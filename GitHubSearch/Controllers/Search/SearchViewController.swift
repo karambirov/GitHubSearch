@@ -34,12 +34,12 @@ final class SearchViewController: UIViewController {
         super.viewDidLoad()
         initialSetup()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.hidesSearchBarWhenScrolling = false
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationItem.hidesSearchBarWhenScrolling = true
@@ -83,6 +83,7 @@ extension SearchViewController {
         let vc = nib.instantiate(withOwner: nil, options: nil).first as! SearchViewController
         return vc
     }
+    
 }
 
 
@@ -104,11 +105,11 @@ extension SearchViewController: UISearchBarDelegate {
                     print(repositories.items)
                     self.repositories = repositories.items
                 } catch let error {
-                    print("ERROR: \(error)")
+                    print("\n\nERROR: \(error)")
                 }
 
             case .failure(let error):
-                print("ERROR: \(error.errorDescription), REASON: \(error.failureReason)")
+                print("\n\nERROR: \(error.errorDescription), REASON: \(error.failureReason)")
             }
         }
     }

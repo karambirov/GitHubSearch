@@ -14,8 +14,6 @@ private enum Constants {
     static let navigationTitle = "About repository"
 }
 
-// TODO: - Figure out how to make inits more elegant
-
 final class DetailViewController: UIViewController {
     
     // MARK: - Outlets
