@@ -101,14 +101,9 @@
 		AA46ABBF20FC7B0F00628605 /* GitHubSearch */ = {
 			isa = PBXGroup;
 			children = (
-				AA46ABC020FC7B0F00628605 /* AppDelegate.swift */,
-				AA46ABC520FC7B0F00628605 /* SearchViewController.swift */,
-				AA46ABC720FC7B0F00628605 /* DetailViewController.swift */,
-				AA46ABC920FC7B0F00628605 /* Main.storyboard */,
-				AA46ABCC20FC7B1200628605 /* Assets.xcassets */,
-				AA46ABCE20FC7B1200628605 /* LaunchScreen.storyboard */,
-				AA46ABD120FC7B1200628605 /* Info.plist */,
-				AA46ABC220FC7B0F00628605 /* GitHubSearch.xcdatamodeld */,
+				AA46ABF520FC86E900628605 /* Models */,
+				AA46ABF420FC86C200628605 /* Controllers */,
+				AA46ABF320FC867900628605 /* Supporting Files */,
 			);
 			path = GitHubSearch;
 			sourceTree = "<group>";
@@ -129,6 +124,35 @@
 				AA46ABE720FC7B1200628605 /* Info.plist */,
 			);
 			path = GitHubSearchUITests;
+			sourceTree = "<group>";
+		};
+		AA46ABF320FC867900628605 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA46ABC020FC7B0F00628605 /* AppDelegate.swift */,
+				AA46ABCC20FC7B1200628605 /* Assets.xcassets */,
+				AA46ABCE20FC7B1200628605 /* LaunchScreen.storyboard */,
+				AA46ABD120FC7B1200628605 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA46ABF420FC86C200628605 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA46ABC920FC7B0F00628605 /* Main.storyboard */,
+				AA46ABC520FC7B0F00628605 /* SearchViewController.swift */,
+				AA46ABC720FC7B0F00628605 /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AA46ABF520FC86E900628605 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA46ABC220FC7B0F00628605 /* GitHubSearch.xcdatamodeld */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,7 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TDR3533VJS;
-				INFOPLIST_FILE = GitHubSearch/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GitHubSearch/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,7 +482,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TDR3533VJS;
-				INFOPLIST_FILE = GitHubSearch/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GitHubSearch/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
