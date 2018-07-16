@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     var repository: Repository? = nil {
         didSet {
 //            tableView.reloadData()
-            print(repository)
+            print(repository ?? "There is no any repo")
         }
     }
 
