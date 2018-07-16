@@ -21,6 +21,8 @@
 		AA46ABDB20FC7B1200628605 /* GitHubSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABDA20FC7B1200628605 /* GitHubSearchTests.swift */; };
 		AA46ABE620FC7B1200628605 /* GitHubSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABE520FC7B1200628605 /* GitHubSearchUITests.swift */; };
 		AA46ABF920FC97A900628605 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABF820FC97A900628605 /* FavoritesViewController.swift */; };
+		AAC172FD20FCF0EF003B6D0B /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC172FC20FCF0EF003B6D0B /* RepositoryCell.swift */; };
+		AAC172FF20FCF1F7003B6D0B /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC172FE20FCF1F7003B6D0B /* RepositoryCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		AA46ABE520FC7B1200628605 /* GitHubSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchUITests.swift; sourceTree = "<group>"; };
 		AA46ABE720FC7B1200628605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA46ABF820FC97A900628605 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		AAC172FC20FCF0EF003B6D0B /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		AAC172FE20FCF1F7003B6D0B /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 		AA46ABBF20FC7B0F00628605 /* GitHubSearch */ = {
 			isa = PBXGroup;
 			children = (
+				AAC172FB20FCF0CC003B6D0B /* Cells */,
 				AA46ABF420FC86C200628605 /* Controllers */,
 				AA46ABF520FC86E900628605 /* Models */,
 				AA46ABF320FC867900628605 /* Supporting Files */,
@@ -168,6 +173,15 @@
 				AA41A4EA20FCB08F001BD64D /* User+CoreDataProperties.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		AAC172FB20FCF0CC003B6D0B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AAC172FC20FCF0EF003B6D0B /* RepositoryCell.swift */,
+				AAC172FE20FCF1F7003B6D0B /* RepositoryCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +291,7 @@
 				AA46ABD020FC7B1200628605 /* LaunchScreen.storyboard in Resources */,
 				AA46ABCD20FC7B1200628605 /* Assets.xcassets in Resources */,
 				AA46ABCB20FC7B0F00628605 /* Main.storyboard in Resources */,
+				AAC172FF20FCF1F7003B6D0B /* RepositoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +321,7 @@
 				AA46ABC120FC7B0F00628605 /* AppDelegate.swift in Sources */,
 				AA46ABC620FC7B0F00628605 /* SearchViewController.swift in Sources */,
 				AA46ABF920FC97A900628605 /* FavoritesViewController.swift in Sources */,
+				AAC172FD20FCF0EF003B6D0B /* RepositoryCell.swift in Sources */,
 				AA46ABC820FC7B0F00628605 /* DetailViewController.swift in Sources */,
 				AA41A4ED20FCB08F001BD64D /* User+CoreDataClass.swift in Sources */,
 				AA41A4EB20FCB08F001BD64D /* Repository+CoreDataClass.swift in Sources */,
