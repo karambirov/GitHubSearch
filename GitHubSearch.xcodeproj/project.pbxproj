@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AA46ABC120FC7B0F00628605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABC020FC7B0F00628605 /* AppDelegate.swift */; };
 		AA46ABC420FC7B0F00628605 /* GitHubSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABC220FC7B0F00628605 /* GitHubSearch.xcdatamodeld */; };
-		AA46ABC620FC7B0F00628605 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABC520FC7B0F00628605 /* MasterViewController.swift */; };
+		AA46ABC620FC7B0F00628605 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABC520FC7B0F00628605 /* SearchViewController.swift */; };
 		AA46ABC820FC7B0F00628605 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABC720FC7B0F00628605 /* DetailViewController.swift */; };
 		AA46ABCB20FC7B0F00628605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA46ABC920FC7B0F00628605 /* Main.storyboard */; };
 		AA46ABCD20FC7B1200628605 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA46ABCC20FC7B1200628605 /* Assets.xcassets */; };
@@ -39,7 +39,7 @@
 		AA46ABBD20FC7B0F00628605 /* GitHubSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA46ABC020FC7B0F00628605 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA46ABC320FC7B0F00628605 /* GitHubSearch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GitHubSearch.xcdatamodel; sourceTree = "<group>"; };
-		AA46ABC520FC7B0F00628605 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		AA46ABC520FC7B0F00628605 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		AA46ABC720FC7B0F00628605 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AA46ABCA20FC7B0F00628605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA46ABCC20FC7B1200628605 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				AA46ABC020FC7B0F00628605 /* AppDelegate.swift */,
-				AA46ABC520FC7B0F00628605 /* MasterViewController.swift */,
+				AA46ABC520FC7B0F00628605 /* SearchViewController.swift */,
 				AA46ABC720FC7B0F00628605 /* DetailViewController.swift */,
 				AA46ABC920FC7B0F00628605 /* Main.storyboard */,
 				AA46ABCC20FC7B1200628605 /* Assets.xcassets */,
@@ -264,7 +264,7 @@
 			files = (
 				AA46ABC420FC7B0F00628605 /* GitHubSearch.xcdatamodeld in Sources */,
 				AA46ABC120FC7B0F00628605 /* AppDelegate.swift in Sources */,
-				AA46ABC620FC7B0F00628605 /* MasterViewController.swift in Sources */,
+				AA46ABC620FC7B0F00628605 /* SearchViewController.swift in Sources */,
 				AA46ABC820FC7B0F00628605 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
