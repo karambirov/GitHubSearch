@@ -10,6 +10,13 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var repository: Repository? = nil {
+        didSet {
+//            tableView.reloadData()
+            print(repository)
+        }
+    }
+
     func configureView() {
         // Update the user interface for the detail item.
 //        if let detail = detailItem {

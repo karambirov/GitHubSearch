@@ -40,32 +40,6 @@ class SearchViewController: UITableViewController, NSFetchedResultsControllerDel
 }
 
 
-// MARK: - Setup
-fileprivate extension SearchViewController {
-
-    func initialSetup() {
-        setupNavigationBar()
-        setupSearchController()
-    }
-
-    func setupNavigationBar() {
-        navigationItem.searchController = searchController
-    }
-
-    func setupSearchController() {
-        searchController.searchResultsUpdater                   = self
-
-        searchController.obscuresBackgroundDuringPresentation   = false
-        searchController.dimsBackgroundDuringPresentation       = false
-        searchController.hidesNavigationBarDuringPresentation   = false
-
-        searchController.searchBar.placeholder                  = "Search Repositories"
-        searchController.searchBar.delegate                     = self
-    }
-
-}
-
-
 // MARK: - Table View
 extension SearchViewController {
 
@@ -74,7 +48,8 @@ extension SearchViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryCell", for: indexPath)
+        let cell: RepositoryCell = tableView.dequeueCell(withIdentifier: RepositoryCell.typeName, for: indexPath)
+        cell.repository = repositories[indexPath.row]
         return cell
     }
 
@@ -87,7 +62,8 @@ extension SearchViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-
+                let detail = segue.destination as! DetailViewController
+                detail.repository = repositories[indexPath.row]
             }
         }
     }
@@ -112,6 +88,39 @@ extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
         print(searchBar.text!)
+    }
+
+}
+
+
+// MARK: - Setup
+fileprivate extension SearchViewController {
+
+    func initialSetup() {
+        setupNavigationBar()
+        setupSearchController()
+        setupTableView()
+    }
+
+    func setupNavigationBar() {
+        navigationItem.searchController = searchController
+    }
+
+    func setupSearchController() {
+        searchController.searchResultsUpdater                   = self
+
+        searchController.obscuresBackgroundDuringPresentation   = false
+        searchController.dimsBackgroundDuringPresentation       = false
+        searchController.hidesNavigationBarDuringPresentation   = false
+
+        searchController.searchBar.placeholder                  = "Search Repositories"
+        searchController.searchBar.delegate                     = self
+    }
+
+    func setupTableView() {
+        let nib = UINib(nibName: RepositoryCell.typeName, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: RepositoryCell.typeName)
+        tableView.tableFooterView = UIView()
     }
 
 }

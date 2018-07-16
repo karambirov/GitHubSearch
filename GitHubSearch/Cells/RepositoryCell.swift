@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class RepositoryCell: UITableViewCell {
+final class RepositoryCell: UITableViewCell, Describable {
 
     // MARK: - Outlets
     @IBOutlet fileprivate weak var nameLabel: UILabel!
