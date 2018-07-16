@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA41A4EB20FCB08F001BD64D /* Repository+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA41A4E720FCB08F001BD64D /* Repository+CoreDataClass.swift */; };
+		AA41A4EC20FCB08F001BD64D /* Repository+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA41A4E820FCB08F001BD64D /* Repository+CoreDataProperties.swift */; };
+		AA41A4ED20FCB08F001BD64D /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA41A4E920FCB08F001BD64D /* User+CoreDataClass.swift */; };
+		AA41A4EE20FCB08F001BD64D /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA41A4EA20FCB08F001BD64D /* User+CoreDataProperties.swift */; };
 		AA46ABC120FC7B0F00628605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABC020FC7B0F00628605 /* AppDelegate.swift */; };
 		AA46ABC420FC7B0F00628605 /* GitHubSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABC220FC7B0F00628605 /* GitHubSearch.xcdatamodeld */; };
 		AA46ABC620FC7B0F00628605 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABC520FC7B0F00628605 /* SearchViewController.swift */; };
@@ -37,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA41A4E720FCB08F001BD64D /* Repository+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repository+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AA41A4E820FCB08F001BD64D /* Repository+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repository+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AA41A4E920FCB08F001BD64D /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AA41A4EA20FCB08F001BD64D /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AA46ABBD20FC7B0F00628605 /* GitHubSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA46ABC020FC7B0F00628605 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA46ABC320FC7B0F00628605 /* GitHubSearch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GitHubSearch.xcdatamodel; sourceTree = "<group>"; };
@@ -154,6 +162,10 @@
 			isa = PBXGroup;
 			children = (
 				AA46ABC220FC7B0F00628605 /* GitHubSearch.xcdatamodeld */,
+				AA41A4E720FCB08F001BD64D /* Repository+CoreDataClass.swift */,
+				AA41A4E820FCB08F001BD64D /* Repository+CoreDataProperties.swift */,
+				AA41A4E920FCB08F001BD64D /* User+CoreDataClass.swift */,
+				AA41A4EA20FCB08F001BD64D /* User+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,11 +301,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA41A4EC20FCB08F001BD64D /* Repository+CoreDataProperties.swift in Sources */,
 				AA46ABC420FC7B0F00628605 /* GitHubSearch.xcdatamodeld in Sources */,
 				AA46ABC120FC7B0F00628605 /* AppDelegate.swift in Sources */,
 				AA46ABC620FC7B0F00628605 /* SearchViewController.swift in Sources */,
 				AA46ABF920FC97A900628605 /* FavoritesViewController.swift in Sources */,
 				AA46ABC820FC7B0F00628605 /* DetailViewController.swift in Sources */,
+				AA41A4ED20FCB08F001BD64D /* User+CoreDataClass.swift in Sources */,
+				AA41A4EB20FCB08F001BD64D /* Repository+CoreDataClass.swift in Sources */,
+				AA41A4EE20FCB08F001BD64D /* User+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
