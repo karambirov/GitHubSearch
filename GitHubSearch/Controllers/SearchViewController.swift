@@ -57,14 +57,21 @@ extension SearchViewController {
 
 
 // MARK: - Navigation
-extension SearchViewController {
+extension SearchViewController: SegueHandlerType {
+
+    enum SegueIdentifier: String {
+        case showDetail
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
+
+        switch segueIdentifier(for: segue) {
+        case .showDetail:
             if let indexPath = tableView.indexPathForSelectedRow {
                 let detail = segue.destination as! DetailViewController
                 detail.repository = repositories[indexPath.row]
             }
+
         }
     }
 

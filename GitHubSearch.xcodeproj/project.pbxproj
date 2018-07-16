@@ -25,6 +25,8 @@
 		AAC172FF20FCF1F7003B6D0B /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC172FE20FCF1F7003B6D0B /* RepositoryCell.xib */; };
 		AAC1730220FCF9CD003B6D0B /* Describable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1730120FCF9CD003B6D0B /* Describable.swift */; };
 		AAC1730520FCFA97003B6D0B /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1730420FCFA97003B6D0B /* UITableView+Extensions.swift */; };
+		AAC1730D20FD05C8003B6D0B /* SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1730C20FD05C8003B6D0B /* SegueIdentifier.swift */; };
+		AAC1730F20FD0822003B6D0B /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1730E20FD0822003B6D0B /* SegueHandlerType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		AAC172FE20FCF1F7003B6D0B /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		AAC1730120FCF9CD003B6D0B /* Describable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Describable.swift; sourceTree = "<group>"; };
 		AAC1730420FCFA97003B6D0B /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		AAC1730C20FD05C8003B6D0B /* SegueIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdentifier.swift; sourceTree = "<group>"; };
+		AAC1730E20FD0822003B6D0B /* SegueHandlerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,7 @@
 				AA41A4E820FCB08F001BD64D /* Repository+CoreDataProperties.swift */,
 				AA41A4E920FCB08F001BD64D /* User+CoreDataClass.swift */,
 				AA41A4EA20FCB08F001BD64D /* User+CoreDataProperties.swift */,
+				AAC1730C20FD05C8003B6D0B /* SegueIdentifier.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				AAC1730120FCF9CD003B6D0B /* Describable.swift */,
+				AAC1730E20FD0822003B6D0B /* SegueHandlerType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -338,11 +344,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAC1730D20FD05C8003B6D0B /* SegueIdentifier.swift in Sources */,
 				AA41A4EC20FCB08F001BD64D /* Repository+CoreDataProperties.swift in Sources */,
 				AA46ABC420FC7B0F00628605 /* GitHubSearch.xcdatamodeld in Sources */,
 				AA46ABC120FC7B0F00628605 /* AppDelegate.swift in Sources */,
 				AAC1730520FCFA97003B6D0B /* UITableView+Extensions.swift in Sources */,
 				AA46ABC620FC7B0F00628605 /* SearchViewController.swift in Sources */,
+				AAC1730F20FD0822003B6D0B /* SegueHandlerType.swift in Sources */,
 				AA46ABF920FC97A900628605 /* FavoritesViewController.swift in Sources */,
 				AAC172FD20FCF0EF003B6D0B /* RepositoryCell.swift in Sources */,
 				AA46ABC820FC7B0F00628605 /* DetailViewController.swift in Sources */,
