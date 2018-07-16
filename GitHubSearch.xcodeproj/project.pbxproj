@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		AA46ABC120FC7B0F00628605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABC020FC7B0F00628605 /* AppDelegate.swift */; };
 		AA46ABC420FC7B0F00628605 /* GitHubSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABC220FC7B0F00628605 /* GitHubSearch.xcdatamodeld */; };
-		AA46ABC620FC7B0F00628605 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABC520FC7B0F00628605 /* MasterViewController.swift */; };
+		AA46ABC620FC7B0F00628605 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABC520FC7B0F00628605 /* SearchViewController.swift */; };
 		AA46ABC820FC7B0F00628605 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABC720FC7B0F00628605 /* DetailViewController.swift */; };
 		AA46ABCB20FC7B0F00628605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA46ABC920FC7B0F00628605 /* Main.storyboard */; };
 		AA46ABCD20FC7B1200628605 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA46ABCC20FC7B1200628605 /* Assets.xcassets */; };
 		AA46ABD020FC7B1200628605 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA46ABCE20FC7B1200628605 /* LaunchScreen.storyboard */; };
 		AA46ABDB20FC7B1200628605 /* GitHubSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABDA20FC7B1200628605 /* GitHubSearchTests.swift */; };
 		AA46ABE620FC7B1200628605 /* GitHubSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABE520FC7B1200628605 /* GitHubSearchUITests.swift */; };
+		AA46ABF920FC97A900628605 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABF820FC97A900628605 /* FavoritesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		AA46ABBD20FC7B0F00628605 /* GitHubSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA46ABC020FC7B0F00628605 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA46ABC320FC7B0F00628605 /* GitHubSearch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GitHubSearch.xcdatamodel; sourceTree = "<group>"; };
-		AA46ABC520FC7B0F00628605 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		AA46ABC520FC7B0F00628605 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		AA46ABC720FC7B0F00628605 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AA46ABCA20FC7B0F00628605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA46ABCC20FC7B1200628605 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		AA46ABE120FC7B1200628605 /* GitHubSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA46ABE520FC7B1200628605 /* GitHubSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchUITests.swift; sourceTree = "<group>"; };
 		AA46ABE720FC7B1200628605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA46ABF820FC97A900628605 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +103,9 @@
 		AA46ABBF20FC7B0F00628605 /* GitHubSearch */ = {
 			isa = PBXGroup;
 			children = (
-				AA46ABC020FC7B0F00628605 /* AppDelegate.swift */,
-				AA46ABC520FC7B0F00628605 /* MasterViewController.swift */,
-				AA46ABC720FC7B0F00628605 /* DetailViewController.swift */,
-				AA46ABC920FC7B0F00628605 /* Main.storyboard */,
-				AA46ABCC20FC7B1200628605 /* Assets.xcassets */,
-				AA46ABCE20FC7B1200628605 /* LaunchScreen.storyboard */,
-				AA46ABD120FC7B1200628605 /* Info.plist */,
-				AA46ABC220FC7B0F00628605 /* GitHubSearch.xcdatamodeld */,
+				AA46ABF420FC86C200628605 /* Controllers */,
+				AA46ABF520FC86E900628605 /* Models */,
+				AA46ABF320FC867900628605 /* Supporting Files */,
 			);
 			path = GitHubSearch;
 			sourceTree = "<group>";
@@ -129,6 +126,36 @@
 				AA46ABE720FC7B1200628605 /* Info.plist */,
 			);
 			path = GitHubSearchUITests;
+			sourceTree = "<group>";
+		};
+		AA46ABF320FC867900628605 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA46ABC020FC7B0F00628605 /* AppDelegate.swift */,
+				AA46ABCC20FC7B1200628605 /* Assets.xcassets */,
+				AA46ABCE20FC7B1200628605 /* LaunchScreen.storyboard */,
+				AA46ABD120FC7B1200628605 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA46ABF420FC86C200628605 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA46ABC920FC7B0F00628605 /* Main.storyboard */,
+				AA46ABC520FC7B0F00628605 /* SearchViewController.swift */,
+				AA46ABC720FC7B0F00628605 /* DetailViewController.swift */,
+				AA46ABF820FC97A900628605 /* FavoritesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AA46ABF520FC86E900628605 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA46ABC220FC7B0F00628605 /* GitHubSearch.xcdatamodeld */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,7 +291,8 @@
 			files = (
 				AA46ABC420FC7B0F00628605 /* GitHubSearch.xcdatamodeld in Sources */,
 				AA46ABC120FC7B0F00628605 /* AppDelegate.swift in Sources */,
-				AA46ABC620FC7B0F00628605 /* MasterViewController.swift in Sources */,
+				AA46ABC620FC7B0F00628605 /* SearchViewController.swift in Sources */,
+				AA46ABF920FC97A900628605 /* FavoritesViewController.swift in Sources */,
 				AA46ABC820FC7B0F00628605 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,7 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TDR3533VJS;
-				INFOPLIST_FILE = GitHubSearch/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GitHubSearch/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,7 +486,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TDR3533VJS;
-				INFOPLIST_FILE = GitHubSearch/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GitHubSearch/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
