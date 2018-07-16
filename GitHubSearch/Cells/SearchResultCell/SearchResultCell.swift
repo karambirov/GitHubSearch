@@ -15,15 +15,12 @@ final class SearchResultCell: UITableViewCell {
     @IBOutlet weak var ownerLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var repository: Repository? {
+        didSet {
+            nameLabel.text = repository?.fullName
+            ownerLabel.text = repository?.owner.login
+            descriptionLabel.text = repository?.description
+        }
     }
     
 }

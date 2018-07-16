@@ -17,17 +17,17 @@ final class TabBarController: UITabBarController {
     // MARK: - ViewController's Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        initialSetup()
     }
 
 }
 
 extension TabBarController {
     
-    static func instantiateFromNib() -> TabBarController {
-        let nib = UINib(nibName: Constants.nibName, bundle: nil)
-        let vc = nib.instantiate(withOwner: nil, options: nil).first as! TabBarController
-        return vc
+    fileprivate func initialSetup() {
+        let search = SearchViewController.instantiateFromNib().embedInNavigationController()
+        search.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+        viewControllers = [search]
     }
     
 }

@@ -16,15 +16,15 @@ final class DetailCell: UITableViewCell {
     @IBOutlet weak var repoFullNameLabel: UILabel!
     @IBOutlet weak var repoDescriptionLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var repository: Repository? {
+        didSet {
+            ownerImage.image = UIImage()
+            // TODO: - Here should be owner's full name, not login
+            ownerNameLabel.text = repository?.owner.login
+            ownerEmailLabel.text = repository?.owner.email
+            repoFullNameLabel.text = repository?.fullName
+            repoDescriptionLabel.text = repository?.description
+        }
     }
     
 }
