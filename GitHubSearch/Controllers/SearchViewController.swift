@@ -21,11 +21,9 @@ class SearchViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
 
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        initialSetup()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +39,32 @@ class SearchViewController: UITableViewController, NSFetchedResultsControllerDel
                 
             }
         }
+    }
+
+}
+
+
+// MARK: - Setup
+fileprivate extension SearchViewController {
+
+    func initialSetup() {
+        setupNavigationBar()
+        setupSearchController()
+    }
+
+    func setupNavigationBar() {
+        navigationItem.searchController = searchController
+    }
+
+    func setupSearchController() {
+        searchController.searchResultsUpdater                   = self
+
+        searchController.obscuresBackgroundDuringPresentation   = false
+        searchController.dimsBackgroundDuringPresentation       = false
+        searchController.hidesNavigationBarDuringPresentation   = false
+
+        searchController.searchBar.placeholder                  = "Search Repositories"
+        searchController.searchBar.delegate                     = self
     }
 
 }
@@ -74,3 +98,24 @@ extension SearchViewController {
 
 }
 
+
+// MARK: - UISearchBar Delegate
+extension SearchViewController: UISearchBarDelegate {
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // TODO: - send network request here after a little delay (0.3 secs)
+        guard let query = searchBar.text else { return }
+        print(query)
+    }
+
+}
+
+// MARK: - UISearchResultsUpdating Delegate
+extension SearchViewController: UISearchResultsUpdating {
+
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        print(searchBar.text!)
+    }
+
+}
