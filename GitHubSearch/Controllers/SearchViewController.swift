@@ -11,8 +11,16 @@ import CoreData
 
 class SearchViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
-    var detailViewController: DetailViewController? = nil
-    var managedObjectContext: NSManagedObjectContext? = nil
+    // MARK: - Properties
+    fileprivate var detailViewController: DetailViewController? = nil
+    fileprivate var managedObjectContext: NSManagedObjectContext? = nil
+    fileprivate let searchController = UISearchController(searchResultsController: nil)
+    var repositories = [Repository]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+
 
 
     override func viewDidLoad() {
@@ -42,7 +50,7 @@ class SearchViewController: UITableViewController, NSFetchedResultsControllerDel
 extension SearchViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return repositories.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
