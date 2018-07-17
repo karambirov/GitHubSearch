@@ -51,7 +51,9 @@ extension FavoritesViewController {
 
     func favoritesFetchedResultController() -> NSFetchedResultsController<Repository> {
 
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: repositoryFetchRequest(), managedObjectContext: coreDataService.mainContext, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: repositoryFetchRequest(),
+                                                              managedObjectContext: coreDataService.mainContext,
+                                                              sectionNameKeyPath: nil, cacheName: nil)
 
         fetchedResultsController.delegate = self
 

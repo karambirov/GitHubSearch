@@ -99,8 +99,8 @@ extension SearchViewController: UISearchResultsUpdating {
 }
 
 
-// MARK: - Setup
-fileprivate extension SearchViewController {
+// MARK: - Private
+private extension SearchViewController {
 
     func initialSetup() {
         setupNavigationBar()
