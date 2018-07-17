@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RepositoryCell" customModule="GitHubSearch" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionLabel" destination="J9H-h6-f9T" id="ydk-hL-Ijw"/>
+                <outlet property="nameLabel" destination="mUe-3V-WKM" id="aKq-Cb-hUS"/>
+                <outlet property="ownerLabel" destination="mdI-fR-Dse" id="jtO-dw-SLN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RepositoryCell" rowHeight="100" id="Anf-Of-kB7">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Anf-Of-kB7" id="g2F-qx-mN7">
+                <rect key="frame" x="0.0" y="0.0" width="341" height="111.66666666666667"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Yag-eu-DM5">
+                        <rect key="frame" x="16" y="16.000000000000004" width="317" height="43.333333333333343"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUe-3V-WKM">
+                                <rect key="frame" x="0.0" y="0.0" width="46.666666666666664" height="20.333333333333332"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdI-fR-Dse">
+                                <rect key="frame" x="0.0" y="28.333333333333336" width="40" height="15"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9H-h6-f9T">
+                        <rect key="frame" x="16" y="75.333333333333329" width="317" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="J9H-h6-f9T" firstAttribute="trailing" secondItem="g2F-qx-mN7" secondAttribute="trailingMargin" id="AJn-3j-Na3"/>
+                    <constraint firstItem="Yag-eu-DM5" firstAttribute="leading" secondItem="g2F-qx-mN7" secondAttribute="leadingMargin" id="RtQ-Kz-Tsr"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Yag-eu-DM5" secondAttribute="trailing" id="U4B-7v-Wiy"/>
+                    <constraint firstAttribute="bottom" secondItem="J9H-h6-f9T" secondAttribute="bottom" constant="16" id="dqk-5z-gaR"/>
+                    <constraint firstItem="J9H-h6-f9T" firstAttribute="leading" secondItem="g2F-qx-mN7" secondAttribute="leadingMargin" id="hIE-pG-bzD"/>
+                    <constraint firstItem="J9H-h6-f9T" firstAttribute="top" secondItem="Yag-eu-DM5" secondAttribute="bottom" constant="16" id="kC2-yI-bBO"/>
+                    <constraint firstItem="Yag-eu-DM5" firstAttribute="top" secondItem="g2F-qx-mN7" secondAttribute="top" constant="16" id="w9Q-Lr-rFE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="28.5" y="94"/>
+        </tableViewCell>
+    </objects>
+</document>

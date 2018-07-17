@@ -8,7 +8,14 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController {
+
+    var repository: Repository? = nil {
+        didSet {
+//            tableView.reloadData()
+            print(repository ?? "There is no any repo")
+        }
+    }
 
     func configureView() {
         // Update the user interface for the detail item.
