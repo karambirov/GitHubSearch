@@ -12,7 +12,6 @@ import CoreData
 final class FavoritesViewController: UITableViewController {
 
     // MARK: - Properties
-    fileprivate var detailViewController: DetailViewController? = nil
     fileprivate var coreDataService: CoreDataService!
     fileprivate var fetchedResultsController: NSFetchedResultsController<Repository> = NSFetchedResultsController()
 
@@ -72,25 +71,6 @@ extension FavoritesViewController {
         return fetchRequest
     }
 
-
-//
-//    @objc func insertNewRepository(withFullName fullName: String, repoDescription: String, owner: User?) {
-//        let context = self.fetchedResultsController.managedObjectContext
-//        let newRepository = Repository(context: context)
-//        let newUser = User(context: context)
-//
-//        newRepository.fullName = fullName
-//        newRepository.repoDescription = repoDescription
-//        newRepository.owner = owner
-//
-//        do {
-//            try context.save()
-//        } catch {
-//            let nserror = error as NSError
-//            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-//        }
-//    }
-
 }
 
 
@@ -126,8 +106,8 @@ extension FavoritesViewController: NSFetchedResultsControllerDelegate {
 }
 
 
-// MARK: - Setup
-fileprivate extension FavoritesViewController {
+// MARK: - Private
+private extension FavoritesViewController {
 
     func initialSetup() {
         setupNavigationBar()

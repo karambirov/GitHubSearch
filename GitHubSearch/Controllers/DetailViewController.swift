@@ -18,13 +18,6 @@ final class DetailViewController: UIViewController {
         }
     }
 
-    func configureView() {
-        // Update the user interface for the detail item.
-//        if let detail = detailItem {
-//
-//        }
-    }
-
     // MARK: - View Controller's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,3 +26,22 @@ final class DetailViewController: UIViewController {
 
 }
 
+
+// MARK: - Internal
+extension DetailViewController {
+    
+}
+
+
+// MARK: - Private
+private extension DetailViewController {
+
+    func configureView() {
+        guard let repository = repository else { return }
+
+        title = repository.fullName
+
+        // TODO: - Set outlets here
+    }
+
+}
