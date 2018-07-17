@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class SearchViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+final class SearchViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     // MARK: - Properties
     fileprivate var detailViewController: DetailViewController? = nil
@@ -28,7 +28,6 @@ class SearchViewController: UITableViewController, NSFetchedResultsControllerDel
 
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.hidesSearchBarWhenScrolling = false
-        clearsSelectionOnViewWillAppear = true
         super.viewWillAppear(animated)
     }
 
@@ -111,6 +110,7 @@ fileprivate extension SearchViewController {
 
     func setupNavigationBar() {
         navigationItem.searchController = searchController
+        clearsSelectionOnViewWillAppear = true
     }
 
     func setupSearchController() {
