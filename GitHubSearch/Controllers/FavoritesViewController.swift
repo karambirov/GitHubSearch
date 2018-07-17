@@ -14,6 +14,7 @@ final class FavoritesViewController: UITableViewController {
     // MARK: - Properties
     fileprivate var detailViewController: DetailViewController? = nil
 
+    fileprivate var coreDataService: CoreDataService!
     fileprivate var managedObjectContext: NSManagedObjectContext? = nil
     fileprivate var _fetchedResultsController: NSFetchedResultsController<Repository>? = nil
 
