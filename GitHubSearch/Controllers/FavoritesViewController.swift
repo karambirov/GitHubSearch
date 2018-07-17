@@ -15,14 +15,8 @@ final class FavoritesViewController: UITableViewController {
     fileprivate var detailViewController: DetailViewController? = nil
 
     fileprivate var coreDataService: CoreDataService!
-    fileprivate var managedObjectContext: NSManagedObjectContext? = nil
-    fileprivate var _fetchedResultsController: NSFetchedResultsController<Repository>? = nil
 
-    var repositories = [Repository]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    fileprivate var fetchedResultsController: NSFetchedResultsController<Repository> = NSFetchedResultsController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,43 +51,66 @@ extension FavoritesViewController {
 // MARK: - NSFetchedResultsController
 extension FavoritesViewController {
 
-    var fetchedResultsController: NSFetchedResultsController<Repository> {
-        if _fetchedResultsController != nil {
-            return _fetchedResultsController!
+    func favoritesFetchedResultController() -> NSFetchedResultsController<Repository> {
+
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: repositoryFetchRequest(), managedObjectContext: coreDataService.mainContext, sectionNameKeyPath: nil, cacheName: nil)
+
+        fetchedResultsController.delegate = self
+
+        do {
+            try fetchedResultsController.performFetch()
+            return fetchedResultsController
+        } catch let error as NSError {
+            fatalError("Error: \(error.localizedDescription)")
         }
 
+    }
+
+    func repositoryFetchRequest() -> NSFetchRequest<Repository> {
         let fetchRequest: NSFetchRequest<Repository> = Repository.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "fullName", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
-
-        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: "Favorites")
-        aFetchedResultsController.delegate = self
-        _fetchedResultsController = aFetchedResultsController
-
-        do {
-            try _fetchedResultsController?.performFetch()
-        } catch {
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
-
-        return _fetchedResultsController!
+        return fetchRequest
     }
 
-    @objc func insertNewRepository(withFullName fullName: String, repoDescription: String, owner: User?) {
-        let context = self.fetchedResultsController.managedObjectContext
-        let newRepository = Repository(context: context)
-        let newUser = User(context: context)
 
-        newRepository.fullName = fullName
-        newRepository.repoDescription = repoDescription
-        newRepository.owner = owner
+//
+//    @objc func insertNewRepository(withFullName fullName: String, repoDescription: String, owner: User?) {
+//        let context = self.fetchedResultsController.managedObjectContext
+//        let newRepository = Repository(context: context)
+//        let newUser = User(context: context)
+//
+//        newRepository.fullName = fullName
+//        newRepository.repoDescription = repoDescription
+//        newRepository.owner = owner
+//
+//        do {
+//            try context.save()
+//        } catch {
+//            let nserror = error as NSError
+//            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+//        }
+//    }
 
-        do {
-            try context.save()
-        } catch {
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+}
+
+
+// MARK: - Navigation
+extension FavoritesViewController: SegueHandlerType {
+
+    enum SegueIdentifier: String {
+        case showDetail
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        switch segueIdentifier(for: segue) {
+        case .showDetail:
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let detail = segue.destination as! DetailViewController
+                detail.repository = fetchedResultsController.object(at: indexPath)
+            }
+
         }
     }
 
@@ -116,6 +133,8 @@ fileprivate extension FavoritesViewController {
     func initialSetup() {
         setupNavigationBar()
         setupTableView()
+
+        fetchedResultsController = favoritesFetchedResultController()
     }
 
     func setupNavigationBar() {
