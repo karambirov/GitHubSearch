@@ -35,28 +35,14 @@ final class FavoritesViewController: UITableViewController {
 extension FavoritesViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repositories.count
+        return fetchedResultsController.sections![section].numberOfObjects
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: RepositoryCell = tableView.dequeueCell(withIdentifier: RepositoryCell.typeName, for: indexPath)
-        configure(cell, withRepository: repositories[indexPath.row])
+        let repository = fetchedResultsController.object(at: indexPath)
+        configure(cell, withRepository: repository)
         return cell
-    }
-
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-     }
-
-
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
     }
 
     func configure(_ cell: RepositoryCell, withRepository repository: Repository) {
@@ -67,8 +53,8 @@ extension FavoritesViewController {
 }
 
 
-// MARK: - Fetched Results Controller
-extension FavoritesViewController: NSFetchedResultsControllerDelegate {
+// MARK: - NSFetchedResultsController
+extension FavoritesViewController {
 
     var fetchedResultsController: NSFetchedResultsController<Repository> {
         if _fetchedResultsController != nil {
@@ -96,6 +82,7 @@ extension FavoritesViewController: NSFetchedResultsControllerDelegate {
     @objc func insertNewRepository(withFullName fullName: String, repoDescription: String, owner: User?) {
         let context = self.fetchedResultsController.managedObjectContext
         let newRepository = Repository(context: context)
+        let newUser = User(context: context)
 
         newRepository.fullName = fullName
         newRepository.repoDescription = repoDescription
@@ -109,30 +96,15 @@ extension FavoritesViewController: NSFetchedResultsControllerDelegate {
         }
     }
 
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.beginUpdates()
-    }
+}
 
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        switch type {
-        case .insert:
-            tableView.insertRows(at: [newIndexPath!], with: .fade)
-        case .delete:
-            tableView.deleteRows(at: [indexPath!], with: .fade)
-        case .update:
-            let cell = tableView.cellForRow(at: indexPath!) as! RepositoryCell
-            configure(cell, withRepository: anObject as! Repository)
-        case .move:
-            let cell = tableView.cellForRow(at: indexPath!) as! RepositoryCell
-            configure(cell, withRepository: anObject as! Repository)
-            tableView.moveRow(at: indexPath!, to: newIndexPath!)
-        }
-    }
+
+// MARK: - NSFetchedResultsControllerDelegate
+extension FavoritesViewController: NSFetchedResultsControllerDelegate {
 
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.endUpdates()
+        tableView.reloadData()
     }
-
 
 }
 
@@ -147,7 +119,6 @@ fileprivate extension FavoritesViewController {
 
     func setupNavigationBar() {
         clearsSelectionOnViewWillAppear = true
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
 
