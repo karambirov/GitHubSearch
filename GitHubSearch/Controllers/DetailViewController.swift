@@ -10,9 +10,10 @@ import UIKit
 
 final class DetailViewController: UIViewController {
 
-    var repository: Repository? = nil {
+    // MARK: - Properties
+    var repository: Repository? {
         didSet {
-//            tableView.reloadData()
+            configureView()
             print(repository ?? "There is no any repo")
         }
     }
@@ -24,19 +25,11 @@ final class DetailViewController: UIViewController {
 //        }
     }
 
+    // MARK: - View Controller's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         configureView()
     }
-
-//    var detailItem: Event? {
-//        didSet {
-//            // Update the view.
-//            configureView()
-//        }
-//    }
-
 
 }
 

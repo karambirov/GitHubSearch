@@ -13,11 +13,10 @@ final class FavoritesViewController: UITableViewController {
 
     // MARK: - Properties
     fileprivate var detailViewController: DetailViewController? = nil
-
     fileprivate var coreDataService: CoreDataService!
-
     fileprivate var fetchedResultsController: NSFetchedResultsController<Repository> = NSFetchedResultsController()
 
+    // MARK: - View Controller's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
