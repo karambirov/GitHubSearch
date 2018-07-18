@@ -12,15 +12,15 @@ import CoreData
 final class SearchViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     // MARK: - Properties
-    fileprivate var detailViewController: DetailViewController? = nil
-    fileprivate var managedObjectContext: NSManagedObjectContext? = nil
     fileprivate let searchController = UISearchController(searchResultsController: nil)
+
     var repositories = [Repository]() {
         didSet {
             tableView.reloadData()
         }
     }
 
+    // MARK: - View Controller's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
@@ -99,8 +99,8 @@ extension SearchViewController: UISearchResultsUpdating {
 }
 
 
-// MARK: - Setup
-fileprivate extension SearchViewController {
+// MARK: - Private
+private extension SearchViewController {
 
     func initialSetup() {
         setupNavigationBar()

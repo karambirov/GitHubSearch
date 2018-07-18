@@ -9,17 +9,13 @@
 import UIKit
 import CoreData
 
-final class FavoritesViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+final class FavoritesViewController: UITableViewController {
 
     // MARK: - Properties
-    fileprivate var detailViewController: DetailViewController? = nil
-    fileprivate var managedObjectContext: NSManagedObjectContext? = nil
-    var repositories = [Repository]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    fileprivate var coreDataService: CoreDataService!
+    fileprivate var fetchedResultsController: NSFetchedResultsController<Repository> = NSFetchedResultsController()
 
+    // MARK: - View Controller's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
@@ -32,45 +28,98 @@ final class FavoritesViewController: UITableViewController, NSFetchedResultsCont
 extension FavoritesViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repositories.count
+        return fetchedResultsController.sections![section].numberOfObjects
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: RepositoryCell = tableView.dequeueCell(withIdentifier: RepositoryCell.typeName, for: indexPath)
-        cell.repository = repositories[indexPath.row]
+        let repository = fetchedResultsController.object(at: indexPath)
+        configure(cell, withRepository: repository)
         return cell
     }
 
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-     }
-
-
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
+    func configure(_ cell: RepositoryCell, withRepository repository: Repository) {
+        cell.repository = repository
     }
 
 
 }
 
 
-// MARK: - Setup
-fileprivate extension FavoritesViewController {
+// MARK: - NSFetchedResultsController
+extension FavoritesViewController {
+
+    func favoritesFetchedResultController() -> NSFetchedResultsController<Repository> {
+
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: repositoryFetchRequest(),
+                                                              managedObjectContext: coreDataService.mainContext,
+                                                              sectionNameKeyPath: nil, cacheName: nil)
+
+        fetchedResultsController.delegate = self
+
+        do {
+            try fetchedResultsController.performFetch()
+            return fetchedResultsController
+        } catch let error as NSError {
+            fatalError("Error: \(error.localizedDescription)")
+        }
+
+    }
+
+    func repositoryFetchRequest() -> NSFetchRequest<Repository> {
+        let fetchRequest: NSFetchRequest<Repository> = Repository.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "fullName", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        return fetchRequest
+    }
+
+}
+
+
+// MARK: - Navigation
+extension FavoritesViewController: SegueHandlerType {
+
+    enum SegueIdentifier: String {
+        case showDetail
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        switch segueIdentifier(for: segue) {
+        case .showDetail:
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let detail = segue.destination as! DetailViewController
+                detail.repository = fetchedResultsController.object(at: indexPath)
+            }
+
+        }
+    }
+
+}
+
+
+// MARK: - NSFetchedResultsControllerDelegate
+extension FavoritesViewController: NSFetchedResultsControllerDelegate {
+
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.reloadData()
+    }
+
+}
+
+
+// MARK: - Private
+private extension FavoritesViewController {
 
     func initialSetup() {
         setupNavigationBar()
         setupTableView()
+
+        fetchedResultsController = favoritesFetchedResultController()
     }
 
     func setupNavigationBar() {
         clearsSelectionOnViewWillAppear = true
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
 

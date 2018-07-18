@@ -9,7 +9,7 @@
         <attribute name="avatarURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="login" attributeType="String" syncable="YES"/>
-        <relationship name="repository" maxCount="1" deletionRule="Nullify" destinationEntity="Repository" inverseName="owner" inverseEntity="Repository" syncable="YES"/>
+        <relationship name="repository" toMany="YES" deletionRule="Nullify" destinationEntity="Repository" inverseName="owner" inverseEntity="Repository" syncable="YES"/>
     </entity>
     <elements>
         <element name="Repository" positionX="-294.39453125" positionY="-1.33984375" width="122.046875" height="90"/>
