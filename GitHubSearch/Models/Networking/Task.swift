@@ -9,6 +9,6 @@
 import Foundation
 
 enum Task {
-    case request(parameters: [String: String])
-    case request(encodable: Encodable)
+    case requestWithParameters([String: String])
+    case requestWithEncodable(Encodable)
 }

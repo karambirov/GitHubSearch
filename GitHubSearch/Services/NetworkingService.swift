@@ -9,5 +9,13 @@
 import Foundation
 
 final class NetworkingService<Resource: ResourceType>: NetworkingType {
-    
+
+    init() {}
+
+    func request(resource: Resource, session: NetworkingSession,
+                 completion: @escaping (NetworkingResult<Response>) -> Void) -> URLSessionDataTask {
+
+        let request = URLRequest(resource: resource)
+    }
+
 }

@@ -31,6 +31,9 @@
 		AA533DA621032EE500070A3E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA533DA521032EE500070A3E /* Response.swift */; };
 		AA533DA82103305000070A3E /* NetworkingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA533DA72103305000070A3E /* NetworkingSession.swift */; };
 		AA533DAA210330C700070A3E /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA533DA9210330C700070A3E /* URLSession+Extensions.swift */; };
+		AA533DAC2103341700070A3E /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA533DAB2103341700070A3E /* URLRequest+Extensions.swift */; };
+		AA533DAE210334B000070A3E /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA533DAD210334B000070A3E /* URL+Extensions.swift */; };
+		AA533DB0210336FE00070A3E /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA533DAF210336FE00070A3E /* AnyEncodable.swift */; };
 		AAC172FD20FCF0EF003B6D0B /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC172FC20FCF0EF003B6D0B /* RepositoryCell.swift */; };
 		AAC172FF20FCF1F7003B6D0B /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC172FE20FCF1F7003B6D0B /* RepositoryCell.xib */; };
 		AAC1730220FCF9CD003B6D0B /* Describable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1730120FCF9CD003B6D0B /* Describable.swift */; };
@@ -87,6 +90,9 @@
 		AA533DA521032EE500070A3E /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		AA533DA72103305000070A3E /* NetworkingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingSession.swift; sourceTree = "<group>"; };
 		AA533DA9210330C700070A3E /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
+		AA533DAB2103341700070A3E /* URLRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extensions.swift"; sourceTree = "<group>"; };
+		AA533DAD210334B000070A3E /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
+		AA533DAF210336FE00070A3E /* AnyEncodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyEncodable.swift; sourceTree = "<group>"; };
 		AAC172FC20FCF0EF003B6D0B /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		AAC172FE20FCF1F7003B6D0B /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		AAC1730120FCF9CD003B6D0B /* Describable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Describable.swift; sourceTree = "<group>"; };
@@ -213,6 +219,7 @@
 				AA533DA121032E4B00070A3E /* NetworkingResult.swift */,
 				AA533DA321032E7300070A3E /* NetworkingError.swift */,
 				AA533DA521032EE500070A3E /* Response.swift */,
+				AA533DAF210336FE00070A3E /* AnyEncodable.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -243,6 +250,8 @@
 			children = (
 				AAC1730420FCFA97003B6D0B /* UITableView+Extensions.swift */,
 				AA533DA9210330C700070A3E /* URLSession+Extensions.swift */,
+				AA533DAB2103341700070A3E /* URLRequest+Extensions.swift */,
+				AA533DAD210334B000070A3E /* URL+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -407,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA41A4EC20FCB08F001BD64D /* Repository+CoreDataProperties.swift in Sources */,
+				AA533DB0210336FE00070A3E /* AnyEncodable.swift in Sources */,
 				AA533DA421032E7300070A3E /* NetworkingError.swift in Sources */,
 				AA46ABC420FC7B0F00628605 /* GitHubSearch.xcdatamodeld in Sources */,
 				AA46ABC120FC7B0F00628605 /* AppDelegate.swift in Sources */,
@@ -414,6 +424,7 @@
 				AA46ABC620FC7B0F00628605 /* SearchViewController.swift in Sources */,
 				AAC1730F20FD0822003B6D0B /* SegueHandlerType.swift in Sources */,
 				AA533D9721032BD600070A3E /* ResourceType.swift in Sources */,
+				AA533DAC2103341700070A3E /* URLRequest+Extensions.swift in Sources */,
 				AA533DAA210330C700070A3E /* URLSession+Extensions.swift in Sources */,
 				AAC1735120FE4DD8003B6D0B /* CoreDataService.swift in Sources */,
 				AA533DA021032DC100070A3E /* NetworkingType.swift in Sources */,
@@ -422,6 +433,7 @@
 				AA533DA221032E4B00070A3E /* NetworkingResult.swift in Sources */,
 				AA46ABC820FC7B0F00628605 /* DetailViewController.swift in Sources */,
 				AA41A4ED20FCB08F001BD64D /* User+CoreDataClass.swift in Sources */,
+				AA533DAE210334B000070A3E /* URL+Extensions.swift in Sources */,
 				AA41A4EB20FCB08F001BD64D /* Repository+CoreDataClass.swift in Sources */,
 				AA533D9C21032CC700070A3E /* HTTPMethod.swift in Sources */,
 				AA533D9E21032D7100070A3E /* NetworkingService.swift in Sources */,
