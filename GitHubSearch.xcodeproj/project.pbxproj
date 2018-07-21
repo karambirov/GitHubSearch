@@ -21,6 +21,9 @@
 		AA46ABDB20FC7B1200628605 /* GitHubSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABDA20FC7B1200628605 /* GitHubSearchTests.swift */; };
 		AA46ABE620FC7B1200628605 /* GitHubSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABE520FC7B1200628605 /* GitHubSearchUITests.swift */; };
 		AA46ABF920FC97A900628605 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46ABF820FC97A900628605 /* FavoritesViewController.swift */; };
+		AA533D9721032BD600070A3E /* ResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA533D9621032BD600070A3E /* ResourceType.swift */; };
+		AA533D9A21032C6900070A3E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA533D9921032C6900070A3E /* Task.swift */; };
+		AA533D9C21032CC700070A3E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA533D9B21032CC700070A3E /* HTTPMethod.swift */; };
 		AAC172FD20FCF0EF003B6D0B /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC172FC20FCF0EF003B6D0B /* RepositoryCell.swift */; };
 		AAC172FF20FCF1F7003B6D0B /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC172FE20FCF1F7003B6D0B /* RepositoryCell.xib */; };
 		AAC1730220FCF9CD003B6D0B /* Describable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1730120FCF9CD003B6D0B /* Describable.swift */; };
@@ -68,6 +71,9 @@
 		AA46ABE520FC7B1200628605 /* GitHubSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchUITests.swift; sourceTree = "<group>"; };
 		AA46ABE720FC7B1200628605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA46ABF820FC97A900628605 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		AA533D9621032BD600070A3E /* ResourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceType.swift; sourceTree = "<group>"; };
+		AA533D9921032C6900070A3E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		AA533D9B21032CC700070A3E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		AAC172FC20FCF0EF003B6D0B /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		AAC172FE20FCF1F7003B6D0B /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		AAC1730120FCF9CD003B6D0B /* Describable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Describable.swift; sourceTree = "<group>"; };
@@ -179,12 +185,22 @@
 		AA46ABF520FC86E900628605 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AA533D9821032C5700070A3E /* Networking */,
 				AAC1735220FE69C1003B6D0B /* Repository */,
 				AAC1735320FE69CF003B6D0B /* User */,
 				AA46ABC220FC7B0F00628605 /* GitHubSearch.xcdatamodeld */,
 				AAC1730C20FD05C8003B6D0B /* SegueIdentifier.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		AA533D9821032C5700070A3E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AA533D9921032C6900070A3E /* Task.swift */,
+				AA533D9B21032CC700070A3E /* HTTPMethod.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		AAC172FB20FCF0CC003B6D0B /* Cells */ = {
@@ -201,6 +217,7 @@
 			children = (
 				AAC1730120FCF9CD003B6D0B /* Describable.swift */,
 				AAC1730E20FD0822003B6D0B /* SegueHandlerType.swift */,
+				AA533D9621032BD600070A3E /* ResourceType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -378,13 +395,16 @@
 				AAC1730520FCFA97003B6D0B /* UITableView+Extensions.swift in Sources */,
 				AA46ABC620FC7B0F00628605 /* SearchViewController.swift in Sources */,
 				AAC1730F20FD0822003B6D0B /* SegueHandlerType.swift in Sources */,
+				AA533D9721032BD600070A3E /* ResourceType.swift in Sources */,
 				AAC1735120FE4DD8003B6D0B /* CoreDataService.swift in Sources */,
 				AA46ABF920FC97A900628605 /* FavoritesViewController.swift in Sources */,
 				AAC172FD20FCF0EF003B6D0B /* RepositoryCell.swift in Sources */,
 				AA46ABC820FC7B0F00628605 /* DetailViewController.swift in Sources */,
 				AA41A4ED20FCB08F001BD64D /* User+CoreDataClass.swift in Sources */,
 				AA41A4EB20FCB08F001BD64D /* Repository+CoreDataClass.swift in Sources */,
+				AA533D9C21032CC700070A3E /* HTTPMethod.swift in Sources */,
 				AA41A4EE20FCB08F001BD64D /* User+CoreDataProperties.swift in Sources */,
+				AA533D9A21032C6900070A3E /* Task.swift in Sources */,
 				AAC1730220FCF9CD003B6D0B /* Describable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
