@@ -11,5 +11,5 @@ import Foundation
 protocol NetworkingType {
     associatedtype Resource
 
-    func request(resource: Resource, session: NetworkingSession, completion: @escaping (NetworkingResult<Response>) -> Void) -> URLSessionDataTask
+    func request(_ resource: Resource, session: NetworkingSession, completion: @escaping (NetworkingResult<Response>) -> Void) -> URLSessionDataTask
 }

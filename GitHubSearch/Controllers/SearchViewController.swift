@@ -12,6 +12,7 @@ import CoreData
 final class SearchViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     // MARK: - Properties
+    fileprivate var gitHub = NetworkingService<GitHub>()
     fileprivate let searchController = UISearchController(searchResultsController: nil)
 
     var repositories = [Repository]() {
@@ -84,6 +85,16 @@ extension SearchViewController: UISearchBarDelegate {
         // TODO: - send network request here after a little delay (0.3 secs)
         guard let query = searchBar.text else { return }
         print(query)
+
+        gitHub.request(.repoSearch(query: query)) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+            case .error(let error):
+                print("\(error.localizedDescription)\n\(error)")
+            }
+        }
+
     }
 
 }

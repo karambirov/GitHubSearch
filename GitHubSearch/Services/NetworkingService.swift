@@ -12,7 +12,7 @@ final class NetworkingService<Resource: ResourceType>: NetworkingType {
 
     init() {}
 
-    func request(resource: Resource,
+    func request(_ resource: Resource,
                  session: NetworkingSession = URLSession.shared,
                  completion: @escaping (NetworkingResult<Response>) -> Void) -> URLSessionDataTask {
 
