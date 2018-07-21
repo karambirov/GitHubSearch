@@ -12,7 +12,7 @@ import CoreData
 final class FavoritesViewController: UITableViewController {
 
     // MARK: - Properties
-    fileprivate var coreDataService: CoreDataService!
+    var coreDataService: CoreDataService!
     fileprivate var fetchedResultsController: NSFetchedResultsController<Repository> = NSFetchedResultsController()
 
     // MARK: - View Controller's life cycle
