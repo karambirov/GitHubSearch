@@ -44,6 +44,7 @@ private extension AppDelegate {
             let favoritesViewConroller = favoritesNavigationController.topViewController as? FavoritesViewController
             else { fatalError("Application storyboard mis-configuration. Application is mis-configured") }
 
+        favoritesViewConroller.coreDataService = coreDataService
     }
 
 }
