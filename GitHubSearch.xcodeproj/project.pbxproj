@@ -59,9 +59,10 @@
 		AAA8A9E521D4CCED004A7E89 /* GitHubSearch */ = {
 			isa = PBXGroup;
 			children = (
+				AAC6353221D4CE6B00A5E63C /* Modules */,
 				AAC6353421D4CE7C00A5E63C /* Services */,
 				AAC6353321D4CE7200A5E63C /* Extensions */,
-				AAC6353221D4CE6B00A5E63C /* Modules */,
+				AAC6353721D4DECF00A5E63C /* Protocols */,
 				AAC6353121D4CE5000A5E63C /* Resources */,
 				AAC6352E21D4CDF600A5E63C /* Other */,
 			);
@@ -138,6 +139,13 @@
 				AAA8A9E821D4CCED004A7E89 /* ViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AAC6353721D4DECF00A5E63C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		DDC8459EE02F5D7C07035B2B /* Pods */ = {
