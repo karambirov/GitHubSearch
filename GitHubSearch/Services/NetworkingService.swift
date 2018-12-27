@@ -18,7 +18,7 @@ final class NetworkingService<Resource: ResourceType>: NetworkingType {
 
         let request = URLRequest(resource: resource)
 
-        return session.loadData(with: request) { data, response, error in
+        let task = session.loadData(with: request) { data, response, error in
             guard error == nil else {
                 completion(.error(.error(error)))
                 return
@@ -39,8 +39,12 @@ final class NetworkingService<Resource: ResourceType>: NetworkingType {
                 return
             }
 
-            completion(.success(Response(urlRequest: request, data: data)))
+            DispatchQueue.main.async {
+                completion(.success(Response(urlRequest: request, data: data)))
+            }
         }
+
+        return task
     }
 
 }

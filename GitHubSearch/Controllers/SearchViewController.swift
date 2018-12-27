@@ -89,7 +89,8 @@ extension SearchViewController: UISearchBarDelegate {
         gitHub.request(.repoSearch(query: query)) { result in
             switch result {
             case .success(let response):
-                print(response)
+                let data = response.data
+                print(data)
             case .error(let error):
                 print("\(error.localizedDescription)\n\(error)")
             }
