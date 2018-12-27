@@ -14,6 +14,7 @@
 		AAC6353B21D4E22100A5E63C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6353A21D4E22100A5E63C /* R.generated.swift */; };
 		AAC6355221D4EA5400A5E63C /* GitHubSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6355121D4EA5400A5E63C /* GitHubSearchTests.swift */; };
 		AAC6356021D4EA7A00A5E63C /* GitHubSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6355F21D4EA7A00A5E63C /* GitHubSearchUITests.swift */; };
+		AAC6356821D4EC2000A5E63C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AAC6356721D4EC2000A5E63C /* .swiftlint.yml */; };
 		BEA582D79E863E8CE5015DA1 /* Pods_GitHubSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0607768084581CC687146969 /* Pods_GitHubSearch.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		AAC6355D21D4EA7A00A5E63C /* GitHubSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC6355F21D4EA7A00A5E63C /* GitHubSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchUITests.swift; sourceTree = "<group>"; };
 		AAC6356121D4EA7A00A5E63C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAC6356721D4EC2000A5E63C /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		C3805C6B43741B7DFC0A6237 /* Pods-GitHubSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSearch/Pods-GitHubSearch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +137,7 @@
 		AAC6353021D4CE1500A5E63C /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				AAC6356721D4EC2000A5E63C /* .swiftlint.yml */,
 				AAA8A9F221D4CCF0004A7E89 /* Info.plist */,
 			);
 			path = Config;
@@ -338,6 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAC6356821D4EC2000A5E63C /* .swiftlint.yml in Resources */,
 				AAA8A9F121D4CCF0004A7E89 /* LaunchScreen.storyboard in Resources */,
 				AAA8A9EE21D4CCF0004A7E89 /* Assets.xcassets in Resources */,
 			);
