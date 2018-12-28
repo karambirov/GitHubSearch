@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 
     let isLoading = BehaviorRelay(value: false)
 
-    var emptyDataSetTitle = R.string.localizable.commonNoResults.key.localized()
+    fileprivate var emptyDataSetTitle = R.string.localizable.commonNoResults.key.localized()
 
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -28,8 +28,16 @@ class ViewController: UIViewController {
         setupNotifications()
     }
 
+    fileprivate lazy var closeBarButton: UIBarButtonItem = {
+        return UIBarButtonItem(title: R.string.localizable.commonClose.key.localized(),
+                                   style: .done,
+                                   target: self,
+                                   action: #selector(close))
+    }()
+
 }
 
+// MARK: - Actions
 extension ViewController {
 
     var inset: CGFloat {
@@ -51,6 +59,18 @@ extension ViewController {
             .subscribe { [weak self] event in
                 self?.didBecomeActive()
             }.disposed(by: rx.disposeBag)
+    }
+
+    fileprivate func adjustLeftBarButtonItem() {
+        if self.navigationController?.viewControllers.count ?? 0 > 1 { // Pushed
+            self.navigationItem.leftBarButtonItem = nil
+        } else if self.presentingViewController != nil { // presented
+            self.navigationItem.leftBarButtonItem = closeBarButton
+        }
+    }
+
+    @objc fileprivate func close() {
+        dismiss(animated: true)
     }
 
 }
