@@ -12,9 +12,11 @@ import RxSwift
 import RxCocoa
 import NSObject_Rx
 import Localize_Swift
+import SnapKit
 
 class ViewController: UIViewController {
 
+    // MARK: - Properties
     let isLoading = BehaviorRelay(value: false)
     var automaticallyAdjustsLeftBarButton = true
 
@@ -42,6 +44,32 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         updateUI()
     }
+
+    // MARK: - Views
+    lazy var contentView: View = {
+        let view = View()
+        self.view.addSubview(view)
+        view.snp.makeConstraints { make in
+            if #available(iOS 11.0, *) {
+                make.edges.equalTo(self.view.safeAreaLayoutGuide)
+            } else {
+                make.left.right.equalToSuperview()
+                make.top.equalTo(self.topLayoutGuide.snp.bottom)
+                make.bottom.equalTo(self.topLayoutGuide.snp.top)
+            }
+        }
+        return view
+    }()
+
+    lazy var stackView: StackView = {
+        let subviews: [UIView] = []
+        let view = StackView(arrangedSubviews: subviews)
+        self.contentView.addSubview(view)
+        view.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        return view
+    }()
 
     fileprivate lazy var closeBarButton: UIBarButtonItem = {
         return UIBarButtonItem(title: R.string.localizable.commonClose.key.localized(),
