@@ -16,6 +16,7 @@ import Localize_Swift
 class ViewController: UIViewController {
 
     let isLoading = BehaviorRelay(value: false)
+    var automaticallyAdjustsLeftBarButton = true
 
     fileprivate var emptyDataSetTitle = R.string.localizable.commonNoResults.key.localized()
 
@@ -26,6 +27,20 @@ class ViewController: UIViewController {
         makeUI()
         bindViewModel()
         setupNotifications()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if automaticallyAdjustsLeftBarButton {
+            adjustLeftBarButtonItem()
+        }
+        updateUI()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateUI()
     }
 
     fileprivate lazy var closeBarButton: UIBarButtonItem = {
