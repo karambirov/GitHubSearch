@@ -10,6 +10,7 @@ import UIKit
 import DZNEmptyDataSet
 import RxSwift
 import RxCocoa
+import NSObject_Rx
 import Localize_Swift
 
 class ViewController: UIViewController {
@@ -18,8 +19,41 @@ class ViewController: UIViewController {
 
     var emptyDataSetTitle = R.string.localizable.commonNoResults.key.localized()
 
+    // MARK: - Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        makeUI()
+        bindViewModel()
+        setupNotifications()
+    }
+
 }
 
+extension ViewController {
+
+    var inset: CGFloat {
+        return Configs.BaseDimensions.inset
+    }
+
+    func makeUI() {}
+    func bindViewModel() {}
+    func updateUI() {}
+
+    func didBecomeActive() {
+        updateUI()
+    }
+
+    fileprivate func setupNotifications() {
+        // Observe application did become active notification
+        NotificationCenter.default.rx
+            .notification(UIApplication.didBecomeActiveNotification)
+            .subscribe { [weak self] event in
+                self?.didBecomeActive()
+            }.disposed(by: rx.disposeBag)
+    }
+
+}
 
 // MARK: - DZNEmptyDataSetSource
 extension ViewController: DZNEmptyDataSetSource {
