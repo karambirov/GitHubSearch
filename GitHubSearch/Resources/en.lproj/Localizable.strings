@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  GitHubSearch
+
+  Created by Eugene Karambirov on 28/12/2018.
+  Copyright © 2018 Eugene Karambirov. All rights reserved.
+*/
+
+// Common
+"Common.Yes" = "Yes";
+"Common.No" = "No";
+"Common.OK" = "OK";
+"Common.Cancel" = "Cancel";
+"Common.Done" = "Done";
+"Common.Back" = "Back";
+"Common.Close" = "Close";
+"Common.Edit" = "Edit";
+"Common.Next" = "Next";
+"Common.Skip" = "Skip";
+"Common.Reset" = "Reset";
+"Common.Save" = "Save";
+"Common.Delete" = "Delete";
+"Common.Search" = "Search";
+"Common.Error" = "Error";
+"Common.NoResults" = "No Results";

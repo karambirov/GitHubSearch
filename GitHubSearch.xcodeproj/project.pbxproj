@@ -19,6 +19,7 @@
 		AAC6356E21D6057B00A5E63C /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC6356C21D6057B00A5E63C /* RepositoryCell.xib */; };
 		AAC6357121D6066F00A5E63C /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6357021D6066F00A5E63C /* TableViewController.swift */; };
 		AAC6357321D606B500A5E63C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6357221D606B500A5E63C /* ViewController.swift */; };
+		AAC6357621D6074E00A5E63C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAC6357821D6074E00A5E63C /* Localizable.strings */; };
 		BEA582D79E863E8CE5015DA1 /* Pods_GitHubSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0607768084581CC687146969 /* Pods_GitHubSearch.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,8 @@
 		AAC6356C21D6057B00A5E63C /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		AAC6357021D6066F00A5E63C /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		AAC6357221D606B500A5E63C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AAC6357721D6074E00A5E63C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AAC6357921D6075100A5E63C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C3805C6B43741B7DFC0A6237 /* Pods-GitHubSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSearch/Pods-GitHubSearch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +160,7 @@
 				AAA8A9EF21D4CCF0004A7E89 /* LaunchScreen.storyboard */,
 				AAA8A9ED21D4CCF0004A7E89 /* Assets.xcassets */,
 				AAC6353A21D4E22100A5E63C /* R.generated.swift */,
+				AAC6357821D6074E00A5E63C /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -359,6 +363,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = AAA8A9DA21D4CCED004A7E89;
 			productRefGroup = AAA8A9E421D4CCED004A7E89 /* Products */;
@@ -377,6 +382,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAC6357621D6074E00A5E63C /* Localizable.strings in Resources */,
 				AAC6356821D4EC2000A5E63C /* .swiftlint.yml in Resources */,
 				AAA8A9F121D4CCF0004A7E89 /* LaunchScreen.storyboard in Resources */,
 				AAA8A9EE21D4CCF0004A7E89 /* Assets.xcassets in Resources */,
@@ -594,6 +600,15 @@
 				AAC6353821D4DF6D00A5E63C /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AAC6357821D6074E00A5E63C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAC6357721D6074E00A5E63C /* en */,
+				AAC6357921D6075100A5E63C /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
