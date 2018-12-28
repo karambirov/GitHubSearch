@@ -21,6 +21,9 @@
 		AAC6357321D606B500A5E63C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6357221D606B500A5E63C /* ViewController.swift */; };
 		AAC6357621D6074E00A5E63C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAC6357821D6074E00A5E63C /* Localizable.strings */; };
 		AADED01C21D60B9B00CE305B /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADED01B21D60B9B00CE305B /* Configs.swift */; };
+		AADED02221D61BF800CE305B /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADED02121D61BF700CE305B /* TableView.swift */; };
+		AADED02421D61CDA00CE305B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADED02321D61CDA00CE305B /* UIView+Extensions.swift */; };
+		AADED02621D61D2300CE305B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADED02521D61D2300CE305B /* View.swift */; };
 		BEA582D79E863E8CE5015DA1 /* Pods_GitHubSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0607768084581CC687146969 /* Pods_GitHubSearch.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +69,9 @@
 		AAC6357721D6074E00A5E63C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AAC6357921D6075100A5E63C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AADED01B21D60B9B00CE305B /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
+		AADED02121D61BF700CE305B /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		AADED02321D61CDA00CE305B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		AADED02521D61D2300CE305B /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		C3805C6B43741B7DFC0A6237 /* Pods-GitHubSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSearch/Pods-GitHubSearch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +187,7 @@
 		AAC6353321D4CE7200A5E63C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AADED02321D61CDA00CE305B /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -255,6 +262,8 @@
 		AAC6356F21D605AB00A5E63C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AADED02121D61BF700CE305B /* TableView.swift */,
+				AADED02521D61D2300CE305B /* View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -573,9 +582,12 @@
 			files = (
 				AAC6357321D606B500A5E63C /* ViewController.swift in Sources */,
 				AAA8A9E921D4CCED004A7E89 /* SearchController.swift in Sources */,
+				AADED02621D61D2300CE305B /* View.swift in Sources */,
 				AAA8A9E721D4CCED004A7E89 /* AppDelegate.swift in Sources */,
+				AADED02421D61CDA00CE305B /* UIView+Extensions.swift in Sources */,
 				AAC6353B21D4E22100A5E63C /* R.generated.swift in Sources */,
 				AAC6357121D6066F00A5E63C /* TableViewController.swift in Sources */,
+				AADED02221D61BF800CE305B /* TableView.swift in Sources */,
 				AAC6356D21D6057B00A5E63C /* RepositoryCell.swift in Sources */,
 				AADED01C21D60B9B00CE305B /* Configs.swift in Sources */,
 			);
