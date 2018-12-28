@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  Configs.swift
 //  GitHubSearch
 //
 //  Created by Eugene Karambirov on 28/12/2018.
@@ -8,6 +8,10 @@
 
 import UIKit
 
-class TableViewController: ViewController, UIScrollViewDelegate {
+struct Configs {
+
+    struct BaseDimensions {
+        static let inset: CGFloat = 10
+    }
 
 }
