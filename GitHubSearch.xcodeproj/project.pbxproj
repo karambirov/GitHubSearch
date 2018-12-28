@@ -195,7 +195,7 @@
 		AAC6353521D4D00600A5E63C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				AAC6356A21D6055600A5E63C /* Repository */,
+				AAC6356A21D6055600A5E63C /* RepositoryCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -203,7 +203,9 @@
 		AAC6353621D4D00C00A5E63C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AAC6356921D50FD300A5E63C /* Search */,
+				AADED01E21D60C1F00CE305B /* TableViewController */,
+				AADED01D21D60C0F00CE305B /* ViewController */,
+				AAC6356921D50FD300A5E63C /* SearchController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -233,30 +235,44 @@
 			path = GitHubSearchUITests;
 			sourceTree = "<group>";
 		};
-		AAC6356921D50FD300A5E63C /* Search */ = {
+		AAC6356921D50FD300A5E63C /* SearchController */ = {
 			isa = PBXGroup;
 			children = (
 				AAA8A9E821D4CCED004A7E89 /* SearchController.swift */,
 			);
-			path = Search;
+			path = SearchController;
 			sourceTree = "<group>";
 		};
-		AAC6356A21D6055600A5E63C /* Repository */ = {
+		AAC6356A21D6055600A5E63C /* RepositoryCell */ = {
 			isa = PBXGroup;
 			children = (
 				AAC6356B21D6057B00A5E63C /* RepositoryCell.swift */,
 				AAC6356C21D6057B00A5E63C /* RepositoryCell.xib */,
 			);
-			path = Repository;
+			path = RepositoryCell;
 			sourceTree = "<group>";
 		};
 		AAC6356F21D605AB00A5E63C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AAC6357021D6066F00A5E63C /* TableViewController.swift */,
-				AAC6357221D606B500A5E63C /* ViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AADED01D21D60C0F00CE305B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AAC6357221D606B500A5E63C /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AADED01E21D60C1F00CE305B /* TableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AAC6357021D6066F00A5E63C /* TableViewController.swift */,
+			);
+			path = TableViewController;
 			sourceTree = "<group>";
 		};
 		DDC8459EE02F5D7C07035B2B /* Pods */ = {
