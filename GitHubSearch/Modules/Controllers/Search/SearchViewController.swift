@@ -24,6 +24,9 @@ final class SearchViewController: UIViewController {
     // MARK: - View Controller's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.repositories
+            .append(Repository(fullName: "apple/swift",
+                               repoDescription: "Programming language. Available for macOS and Linux."))
         initialSetup()
     }
 
@@ -88,9 +91,9 @@ extension SearchViewController {
     }
 
     fileprivate func setupTableView() {
+        tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.typeName)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.typeName)
     }
 }
 
