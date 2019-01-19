@@ -8,3 +8,6 @@
 
 import UIKit
 
+final class SearchViewModel {
+
+}
