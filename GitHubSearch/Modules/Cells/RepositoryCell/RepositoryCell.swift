@@ -8,17 +8,13 @@
 
 import UIKit
 
-class RepositoryCell: UITableViewCell, Describable {
+final class RepositoryCell: UITableViewCell, Describable {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    // MARK: - Properties
+    var repository: Repository? {
+        didSet {
+            // Setup labels
+        }
     }
 
 }

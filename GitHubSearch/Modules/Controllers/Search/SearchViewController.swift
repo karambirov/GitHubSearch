@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SearchViewController.swift
 //  GitHubSearch
 //
 //  Created by Eugene Karambirov on 27/12/2018.
@@ -8,9 +8,10 @@
 
 import UIKit
 
-final class SearchController: UIViewController {
+final class SearchViewController: UIViewController {
 
     // MARK: - Properties
+    fileprivate let viewModel = SearchViewModel()
     fileprivate let searchController = UISearchController(searchResultsController: nil)
 
     fileprivate let tableView: UITableView = {
@@ -18,12 +19,6 @@ final class SearchController: UIViewController {
         tableView.tableFooterView = UIView()
         return tableView
     }()
-
-    fileprivate var repositories = [Repository]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
 
     // MARK: - View Controller's life cycle
     override func viewDidLoad() {
@@ -34,7 +29,7 @@ final class SearchController: UIViewController {
 }
 
 // MARK: - Setup
-extension SearchController {
+extension SearchViewController {
     fileprivate func initialSetup() {
         view.backgroundColor = .white
         setupNavigationBar()
@@ -44,7 +39,7 @@ extension SearchController {
 
     fileprivate func setupNavigationBar() {
         navigationItem.searchController = searchController
-        title = "Search"
+        title = viewModel.title
     }
 
     fileprivate func setupSearchController() {
@@ -53,7 +48,7 @@ extension SearchController {
         searchController.dimsBackgroundDuringPresentation     = false
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.definesPresentationContext           = true
-        searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.placeholder = viewModel.searchBarPlaceholder
         searchController.searchBar.delegate = self
     }
 
@@ -65,33 +60,33 @@ extension SearchController {
 }
 
 // MARK: - Table View
-extension SearchController: UITableViewDataSource {
+extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repositories.count
+        return viewModel.repositories.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueCell(withIdentifier: RepositoryCell.typeName, for: indexPath)
-
+        let cell: RepositoryCell = tableView.dequeueCell(withIdentifier: RepositoryCell.typeName, for: indexPath)
+        cell.repository = viewModel.repositories[indexPath.row]
         return cell
     }
 }
 
-extension SearchController: UITableViewDelegate {
+extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Open details")
     }
 }
 
 // MARK: - Search
-extension SearchController: UISearchResultsUpdating {
+extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
         print(searchBar.text!)
     }
 }
 
-extension SearchController: UISearchBarDelegate {
+extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("Searching...")
     }
