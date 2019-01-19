@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 final class SearchViewController: UIViewController {
 
@@ -26,37 +27,6 @@ final class SearchViewController: UIViewController {
         initialSetup()
     }
 
-}
-
-// MARK: - Setup
-extension SearchViewController {
-    fileprivate func initialSetup() {
-        view.backgroundColor = .white
-        setupNavigationBar()
-        setupSearchController()
-        setupTableView()
-    }
-
-    fileprivate func setupNavigationBar() {
-        navigationItem.searchController = searchController
-        title = viewModel.title
-    }
-
-    fileprivate func setupSearchController() {
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.dimsBackgroundDuringPresentation     = false
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.definesPresentationContext           = true
-        searchController.searchBar.placeholder = viewModel.searchBarPlaceholder
-        searchController.searchBar.delegate = self
-    }
-
-    fileprivate func setupTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.typeName)
-    }
 }
 
 // MARK: - Table View
@@ -89,5 +59,47 @@ extension SearchViewController: UISearchResultsUpdating {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("Searching...")
+    }
+}
+
+// MARK: - Setup
+extension SearchViewController {
+    fileprivate func initialSetup() {
+        view.backgroundColor = .white
+        setupNavigationBar()
+        setupSearchController()
+        setupTableView()
+        setupViews()
+    }
+
+    fileprivate func setupNavigationBar() {
+        navigationItem.searchController = searchController
+        title = viewModel.title
+    }
+
+    fileprivate func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.dimsBackgroundDuringPresentation     = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.definesPresentationContext           = true
+        searchController.searchBar.placeholder = viewModel.searchBarPlaceholder
+        searchController.searchBar.delegate = self
+    }
+
+    fileprivate func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.typeName)
+    }
+}
+
+// MARK: - Setup views
+extension SearchViewController {
+    fileprivate func setupViews() {
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 }
