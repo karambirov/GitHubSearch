@@ -9,14 +9,10 @@
 import UIKit
 import SnapKit
 
-final class RepositoryCell: UITableViewCell, Describable {
+final class RepositoryCell: UITableViewCell {
 
     // MARK: - Properties
-    var repository: Repository? {
-        didSet {
-            // Setup labels
-        }
-    }
+    let viewModel = RepositoryCellViewModel()
 
     // MARK: - Life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -39,16 +35,16 @@ extension RepositoryCell {
 
         let nameLabel: UILabel = {
             let label = UILabel()
-            label.text = "Repo's name"
+            label.text = viewModel.repository?.fullName
             label.font = UIFont.boldSystemFont(ofSize: 17)
             return label
         }()
 
         let descriptionLabel: UILabel = {
             let label = UILabel()
-            label.text = "Repo's description"
+            label.text = viewModel.repository?.repoDescription
             label.font = UIFont.systemFont(ofSize: 15)
-            label.textColor = UIColor.darkText
+            label.textColor = UIColor.gray
             return label
         }()
 

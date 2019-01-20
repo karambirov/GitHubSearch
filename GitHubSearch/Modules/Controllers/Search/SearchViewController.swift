@@ -9,6 +9,8 @@
 import UIKit
 import SnapKit
 
+// TODO: Maybe I should create a service for searching instead of doing search in VC.
+
 final class SearchViewController: UIViewController {
 
     // MARK: - Properties
@@ -40,7 +42,7 @@ extension SearchViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: RepositoryCell = tableView.dequeueCell(withIdentifier: RepositoryCell.typeName, for: indexPath)
-        cell.repository = viewModel.repositories[indexPath.row]
+        cell.viewModel.repository = viewModel.repositories[indexPath.row]
         return cell
     }
 }
