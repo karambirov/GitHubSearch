@@ -8,11 +8,17 @@
 
 import Foundation
 
+protocol RepositoryCellViewModelDelegate: AnyObject {
+    func configure(with repository: Repository)
+}
+
 final class RepositoryCellViewModel {
 
-    var repository: Repository? {
+    weak var delegate: RepositoryCellViewModelDelegate?
+
+    var repository: Repository! {
         didSet {
-            // Setup labels
+            delegate?.configure(with: self.repository)
         }
     }
 

@@ -9,8 +9,6 @@
 import UIKit
 import SnapKit
 
-// TODO: Maybe I should create a service for searching instead of doing search in VC.
-
 final class SearchViewController: UIViewController {
 
     // MARK: - Properties
@@ -26,9 +24,10 @@ final class SearchViewController: UIViewController {
     // MARK: - View Controller's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.repositories
-            .append(Repository(fullName: "apple/swift",
-                               repoDescription: "Programming language. Available for macOS and Linux."))
+        // TODO: Delete fake repo when networking layer is done.
+//        viewModel.repositories
+//                 .append(Repository(fullName: "apple/swift",
+//                                    repoDescription: "Programming language. Available for macOS and Linux."))
         initialSetup()
     }
 
@@ -79,7 +78,7 @@ extension SearchViewController {
 
     fileprivate func setupNavigationBar() {
         navigationItem.searchController = searchController
-        title = viewModel.title
+        title = "Search"
     }
 
     fileprivate func setupSearchController() {
@@ -88,7 +87,7 @@ extension SearchViewController {
         searchController.dimsBackgroundDuringPresentation     = false
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.definesPresentationContext           = true
-        searchController.searchBar.placeholder = viewModel.searchBarPlaceholder
+        searchController.searchBar.placeholder = "Search"
         searchController.searchBar.delegate = self
     }
 

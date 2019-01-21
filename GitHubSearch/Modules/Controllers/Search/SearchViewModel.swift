@@ -11,8 +11,6 @@ import UIKit
 final class SearchViewModel {
 
     // MARK: - Properties
-    let title = "Search"
-    let searchBarPlaceholder = "Search"
-
     var repositories = [Repository]()
+
 }

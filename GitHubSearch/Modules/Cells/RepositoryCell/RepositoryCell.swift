@@ -12,39 +12,39 @@ import SnapKit
 final class RepositoryCell: UITableViewCell {
 
     // MARK: - Properties
-    let viewModel = RepositoryCellViewModel()
+    var viewModel = RepositoryCellViewModel()
 
-    // MARK: - Life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupViews()
+        viewModel.delegate = self
     }
 
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
     }
 
 }
 
-// Setup views
-extension RepositoryCell {
+// MARK: - Setup views
+extension RepositoryCell: RepositoryCellViewModelDelegate {
 
-    fileprivate func setupViews() {
-
+    func configure(with repository: Repository) {
         self.accessoryType = .disclosureIndicator
 
         let nameLabel: UILabel = {
             let label = UILabel()
-            label.text = viewModel.repository?.fullName
+            label.text = repository.fullName
             label.font = UIFont.boldSystemFont(ofSize: 17)
+            label.numberOfLines = 0
             return label
         }()
 
         let descriptionLabel: UILabel = {
             let label = UILabel()
-            label.text = viewModel.repository?.repoDescription
+            label.text = repository.repoDescription
             label.font = UIFont.systemFont(ofSize: 15)
             label.textColor = UIColor.gray
+            label.numberOfLines = 0
             return label
         }()
 
