@@ -25,7 +25,7 @@ extension GitHub: TargetType {
     var path: String {
         switch self {
         case .searchRepo:
-            return "/search/repositories/"
+            return "/search/repositories"
         }
     }
 

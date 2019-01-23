@@ -24,10 +24,6 @@ final class SearchViewController: UIViewController {
     // MARK: - View Controller's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO: Delete fake repo when networking layer is done.
-//        viewModel.repositories
-//                 .append(Repository(fullName: "apple/swift",
-//                                    repoDescription: "Programming language. Available for macOS and Linux."))
         initialSetup()
     }
 
