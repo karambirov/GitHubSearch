@@ -24,8 +24,10 @@ final class NetworkService {
             case .success(let response):
                 do {
                     let repositories = try response.map(SearchResults<Repository>.self)
-                    print(repositories)
-                    completionHandler(repositories.items)
+//                    print(repositories.items)
+                    DispatchQueue.main.async {
+                        completionHandler(repositories.items)
+                    }
                 } catch let error {
                     print(error.localizedDescription)
                 }

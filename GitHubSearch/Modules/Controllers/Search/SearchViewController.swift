@@ -26,8 +26,10 @@ final class SearchViewController: UIViewController {
         super.viewDidLoad()
         initialSetup()
 
-        viewModel.searchRepositories(withQuery: "alamofire")
-        tableView.reloadData()
+        viewModel.searchRepositories(withQuery: "alamofire") { [weak self] in
+            guard let self = self else { return }
+            self.tableView.reloadData()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +47,7 @@ final class SearchViewController: UIViewController {
 // MARK: - Table View
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("There's \(viewModel.repositories.count) items in the table.")
         return viewModel.repositories.count
     }
 
