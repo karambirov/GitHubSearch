@@ -94,7 +94,7 @@ extension SearchViewController {
     fileprivate func setupTableView() {
         tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.typeName)
         tableView.dataSource = self
-        tableView.delegate = self
+        tableView.delegate   = self
     }
 }
 
