@@ -25,6 +25,9 @@ final class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
+
+        viewModel.searchRepositories(withQuery: "alamofire")
+        tableView.reloadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -68,6 +71,9 @@ extension SearchViewController: UISearchResultsUpdating {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let query = searchBar.text, query.count > 2 else {
+            return
+        }
         print("Searching...")
     }
 }

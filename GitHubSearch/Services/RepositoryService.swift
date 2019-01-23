@@ -16,8 +16,12 @@ final class RepositoryService {
         self.networkService = networkService
     }
 
-    func searchRepositories(withQuery query: String) {
-        networkService?.searchRepositories(withQuery: query)
+    func searchRepositories(withQuery query: String,
+                            completionHandler: @escaping (([Repository]?) -> Void)) {
+        networkService?.searchRepositories(withQuery: query) { repositories in
+            guard let repositories = repositories else { return }
+            completionHandler(repositories)
+        }
     }
 
 }

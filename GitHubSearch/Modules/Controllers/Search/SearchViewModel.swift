@@ -11,10 +11,17 @@ import UIKit
 final class SearchViewModel {
 
     // MARK: - Private
-    fileprivate let networkService = NetworkService()
+    private let networkService = NetworkService()
+    private lazy var repositoryService = RepositoryService(networkService: networkService)
 
     // MARK: - Properties
     var repositories = [Repository]()
-    lazy var repositoryService = RepositoryService(networkService: networkService)
+
+    func searchRepositories(withQuery query: String) {
+        repositoryService.searchRepositories(withQuery: query) { [weak self] repos in
+            guard let self = self, let repos = repos else { return }
+            self.repositories += repos
+        }
+    }
 
 }
