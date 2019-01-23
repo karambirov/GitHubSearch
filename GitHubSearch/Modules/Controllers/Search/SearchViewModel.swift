@@ -10,7 +10,11 @@ import UIKit
 
 final class SearchViewModel {
 
+    // MARK: - Private
+    fileprivate let networkService = NetworkService()
+
     // MARK: - Properties
     var repositories = [Repository]()
+    lazy var repositoryService = RepositoryService(networkService: networkService)
 
 }

@@ -9,6 +9,14 @@
 import Foundation
 
 struct Repository: Codable {
-    let fullName: String
+    let fullName: String?
     let repoDescription: String?
+    let owner: Owner?
+    let language: String?
+
+    enum CodingKeys: String, CodingKey {
+        case owner, language
+        case fullName = "full_name"
+        case repoDescription = "description"
+    }
 }

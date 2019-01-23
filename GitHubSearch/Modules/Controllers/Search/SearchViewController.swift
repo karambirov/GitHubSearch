@@ -27,6 +27,16 @@ final class SearchViewController: UIViewController {
         initialSetup()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        navigationItem.hidesSearchBarWhenScrolling = false
+        super.viewWillAppear(animated)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        navigationItem.hidesSearchBarWhenScrolling = true
+        super.viewDidAppear(animated)
+    }
+
 }
 
 // MARK: - Table View

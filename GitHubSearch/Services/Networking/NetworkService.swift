@@ -13,7 +13,7 @@ final class NetworkService {
 
     private var provider: MoyaProvider<GitHub>?
 
-    init(provider: MoyaProvider<GitHub>) {
+    init(provider: MoyaProvider<GitHub> = MoyaProvider<GitHub>()) {
         self.provider = provider
     }
 
