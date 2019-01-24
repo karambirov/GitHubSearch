@@ -18,17 +18,12 @@ final class SearchViewModel {
     var repositories = [Repository]()
 
     func searchRepositories(withQuery query: String, completion: @escaping () -> Void) {
-//        repositories = repositoryService.searchRepositories(withQuery: query)
-        networkService.searchRepositories(withQuery: query) { repos in
-            guard let repos = repos else {
-                print("Failed in ", #file)
-                return
-            }
-            DispatchQueue.main.async {
-                self.repositories.append(contentsOf: repos)
-                completion()
-                print("Repositories: ", self.repositories.count)
-            }
+        repositoryService.searchRepositories(withQuery: query) { [weak self] repositories in
+            guard let self = self else { return }
+            self.repositories = repositories
+            print(3)
+            completion()
         }
     }
+
 }
