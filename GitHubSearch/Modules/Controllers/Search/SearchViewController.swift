@@ -42,13 +42,15 @@ final class SearchViewController: UIViewController {
 // MARK: - Table View
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("There's \(viewModel.repositories.count) items in the table.")
         return viewModel.repositories.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: RepositoryCell = tableView.dequeueCell(withIdentifier: RepositoryCell.typeName, for: indexPath)
-        cell.viewModel?.repository = viewModel.repositories[indexPath.row]
+        let cellViewModel = RepositoryCellViewModel(repository: viewModel.repositories[indexPath.row])
+        let cell: RepositoryCell = tableView.dequeueCell(withIdentifier: RepositoryCell.typeName,
+                                                         for: indexPath)
+        cell.setup(with: cellViewModel)
+        cell.layoutIfNeeded()
         return cell
     }
 }

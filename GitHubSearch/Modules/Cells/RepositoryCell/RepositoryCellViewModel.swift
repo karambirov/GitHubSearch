@@ -8,18 +8,16 @@
 
 import Foundation
 
-protocol RepositoryCellViewModelDelegate: AnyObject {
-    func configure(with repository: Repository)
-}
-
 final class RepositoryCellViewModel {
 
-    weak var delegate: RepositoryCellViewModelDelegate?
+    var repository = Observable<Repository>()
+    var fullName: String?
+    var repoDescription: String?
 
-    var repository: Repository! {
-        didSet {
-            delegate?.configure(with: self.repository)
-        }
+    init(repository: Repository) {
+        self.repository.value = repository
+        self.fullName         = repository.fullName
+        self.repoDescription  = repository.repoDescription
     }
 
 }
