@@ -18,11 +18,10 @@ final class RepositoryService {
         self.repositories = repositories
     }
 
-    func searchRepositories(withQuery query: String, completion: @escaping ([Repository]) -> Void) {
-        networkService?.searchRepositories(withQuery: query) { [weak self] repositories in
+    func searchRepositories(with query: String, completion: @escaping ([Repository]) -> Void) {
+        networkService?.searchRepositories(with: query) { [weak self] repositories in
             guard let self = self, let repositories = repositories else { return }
             self.repositories += repositories
-            print(2)
             completion(self.repositories)
         }
     }

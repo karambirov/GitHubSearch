@@ -16,12 +16,12 @@ final class SearchViewModel {
 
     // MARK: - Properties
     var repositories = [Repository]()
+    var cellViewModel = RepositoryCellViewModel()
 
-    func searchRepositories(withQuery query: String, completion: @escaping () -> Void) {
-        repositoryService.searchRepositories(withQuery: query) { [weak self] repositories in
+    func searchRepositories(with query: String, completion: @escaping () -> Void) {
+        repositoryService.searchRepositories(with: query) { [weak self] repositories in
             guard let self = self else { return }
             self.repositories = repositories
-            print(3)
             completion()
         }
     }

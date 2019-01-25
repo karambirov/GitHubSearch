@@ -48,7 +48,7 @@ extension SearchViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: RepositoryCell = tableView.dequeueCell(withIdentifier: RepositoryCell.typeName, for: indexPath)
-        cell.viewModel.repository = viewModel.repositories[indexPath.row]
+        cell.viewModel?.repository = viewModel.repositories[indexPath.row]
         return cell
     }
 }
@@ -70,10 +70,8 @@ extension SearchViewController: UISearchResultsUpdating {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text, query.count > 2 else { return }
-        viewModel.searchRepositories(withQuery: query) { [weak self] in
+        viewModel.searchRepositories(with: query) { [weak self] in
             guard let self = self else { return }
-            print(4)
-            print("Reloading...")
             self.tableView.reloadData()
         }
     }

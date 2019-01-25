@@ -12,15 +12,22 @@ import SnapKit
 final class RepositoryCell: UITableViewCell {
 
     // MARK: - Properties
-    var viewModel = RepositoryCellViewModel()
+    var viewModel: RepositoryCellViewModel?
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        viewModel.delegate = self
+        viewModel = RepositoryCellViewModel()
+        viewModel?.delegate = self
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        viewModel = RepositoryCellViewModel()
+        viewModel?.delegate = self
     }
 
 }
