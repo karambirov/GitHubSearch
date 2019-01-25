@@ -12,6 +12,13 @@
 		AA00CD5021F3311F0046B9A4 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD4F21F3311F0046B9A4 /* UITableView+Extensions.swift */; };
 		AA00CD5221F344D90046B9A4 /* RepositoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD5121F344D90046B9A4 /* RepositoryCellViewModel.swift */; };
 		AA00CD5421F4CC650046B9A4 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD5321F4CC650046B9A4 /* UITableViewCell+Extensions.swift */; };
+		AA00CD5B21F86D080046B9A4 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD5A21F86D080046B9A4 /* GitHub.swift */; };
+		AA00CD5D21F876A30046B9A4 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD5C21F876A30046B9A4 /* String+Extensions.swift */; };
+		AA00CD5F21F87BDA0046B9A4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD5E21F87BDA0046B9A4 /* NetworkService.swift */; };
+		AA00CD6121F89FEF0046B9A4 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD6021F89FEF0046B9A4 /* RepositoryService.swift */; };
+		AA00CD6321F8A4420046B9A4 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD6221F8A4420046B9A4 /* Owner.swift */; };
+		AA00CD6521F8A8DD0046B9A4 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD6421F8A8DD0046B9A4 /* SearchResults.swift */; };
+		AA00CD6721FB63980046B9A4 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD6621FB63980046B9A4 /* Observable.swift */; };
 		AAA8A9E721D4CCED004A7E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8A9E621D4CCED004A7E89 /* AppDelegate.swift */; };
 		AAA8A9E921D4CCED004A7E89 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8A9E821D4CCED004A7E89 /* SearchViewController.swift */; };
 		AAA8A9EE21D4CCF0004A7E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA8A9ED21D4CCF0004A7E89 /* Assets.xcassets */; };
@@ -53,6 +60,13 @@
 		AA00CD4F21F3311F0046B9A4 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		AA00CD5121F344D90046B9A4 /* RepositoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewModel.swift; sourceTree = "<group>"; };
 		AA00CD5321F4CC650046B9A4 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		AA00CD5A21F86D080046B9A4 /* GitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
+		AA00CD5C21F876A30046B9A4 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		AA00CD5E21F87BDA0046B9A4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		AA00CD6021F89FEF0046B9A4 /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
+		AA00CD6221F8A4420046B9A4 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		AA00CD6421F8A8DD0046B9A4 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
+		AA00CD6621FB63980046B9A4 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		AAA8A9E321D4CCED004A7E89 /* GitHubSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA8A9E621D4CCED004A7E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAA8A9E821D4CCED004A7E89 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -107,8 +121,20 @@
 			isa = PBXGroup;
 			children = (
 				AA00CD4B21F32FAE0046B9A4 /* Repository.swift */,
+				AA00CD6221F8A4420046B9A4 /* Owner.swift */,
+				AA00CD6421F8A8DD0046B9A4 /* SearchResults.swift */,
+				AA00CD6621FB63980046B9A4 /* Observable.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		AA00CD5921F86CEF0046B9A4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AA00CD5A21F86D080046B9A4 /* GitHub.swift */,
+				AA00CD5E21F87BDA0046B9A4 /* NetworkService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		AAA8A9DA21D4CCED004A7E89 = {
@@ -201,6 +227,7 @@
 				AADED02321D61CDA00CE305B /* UIView+Extensions.swift */,
 				AA00CD4F21F3311F0046B9A4 /* UITableView+Extensions.swift */,
 				AA00CD5321F4CC650046B9A4 /* UITableViewCell+Extensions.swift */,
+				AA00CD5C21F876A30046B9A4 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -208,6 +235,8 @@
 		AAC6353421D4CE7C00A5E63C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AA00CD5921F86CEF0046B9A4 /* Networking */,
+				AA00CD6021F89FEF0046B9A4 /* RepositoryService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -554,17 +583,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA00CD6721FB63980046B9A4 /* Observable.swift in Sources */,
+				AA00CD5F21F87BDA0046B9A4 /* NetworkService.swift in Sources */,
 				AAA8A9E921D4CCED004A7E89 /* SearchViewController.swift in Sources */,
 				AAA8A9E721D4CCED004A7E89 /* AppDelegate.swift in Sources */,
+				AA00CD6121F89FEF0046B9A4 /* RepositoryService.swift in Sources */,
 				AA00CD5421F4CC650046B9A4 /* UITableViewCell+Extensions.swift in Sources */,
 				AADED02421D61CDA00CE305B /* UIView+Extensions.swift in Sources */,
 				AA00CD4C21F32FAE0046B9A4 /* Repository.swift in Sources */,
 				AADED02A21D626FD00CE305B /* SearchViewModel.swift in Sources */,
 				AA00CD5021F3311F0046B9A4 /* UITableView+Extensions.swift in Sources */,
+				AA00CD5B21F86D080046B9A4 /* GitHub.swift in Sources */,
+				AA00CD5D21F876A30046B9A4 /* String+Extensions.swift in Sources */,
 				AAC6353B21D4E22100A5E63C /* R.generated.swift in Sources */,
 				AA00CD5221F344D90046B9A4 /* RepositoryCellViewModel.swift in Sources */,
 				AA00CD4E21F330D10046B9A4 /* Describable.swift in Sources */,
+				AA00CD6321F8A4420046B9A4 /* Owner.swift in Sources */,
 				AAC6356D21D6057B00A5E63C /* RepositoryCell.swift in Sources */,
+				AA00CD6521F8A8DD0046B9A4 /* SearchResults.swift in Sources */,
 				AADED01C21D60B9B00CE305B /* Configs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,11 +24,17 @@ final class SearchViewController: UIViewController {
     // MARK: - View Controller's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO: Delete fake repo when networking layer is done.
-//        viewModel.repositories
-//                 .append(Repository(fullName: "apple/swift",
-//                                    repoDescription: "Programming language. Available for macOS and Linux."))
         initialSetup()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        navigationItem.hidesSearchBarWhenScrolling = false
+        super.viewWillAppear(animated)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        navigationItem.hidesSearchBarWhenScrolling = true
+        super.viewDidAppear(animated)
     }
 
 }
@@ -40,8 +46,11 @@ extension SearchViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: RepositoryCell = tableView.dequeueCell(withIdentifier: RepositoryCell.typeName, for: indexPath)
-        cell.viewModel.repository = viewModel.repositories[indexPath.row]
+        let cellViewModel = RepositoryCellViewModel(repository: viewModel.repositories[indexPath.row])
+        let cell: RepositoryCell = tableView.dequeueCell(withIdentifier: RepositoryCell.typeName,
+                                                         for: indexPath)
+        cell.setup(with: cellViewModel)
+        cell.layoutIfNeeded()
         return cell
     }
 }
@@ -62,7 +71,11 @@ extension SearchViewController: UISearchResultsUpdating {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("Searching...")
+        guard let query = searchBar.text, query.count > 2 else { return }
+        viewModel.searchRepositories(with: query) { [weak self] in
+            guard let self = self else { return }
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -94,7 +107,7 @@ extension SearchViewController {
     fileprivate func setupTableView() {
         tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.typeName)
         tableView.dataSource = self
-        tableView.delegate = self
+        tableView.delegate   = self
     }
 }
 
