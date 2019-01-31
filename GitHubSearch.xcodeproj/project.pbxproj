@@ -30,6 +30,9 @@
 		AAC6356D21D6057B00A5E63C /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6356B21D6057B00A5E63C /* RepositoryCell.swift */; };
 		AAC6357621D6074E00A5E63C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAC6357821D6074E00A5E63C /* Localizable.strings */; };
 		AACFDF5322035BC10057121B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5222035BC10057121B /* TabBarController.swift */; };
+		AACFDF5522035C850057121B /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5422035C850057121B /* TabBarViewModel.swift */; };
+		AACFDF5822035CAD0057121B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5722035CAD0057121B /* FavoritesViewController.swift */; };
+		AACFDF5A22035CBA0057121B /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5922035CBA0057121B /* FavoritesViewModel.swift */; };
 		AADED01C21D60B9B00CE305B /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADED01B21D60B9B00CE305B /* Configs.swift */; };
 		AADED02421D61CDA00CE305B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADED02321D61CDA00CE305B /* UIView+Extensions.swift */; };
 		AADED02A21D626FD00CE305B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADED02921D626FD00CE305B /* SearchViewModel.swift */; };
@@ -87,6 +90,9 @@
 		AAC6357721D6074E00A5E63C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AAC6357921D6075100A5E63C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AACFDF5222035BC10057121B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		AACFDF5422035C850057121B /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		AACFDF5722035CAD0057121B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		AACFDF5922035CBA0057121B /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		AADED01B21D60B9B00CE305B /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
 		AADED02321D61CDA00CE305B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		AADED02921D626FD00CE305B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -256,6 +262,7 @@
 			children = (
 				AACFDF5122035B940057121B /* TabBar */,
 				AAC6356921D50FD300A5E63C /* Search */,
+				AACFDF5622035C980057121B /* Favorites */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -315,8 +322,18 @@
 			isa = PBXGroup;
 			children = (
 				AACFDF5222035BC10057121B /* TabBarController.swift */,
+				AACFDF5422035C850057121B /* TabBarViewModel.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		AACFDF5622035C980057121B /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				AACFDF5722035CAD0057121B /* FavoritesViewController.swift */,
+				AACFDF5922035CBA0057121B /* FavoritesViewModel.swift */,
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 		DDC8459EE02F5D7C07035B2B /* Pods */ = {
@@ -594,6 +611,7 @@
 				AAA8A9E721D4CCED004A7E89 /* AppDelegate.swift in Sources */,
 				AA00CD6121F89FEF0046B9A4 /* RepositoryService.swift in Sources */,
 				AA00CD5421F4CC650046B9A4 /* UITableViewCell+Extensions.swift in Sources */,
+				AACFDF5822035CAD0057121B /* FavoritesViewController.swift in Sources */,
 				AADED02421D61CDA00CE305B /* UIView+Extensions.swift in Sources */,
 				AA00CD4C21F32FAE0046B9A4 /* Repository.swift in Sources */,
 				AADED02A21D626FD00CE305B /* SearchViewModel.swift in Sources */,
@@ -607,6 +625,8 @@
 				AA00CD6321F8A4420046B9A4 /* Owner.swift in Sources */,
 				AAC6356D21D6057B00A5E63C /* RepositoryCell.swift in Sources */,
 				AA00CD6521F8A8DD0046B9A4 /* SearchResults.swift in Sources */,
+				AACFDF5A22035CBA0057121B /* FavoritesViewModel.swift in Sources */,
+				AACFDF5522035C850057121B /* TabBarViewModel.swift in Sources */,
 				AADED01C21D60B9B00CE305B /* Configs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
