@@ -29,6 +29,7 @@
 		AAC6356821D4EC2000A5E63C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AAC6356721D4EC2000A5E63C /* .swiftlint.yml */; };
 		AAC6356D21D6057B00A5E63C /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6356B21D6057B00A5E63C /* RepositoryCell.swift */; };
 		AAC6357621D6074E00A5E63C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAC6357821D6074E00A5E63C /* Localizable.strings */; };
+		AACFDF5322035BC10057121B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5222035BC10057121B /* TabBarController.swift */; };
 		AADED01C21D60B9B00CE305B /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADED01B21D60B9B00CE305B /* Configs.swift */; };
 		AADED02421D61CDA00CE305B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADED02321D61CDA00CE305B /* UIView+Extensions.swift */; };
 		AADED02A21D626FD00CE305B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADED02921D626FD00CE305B /* SearchViewModel.swift */; };
@@ -85,6 +86,7 @@
 		AAC6356B21D6057B00A5E63C /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		AAC6357721D6074E00A5E63C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AAC6357921D6075100A5E63C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AACFDF5222035BC10057121B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		AADED01B21D60B9B00CE305B /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
 		AADED02321D61CDA00CE305B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		AADED02921D626FD00CE305B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 		AAC6353621D4D00C00A5E63C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AACFDF5122035B940057121B /* TabBar */,
 				AAC6356921D50FD300A5E63C /* Search */,
 			);
 			path = Controllers;
@@ -306,6 +309,14 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AACFDF5122035B940057121B /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				AACFDF5222035BC10057121B /* TabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		DDC8459EE02F5D7C07035B2B /* Pods */ = {
@@ -546,7 +557,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/GitHubSearch/Resources/R.generated.swift",
+				$SRCROOT/GitHubSearch/Resources/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -590,6 +601,7 @@
 				AA00CD5B21F86D080046B9A4 /* GitHub.swift in Sources */,
 				AA00CD5D21F876A30046B9A4 /* String+Extensions.swift in Sources */,
 				AAC6353B21D4E22100A5E63C /* R.generated.swift in Sources */,
+				AACFDF5322035BC10057121B /* TabBarController.swift in Sources */,
 				AA00CD5221F344D90046B9A4 /* RepositoryCellViewModel.swift in Sources */,
 				AA00CD4E21F330D10046B9A4 /* Describable.swift in Sources */,
 				AA00CD6321F8A4420046B9A4 /* Owner.swift in Sources */,
