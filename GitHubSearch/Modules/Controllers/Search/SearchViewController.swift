@@ -67,6 +67,7 @@ extension SearchViewController: UISearchResultsUpdating {
         let searchBar = searchController.searchBar
         print(searchBar.text!)
     }
+
 }
 
 extension SearchViewController: UISearchBarDelegate {
@@ -76,6 +77,11 @@ extension SearchViewController: UISearchBarDelegate {
             guard let self = self else { return }
             self.tableView.reloadData()
         }
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.repositories = []
+        tableView.reloadData()
     }
 }
 
