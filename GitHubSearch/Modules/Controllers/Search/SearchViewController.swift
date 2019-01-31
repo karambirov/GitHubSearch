@@ -34,6 +34,7 @@ final class SearchViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         navigationItem.hidesSearchBarWhenScrolling = true
+        searchController.searchBar.becomeFirstResponder()
         super.viewDidAppear(animated)
     }
 
@@ -62,14 +63,6 @@ extension SearchViewController: UITableViewDelegate {
 }
 
 // MARK: - Search
-extension SearchViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        print(searchBar.text!)
-    }
-
-}
-
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text, query.count > 2 else { return }
@@ -80,7 +73,7 @@ extension SearchViewController: UISearchBarDelegate {
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.repositories = []
+        viewModel.repositories.removeAll()
         tableView.reloadData()
     }
 }
@@ -101,7 +94,6 @@ extension SearchViewController {
     }
 
     fileprivate func setupSearchController() {
-        searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation     = false
         searchController.hidesNavigationBarDuringPresentation = false
