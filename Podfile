@@ -9,17 +9,14 @@ target 'GitHubSearch' do
   # Pods for GitHubSearch
 
   # Networking
-  pod 'Moya'                        # https://github.com/Moya/Moya
-  pod 'ReachabilitySwift', '~> 4.0' # https://github.com/ashleymills/Reachability.swift
+  pod 'Moya'                                        # https://github.com/Moya/Moya
+  pod 'AlamofireNetworkActivityIndicator', '~> 2.2' # https://github.com/Alamofire/AlamofireNetworkActivityIndicator
 
   # Image
   pod 'Kingfisher', '~> 4.0'  # https://github.com/onevcat/Kingfisher
 
   # UI
-  pod 'NVActivityIndicatorView', '~> 4.0'    # https://github.com/ninjaprox/NVActivityIndicatorView
-  pod 'PMAlertController', '~> 3.5.0'        # https://github.com/pmusolino/PMAlertController
-  pod 'ImageSlideshow/Kingfisher', '~> 1.0'  # https://github.com/zvonicek/ImageSlideshow
-  pod 'DZNEmptyDataSet', '~> 1.0'            # https://github.com/dzenbot/DZNEmptyDataSet
+  pod 'EmptyDataSet-Swift', '~> 4.2.0'       # https://github.com/Xiaoye220/EmptyDataSet-Swift
   pod 'Localize-Swift', '~> 2.0'             # https://github.com/marmelroy/Localize-Swift
   pod 'KafkaRefresh', '~> 1.0'               # https://github.com/OpenFeyn/KafkaRefresh
 

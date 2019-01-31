@@ -34,7 +34,6 @@ final class SearchViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         navigationItem.hidesSearchBarWhenScrolling = true
-        searchController.searchBar.becomeFirstResponder()
         super.viewDidAppear(animated)
     }
 

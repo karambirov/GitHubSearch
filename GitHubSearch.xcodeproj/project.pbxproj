@@ -29,6 +29,10 @@
 		AAC6356821D4EC2000A5E63C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AAC6356721D4EC2000A5E63C /* .swiftlint.yml */; };
 		AAC6356D21D6057B00A5E63C /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6356B21D6057B00A5E63C /* RepositoryCell.swift */; };
 		AAC6357621D6074E00A5E63C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAC6357821D6074E00A5E63C /* Localizable.strings */; };
+		AACFDF5322035BC10057121B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5222035BC10057121B /* TabBarController.swift */; };
+		AACFDF5522035C850057121B /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5422035C850057121B /* TabBarViewModel.swift */; };
+		AACFDF5822035CAD0057121B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5722035CAD0057121B /* FavoritesViewController.swift */; };
+		AACFDF5A22035CBA0057121B /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5922035CBA0057121B /* FavoritesViewModel.swift */; };
 		AADED01C21D60B9B00CE305B /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADED01B21D60B9B00CE305B /* Configs.swift */; };
 		AADED02421D61CDA00CE305B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADED02321D61CDA00CE305B /* UIView+Extensions.swift */; };
 		AADED02A21D626FD00CE305B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADED02921D626FD00CE305B /* SearchViewModel.swift */; };
@@ -85,6 +89,10 @@
 		AAC6356B21D6057B00A5E63C /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		AAC6357721D6074E00A5E63C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AAC6357921D6075100A5E63C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AACFDF5222035BC10057121B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		AACFDF5422035C850057121B /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		AACFDF5722035CAD0057121B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		AACFDF5922035CBA0057121B /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		AADED01B21D60B9B00CE305B /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
 		AADED02321D61CDA00CE305B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		AADED02921D626FD00CE305B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -252,7 +260,9 @@
 		AAC6353621D4D00C00A5E63C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AACFDF5122035B940057121B /* TabBar */,
 				AAC6356921D50FD300A5E63C /* Search */,
+				AACFDF5622035C980057121B /* Favorites */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -306,6 +316,24 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AACFDF5122035B940057121B /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				AACFDF5222035BC10057121B /* TabBarController.swift */,
+				AACFDF5422035C850057121B /* TabBarViewModel.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		AACFDF5622035C980057121B /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				AACFDF5722035CAD0057121B /* FavoritesViewController.swift */,
+				AACFDF5922035CBA0057121B /* FavoritesViewModel.swift */,
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 		DDC8459EE02F5D7C07035B2B /* Pods */ = {
@@ -468,20 +496,17 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GitHubSearch/Pods-GitHubSearch-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/AttributedLib/AttributedLib.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
-				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/EmptyDataSet-Swift/EmptyDataSet_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/KafkaRefresh/KafkaRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/PMAlertController/PMAlertController.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
@@ -492,20 +517,17 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AttributedLib.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EmptyDataSet_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KafkaRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PMAlertController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
@@ -589,6 +611,7 @@
 				AAA8A9E721D4CCED004A7E89 /* AppDelegate.swift in Sources */,
 				AA00CD6121F89FEF0046B9A4 /* RepositoryService.swift in Sources */,
 				AA00CD5421F4CC650046B9A4 /* UITableViewCell+Extensions.swift in Sources */,
+				AACFDF5822035CAD0057121B /* FavoritesViewController.swift in Sources */,
 				AADED02421D61CDA00CE305B /* UIView+Extensions.swift in Sources */,
 				AA00CD4C21F32FAE0046B9A4 /* Repository.swift in Sources */,
 				AADED02A21D626FD00CE305B /* SearchViewModel.swift in Sources */,
@@ -596,11 +619,14 @@
 				AA00CD5B21F86D080046B9A4 /* GitHub.swift in Sources */,
 				AA00CD5D21F876A30046B9A4 /* String+Extensions.swift in Sources */,
 				AAC6353B21D4E22100A5E63C /* R.generated.swift in Sources */,
+				AACFDF5322035BC10057121B /* TabBarController.swift in Sources */,
 				AA00CD5221F344D90046B9A4 /* RepositoryCellViewModel.swift in Sources */,
 				AA00CD4E21F330D10046B9A4 /* Describable.swift in Sources */,
 				AA00CD6321F8A4420046B9A4 /* Owner.swift in Sources */,
 				AAC6356D21D6057B00A5E63C /* RepositoryCell.swift in Sources */,
 				AA00CD6521F8A8DD0046B9A4 /* SearchResults.swift in Sources */,
+				AACFDF5A22035CBA0057121B /* FavoritesViewModel.swift in Sources */,
+				AACFDF5522035C850057121B /* TabBarViewModel.swift in Sources */,
 				AADED01C21D60B9B00CE305B /* Configs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,12 +16,17 @@ final class SearchViewModel {
 
     // MARK: - Properties
     var repositories = [Repository]()
+    var isLoading = false
 
     func searchRepositories(with query: String, completion: @escaping () -> Void) {
+        isLoading = true
         repositoryService.searchRepositories(with: query) { [weak self] repositories in
             guard let self = self else { return }
             self.repositories = repositories
-            completion()
+            DispatchQueue.main.async {
+                self.isLoading = false
+                completion()
+            }
         }
     }
 
