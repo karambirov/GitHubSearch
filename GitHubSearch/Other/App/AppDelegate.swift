@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireNetworkActivityIndicator
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let searchVC = SearchViewController()
         window?.rootViewController = UINavigationController(rootViewController: searchVC)
         window?.makeKeyAndVisible()
+
+        NetworkActivityIndicatorManager.shared.isEnabled = true
 
         return true
     }

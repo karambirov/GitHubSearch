@@ -9,8 +9,9 @@ target 'GitHubSearch' do
   # Pods for GitHubSearch
 
   # Networking
-  pod 'Moya'                        # https://github.com/Moya/Moya
-  pod 'ReachabilitySwift', '~> 4.0' # https://github.com/ashleymills/Reachability.swift
+  pod 'Moya'                                        # https://github.com/Moya/Moya
+  pod 'ReachabilitySwift', '~> 4.0'                 # https://github.com/ashleymills/Reachability.swift
+  pod 'AlamofireNetworkActivityIndicator', '~> 2.2' # https://github.com/Alamofire/AlamofireNetworkActivityIndicator
 
   # Image
   pod 'Kingfisher', '~> 4.0'  # https://github.com/onevcat/Kingfisher
