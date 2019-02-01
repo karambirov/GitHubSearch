@@ -11,23 +11,25 @@ import UIKit
 final class SearchViewModel {
 
     // MARK: - Private
-    private let networkService = NetworkService()
-    private lazy var repositoryService = RepositoryService(networkService: networkService)
+    private lazy var repositoryService = RepositoryService()
 
     // MARK: - Properties
-    var repositories = [Repository]()
-    var isLoading = false
+    var repositories: [Repository]?
+    var dataSource: TableViewDataSource<Repository, RepositoryCell>?
 
     func searchRepositories(with query: String, completion: @escaping () -> Void) {
-        isLoading = true
         repositoryService.searchRepositories(with: query) { [weak self] repositories in
             guard let self = self else { return }
-            self.repositories = repositories
+            self.repositoriesDidLoad(repositories)
             DispatchQueue.main.async {
-                self.isLoading = false
                 completion()
             }
         }
+    }
+
+    private func repositoriesDidLoad(_ repositories: [Repository]) {
+        self.repositories = repositories
+        dataSource = .make(for: repositories)
     }
 
 }

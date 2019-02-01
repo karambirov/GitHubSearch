@@ -40,21 +40,6 @@ final class SearchViewController: UIViewController {
 }
 
 // MARK: - Table View
-extension SearchViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.repositories.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellViewModel = RepositoryCellViewModel(repository: viewModel.repositories[indexPath.row])
-        let cell: RepositoryCell = tableView.dequeueCell(withIdentifier: RepositoryCell.typeName,
-                                                         for: indexPath)
-        cell.setup(with: cellViewModel)
-        cell.layoutIfNeeded()
-        return cell
-    }
-}
-
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Open details")
@@ -67,12 +52,13 @@ extension SearchViewController: UISearchBarDelegate {
         guard let query = searchBar.text, query.count > 2 else { return }
         viewModel.searchRepositories(with: query) { [weak self] in
             guard let self = self else { return }
+            self.tableView.dataSource = self.viewModel.dataSource
             self.tableView.reloadData()
         }
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.repositories.removeAll()
+        viewModel.repositories?.removeAll()
         tableView.reloadData()
     }
 }
@@ -97,13 +83,13 @@ extension SearchViewController {
         searchController.dimsBackgroundDuringPresentation     = false
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.definesPresentationContext           = true
-        searchController.searchBar.placeholder = "Search"
-        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder                = "Search"
+        searchController.searchBar.delegate                   = self
     }
 
     fileprivate func setupTableView() {
         tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.typeName)
-        tableView.dataSource = self
+        tableView.dataSource = viewModel.dataSource
         tableView.delegate   = self
     }
 }
