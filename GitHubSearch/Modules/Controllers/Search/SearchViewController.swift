@@ -40,21 +40,6 @@ final class SearchViewController: UIViewController {
 }
 
 // MARK: - Table View
-//extension SearchViewController: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return viewModel.repositories.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cellViewModel = RepositoryCellViewModel(repository: viewModel.repositories[indexPath.row])
-//        let cell: RepositoryCell = tableView.dequeueCell(withIdentifier: RepositoryCell.typeName,
-//                                                         for: indexPath)
-//        cell.setup(with: cellViewModel)
-//        cell.layoutIfNeeded()
-//        return cell
-//    }
-//}
-
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Open details")
