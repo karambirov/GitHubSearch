@@ -51,7 +51,8 @@ final class SearchViewController: UIViewController {
 // MARK: - Table View
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Open details")
+        guard let repository = viewModel.repository(for: indexPath) else { return }
+        viewModel.router.openDetails(for: repository)
     }
 }
 

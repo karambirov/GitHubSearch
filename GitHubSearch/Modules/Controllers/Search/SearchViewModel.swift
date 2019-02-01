@@ -36,6 +36,11 @@ final class SearchViewModel {
         }
     }
 
+    func repository(for indexPath: IndexPath) -> Repository? {
+        guard let repository = repositories?[indexPath.row] else { return nil }
+        return repository
+    }
+
     func deleteLoadedRepositories() {
         self.repositories?.removeAll()
         guard let repositories = repositories else { return }
