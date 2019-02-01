@@ -13,7 +13,7 @@ final class RepositoryService {
     private var networkService: NetworkService?
     private var repositories: [Repository]
 
-    init(networkService: NetworkService = NetworkService(), repositories: [Repository] = [Repository]()) {
+    init(networkService: NetworkService = .init(), repositories: [Repository] = [Repository]()) {
         self.networkService = networkService
         self.repositories = repositories
     }
