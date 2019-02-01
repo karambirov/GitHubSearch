@@ -12,13 +12,12 @@ class ModalTransition: NSObject {
 
     var animator: Animator?
     var isAnimated = true
-
-    var modalTransitionStyle: UIModalTransitionStyle
-    var modalPresentationStyle: UIModalPresentationStyle
-
     var completionHandler: (() -> Void)?
 
     weak var viewController: UIViewController?
+
+    var modalTransitionStyle: UIModalTransitionStyle
+    var modalPresentationStyle: UIModalPresentationStyle
 
     init(animator: Animator? = nil, isAnimated: Bool = true,
          modalTransitionStyle: UIModalTransitionStyle = .coverVertical,
