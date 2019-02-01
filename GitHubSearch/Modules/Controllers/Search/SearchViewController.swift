@@ -15,9 +15,8 @@ final class SearchViewController: UIViewController {
     fileprivate let viewModel = SearchViewModel()
     fileprivate let searchController = UISearchController(searchResultsController: nil)
 
-    fileprivate let tableView: UITableView = {
+    fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.tableFooterView = UIView()
         return tableView
     }()
 
@@ -91,6 +90,7 @@ extension SearchViewController {
         tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.typeName)
         tableView.dataSource = viewModel.dataSource
         tableView.delegate   = self
+        tableView.tableFooterView = UIView()
     }
 }
 
