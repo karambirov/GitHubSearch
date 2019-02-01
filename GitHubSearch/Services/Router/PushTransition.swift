@@ -28,7 +28,7 @@ extension PushTransition: Transition {
 
     func open(_ viewController: UIViewController) {
         self.viewController?.navigationController?.delegate = self
-        self.viewController?.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        self.viewController?.navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.viewController?.navigationController?.pushViewController(viewController, animated: isAnimated)
     }
 
@@ -58,5 +58,12 @@ extension PushTransition: UINavigationControllerDelegate {
             animator.isPresenting = false
             return animator
         }
+    }
+}
+
+// MARK: - UIGestureRecognizerDelegate
+extension PushTransition: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
