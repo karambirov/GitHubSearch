@@ -1,20 +1,18 @@
 //
-//  FavoritesViewController.swift
+//  DetailsViewController.swift
 //  GitHubSearch
 //
-//  Created by Eugene Karambirov on 31/01/2019.
+//  Created by Eugene Karambirov on 01/02/2019.
 //  Copyright © 2019 Eugene Karambirov. All rights reserved.
 //
 
 import UIKit
 
-final class FavoritesViewController: UIViewController {
+final class DetailsViewController: UIViewController {
 
-    // MARK: - Properties
-    fileprivate var viewModel: FavoritesViewModel
+    var viewModel: DetailsViewModel
 
-    // MARK: - View Controller's life cycle
-    init(viewModel: FavoritesViewModel) {
+    init(viewModel: DetailsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -25,7 +23,6 @@ final class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
+        view.backgroundColor = UIColor.lightGray
     }
-
 }

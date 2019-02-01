@@ -22,9 +22,18 @@ extension TabBarViewModel.TabBarItem {
     var viewController: UIViewController {
         switch self {
         case .search:
-            return UINavigationController(rootViewController: SearchViewController())
+            let router = SearchRouter()
+            let viewModel = SearchViewModel(router: router)
+            let viewController = SearchViewController(viewModel: viewModel)
+            router.viewController = viewController
+            return UINavigationController(rootViewController: viewController)
+
         case .favorites:
-            return UINavigationController(rootViewController: FavoritesViewController())
+            let router = FavoritesRouter()
+            let viewModel = FavoritesViewModel(router: router)
+            let viewController = FavoritesViewController(viewModel: viewModel)
+            router.viewController = viewController
+            return UINavigationController(rootViewController: viewController)
         }
     }
 

@@ -10,8 +10,4 @@ import UIKit
 
 extension UIView {
 
-    var inset: CGFloat {
-        return Configs.BaseDimensions.inset
-    }
-
 }

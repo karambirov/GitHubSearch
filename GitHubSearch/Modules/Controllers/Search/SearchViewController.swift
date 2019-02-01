@@ -12,7 +12,7 @@ import SnapKit
 final class SearchViewController: UIViewController {
 
     // MARK: - Properties
-    fileprivate let viewModel = SearchViewModel()
+    fileprivate let viewModel: SearchViewModel
     fileprivate let searchController = UISearchController(searchResultsController: nil)
 
     fileprivate lazy var tableView: UITableView = {
@@ -21,6 +21,16 @@ final class SearchViewController: UIViewController {
     }()
 
     // MARK: - View Controller's life cycle
+
+    init(viewModel: SearchViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
@@ -33,6 +43,7 @@ final class SearchViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         navigationItem.hidesSearchBarWhenScrolling = true
+        clearSelectionForCell()
         super.viewDidAppear(animated)
     }
 
@@ -41,7 +52,8 @@ final class SearchViewController: UIViewController {
 // MARK: - Table View
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Open details")
+        guard let repository = viewModel.repository(for: indexPath) else { return }
+        viewModel.router.openDetails(for: repository)
     }
 }
 
@@ -91,6 +103,11 @@ extension SearchViewController {
         tableView.dataSource = viewModel.dataSource
         tableView.delegate   = self
         tableView.tableFooterView = UIView()
+    }
+
+    func clearSelectionForCell() {
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
+        tableView.deselectRow(at: selectedIndexPath, animated: true)
     }
 }
 
