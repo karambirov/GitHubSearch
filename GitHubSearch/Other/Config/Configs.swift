@@ -10,8 +10,4 @@ import UIKit
 
 struct Configs {
 
-    struct BaseDimensions {
-        static let inset: CGFloat = 10
-    }
-
 }

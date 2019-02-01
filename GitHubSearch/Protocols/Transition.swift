@@ -9,7 +9,7 @@
 import UIKit
 
 protocol Transition: AnyObject {
-    /// Should be declared as `weak`
+    /// Should be declared as weak.
     var viewController: UIViewController? { get set }
 
     func open(_ viewController: UIViewController)
