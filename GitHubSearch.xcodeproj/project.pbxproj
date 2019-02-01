@@ -20,6 +20,8 @@
 		AA00CD6521F8A8DD0046B9A4 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD6421F8A8DD0046B9A4 /* SearchResults.swift */; };
 		AA00CD6721FB63980046B9A4 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD6621FB63980046B9A4 /* Observable.swift */; };
 		AA23C02E220445E60091B663 /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA23C02D220445E60091B663 /* RepositoryInfoView.swift */; };
+		AA27BE512204703600D4779F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA27BE502204703600D4779F /* DetailsViewController.swift */; };
+		AA27BE532204705A00D4779F /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA27BE522204705A00D4779F /* DetailsViewModel.swift */; };
 		AAA8A9E721D4CCED004A7E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8A9E621D4CCED004A7E89 /* AppDelegate.swift */; };
 		AAA8A9E921D4CCED004A7E89 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8A9E821D4CCED004A7E89 /* SearchViewController.swift */; };
 		AAA8A9EE21D4CCF0004A7E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA8A9ED21D4CCF0004A7E89 /* Assets.xcassets */; };
@@ -74,6 +76,8 @@
 		AA00CD6421F8A8DD0046B9A4 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		AA00CD6621FB63980046B9A4 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		AA23C02D220445E60091B663 /* RepositoryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoView.swift; sourceTree = "<group>"; };
+		AA27BE502204703600D4779F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		AA27BE522204705A00D4779F /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		AAA8A9E321D4CCED004A7E89 /* GitHubSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA8A9E621D4CCED004A7E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAA8A9E821D4CCED004A7E89 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +151,15 @@
 				AA00CD5E21F87BDA0046B9A4 /* NetworkService.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		AA27BE4F2204700600D4779F /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				AA27BE502204703600D4779F /* DetailsViewController.swift */,
+				AA27BE522204705A00D4779F /* DetailsViewModel.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		AAA8A9DA21D4CCED004A7E89 = {
@@ -268,6 +281,7 @@
 				AACFDF5122035B940057121B /* TabBar */,
 				AAC6356921D50FD300A5E63C /* Search */,
 				AACFDF5622035C980057121B /* Favorites */,
+				AA27BE4F2204700600D4779F /* Details */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -622,6 +636,7 @@
 				AA00CD4C21F32FAE0046B9A4 /* Repository.swift in Sources */,
 				AADED02A21D626FD00CE305B /* SearchViewModel.swift in Sources */,
 				AA00CD5021F3311F0046B9A4 /* UITableView+Extensions.swift in Sources */,
+				AA27BE512204703600D4779F /* DetailsViewController.swift in Sources */,
 				AA00CD5B21F86D080046B9A4 /* GitHub.swift in Sources */,
 				AA23C02E220445E60091B663 /* RepositoryInfoView.swift in Sources */,
 				AA00CD5D21F876A30046B9A4 /* String+Extensions.swift in Sources */,
@@ -636,6 +651,7 @@
 				AACFDF5A22035CBA0057121B /* FavoritesViewModel.swift in Sources */,
 				AACFDF5522035C850057121B /* TabBarViewModel.swift in Sources */,
 				AADED01C21D60B9B00CE305B /* Configs.swift in Sources */,
+				AA27BE532204705A00D4779F /* DetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
