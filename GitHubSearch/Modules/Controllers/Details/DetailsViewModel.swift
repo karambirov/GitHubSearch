@@ -8,6 +8,18 @@
 
 import Foundation
 
+final class DetailsRouter: Router<DetailsViewController> {
+    typealias Routes = Closable
+}
+
 final class DetailsViewModel {
+
+    let repository: Repository
+    let router: DetailsRouter.Routes
+
+    init(repository: Repository, router: DetailsRouter.Routes) {
+        self.repository = repository
+        self.router = router
+    }
 
 }

@@ -12,7 +12,7 @@ import SnapKit
 final class SearchViewController: UIViewController {
 
     // MARK: - Properties
-    fileprivate let viewModel = SearchViewModel()
+    fileprivate let viewModel: SearchViewModel
     fileprivate let searchController = UISearchController(searchResultsController: nil)
 
     fileprivate lazy var tableView: UITableView = {
@@ -21,6 +21,16 @@ final class SearchViewController: UIViewController {
     }()
 
     // MARK: - View Controller's life cycle
+
+    init(viewModel: SearchViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()

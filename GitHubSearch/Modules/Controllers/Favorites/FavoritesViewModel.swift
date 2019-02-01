@@ -8,6 +8,17 @@
 
 import Foundation
 
+final class FavoritesRouter: Router<FavoritesViewController>, FavoritesRouter.Routes {
+    typealias Routes = DetailsRoute
+}
+
 final class FavoritesViewModel {
+
+    var repositories: [Repository]?
+    let router: FavoritesRouter.Routes
+
+    init(router: FavoritesRouter.Routes) {
+        self.router = router
+    }
 
 }

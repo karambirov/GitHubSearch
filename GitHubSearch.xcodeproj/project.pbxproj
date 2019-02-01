@@ -27,6 +27,7 @@
 		AA27BE5A220477B000D4779F /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA27BE59220477B000D4779F /* ModalTransition.swift */; };
 		AA27BE5C2204788600D4779F /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA27BE5B2204788600D4779F /* Animator.swift */; };
 		AA27BE5E22047B7B00D4779F /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA27BE5D22047B7B00D4779F /* PushTransition.swift */; };
+		AA27BE612204827500D4779F /* DetailsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA27BE602204827500D4779F /* DetailsRoute.swift */; };
 		AAA8A9E721D4CCED004A7E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8A9E621D4CCED004A7E89 /* AppDelegate.swift */; };
 		AAA8A9E921D4CCED004A7E89 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8A9E821D4CCED004A7E89 /* SearchViewController.swift */; };
 		AAA8A9EE21D4CCF0004A7E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA8A9ED21D4CCF0004A7E89 /* Assets.xcassets */; };
@@ -88,6 +89,7 @@
 		AA27BE59220477B000D4779F /* ModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
 		AA27BE5B2204788600D4779F /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		AA27BE5D22047B7B00D4779F /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
+		AA27BE602204827500D4779F /* DetailsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRoute.swift; sourceTree = "<group>"; };
 		AAA8A9E321D4CCED004A7E89 /* GitHubSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA8A9E621D4CCED004A7E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAA8A9E821D4CCED004A7E89 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,14 @@
 				AA27BE5D22047B7B00D4779F /* PushTransition.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		AA27BE5F2204822B00D4779F /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				AA27BE602204827500D4779F /* DetailsRoute.swift */,
+			);
+			path = Routes;
 			sourceTree = "<group>";
 		};
 		AAA8A9DA21D4CCED004A7E89 = {
@@ -310,6 +320,7 @@
 		AAC6353721D4DECF00A5E63C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				AA27BE5F2204822B00D4779F /* Routes */,
 				AA00CD4D21F330D10046B9A4 /* Describable.swift */,
 				AA27BE562204769F00D4779F /* Transition.swift */,
 				AA27BE5B2204788600D4779F /* Animator.swift */,
@@ -652,6 +663,7 @@
 				AA00CD6721FB63980046B9A4 /* Observable.swift in Sources */,
 				AA00CD5F21F87BDA0046B9A4 /* NetworkService.swift in Sources */,
 				AAA8A9E921D4CCED004A7E89 /* SearchViewController.swift in Sources */,
+				AA27BE612204827500D4779F /* DetailsRoute.swift in Sources */,
 				AAA8A9E721D4CCED004A7E89 /* AppDelegate.swift in Sources */,
 				AA00CD6121F89FEF0046B9A4 /* RepositoryService.swift in Sources */,
 				AA00CD5421F4CC650046B9A4 /* UITableViewCell+Extensions.swift in Sources */,

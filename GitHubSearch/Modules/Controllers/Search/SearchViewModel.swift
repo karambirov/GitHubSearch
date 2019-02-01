@@ -8,6 +8,10 @@
 
 import UIKit
 
+final class SearchRouter: Router<SearchViewController>, SearchRouter.Routes {
+    typealias Routes = DetailsRoute
+}
+
 final class SearchViewModel {
 
     // MARK: - Private
@@ -16,6 +20,11 @@ final class SearchViewModel {
     // MARK: - Properties
     var repositories: [Repository]?
     var dataSource: TableViewDataSource<Repository, RepositoryCell>?
+    let router: SearchRouter.Routes
+
+    init(router: SearchRouter.Routes) {
+        self.router = router
+    }
 
     func searchRepositories(with query: String, completion: @escaping () -> Void) {
         repositoryService.searchRepositories(with: query) { [weak self] repositories in
