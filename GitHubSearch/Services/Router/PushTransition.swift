@@ -28,6 +28,7 @@ extension PushTransition: Transition {
 
     func open(_ viewController: UIViewController) {
         self.viewController?.navigationController?.delegate = self
+        self.viewController?.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         self.viewController?.navigationController?.pushViewController(viewController, animated: isAnimated)
     }
 

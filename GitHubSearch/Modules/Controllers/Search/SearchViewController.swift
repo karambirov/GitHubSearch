@@ -43,6 +43,7 @@ final class SearchViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         navigationItem.hidesSearchBarWhenScrolling = true
+        clearSelectionForCell()
         super.viewDidAppear(animated)
     }
 
@@ -102,6 +103,11 @@ extension SearchViewController {
         tableView.dataSource = viewModel.dataSource
         tableView.delegate   = self
         tableView.tableFooterView = UIView()
+    }
+
+    func clearSelectionForCell() {
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
+        tableView.deselectRow(at: selectedIndexPath, animated: true)
     }
 }
 
