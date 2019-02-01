@@ -13,7 +13,6 @@ final class RepositoryCell: UITableViewCell {
 
     // MARK: - Properties
     var viewModel: RepositoryCellViewModel?
-
     lazy var repositoryInfoView = RepositoryInfoView()
 
     // MARK: - Life cycle
