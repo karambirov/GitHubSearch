@@ -57,7 +57,7 @@ extension SearchViewController: UISearchBarDelegate {
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.repositories?.removeAll()
+        viewModel.deleteLoadedRepositories()
         tableView.reloadData()
     }
 }
