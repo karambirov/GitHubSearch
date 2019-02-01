@@ -27,6 +27,12 @@ final class SearchViewModel {
         }
     }
 
+    func deleteLoadedRepositories() {
+        self.repositories?.removeAll()
+        guard let repositories = repositories else { return }
+        dataSource = .make(for: repositories)
+    }
+
     private func repositoriesDidLoad(_ repositories: [Repository]) {
         self.repositories = repositories
         dataSource = .make(for: repositories)

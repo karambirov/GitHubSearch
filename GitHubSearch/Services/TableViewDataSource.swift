@@ -30,7 +30,6 @@ final class TableViewDataSource<Model, Cell: UITableViewCell>: NSObject, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = models[indexPath.row]
         let cell: Cell = tableView.dequeueCell(withIdentifier: reuseIdentifier, for: indexPath)
-
         cellConfigurator(model, cell)
         return cell
     }
@@ -38,6 +37,7 @@ final class TableViewDataSource<Model, Cell: UITableViewCell>: NSObject, UITable
 }
 
 extension TableViewDataSource where Model == Repository {
+
     static func make(for repositories: [Repository],
                      reuseIdentifier: String = RepositoryCell.typeName) -> TableViewDataSource {
         return TableViewDataSource(models: repositories, reuseIdentifier: reuseIdentifier,
@@ -49,4 +49,5 @@ extension TableViewDataSource where Model == Repository {
             cell.layoutIfNeeded()
         })
     }
+
 }

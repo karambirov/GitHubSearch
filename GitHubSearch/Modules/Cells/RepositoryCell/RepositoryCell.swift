@@ -13,30 +13,7 @@ final class RepositoryCell: UITableViewCell {
 
     // MARK: - Properties
     var viewModel: RepositoryCellViewModel?
-
-    // MARK: - UI
-    lazy var nameLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 17)
-        label.numberOfLines = 0
-        return label
-    }()
-
-    lazy var descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.textColor = UIColor.gray
-        label.numberOfLines = 0
-        return label
-    }()
-
-    lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [nameLabel, descriptionLabel])
-        stackView.axis = .vertical
-        stackView.alignment = .fill
-        stackView.spacing = 8
-        return stackView
-    }()
+    lazy var repositoryInfoView = RepositoryInfoView()
 
     // MARK: - Life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -62,13 +39,13 @@ extension RepositoryCell {
     func setup(with viewModel: RepositoryCellViewModel) {
         self.viewModel = viewModel
 
-        self.nameLabel.text        = viewModel.fullName
-        self.descriptionLabel.text = viewModel.repoDescription
+        self.repositoryInfoView.nameLabel.text        = viewModel.fullName
+        self.repositoryInfoView.descriptionLabel.text = viewModel.repoDescription
 
         viewModel.repository.bind { [weak self] repository in
             guard let self = self else { return }
-            self.nameLabel.text        = repository?.fullName
-            self.descriptionLabel.text = repository?.repoDescription
+            self.repositoryInfoView.nameLabel.text        = repository?.fullName
+            self.repositoryInfoView.descriptionLabel.text = repository?.repoDescription
         }
 
         setNeedsLayout()
@@ -77,10 +54,9 @@ extension RepositoryCell {
     func setupViews() {
         self.accessoryType = .disclosureIndicator
 
-        self.addSubview(stackView)
-        stackView.snp.makeConstraints { make in
-            make.left.top.equalTo(16)
-            make.right.bottom.equalTo(-16)
+        self.addSubview(repositoryInfoView)
+        repositoryInfoView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
     }
 
