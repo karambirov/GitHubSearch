@@ -13,9 +13,10 @@ struct Repository: Codable {
     let repoDescription: String?
     let owner: Owner?
     let language: String?
+    var isFavorite: Bool?
 
     enum CodingKeys: String, CodingKey {
-        case owner, language
+        case owner, language, isFavorite
         case fullName = "full_name"
         case repoDescription = "description"
     }

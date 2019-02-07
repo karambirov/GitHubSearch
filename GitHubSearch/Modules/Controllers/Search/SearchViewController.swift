@@ -14,14 +14,9 @@ final class SearchViewController: UIViewController {
     // MARK: - Properties
     fileprivate let viewModel: SearchViewModel
     fileprivate let searchController = UISearchController(searchResultsController: nil)
-
-    fileprivate lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        return tableView
-    }()
+    fileprivate let tableView = UITableView()
 
     // MARK: - View Controller's life cycle
-
     init(viewModel: SearchViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)

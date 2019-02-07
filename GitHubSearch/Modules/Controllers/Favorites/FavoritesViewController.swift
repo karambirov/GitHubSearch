@@ -11,7 +11,8 @@ import UIKit
 final class FavoritesViewController: UIViewController {
 
     // MARK: - Properties
-    fileprivate var viewModel: FavoritesViewModel
+    fileprivate let viewModel: FavoritesViewModel
+    fileprivate let tableView = UITableView()
 
     // MARK: - View Controller's life cycle
     init(viewModel: FavoritesViewModel) {
@@ -25,7 +26,24 @@ final class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
+        initialSetup()
     }
 
+}
+
+// MARK: - Table View
+extension FavoritesViewController: UITableViewDelegate {
+
+}
+
+// MARK: - Setup
+extension FavoritesViewController {
+    fileprivate func initialSetup() {
+        view.backgroundColor = .white
+        setupTableView()
+    }
+
+    fileprivate func setupTableView() {
+
+    }
 }
