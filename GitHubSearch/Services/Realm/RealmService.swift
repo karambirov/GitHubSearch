@@ -7,8 +7,10 @@
 //
 
 import Foundation
-import Realm
+import RealmSwift
 
 final class RealmService {
+
+    let realmStroage = BaseRealmStorage()
 
 }
