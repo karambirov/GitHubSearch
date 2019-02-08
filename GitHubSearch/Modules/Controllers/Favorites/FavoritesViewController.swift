@@ -50,6 +50,7 @@ extension FavoritesViewController {
         view.backgroundColor = .white
         setupTableView()
         setupNavigationBar()
+        setupViews()
     }
 
     fileprivate func setupNavigationBar() {
@@ -60,7 +61,7 @@ extension FavoritesViewController {
         tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.typeName)
         tableView.dataSource = viewModel.dataSource
         tableView.delegate   = self
-        tableView.backgroundColor = .red
+        tableView.tableFooterView = UIView()
     }
 
     fileprivate func clearSelectionForCell() {
