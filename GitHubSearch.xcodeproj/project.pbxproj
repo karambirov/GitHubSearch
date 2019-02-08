@@ -19,6 +19,7 @@
 		AA00CD6321F8A4420046B9A4 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD6221F8A4420046B9A4 /* Owner.swift */; };
 		AA00CD6521F8A8DD0046B9A4 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD6421F8A8DD0046B9A4 /* SearchResults.swift */; };
 		AA00CD6721FB63980046B9A4 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD6621FB63980046B9A4 /* Observable.swift */; };
+		AA17ED9D220D5A6F001C1E81 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA17ED9C220D5A6F001C1E81 /* RealmService.swift */; };
 		AA23C02E220445E60091B663 /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA23C02D220445E60091B663 /* RepositoryInfoView.swift */; };
 		AA27BE512204703600D4779F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA27BE502204703600D4779F /* DetailsViewController.swift */; };
 		AA27BE532204705A00D4779F /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA27BE522204705A00D4779F /* DetailsViewModel.swift */; };
@@ -81,6 +82,7 @@
 		AA00CD6221F8A4420046B9A4 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		AA00CD6421F8A8DD0046B9A4 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		AA00CD6621FB63980046B9A4 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		AA17ED9C220D5A6F001C1E81 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		AA23C02D220445E60091B663 /* RepositoryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoView.swift; sourceTree = "<group>"; };
 		AA27BE502204703600D4779F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		AA27BE522204705A00D4779F /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				AA00CD5921F86CEF0046B9A4 /* Networking */,
 				AA00CD6021F89FEF0046B9A4 /* RepositoryService.swift */,
 				AACFDF5B220437B10057121B /* TableViewDataSource.swift */,
+				AA17ED9C220D5A6F001C1E81 /* RealmService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -632,7 +635,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/GitHubSearch/Resources/R.generated.swift",
+				$SRCROOT/GitHubSearch/Resources/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -664,6 +667,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA27BE5C2204788600D4779F /* Animator.swift in Sources */,
+				AA17ED9D220D5A6F001C1E81 /* RealmService.swift in Sources */,
 				AA00CD6721FB63980046B9A4 /* Observable.swift in Sources */,
 				AA00CD5F21F87BDA0046B9A4 /* NetworkService.swift in Sources */,
 				AAA8A9E921D4CCED004A7E89 /* SearchViewController.swift in Sources */,
