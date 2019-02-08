@@ -48,8 +48,8 @@ extension FavoritesViewController: UITableViewDelegate {
 extension FavoritesViewController {
     fileprivate func initialSetup() {
         view.backgroundColor = .white
-        setupTableView()
         setupNavigationBar()
+        setupTableView()
         setupViews()
     }
 
