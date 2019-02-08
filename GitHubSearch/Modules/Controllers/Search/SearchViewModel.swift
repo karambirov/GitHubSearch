@@ -15,7 +15,7 @@ final class SearchRouter: Router<SearchViewController>, SearchRouter.Routes {
 final class SearchViewModel {
 
     // MARK: - Private
-    private lazy var repositoryService = RepositoryService()
+    private let repositoryService = RepositoryService()
 
     // MARK: - Properties
     var repositories: [Repository]?
@@ -26,6 +26,7 @@ final class SearchViewModel {
         self.router = router
     }
 
+    // MARK: - Methods
     func searchRepositories(with query: String, completion: @escaping () -> Void) {
         repositoryService.searchRepositories(with: query) { [weak self] repositories in
             guard let self = self else { return }

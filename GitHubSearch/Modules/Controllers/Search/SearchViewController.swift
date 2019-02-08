@@ -100,7 +100,7 @@ extension SearchViewController {
         tableView.tableFooterView = UIView()
     }
 
-    func clearSelectionForCell() {
+    fileprivate func clearSelectionForCell() {
         guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
         tableView.deselectRow(at: selectedIndexPath, animated: true)
     }

@@ -29,11 +29,19 @@ final class FavoritesViewController: UIViewController {
         initialSetup()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        clearSelectionForCell()
+        super.viewDidAppear(animated)
+    }
+
 }
 
 // MARK: - Table View
 extension FavoritesViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let repository = viewModel.repository(for: indexPath) else { return }
+        viewModel.router.openDetails(for: repository)
+    }
 }
 
 // MARK: - Setup
@@ -41,9 +49,30 @@ extension FavoritesViewController {
     fileprivate func initialSetup() {
         view.backgroundColor = .white
         setupTableView()
+        setupNavigationBar()
+    }
+
+    fileprivate func setupNavigationBar() {
+        title = "Favorites"
     }
 
     fileprivate func setupTableView() {
+        tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.typeName)
+        tableView.dataSource = viewModel.dataSource
+        tableView.delegate   = self
+        tableView.backgroundColor = .red
+    }
 
+    fileprivate func clearSelectionForCell() {
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
+        tableView.deselectRow(at: selectedIndexPath, animated: true)
+    }
+}
+
+// MARK: - Setup views
+extension FavoritesViewController {
+    fileprivate func setupViews() {
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
 }
