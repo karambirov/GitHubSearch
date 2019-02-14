@@ -38,8 +38,6 @@
 		AAC6356821D4EC2000A5E63C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AAC6356721D4EC2000A5E63C /* .swiftlint.yml */; };
 		AAC6356D21D6057B00A5E63C /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6356B21D6057B00A5E63C /* RepositoryCell.swift */; };
 		AAC6357621D6074E00A5E63C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAC6357821D6074E00A5E63C /* Localizable.strings */; };
-		AACE7229220D619500ECAE00 /* RepositoryRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACE7228220D619500ECAE00 /* RepositoryRealm.swift */; };
-		AACE722B220D61A100ECAE00 /* OwnerRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACE722A220D61A100ECAE00 /* OwnerRealm.swift */; };
 		AACFDF5322035BC10057121B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5222035BC10057121B /* TabBarController.swift */; };
 		AACFDF5522035C850057121B /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5422035C850057121B /* TabBarViewModel.swift */; };
 		AACFDF5822035CAD0057121B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5722035CAD0057121B /* FavoritesViewController.swift */; };
@@ -111,8 +109,6 @@
 		AAC6356B21D6057B00A5E63C /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		AAC6357721D6074E00A5E63C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AAC6357921D6075100A5E63C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		AACE7228220D619500ECAE00 /* RepositoryRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryRealm.swift; sourceTree = "<group>"; };
-		AACE722A220D61A100ECAE00 /* OwnerRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerRealm.swift; sourceTree = "<group>"; };
 		AACFDF5222035BC10057121B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		AACFDF5422035C850057121B /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		AACFDF5722035CAD0057121B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
@@ -154,7 +150,6 @@
 		AA00CD4A21F32F910046B9A4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AACE7227220D617E00ECAE00 /* Realm */,
 				AA00CD4B21F32FAE0046B9A4 /* Repository.swift */,
 				AA00CD6221F8A4420046B9A4 /* Owner.swift */,
 				AA00CD6421F8A8DD0046B9A4 /* SearchResults.swift */,
@@ -378,15 +373,6 @@
 				AA23C02D220445E60091B663 /* RepositoryInfoView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		AACE7227220D617E00ECAE00 /* Realm */ = {
-			isa = PBXGroup;
-			children = (
-				AACE7228220D619500ECAE00 /* RepositoryRealm.swift */,
-				AACE722A220D61A100ECAE00 /* OwnerRealm.swift */,
-			);
-			path = Realm;
 			sourceTree = "<group>";
 		};
 		AACFDF5122035B940057121B /* TabBar */ = {
@@ -696,7 +682,6 @@
 				AAA8A9E721D4CCED004A7E89 /* AppDelegate.swift in Sources */,
 				AA00CD6121F89FEF0046B9A4 /* RepositoryService.swift in Sources */,
 				AA00CD5421F4CC650046B9A4 /* UITableViewCell+Extensions.swift in Sources */,
-				AACE7229220D619500ECAE00 /* RepositoryRealm.swift in Sources */,
 				AACFDF5822035CAD0057121B /* FavoritesViewController.swift in Sources */,
 				AADED02421D61CDA00CE305B /* UIView+Extensions.swift in Sources */,
 				AA00CD4C21F32FAE0046B9A4 /* Repository.swift in Sources */,
@@ -707,7 +692,6 @@
 				AA00CD5B21F86D080046B9A4 /* GitHub.swift in Sources */,
 				AA23C02E220445E60091B663 /* RepositoryInfoView.swift in Sources */,
 				AAD1AEE0220D63F000B6B0DB /* RealmService.swift in Sources */,
-				AACE722B220D61A100ECAE00 /* OwnerRealm.swift in Sources */,
 				AA00CD5D21F876A30046B9A4 /* String+Extensions.swift in Sources */,
 				AAC6353B21D4E22100A5E63C /* R.generated.swift in Sources */,
 				AACFDF5322035BC10057121B /* TabBarController.swift in Sources */,
