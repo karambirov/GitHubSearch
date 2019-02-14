@@ -28,7 +28,7 @@ final class SearchViewModel {
 
     // MARK: - Methods
     func searchRepositories(with query: String, completion: @escaping () -> Void) {
-        repositoryService.searchRepositories(with: query) { [weak self] repositories in
+        repositoryService.search(with: query) { [weak self] repositories in
             guard let self = self else { return }
             self.repositoriesDidLoad(repositories)
             DispatchQueue.main.async {

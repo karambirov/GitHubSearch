@@ -11,19 +11,22 @@ import Foundation
 final class RepositoryService {
 
     private var networkService: NetworkService?
-    private var repositories: [Repository]
+    private var realmService: RealmService?
 
-    init(networkService: NetworkService = .init(), repositories: [Repository] = [Repository]()) {
+    init(networkService: NetworkService = .init(), realmService: RealmService = .init()) {
         self.networkService = networkService
-        self.repositories = repositories
+        self.realmService = realmService
     }
 
-    func searchRepositories(with query: String, completion: @escaping ([Repository]) -> Void) {
-        networkService?.searchRepositories(with: query) { [weak self] repositories in
-            guard let self = self, let repositories = repositories else { return }
-            self.repositories = repositories
-            completion(self.repositories)
+    func search(with query: String, completion: @escaping ([Repository]) -> Void) {
+        networkService?.searchRepositories(with: query) { repositories in
+            guard let repositories = repositories else { return }
+            completion(repositories)
         }
+    }
+
+    func fetchFavorites() -> [Repository] {
+        
     }
 
 }

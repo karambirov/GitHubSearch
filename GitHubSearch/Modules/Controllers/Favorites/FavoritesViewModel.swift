@@ -18,7 +18,7 @@ final class FavoritesViewModel {
     private let repositoryService = RepositoryService()
 
     // MARK: - Properties
-    var repositories: [Repository]?
+    var favoriteRepositories: [Repository]?
     var dataSource: TableViewDataSource<Repository, RepositoryCell>?
     let router: FavoritesRouter.Routes
 
@@ -28,18 +28,18 @@ final class FavoritesViewModel {
 
     // MARK: - Methods
     func repository(for indexPath: IndexPath) -> Repository? {
-        guard let repository = repositories?[indexPath.row] else { return nil }
+        guard let repository = favoriteRepositories?[indexPath.row] else { return nil }
         return repository
     }
 
     func deleteLoadedRepositories() {
-        self.repositories?.removeAll()
-        guard let repositories = repositories else { return }
+        self.favoriteRepositories?.removeAll()
+        guard let repositories = favoriteRepositories else { return }
         dataSource = .make(for: repositories)
     }
 
     private func repositoriesDidLoad(_ repositories: [Repository]) {
-        self.repositories = repositories
+        self.favoriteRepositories = repositories
         dataSource = .make(for: repositories)
     }
 

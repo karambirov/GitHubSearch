@@ -24,7 +24,14 @@ final class Repository: Object, Codable {
         case repoDescription = "description"
     }
 
-    // MARK: - Initialization
+    public override static func indexedProperties() -> [String] {
+        return ["isFavorite"]
+    }
+
+}
+
+// MARK: - Initialization
+extension Repository {
     convenience init(fullName: String, repoDescription: String, language: String, isFavorite: Bool, owner: Owner) {
         self.init()
         self.fullName = fullName
@@ -33,9 +40,4 @@ final class Repository: Object, Codable {
         self.isFavorite = isFavorite
         self.owner = owner
     }
-
-    public override static func indexedProperties() -> [String] {
-        return ["isFavorite"]
-    }
-
 }

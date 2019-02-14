@@ -21,12 +21,14 @@ final class Owner: Object, Codable {
         case avatarURL = "avatar_url"
     }
 
-    // MARK: - Initialization
+}
+
+// MARK: - Initialization
+extension Owner {
     convenience init(login: String, email: String, avatarURL: String? = nil) {
         self.init()
         self.login     = login
         self.email     = email
         self.avatarURL = avatarURL
     }
-
 }
