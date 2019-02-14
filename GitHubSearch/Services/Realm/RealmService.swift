@@ -42,28 +42,28 @@ class RealmService {
 // MARK: - CRUD
 extension RealmService {
 
-    func create<T: Object>(_ model: T.Type, completion: @escaping ((T) -> Void)) throws {
+    func create<T: Object>(_ model: T.Type, completion: @escaping ((T) -> Void)) {
         write { realm in
             let newObject = realm.create(model, value: [], update: false)
             completion(newObject)
         }
     }
 
-    func save(_ object: Object) throws {
+    func save(_ object: Object) {
         write { $0.add(object) }
     }
 
-    func update(_ block: @escaping () -> Void) throws {
+    func update(_ block: @escaping () -> Void) {
         write { _ in
             block()
         }
     }
 
-    func delete(_ object: Object) throws {
+    func delete(_ object: Object) {
         write { $0.delete(object) }
     }
 
-    func deleteAll(_ model: Object) throws {
+    func deleteAll(_ model: Object) {
         write { $0.deleteAll() }
     }
 

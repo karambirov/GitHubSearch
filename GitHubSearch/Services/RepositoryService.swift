@@ -25,8 +25,19 @@ final class RepositoryService {
         }
     }
 
-    func fetchFavorites() -> [Repository] {
-        
+    // TODO: Refactoring needed
+    func fetchFavorites() -> [Repository]? {
+        let predicate = NSPredicate(format: "isFavorite = true")
+        realmService?.fetch(Repository.self, predicate: predicate, completion: { repositories in
+            return repositories
+        })
+        return nil
+    }
+
+    func toggleFavorite(_ repository: Repository) {
+        realmService?.update {
+            repository.isFavorite = !repository.isFavorite
+        }
     }
 
 }

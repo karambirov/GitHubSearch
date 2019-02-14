@@ -18,7 +18,7 @@ final class FavoritesViewModel {
     private let repositoryService = RepositoryService()
 
     // MARK: - Properties
-    var favoriteRepositories: [Repository]?
+    lazy var favoriteRepositories = repositoryService.fetchFavorites()
     var dataSource: TableViewDataSource<Repository, RepositoryCell>?
     let router: FavoritesRouter.Routes
 
