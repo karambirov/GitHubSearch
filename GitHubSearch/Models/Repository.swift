@@ -7,17 +7,35 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Repository: Codable {
-    let fullName: String?
-    let repoDescription: String?
-    let owner: Owner?
-    let language: String?
-    var isFavorite: Bool?
+@objcMembers
+final class Repository: Object, Codable {
+
+    dynamic var fullName        = ""
+    dynamic var repoDescription = ""
+    dynamic var language        = ""
+    dynamic var isFavorite      = false
+    dynamic var owner: Owner?
 
     enum CodingKeys: String, CodingKey {
         case owner, language, isFavorite
         case fullName = "full_name"
         case repoDescription = "description"
     }
+
+    // MARK: - Initialization
+    convenience init(fullName: String, repoDescription: String, language: String, isFavorite: Bool, owner: Owner) {
+        self.init()
+        self.fullName = fullName
+        self.repoDescription = repoDescription
+        self.language = language
+        self.isFavorite = isFavorite
+        self.owner = owner
+    }
+
+    public override static func indexedProperties() -> [String] {
+        return ["isFavorite"]
+    }
+
 }

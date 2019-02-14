@@ -7,14 +7,26 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Owner: Codable {
-    let login: String
-    let email: String?
-    let avatarURL: String?
+@objcMembers
+final class Owner: Object, Codable {
+
+    dynamic var login = ""
+    dynamic var email = ""
+    dynamic var avatarURL: String?
 
     enum CodingKeys: String, CodingKey {
         case login, email
         case avatarURL = "avatar_url"
     }
+
+    // MARK: - Initialization
+    convenience init(login: String, email: String, avatarURL: String? = nil) {
+        self.init()
+        self.login     = login
+        self.email     = email
+        self.avatarURL = avatarURL
+    }
+
 }
