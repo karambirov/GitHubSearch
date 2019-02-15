@@ -34,6 +34,7 @@ final class OwnerInfoView: UIView {
     fileprivate lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [titleLabel, ownerUserNameLabel, ownerEmailLabel])
         stackView.axis = .vertical
+        stackView.distribution = .fill
         stackView.spacing = 8
         return stackView
     }()

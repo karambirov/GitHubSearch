@@ -14,6 +14,7 @@ final class DetailsRouter: Router<DetailsViewController> {
 
 final class DetailsViewModel {
 
+    // MARK: - Properties
     let repository: Repository
     let router: DetailsRouter.Routes
 

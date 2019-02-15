@@ -29,6 +29,7 @@ final class RepositoryInfoView: UIView {
     fileprivate lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [nameLabel, descriptionLabel])
         stackView.axis = .vertical
+        stackView.distribution = .fillEqually
         stackView.spacing = 8
         return stackView
     }()

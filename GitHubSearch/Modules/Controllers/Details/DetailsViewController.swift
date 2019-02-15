@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import SnapKit
 
 final class DetailsViewController: UIViewController {
 
     var viewModel: DetailsViewModel
+
+    fileprivate var detailsStackView: DetailsStackView?
 
     init(viewModel: DetailsViewModel) {
         self.viewModel = viewModel
@@ -23,6 +26,27 @@ final class DetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.lightGray
+        initialSetup()
     }
+
+}
+
+// MARK: - Setup views
+extension DetailsViewController {
+
+    fileprivate func initialSetup() {
+        view.backgroundColor = .white
+        setupViews()
+    }
+
+    private func setupViews() {
+        detailsStackView = DetailsStackView(repository: viewModel.repository)
+        guard let detailsStackView = detailsStackView else { return }
+        view.addSubview(detailsStackView)
+
+        detailsStackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+
 }
