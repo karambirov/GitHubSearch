@@ -40,7 +40,7 @@ final class RepositoryInfoView: UIView {
 }
 
 // MARK: - Setup views
-extension OwnerInfoView {
+extension RepositoryInfoView {
     fileprivate func setupViews() {
         self.addSubview(stackView)
         stackView.snp.makeConstraints { make in
