@@ -12,7 +12,7 @@ final class FavoritesViewController: UIViewController {
 
     // MARK: - Properties
     fileprivate let viewModel: FavoritesViewModel
-    fileprivate let tableView = UITableView()
+    fileprivate lazy var tableView = UITableView()
 
     // MARK: - View Controller's life cycle
     init(viewModel: FavoritesViewModel) {
@@ -29,6 +29,15 @@ final class FavoritesViewController: UIViewController {
         initialSetup()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        viewModel.fetchFavoriteRepositories { [weak self] in
+            guard let self = self else { return }
+            self.tableView.reloadData()
+        }
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         clearSelectionForCell()
         super.viewDidAppear(animated)
@@ -38,14 +47,17 @@ final class FavoritesViewController: UIViewController {
 
 // MARK: - Table View
 extension FavoritesViewController: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let repository = viewModel.repository(for: indexPath) else { return }
         viewModel.router.openDetails(for: repository)
     }
+
 }
 
 // MARK: - Setup
 extension FavoritesViewController {
+
     fileprivate func initialSetup() {
         view.backgroundColor = .white
         setupNavigationBar()
@@ -68,12 +80,15 @@ extension FavoritesViewController {
         guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
         tableView.deselectRow(at: selectedIndexPath, animated: true)
     }
+
 }
 
 // MARK: - Setup views
 extension FavoritesViewController {
+
     fileprivate func setupViews() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
+
 }

@@ -18,7 +18,7 @@ final class FavoritesViewModel {
     private let repositoryService = RepositoryService()
 
     // MARK: - Properties
-    lazy var favoriteRepositories = repositoryService.fetchFavorites()
+    var favoriteRepositories: [Repository]?
     var dataSource: TableViewDataSource<Repository, RepositoryCell>?
     let router: FavoritesRouter.Routes
 
@@ -27,15 +27,17 @@ final class FavoritesViewModel {
     }
 
     // MARK: - Methods
+    func fetchFavoriteRepositories(_ completion: @escaping () -> Void) {
+        guard let repositories = repositoryService.fetchFavorites() else { return }
+        repositoriesDidLoad(repositories)
+        DispatchQueue.main.async {
+            completion()
+        }
+    }
+
     func repository(for indexPath: IndexPath) -> Repository? {
         guard let repository = favoriteRepositories?[indexPath.row] else { return nil }
         return repository
-    }
-
-    func deleteLoadedRepositories() {
-        self.favoriteRepositories?.removeAll()
-        guard let repositories = favoriteRepositories else { return }
-        dataSource = .make(for: repositories)
     }
 
     private func repositoriesDidLoad(_ repositories: [Repository]) {

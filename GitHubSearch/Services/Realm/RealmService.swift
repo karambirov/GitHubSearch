@@ -67,16 +67,16 @@ extension RealmService {
         write { $0.deleteAll() }
     }
 
-    func fetch<T: Object>(_ model: T.Type, predicate: NSPredicate? = nil, sorted: Sorted? = nil, completion: (([T]) -> Void)) {
+    func fetch<T: Object>(_ model: T.Type, predicate: NSPredicate? = nil, sorted: Sorted? = nil, completion: ([T]) -> Void) {
         write { realm in
             let objects = realm.objects(model)
 
             if let predicate = predicate {
-                objects.filter(predicate)
+                _ = objects.filter(predicate)
             }
 
             if let sorted = sorted {
-                objects.sorted(byKeyPath: sorted.key, ascending: sorted.ascending)
+                _ = objects.sorted(byKeyPath: sorted.key, ascending: sorted.ascending)
             }
 
             completion(objects.compactMap { $0 })

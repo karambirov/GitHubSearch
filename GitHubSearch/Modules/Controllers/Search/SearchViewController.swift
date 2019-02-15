@@ -13,8 +13,8 @@ final class SearchViewController: UIViewController {
 
     // MARK: - Properties
     fileprivate let viewModel: SearchViewModel
-    fileprivate let searchController = UISearchController(searchResultsController: nil)
-    fileprivate let tableView = UITableView()
+    fileprivate lazy var searchController = UISearchController(searchResultsController: nil)
+    fileprivate lazy var tableView = UITableView()
 
     // MARK: - View Controller's life cycle
     init(viewModel: SearchViewModel) {
@@ -46,14 +46,17 @@ final class SearchViewController: UIViewController {
 
 // MARK: - Table View
 extension SearchViewController: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let repository = viewModel.repository(for: indexPath) else { return }
         viewModel.router.openDetails(for: repository)
     }
+
 }
 
 // MARK: - Search
 extension SearchViewController: UISearchBarDelegate {
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text, query.count > 2 else { return }
         viewModel.searchRepositories(with: query) { [weak self] in
@@ -67,10 +70,12 @@ extension SearchViewController: UISearchBarDelegate {
         viewModel.deleteLoadedRepositories()
         tableView.reloadData()
     }
+
 }
 
 // MARK: - Setup
 extension SearchViewController {
+
     fileprivate func initialSetup() {
         view.backgroundColor = .white
         setupNavigationBar()
@@ -104,14 +109,17 @@ extension SearchViewController {
         guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
         tableView.deselectRow(at: selectedIndexPath, animated: true)
     }
+
 }
 
 // MARK: - Setup views
 extension SearchViewController {
+
     fileprivate func setupViews() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
+
 }
