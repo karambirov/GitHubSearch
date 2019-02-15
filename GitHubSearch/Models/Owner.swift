@@ -13,7 +13,7 @@ import RealmSwift
 final class Owner: Object, Codable {
 
     dynamic var login = ""
-    dynamic var email = ""
+    dynamic var email: String?
     dynamic var avatarURL: String?
 
     enum CodingKeys: String, CodingKey {

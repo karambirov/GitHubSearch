@@ -12,14 +12,15 @@ import RealmSwift
 @objcMembers
 final class Repository: Object, Codable {
 
-    dynamic var fullName        = ""
-    dynamic var repoDescription = ""
-    dynamic var language        = ""
-    dynamic var isFavorite      = false
+    dynamic var fullName = ""
+    dynamic var repoDescription: String?
+    dynamic var language: String?
     dynamic var owner: Owner?
 
+    dynamic var isFavorite = false
+
     enum CodingKeys: String, CodingKey {
-        case owner, language, isFavorite
+        case owner, language
         case fullName = "full_name"
         case repoDescription = "description"
     }

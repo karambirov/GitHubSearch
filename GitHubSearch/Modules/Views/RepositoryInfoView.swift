@@ -26,7 +26,7 @@ final class RepositoryInfoView: UIView {
         return label
     }()
 
-    lazy var stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [nameLabel, descriptionLabel])
         stackView.axis = .vertical
         stackView.alignment = .fill
@@ -38,7 +38,7 @@ final class RepositoryInfoView: UIView {
         setupViews()
     }
 
-    func setupViews() {
+    private func setupViews() {
         self.addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.left.top.equalTo(16)
