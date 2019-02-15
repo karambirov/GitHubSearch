@@ -19,6 +19,7 @@ final class DetailsStackView: UIStackView {
         let repositoryInfoView = RepositoryInfoView()
         let ownerInfoView = OwnerInfoView()
         self.init(arrangedSubviews: [repositoryInfoView, ownerInfoView])
+        setupViews()
     }
 
 }
