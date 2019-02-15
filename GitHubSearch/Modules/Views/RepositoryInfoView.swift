@@ -26,10 +26,9 @@ final class RepositoryInfoView: UIView {
         return label
     }()
 
-    private lazy var stackView: UIStackView = {
+    fileprivate lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [nameLabel, descriptionLabel])
         stackView.axis = .vertical
-        stackView.alignment = .fill
         stackView.spacing = 8
         return stackView
     }()
@@ -38,12 +37,15 @@ final class RepositoryInfoView: UIView {
         setupViews()
     }
 
-    private func setupViews() {
+}
+
+// MARK: - Setup views
+extension OwnerInfoView {
+    fileprivate func setupViews() {
         self.addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.left.top.equalTo(16)
             make.right.bottom.equalTo(-16)
         }
     }
-
 }
