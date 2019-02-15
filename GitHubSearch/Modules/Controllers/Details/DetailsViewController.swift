@@ -36,6 +36,7 @@ extension DetailsViewController {
 
     fileprivate func initialSetup() {
         view.backgroundColor = .white
+        title = "About repository"
         setupViews()
     }
 
@@ -45,7 +46,8 @@ extension DetailsViewController {
         view.addSubview(detailsStackView)
 
         detailsStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.left.top.right.equalTo(self.view.safeAreaLayoutGuide)
+            make.bottom.lessThanOrEqualTo(self.view.safeAreaLayoutGuide)
         }
     }
 

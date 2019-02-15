@@ -11,17 +11,22 @@ import SnapKit
 
 final class RepositoryInfoView: UIView {
 
+//    override var intrinsicContentSize: CGSize {
+//        return sizeThatFits(stackView.frame.size)
+////        return CGSize(width: 1, height: stackView.frame.height)
+//    }
+
     lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.font = .boldSystemFont(ofSize: 17)
         label.numberOfLines = 0
         return label
     }()
 
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.textColor = UIColor.gray
+        label.font = .systemFont(ofSize: 15)
+        label.textColor = .gray
         label.numberOfLines = 0
         return label
     }()
@@ -29,7 +34,6 @@ final class RepositoryInfoView: UIView {
     fileprivate lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [nameLabel, descriptionLabel])
         stackView.axis = .vertical
-        stackView.distribution = .fillEqually
         stackView.spacing = 8
         return stackView
     }()

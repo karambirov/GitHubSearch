@@ -13,7 +13,7 @@ final class OwnerInfoView: UIView {
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.font = .boldSystemFont(ofSize: 20)
         label.text = "Owner's information"
         label.numberOfLines = 0
         return label
@@ -34,7 +34,6 @@ final class OwnerInfoView: UIView {
     fileprivate lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [titleLabel, ownerUserNameLabel, ownerEmailLabel])
         stackView.axis = .vertical
-        stackView.distribution = .fill
         stackView.spacing = 8
         return stackView
     }()

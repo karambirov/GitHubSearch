@@ -9,34 +9,45 @@
 import UIKit
 import SnapKit
 
-private let notAvailable = "n/a"
-
 final class DetailsStackView: UIStackView {
 
     convenience init(repository: Repository) {
-        let repositoryInfoView = RepositoryInfoView()
-        repositoryInfoView.nameLabel.text = repository.fullName
-        repositoryInfoView.descriptionLabel.text = repository.repoDescription
-
-        let ownerInfoView = OwnerInfoView()
-        ownerInfoView.ownerUserNameLabel.text = "Username: \(repository.owner?.login ?? notAvailable)"
-        ownerInfoView.ownerEmailLabel.text = "Email: \(repository.owner?.email ?? notAvailable)"
-
-        self.init(arrangedSubviews: [repositoryInfoView, ownerInfoView])
+        self.init()
+        _ = setupArrangedSubviews(with: repository)
+            .map { self.addArrangedSubview($0) }
     }
 
     override func didMoveToSuperview() {
-        setupViews()
+        setupStackView()
     }
 
 }
 
 // MARK: - Setup views
 extension DetailsStackView {
-    fileprivate func setupViews() {
+
+    fileprivate func setupStackView() {
         self.axis = .vertical
         self.alignment = .fill
-        self.distribution = .fill
-        self.spacing = 8
+        self.distribution = .fillProportionally
     }
+
+    fileprivate func setupArrangedSubviews(with repository: Repository) -> [UIView] {
+        let notAvailable = "n/a"
+
+        let repositoryInfoView = RepositoryInfoView()
+        repositoryInfoView.nameLabel.text = repository.fullName
+        repositoryInfoView.nameLabel.font = .boldSystemFont(ofSize: 20)
+
+        repositoryInfoView.descriptionLabel.text = repository.repoDescription
+        repositoryInfoView.descriptionLabel.font = .systemFont(ofSize: 17)
+        repositoryInfoView.descriptionLabel.textColor = .darkText
+
+        let ownerInfoView = OwnerInfoView()
+        ownerInfoView.ownerUserNameLabel.text = "Username: \(repository.owner?.login ?? notAvailable)"
+        ownerInfoView.ownerEmailLabel.text = "Email: \(repository.owner?.email ?? notAvailable)"
+
+        return [repositoryInfoView, ownerInfoView]
+    }
+
 }
