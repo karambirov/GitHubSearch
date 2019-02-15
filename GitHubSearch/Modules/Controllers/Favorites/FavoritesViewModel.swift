@@ -14,11 +14,35 @@ final class FavoritesRouter: Router<FavoritesViewController>, FavoritesRouter.Ro
 
 final class FavoritesViewModel {
 
-    var repositories: [Repository]?
+    // MARK: - Private
+    private let repositoryService = RepositoryService()
+
+    // MARK: - Properties
+    var favoriteRepositories: [Repository]?
+    var dataSource: TableViewDataSource<Repository, RepositoryCell>?
     let router: FavoritesRouter.Routes
 
     init(router: FavoritesRouter.Routes) {
         self.router = router
+    }
+
+    // MARK: - Methods
+    func fetchFavoriteRepositories(_ completion: @escaping () -> Void) {
+        guard let repositories = repositoryService.fetchFavorites() else { return }
+        repositoriesDidLoad(repositories)
+        DispatchQueue.main.async {
+            completion()
+        }
+    }
+
+    func repository(for indexPath: IndexPath) -> Repository? {
+        guard let repository = favoriteRepositories?[indexPath.row] else { return nil }
+        return repository
+    }
+
+    private func repositoriesDidLoad(_ repositories: [Repository]) {
+        self.favoriteRepositories = repositories
+        dataSource = .make(for: repositories)
     }
 
 }

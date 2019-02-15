@@ -11,7 +11,8 @@ import UIKit
 final class FavoritesViewController: UIViewController {
 
     // MARK: - Properties
-    fileprivate var viewModel: FavoritesViewModel
+    fileprivate let viewModel: FavoritesViewModel
+    fileprivate lazy var tableView = UITableView()
 
     // MARK: - View Controller's life cycle
     init(viewModel: FavoritesViewModel) {
@@ -25,7 +26,69 @@ final class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
+        initialSetup()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        viewModel.fetchFavoriteRepositories { [weak self] in
+            guard let self = self else { return }
+            self.tableView.reloadData()
+        }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        clearSelectionForCell()
+        super.viewDidAppear(animated)
+    }
+
+}
+
+// MARK: - Table View
+extension FavoritesViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let repository = viewModel.repository(for: indexPath) else { return }
+        viewModel.router.openDetails(for: repository)
+    }
+
+}
+
+// MARK: - Setup
+extension FavoritesViewController {
+
+    fileprivate func initialSetup() {
+        view.backgroundColor = .white
+        setupNavigationBar()
+        setupTableView()
+        setupViews()
+    }
+
+    fileprivate func setupNavigationBar() {
+        title = "Favorites"
+    }
+
+    fileprivate func setupTableView() {
+        tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.typeName)
+        tableView.dataSource = viewModel.dataSource
+        tableView.delegate   = self
+        tableView.tableFooterView = UIView()
+    }
+
+    fileprivate func clearSelectionForCell() {
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
+        tableView.deselectRow(at: selectedIndexPath, animated: true)
+    }
+
+}
+
+// MARK: - Setup views
+extension FavoritesViewController {
+
+    fileprivate func setupViews() {
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
 
 }

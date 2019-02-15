@@ -12,6 +12,9 @@ target 'GitHubSearch' do
   pod 'Moya'                                        # https://github.com/Moya/Moya
   pod 'AlamofireNetworkActivityIndicator', '~> 2.2' # https://github.com/Alamofire/AlamofireNetworkActivityIndicator
 
+  # Persistance
+  pod 'RealmSwift' # https://github.com/realm/realm-cocoa
+
   # Image
   pod 'Kingfisher', '~> 4.0'  # https://github.com/onevcat/Kingfisher
 

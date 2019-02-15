@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Observable<T> {
+final class Observable<T> {
     var value: T? {
         didSet {
             DispatchQueue.main.async {
