@@ -11,14 +11,13 @@ import SnapKit
 
 final class DetailsStackView: UIStackView {
 
-    override func didMoveToSuperview() {
-        setupViews()
-    }
-
     convenience init() {
         let repositoryInfoView = RepositoryInfoView()
         let ownerInfoView = OwnerInfoView()
         self.init(arrangedSubviews: [repositoryInfoView, ownerInfoView])
+    }
+
+    override func didMoveToSuperview() {
         setupViews()
     }
 
