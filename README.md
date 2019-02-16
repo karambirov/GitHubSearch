@@ -1,6 +1,7 @@
 # GitHubSearch
 GitHub iOS client written in Swift and MVVM architecture without Rx and Interface Builder.
 
+## Screenshots
 <p align="center">
   <img src="https://user-images.githubusercontent.com/6949755/52898872-71a60e00-31f4-11e9-853a-d7993aae4eed.png" width="70%">
 </p>
