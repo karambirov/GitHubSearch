@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import SnapKit
 
 final class DetailsViewController: UIViewController {
 
     var viewModel: DetailsViewModel
+
+    fileprivate var detailsStackView: DetailsStackView?
 
     init(viewModel: DetailsViewModel) {
         self.viewModel = viewModel
@@ -23,6 +26,47 @@ final class DetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.lightGray
+        initialSetup()
     }
+
+}
+
+// MARK: - Setup views
+extension DetailsViewController {
+
+    fileprivate func initialSetup() {
+        view.backgroundColor = .white
+        title = "About repository"
+        setupViews()
+        setupNavigationBarRightButton()
+    }
+
+    private func setupViews() {
+        detailsStackView = DetailsStackView(repository: viewModel.repository)
+        guard let detailsStackView = detailsStackView else { return }
+        view.addSubview(detailsStackView)
+
+        detailsStackView.snp.makeConstraints { make in
+            make.left.top.right.equalTo(self.view.safeAreaLayoutGuide)
+            make.bottom.lessThanOrEqualTo(self.view.safeAreaLayoutGuide)
+        }
+    }
+
+    private func setupNavigationBarRightButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorite", style: .plain, target: self, action: #selector(favoriteButtonTapped))
+    }
+
+    @objc private func favoriteButtonTapped() {
+        if !viewModel.repository.isFavorite {
+            print("Favorite")
+            viewModel.toggleFavorite()
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Unfavorite", style: .plain, target: self, action: #selector(favoriteButtonTapped))
+        } else {
+            print("Delete from Favorite")
+            viewModel.toggleFavorite()
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorite", style: .plain, target: self, action: #selector(favoriteButtonTapped))
+        }
+
+    }
+
 }

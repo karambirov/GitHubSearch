@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 final class FavoritesRouter: Router<FavoritesViewController>, FavoritesRouter.Routes {
     typealias Routes = DetailsRoute
@@ -27,12 +28,23 @@ final class FavoritesViewModel {
     }
 
     // MARK: - Methods
+
+    // FIXME: - Table stays empty after fetching
     func fetchFavoriteRepositories(_ completion: @escaping () -> Void) {
-        guard let repositories = repositoryService.fetchFavorites() else { return }
-        repositoriesDidLoad(repositories)
-        DispatchQueue.main.async {
-            completion()
+        let rs = RealmService()
+        rs.fetch(Repository.self, completion: { (repositories) in
+            self.favoriteRepositories = repositories
+            DispatchQueue.main.async {
+                self.repositoriesDidLoad(self.favoriteRepositories!)
+                completion()
+            }
+        })
+
+        repositoryService.fetchFavorites { [weak self] repositories in
+            guard let self = self else { return }
+
         }
+
     }
 
     func repository(for indexPath: IndexPath) -> Repository? {
@@ -42,7 +54,7 @@ final class FavoritesViewModel {
 
     private func repositoriesDidLoad(_ repositories: [Repository]) {
         self.favoriteRepositories = repositories
-        dataSource = .make(for: repositories)
+        dataSource = .make(for: favoriteRepositories!)
     }
 
 }

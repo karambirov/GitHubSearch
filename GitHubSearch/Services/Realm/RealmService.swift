@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class RealmService {
+struct RealmService {
 
     private let realmConfig = Realm.Configuration(schemaVersion: 1)
 
@@ -41,13 +41,6 @@ class RealmService {
 
 // MARK: - CRUD
 extension RealmService {
-
-    func create<T: Object>(_ model: T.Type, completion: @escaping ((T) -> Void)) {
-        write { realm in
-            let newObject = realm.create(model, value: [], update: false)
-            completion(newObject)
-        }
-    }
 
     func save(_ object: Object) {
         write { $0.add(object) }
