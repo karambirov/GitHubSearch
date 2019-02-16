@@ -38,6 +38,7 @@ extension DetailsViewController {
         view.backgroundColor = .white
         title = "About repository"
         setupViews()
+        setupNavigationBarRightButton()
     }
 
     private func setupViews() {
@@ -49,6 +50,23 @@ extension DetailsViewController {
             make.left.top.right.equalTo(self.view.safeAreaLayoutGuide)
             make.bottom.lessThanOrEqualTo(self.view.safeAreaLayoutGuide)
         }
+    }
+
+    private func setupNavigationBarRightButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorite", style: .plain, target: self, action: #selector(favoriteButtonTapped))
+    }
+
+    @objc private func favoriteButtonTapped() {
+        if !viewModel.repository.isFavorite {
+            print("Favorite")
+            viewModel.repository.isFavorite.toggle()
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Unfavorite", style: .plain, target: self, action: #selector(favoriteButtonTapped))
+        } else {
+            print("Delete from Favorite")
+            viewModel.repository.isFavorite.toggle()
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorite", style: .plain, target: self, action: #selector(favoriteButtonTapped))
+        }
+
     }
 
 }
