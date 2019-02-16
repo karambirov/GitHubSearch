@@ -1,5 +1,5 @@
 # GitHubSearch
-GitHub iOS client written in Swift and MVVM architecture without Rx and Interface Builder.
+GitHub iOS client written in Swift and MVVM architecture with Router and without Rx and Interface Builder.
 
 ## Screenshots
 <p align="center">
@@ -11,6 +11,7 @@ GitHub iOS client written in Swift and MVVM architecture without Rx and Interfac
 - [ ] Saving info about favorite repositories on disk, so a user can see them offline.
 
 ## Technologies
+- [x] Separate layer for routing between screens.
 - [x] Networking REST API v3 ([Moya](https://github.com/Moya/Moya)).
 - [x] Programmatically UI ([SnapKit](https://github.com/SnapKit/SnapKit)).
 - [x] Persistance ([Realm](https://github.com/realm/realm-cocoa))
