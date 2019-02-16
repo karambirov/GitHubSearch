@@ -59,11 +59,11 @@ extension DetailsViewController {
     @objc private func favoriteButtonTapped() {
         if !viewModel.repository.isFavorite {
             print("Favorite")
-            viewModel.repository.isFavorite.toggle()
+            viewModel.toggleFavorite()
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Unfavorite", style: .plain, target: self, action: #selector(favoriteButtonTapped))
         } else {
             print("Delete from Favorite")
-            viewModel.repository.isFavorite.toggle()
+            viewModel.toggleFavorite()
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorite", style: .plain, target: self, action: #selector(favoriteButtonTapped))
         }
 

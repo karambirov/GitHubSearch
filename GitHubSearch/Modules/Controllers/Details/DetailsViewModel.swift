@@ -14,6 +14,9 @@ final class DetailsRouter: Router<DetailsViewController> {
 
 final class DetailsViewModel {
 
+    // MARK: - Private
+    private let repositoryService = RepositoryService()
+
     // MARK: - Properties
     let repository: Repository
     let router: DetailsRouter.Routes
@@ -21,6 +24,11 @@ final class DetailsViewModel {
     init(repository: Repository, router: DetailsRouter.Routes) {
         self.repository = repository
         self.router = router
+    }
+
+    func toggleFavorite() {
+        repositoryService.toggleFavorite(repository)
+        print("isFavorite: ", repository.isFavorite)
     }
 
 }

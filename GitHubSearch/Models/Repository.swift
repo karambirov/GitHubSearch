@@ -29,6 +29,10 @@ final class Repository: Object, Codable {
         return ["isFavorite"]
     }
 
+    override public class func primaryKey() -> String {
+        return "fullName"
+    }
+
 }
 
 // MARK: - Initialization
