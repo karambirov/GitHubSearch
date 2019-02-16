@@ -25,4 +25,4 @@ open GitHubSearch.xcworkspace
 ```
 
 ## License
-MIT License. See [LICENSE](https://github.com/khoren93/SwiftHub/blob/master/LICENSE).
+MIT License. See [LICENSE](https://github.com/Karambirov/GitHubSearch/blob/develop/LICENSE).
