@@ -1,7 +1,9 @@
 # GitHubSearch
 GitHub iOS client written in Swift and MVVM architecture without Rx and Interface Builder.
 
-![iphone](https://user-images.githubusercontent.com/6949755/52896678-1ff18980-31dc-11e9-8b67-042e84c9a37f.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/6949755/52898872-71a60e00-31f4-11e9-853a-d7993aae4eed.png" width="70%">
+</p>
 
 ## App Features
 - [x] Searching for repositories using GitHub API.
