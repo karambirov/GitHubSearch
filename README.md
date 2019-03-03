@@ -19,7 +19,7 @@ GitHub iOS client written in Swift and MVVM architecture with Router (without Rx
 - [x] [R.swift](https://github.com/mac-cain13/R.swift) - Get strong typed, autocompleted resources like images, fonts and segues in Swift projects.
 
 ## Building and Running
-You'll need a few things before we get started. Make sure you have Xcode installed from the App Store. Then run the following commands:
+Make sure you have Xcode installed from the App Store. Then run the following commands in Terminal:
 
 ```sh
 clone https://github.com/Karambirov/GitHubSearch.git
