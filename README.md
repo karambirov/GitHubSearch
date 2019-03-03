@@ -1,5 +1,5 @@
 # GitHubSearch
-GitHub iOS client written in Swift and MVVM architecture with Router and without Rx and Interface Builder.
+GitHub iOS client written in Swift and MVVM architecture with Router (without Rx and Interface Builder).
 
 ## Screenshots
 <p align="center">
