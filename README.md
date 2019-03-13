@@ -14,7 +14,7 @@ GitHub iOS client written in Swift using MVVM architecture with Router (without 
 - [x] Separate layer for routing between screens.
 - [x] Networking REST API v3 ([Moya](https://github.com/Moya/Moya)).
 - [x] Programmatically UI ([SnapKit](https://github.com/SnapKit/SnapKit)).
-- [x] Persistance ([Realm](https://github.com/realm/realm-cocoa))
+- [x] Persistence ([Realm](https://github.com/realm/realm-cocoa))
 - [x] [SwiftLint](https://github.com/realm/SwiftLint) - A tool to enforce Swift style and conventions.
 - [x] [R.swift](https://github.com/mac-cain13/R.swift) - Get strong typed, autocompleted resources like images, fonts and segues in Swift projects.
 
