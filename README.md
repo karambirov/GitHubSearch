@@ -1,7 +1,7 @@
 # GitHubSearch
 GitHub iOS client written in Swift using MVVM architecture with Router (without Rx and Interface Builder).
 
-## App Features
+## Features
 - [x] Searching for repositories using GitHub API.
 - [x] Saving info about favorite repositories on disk, so a user can see them offline.
 
