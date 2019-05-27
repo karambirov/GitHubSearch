@@ -31,9 +31,9 @@ final class FavoritesViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         viewModel.fetchFavoriteRepositories { [weak self] in
             guard let self = self else { return }
+            self.tableView.dataSource = viewModel.dataSource
             self.tableView.reloadData()
         }
     }
@@ -71,8 +71,8 @@ extension FavoritesViewController {
 
     fileprivate func setupTableView() {
         tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.typeName)
-        tableView.dataSource = viewModel.dataSource
-        tableView.delegate   = self
+//        tableView.dataSource = viewModel.dataSource
+//        tableView.delegate   = self
         tableView.tableFooterView = UIView()
     }
 
