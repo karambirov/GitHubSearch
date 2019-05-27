@@ -33,7 +33,7 @@ final class FavoritesViewController: UIViewController {
         super.viewWillAppear(animated)
         viewModel.fetchFavoriteRepositories { [weak self] in
             guard let self = self else { return }
-            self.tableView.dataSource = viewModel.dataSource
+            self.tableView.dataSource = self.viewModel.dataSource
             self.tableView.reloadData()
         }
     }
