@@ -53,7 +53,8 @@ extension DetailsViewController {
     }
 
     private func setupNavigationBarRightButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorite", style: .plain, target: self, action: #selector(favoriteButtonTapped))
+        let title = viewModel.repository.isFavorite ? "Unfavorite" : "Favorite"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(favoriteButtonTapped))
     }
 
     @objc private func favoriteButtonTapped() {
@@ -66,7 +67,5 @@ extension DetailsViewController {
             viewModel.toggleFavorite()
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorite", style: .plain, target: self, action: #selector(favoriteButtonTapped))
         }
-
     }
-
 }
