@@ -60,9 +60,9 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text, query.count > 2 else { return }
         viewModel.searchRepositories(with: query) { [weak self] in
-//            guard let self = self else { return }
-            self?.tableView.dataSource = self?.viewModel.dataSource
-            self?.tableView.reloadData()
+            guard let self = self else { return }
+            self.tableView.dataSource = self.viewModel.dataSource
+            self.tableView.reloadData()
         }
     }
 
@@ -93,7 +93,7 @@ extension SearchViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation     = false
         searchController.hidesNavigationBarDuringPresentation = false
-        searchController.definesPresentationContext           = true
+        definesPresentationContext           = true
         searchController.searchBar.placeholder                = "Search"
         searchController.searchBar.delegate                   = self
     }
