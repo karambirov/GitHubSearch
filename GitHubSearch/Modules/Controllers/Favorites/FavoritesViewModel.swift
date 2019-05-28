@@ -31,8 +31,8 @@ final class FavoritesViewModel {
 
     // FIXME: - Table stays empty after fetching
     func fetchFavoriteRepositories(_ completion: @escaping () -> Void) {
-        let rs = RealmService()
-        rs.fetch(Repository.self, completion: { (repositories) in
+        let realmService = RealmService()
+        realmService.fetch(Repository.self, completion: { (repositories) in
             self.favoriteRepositories = repositories
             DispatchQueue.main.async {
                 self.repositoriesDidLoad(self.favoriteRepositories!)
