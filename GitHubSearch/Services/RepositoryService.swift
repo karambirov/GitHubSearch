@@ -36,11 +36,9 @@ final class RepositoryService {
         realmService?.update {
             repository.isFavorite = !repository.isFavorite
         }
-        
-        if repository.isFavorite {
-            self.realmService?.save(repository)
-        } else {
-            self.realmService?.delete(repository)
-        }
+
+        repository.isFavorite
+        ? realmService?.save(repository)
+        : realmService?.delete(repository)
     }
 }
