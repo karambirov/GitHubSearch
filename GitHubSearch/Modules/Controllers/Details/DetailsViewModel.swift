@@ -28,7 +28,6 @@ final class DetailsViewModel {
 
     func toggleFavorite() {
         repositoryService.toggleFavorite(repository)
-        print("isFavorite: ", repository.isFavorite)
     }
 
 }

@@ -78,6 +78,7 @@ extension SearchViewController {
 
     fileprivate func initialSetup() {
         view.backgroundColor = .white
+        definesPresentationContext = true
         setupNavigationBar()
         setupSearchController()
         setupTableView()
@@ -93,7 +94,6 @@ extension SearchViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation     = false
         searchController.hidesNavigationBarDuringPresentation = false
-        searchController.definesPresentationContext           = true
         searchController.searchBar.placeholder                = "Search"
         searchController.searchBar.delegate                   = self
     }

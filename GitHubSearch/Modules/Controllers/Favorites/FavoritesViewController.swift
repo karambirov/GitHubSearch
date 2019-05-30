@@ -34,6 +34,7 @@ final class FavoritesViewController: UIViewController {
 
         viewModel.fetchFavoriteRepositories { [weak self] in
             guard let self = self else { return }
+            self.tableView.dataSource = self.viewModel.dataSource
             self.tableView.reloadData()
         }
     }
@@ -71,7 +72,6 @@ extension FavoritesViewController {
 
     fileprivate func setupTableView() {
         tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.typeName)
-        tableView.dataSource = viewModel.dataSource
         tableView.delegate   = self
         tableView.tableFooterView = UIView()
     }

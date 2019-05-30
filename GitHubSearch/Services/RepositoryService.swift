@@ -33,12 +33,12 @@ final class RepositoryService {
     }
 
     func toggleFavorite(_ repository: Repository) {
-        repository.isFavorite.toggle()
-        if repository.isFavorite {
-            realmService?.save(repository)
-        } else {
-            realmService?.delete(repository)
+        realmService?.update {
+            repository.isFavorite = !repository.isFavorite
         }
-    }
 
+        repository.isFavorite
+        ? realmService?.save(repository)
+        : realmService?.delete(repository)
+    }
 }
