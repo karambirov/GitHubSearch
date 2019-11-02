@@ -29,9 +29,6 @@ target 'GitHubSearch' do
   # Keychain
   pod 'KeychainAccess'  # https://github.com/kishikawakatsumi/KeychainAccess
 
-  # Color
-  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
-
   # Auto Layout
   pod 'SnapKit'    # https://github.com/SnapKit/SnapKit
 
