@@ -1,3 +1,4 @@
+source 'https://cdn.cocoapods.org/'
 # Uncomment the next line to define a global platform for your project
 platform :ios, '11.0'
 
@@ -9,40 +10,33 @@ target 'GitHubSearch' do
   # Pods for GitHubSearch
 
   # Networking
-  pod 'Moya'                                        # https://github.com/Moya/Moya
-  pod 'AlamofireNetworkActivityIndicator', '~> 2.2' # https://github.com/Alamofire/AlamofireNetworkActivityIndicator
+  pod 'Moya'                                # https://github.com/Moya/Moya
+  pod 'AlamofireNetworkActivityIndicator'   # https://github.com/Alamofire/AlamofireNetworkActivityIndicator
 
   # Persistance
-  pod 'RealmSwift' # https://github.com/realm/realm-cocoa
+  pod 'RealmSwift'  # https://github.com/realm/realm-cocoa
 
   # Image
-  pod 'Kingfisher', '~> 4.0'  # https://github.com/onevcat/Kingfisher
+  pod 'Kingfisher'  # https://github.com/onevcat/Kingfisher
 
   # UI
-  pod 'EmptyDataSet-Swift', '~> 4.2.0'       # https://github.com/Xiaoye220/EmptyDataSet-Swift
-  pod 'Localize-Swift', '~> 2.0'             # https://github.com/marmelroy/Localize-Swift
-  pod 'KafkaRefresh', '~> 1.0'               # https://github.com/OpenFeyn/KafkaRefresh
-
-  # Date
-  pod 'DateToolsSwift', '~> 4.0'  # https://github.com/MatthewYork/DateTools
-  pod 'SwiftDate', '~> 5.0'       # https://github.com/malcommac/SwiftDate
+  pod 'Localize-Swift'  # https://github.com/marmelroy/Localize-Swift
 
   # Tools
-  pod 'R.swift', '~> 5.0.0'  # https://github.com/mac-cain13/R.swift
-  pod 'SwiftLint', '0.29.2'  # https://github.com/realm/SwiftLint
+  pod 'R.swift'       # https://github.com/mac-cain13/R.swift
+  pod 'SwifterSwift'  # https://github.com/SwifterSwift/SwifterSwift
 
   # Keychain
-  pod 'KeychainAccess', '~> 3.0'  # https://github.com/kishikawakatsumi/KeychainAccess
+  pod 'KeychainAccess'  # https://github.com/kishikawakatsumi/KeychainAccess
 
   # Color
-  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'  # https://github.com/ViccAlexander/Chameleon
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 
   # Auto Layout
-  pod 'SnapKit'  # https://github.com/SnapKit/SnapKit
+  pod 'SnapKit'    # https://github.com/SnapKit/SnapKit
 
   # Code Quality
-  pod 'SwifterSwift'  # https://github.com/SwifterSwift/SwifterSwift
-  pod 'AttributedLib', :git => 'https://github.com/Nirma/Attributed.git'  # https://github.com/Nirma/Attributed
+  pod 'SwiftLint'   # https://github.com/realm/SwiftLint
 
 end
 
