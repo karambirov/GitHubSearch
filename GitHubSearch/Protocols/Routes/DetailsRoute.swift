@@ -9,8 +9,10 @@
 import Foundation
 
 protocol DetailsRoute {
+
     var detailsTransition: Transition { get }
     func openDetails(for repository: Repository)
+
 }
 
 extension DetailsRoute where Self: RouterProtocol {

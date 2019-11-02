@@ -40,14 +40,18 @@ extension TableViewDataSource where Model == Repository {
 
     static func make(for repositories: [Repository],
                      reuseIdentifier: String = RepositoryCell.typeName) -> TableViewDataSource {
-        return TableViewDataSource(models: repositories, reuseIdentifier: reuseIdentifier,
+
+        return TableViewDataSource(models: repositories,
+                                   reuseIdentifier: reuseIdentifier,
                                    cellConfigurator: { repository, cell in
+
             let cellViewModel = RepositoryCellViewModel(repository: repository)
             if let cell = cell as? RepositoryCell {
                 cell.setup(with: cellViewModel)
             }
             cell.layoutIfNeeded()
         })
+
     }
 
 }

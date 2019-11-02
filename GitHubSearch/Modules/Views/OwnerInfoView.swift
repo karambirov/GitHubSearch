@@ -45,8 +45,8 @@ final class OwnerInfoView: UIView {
 }
 
 // MARK: - Setup views
-extension OwnerInfoView {
-    fileprivate func setupViews() {
+private extension OwnerInfoView {
+    func setupViews() {
         self.addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.left.top.equalTo(16)

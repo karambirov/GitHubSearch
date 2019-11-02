@@ -13,7 +13,7 @@ final class DetailsViewController: UIViewController {
 
     var viewModel: DetailsViewModel
 
-    fileprivate var detailsStackView: DetailsStackView?
+    private var detailsStackView: DetailsStackView?
 
     init(viewModel: DetailsViewModel) {
         self.viewModel = viewModel
@@ -32,16 +32,16 @@ final class DetailsViewController: UIViewController {
 }
 
 // MARK: - Setup views
-extension DetailsViewController {
+private extension DetailsViewController {
 
-    fileprivate func initialSetup() {
+    func initialSetup() {
         view.backgroundColor = .white
         title = "About repository"
         setupViews()
         setupNavigationBarRightButton()
     }
 
-    private func setupViews() {
+    func setupViews() {
         detailsStackView = DetailsStackView(repository: viewModel.repository)
         guard let detailsStackView = detailsStackView else { return }
         view.addSubview(detailsStackView)
@@ -52,12 +52,12 @@ extension DetailsViewController {
         }
     }
 
-    private func setupNavigationBarRightButton() {
+    func setupNavigationBarRightButton() {
         let title = viewModel.repository.isFavorite ? "Unfavorite" : "Favorite"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(favoriteButtonTapped))
     }
 
-    @objc private func favoriteButtonTapped() {
+    @objc func favoriteButtonTapped() {
         if !viewModel.repository.isFavorite {
             print("Favorite")
             viewModel.toggleFavorite()
@@ -68,4 +68,5 @@ extension DetailsViewController {
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorite", style: .plain, target: self, action: #selector(favoriteButtonTapped))
         }
     }
+
 }

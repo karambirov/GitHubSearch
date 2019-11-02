@@ -37,7 +37,13 @@ final class Repository: Object, Codable {
 
 // MARK: - Initialization
 extension Repository {
-    convenience init(fullName: String, repoDescription: String, language: String, isFavorite: Bool, owner: Owner) {
+
+    convenience init(fullName: String,
+                     repoDescription: String,
+                     language: String,
+                     isFavorite: Bool,
+                     owner: Owner) {
+
         self.init()
         self.fullName = fullName
         self.repoDescription = repoDescription
@@ -45,4 +51,5 @@ extension Repository {
         self.isFavorite = isFavorite
         self.owner = owner
     }
+
 }

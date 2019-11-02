@@ -11,30 +11,31 @@ import UIKit
 final class TabBarController: UITabBarController {
 
     // MARK: - Properties
-    fileprivate var viewModel = TabBarViewModel()
+    private var viewModel: TabBarViewModel
 
     // MARK: - View Controller's life cycle
-    init(items: [TabBarViewModel.TabBarItem]) {
+    init(viewModel: TabBarViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        set(items: items)
+        set(items: viewModel.items)
     }
 
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
     }
 
 }
 
 // MARK: - Setup
-extension TabBarController {
+private extension TabBarController {
 
-    fileprivate func tabBarItem(for itemType: TabBarViewModel.TabBarItem) -> UIViewController {
+    func tabBarItem(for itemType: TabBarViewModel.TabBarItem) -> UIViewController {
         let controller = itemType.viewController
         controller.tabBarItem = itemType.tabBarItem
         return controller
     }
 
-    fileprivate func set(items: [TabBarViewModel.TabBarItem]) {
+    func set(items: [TabBarViewModel.TabBarItem]) {
         guard viewControllers?.count != items.count else { return }
         viewControllers = items.map { tabBarItem(for: $0) }
     }

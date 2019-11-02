@@ -41,7 +41,8 @@ extension PushTransition: Transition {
 // MARK: - UINavigationControllerDelegate
 extension PushTransition: UINavigationControllerDelegate {
 
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+    func navigationController(_ navigationController: UINavigationController,
+                              didShow viewController: UIViewController, animated: Bool) {
         completionHandler?()
     }
 
@@ -63,7 +64,10 @@ extension PushTransition: UINavigationControllerDelegate {
 
 // MARK: - UIGestureRecognizerDelegate
 extension PushTransition: UIGestureRecognizerDelegate {
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                           shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
+
 }

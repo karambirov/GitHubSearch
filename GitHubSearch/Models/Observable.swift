@@ -9,6 +9,7 @@
 import Foundation
 
 final class Observable<T> {
+
     var value: T? {
         didSet {
             DispatchQueue.main.async {
@@ -22,4 +23,5 @@ final class Observable<T> {
     func bind(observer: @escaping ((T?) -> Void)) {
         self.observer = observer
     }
+
 }

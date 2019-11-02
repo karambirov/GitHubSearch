@@ -11,8 +11,8 @@ import UIKit
 final class FavoritesViewController: UIViewController {
 
     // MARK: - Properties
-    fileprivate let viewModel: FavoritesViewModel
-    fileprivate lazy var tableView = UITableView()
+    private let viewModel: FavoritesViewModel
+    private lazy var tableView = UITableView()
 
     // MARK: - View Controller's life cycle
     init(viewModel: FavoritesViewModel) {
@@ -57,38 +57,33 @@ extension FavoritesViewController: UITableViewDelegate {
 }
 
 // MARK: - Setup
-extension FavoritesViewController {
+private extension FavoritesViewController {
 
-    fileprivate func initialSetup() {
+    func initialSetup() {
         view.backgroundColor = .white
         setupNavigationBar()
         setupTableView()
         setupViews()
     }
 
-    fileprivate func setupNavigationBar() {
+    func setupNavigationBar() {
         title = "Favorites"
     }
 
-    fileprivate func setupTableView() {
+    func setupTableView() {
         tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.typeName)
         tableView.delegate   = self
         tableView.tableFooterView = UIView()
     }
 
-    fileprivate func clearSelectionForCell() {
-        guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
-        tableView.deselectRow(at: selectedIndexPath, animated: true)
-    }
-
-}
-
-// MARK: - Setup views
-extension FavoritesViewController {
-
-    fileprivate func setupViews() {
+    func setupViews() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
+    }
+
+    func clearSelectionForCell() {
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
+        tableView.deselectRow(at: selectedIndexPath, animated: true)
     }
 
 }

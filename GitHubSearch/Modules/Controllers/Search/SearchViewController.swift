@@ -74,9 +74,9 @@ extension SearchViewController: UISearchBarDelegate {
 }
 
 // MARK: - Setup
-extension SearchViewController {
+private extension SearchViewController {
 
-    fileprivate func initialSetup() {
+    func initialSetup() {
         view.backgroundColor = .white
         definesPresentationContext = true
         setupNavigationBar()
@@ -85,12 +85,12 @@ extension SearchViewController {
         setupViews()
     }
 
-    fileprivate func setupNavigationBar() {
+    func setupNavigationBar() {
         navigationItem.searchController = searchController
         title = "Search"
     }
 
-    fileprivate func setupSearchController() {
+    func setupSearchController() {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation     = false
         searchController.hidesNavigationBarDuringPresentation = false
@@ -98,28 +98,23 @@ extension SearchViewController {
         searchController.searchBar.delegate                   = self
     }
 
-    fileprivate func setupTableView() {
+    func setupTableView() {
         tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.typeName)
         tableView.dataSource = viewModel.dataSource
         tableView.delegate   = self
         tableView.tableFooterView = UIView()
     }
 
-    fileprivate func clearSelectionForCell() {
-        guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
-        tableView.deselectRow(at: selectedIndexPath, animated: true)
-    }
-
-}
-
-// MARK: - Setup views
-extension SearchViewController {
-
-    fileprivate func setupViews() {
+    func setupViews() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+
+    func clearSelectionForCell() {
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
+        tableView.deselectRow(at: selectedIndexPath, animated: true)
     }
 
 }

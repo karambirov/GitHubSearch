@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,7 +28,6 @@
 		AA27BE5C2204788600D4779F /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA27BE5B2204788600D4779F /* Animator.swift */; };
 		AA27BE5E22047B7B00D4779F /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA27BE5D22047B7B00D4779F /* PushTransition.swift */; };
 		AA27BE612204827500D4779F /* DetailsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA27BE602204827500D4779F /* DetailsRoute.swift */; };
-		AAA423C52215A59700B8FA60 /* Sorted.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA423C42215A59700B8FA60 /* Sorted.swift */; };
 		AAA423C72216A7CF00B8FA60 /* OwnerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA423C62216A7CF00B8FA60 /* OwnerInfoView.swift */; };
 		AAA8A9E721D4CCED004A7E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8A9E621D4CCED004A7E89 /* AppDelegate.swift */; };
 		AAA8A9E921D4CCED004A7E89 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8A9E821D4CCED004A7E89 /* SearchViewController.swift */; };
@@ -94,7 +93,6 @@
 		AA27BE5B2204788600D4779F /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		AA27BE5D22047B7B00D4779F /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
 		AA27BE602204827500D4779F /* DetailsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRoute.swift; sourceTree = "<group>"; };
-		AAA423C42215A59700B8FA60 /* Sorted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorted.swift; sourceTree = "<group>"; };
 		AAA423C62216A7CF00B8FA60 /* OwnerInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerInfoView.swift; sourceTree = "<group>"; };
 		AAA8A9E321D4CCED004A7E89 /* GitHubSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA8A9E621D4CCED004A7E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 				AA00CD6221F8A4420046B9A4 /* Owner.swift */,
 				AA00CD6421F8A8DD0046B9A4 /* SearchResults.swift */,
 				AA00CD6621FB63980046B9A4 /* Observable.swift */,
-				AAA423C42215A59700B8FA60 /* Sorted.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -566,50 +563,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GitHubSearch/Pods-GitHubSearch-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
-				"${BUILT_PRODUCTS_DIR}/AttributedLib/AttributedLib.framework",
-				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
-				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/EmptyDataSet-Swift/EmptyDataSet_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/KafkaRefresh/KafkaRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
-				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-GitHubSearch/Pods-GitHubSearch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AttributedLib.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EmptyDataSet_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KafkaRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-GitHubSearch/Pods-GitHubSearch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -674,7 +632,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+			shellScript = "if which ${PODS_ROOT}/SwiftLint/swiftlint >/dev/null; then\n  ${PODS_ROOT}/SwiftLint/swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -701,7 +659,6 @@
 				AA27BE572204769F00D4779F /* Transition.swift in Sources */,
 				AA27BE512204703600D4779F /* DetailsViewController.swift in Sources */,
 				AA00CD5B21F86D080046B9A4 /* GitHub.swift in Sources */,
-				AAA423C52215A59700B8FA60 /* Sorted.swift in Sources */,
 				AA23C02E220445E60091B663 /* RepositoryInfoView.swift in Sources */,
 				AAD1AEE0220D63F000B6B0DB /* RealmService.swift in Sources */,
 				AA00CD5D21F876A30046B9A4 /* String+Extensions.swift in Sources */,
@@ -828,13 +785,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -884,12 +842,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -907,9 +866,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.karambirov.GitHubSearch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.karambirov.GitHubSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -927,9 +886,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.karambirov.GitHubSearch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.karambirov.GitHubSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
