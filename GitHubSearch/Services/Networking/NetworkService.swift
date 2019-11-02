@@ -18,14 +18,15 @@ final class NetworkService {
     }
 
     func searchRepositories(with query: String,
-                            completionHandler: @escaping (([Repository]?) -> Void)) {
+                            completionHandler: @escaping ([Repository]?) -> Void) {
+
         provider?.request(.searchRepo(query: query)) { result in
             switch result {
             case .success(let response):
                 do {
                     let repositories = try response.map(SearchResults<Repository>.self)
                     completionHandler(repositories.items)
-                } catch let error {
+                } catch {
                     print(error.localizedDescription)
                 }
 
@@ -33,6 +34,7 @@ final class NetworkService {
                 print(error)
             }
         }
+
     }
 
 }

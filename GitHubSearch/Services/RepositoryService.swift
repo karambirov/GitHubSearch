@@ -10,8 +10,8 @@ import Foundation
 
 final class RepositoryService {
 
-    private var networkService: NetworkService?
-    private var realmService: RealmService?
+    private var networkService: NetworkService
+    private var realmService: RealmService
 
     init(networkService: NetworkService = .init(), realmService: RealmService = .init()) {
         self.networkService = networkService
@@ -19,7 +19,7 @@ final class RepositoryService {
     }
 
     func search(with query: String, completion: @escaping ([Repository]) -> Void) {
-        networkService?.searchRepositories(with: query) { repositories in
+        networkService.searchRepositories(with: query) { repositories in
             guard let repositories = repositories else { return }
             completion(repositories)
         }
@@ -27,18 +27,16 @@ final class RepositoryService {
 
     func fetchFavorites(completion: @escaping ([Repository]) -> Void) {
         let predicate = NSPredicate(format: "isFavorite = true")
-        realmService?.fetch(Repository.self, predicate: predicate) { repositories in
-            completion(repositories)
-        }
+        realmService.fetch(Repository.self, predicate: predicate, completion: completion)
     }
 
     func toggleFavorite(_ repository: Repository) {
-        realmService?.update {
+        realmService.update {
             repository.isFavorite = !repository.isFavorite
         }
 
         repository.isFavorite
-        ? realmService?.save(repository)
-        : realmService?.delete(repository)
+        ? realmService.save(repository)
+        : realmService.delete(repository)
     }
 }
