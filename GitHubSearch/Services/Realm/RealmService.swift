@@ -26,7 +26,7 @@ struct RealmService {
         }
     }
 
-    fileprivate func write(_ block: (Realm) -> Void) {
+    private func write(_ block: (Realm) -> Void) {
         let realm = self.realm
         do {
             try realm.write {

@@ -24,15 +24,15 @@ final class DetailsStackView: UIStackView {
 }
 
 // MARK: - Setup views
-extension DetailsStackView {
+private extension DetailsStackView {
 
-    fileprivate func setupStackView() {
+    func setupStackView() {
         self.axis = .vertical
         self.alignment = .fill
         self.distribution = .fillProportionally
     }
 
-    fileprivate func setupArrangedSubviews(with repository: Repository) -> [UIView] {
+    func setupArrangedSubviews(with repository: Repository) -> [UIView] {
         let notAvailable = "n/a"
 
         let repositoryInfoView = RepositoryInfoView()

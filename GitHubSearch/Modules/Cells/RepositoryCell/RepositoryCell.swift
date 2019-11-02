@@ -12,8 +12,8 @@ import SnapKit
 final class RepositoryCell: UITableViewCell {
 
     // MARK: - Properties
-    var viewModel: RepositoryCellViewModel?
-    lazy var repositoryInfoView = RepositoryInfoView()
+    private var viewModel: RepositoryCellViewModel?
+    private lazy var repositoryInfoView = RepositoryInfoView()
 
     // MARK: - Life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -51,7 +51,7 @@ extension RepositoryCell {
         setNeedsLayout()
     }
 
-    func setupViews() {
+    private func setupViews() {
         self.accessoryType = .disclosureIndicator
 
         self.addSubview(repositoryInfoView)

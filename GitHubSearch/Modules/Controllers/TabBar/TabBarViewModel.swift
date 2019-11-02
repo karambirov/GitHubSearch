@@ -9,16 +9,19 @@
 import UIKit
 
 final class TabBarViewModel {
-
     enum TabBarItem {
         case search
         case favorites
     }
 
+    var items: [TabBarItem]
+
+    init(items: [TabBarItem]) {
+        self.items = items
+    }
 }
 
 extension TabBarViewModel.TabBarItem {
-
     var viewController: UIViewController {
         switch self {
         case .search:
@@ -45,5 +48,4 @@ extension TabBarViewModel.TabBarItem {
             return UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
         }
     }
-
 }

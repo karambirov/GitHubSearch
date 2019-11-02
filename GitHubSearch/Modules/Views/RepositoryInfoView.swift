@@ -11,11 +11,6 @@ import SnapKit
 
 final class RepositoryInfoView: UIView {
 
-//    override var intrinsicContentSize: CGSize {
-//        return sizeThatFits(stackView.frame.size)
-////        return CGSize(width: 1, height: stackView.frame.height)
-//    }
-
     lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 17)
@@ -31,7 +26,7 @@ final class RepositoryInfoView: UIView {
         return label
     }()
 
-    fileprivate lazy var stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [nameLabel, descriptionLabel])
         stackView.axis = .vertical
         stackView.spacing = 8
@@ -45,8 +40,8 @@ final class RepositoryInfoView: UIView {
 }
 
 // MARK: - Setup views
-extension RepositoryInfoView {
-    fileprivate func setupViews() {
+private extension RepositoryInfoView {
+    func setupViews() {
         self.addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.left.top.equalTo(16)
