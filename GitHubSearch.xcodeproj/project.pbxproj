@@ -28,6 +28,7 @@
 		AA27BE5C2204788600D4779F /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA27BE5B2204788600D4779F /* Animator.swift */; };
 		AA27BE5E22047B7B00D4779F /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA27BE5D22047B7B00D4779F /* PushTransition.swift */; };
 		AA27BE612204827500D4779F /* DetailsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA27BE602204827500D4779F /* DetailsRoute.swift */; };
+		AA392968236DBDEE00F4508F /* Sorted.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA392967236DBDEE00F4508F /* Sorted.swift */; };
 		AAA423C72216A7CF00B8FA60 /* OwnerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA423C62216A7CF00B8FA60 /* OwnerInfoView.swift */; };
 		AAA8A9E721D4CCED004A7E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8A9E621D4CCED004A7E89 /* AppDelegate.swift */; };
 		AAA8A9E921D4CCED004A7E89 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8A9E821D4CCED004A7E89 /* SearchViewController.swift */; };
@@ -93,6 +94,7 @@
 		AA27BE5B2204788600D4779F /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		AA27BE5D22047B7B00D4779F /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
 		AA27BE602204827500D4779F /* DetailsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRoute.swift; sourceTree = "<group>"; };
+		AA392967236DBDEE00F4508F /* Sorted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorted.swift; sourceTree = "<group>"; };
 		AAA423C62216A7CF00B8FA60 /* OwnerInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerInfoView.swift; sourceTree = "<group>"; };
 		AAA8A9E321D4CCED004A7E89 /* GitHubSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA8A9E621D4CCED004A7E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				AA00CD6221F8A4420046B9A4 /* Owner.swift */,
 				AA00CD6421F8A8DD0046B9A4 /* SearchResults.swift */,
 				AA00CD6621FB63980046B9A4 /* Observable.swift */,
+				AA392967236DBDEE00F4508F /* Sorted.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				AACFDF5A22035CBA0057121B /* FavoritesViewModel.swift in Sources */,
 				AA27BE552204767900D4779F /* Router.swift in Sources */,
 				AACFDF5522035C850057121B /* TabBarViewModel.swift in Sources */,
+				AA392968236DBDEE00F4508F /* Sorted.swift in Sources */,
 				AADED01C21D60B9B00CE305B /* Configs.swift in Sources */,
 				AA27BE532204705A00D4779F /* DetailsViewModel.swift in Sources */,
 			);

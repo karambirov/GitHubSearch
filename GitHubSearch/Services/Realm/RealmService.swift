@@ -60,7 +60,11 @@ extension RealmService {
         write { $0.deleteAll() }
     }
 
-    func fetch<T: Object>(_ model: T.Type, predicate: NSPredicate? = nil, sorted: Sorted? = nil, completion: ([T]) -> Void) {
+    func fetch<T: Object>(_ model: T.Type,
+                          predicate: NSPredicate? = nil,
+                          sorted: Sorted? = nil,
+                          completion: ([T]) -> Void) {
+
         write { realm in
             let objects = realm.objects(model)
 
@@ -74,6 +78,7 @@ extension RealmService {
 
             completion(objects.compactMap { $0 })
         }
+
     }
 
 }
