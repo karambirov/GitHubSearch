@@ -17,7 +17,7 @@ struct RealmService {
         Realm.Configuration.defaultConfiguration = realmConfig
     }
 
-    private var realm: Realm {
+    var realm: Realm {
         do {
             let realm = try Realm()
             return realm
@@ -26,7 +26,7 @@ struct RealmService {
         }
     }
 
-    private func write(_ block: (Realm) -> Void) {
+    func write(_ block: (Realm) -> Void) {
         let realm = self.realm
         do {
             try realm.write {
