@@ -9,10 +9,12 @@
 import UIKit
 
 protocol Closable: AnyObject {
+
     func close()
 }
 
 protocol RouterProtocol: AnyObject {
+
     associatedtype ViewController: UIViewController
 
     /// Should be declared as weak.
