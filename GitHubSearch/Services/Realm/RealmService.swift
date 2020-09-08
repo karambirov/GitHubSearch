@@ -17,7 +17,7 @@ struct RealmService {
         Realm.Configuration.defaultConfiguration = realmConfig
     }
 
-    var realm: Realm {
+    private var realm: Realm {
         do {
             let realm = try Realm()
             return realm
@@ -26,7 +26,7 @@ struct RealmService {
         }
     }
 
-    func write(_ block: (Realm) -> Void) {
+    private func write(_ block: (Realm) -> Void) {
         let realm = self.realm
         do {
             try realm.write {
@@ -79,6 +79,11 @@ extension RealmService {
             completion(objects.compactMap { $0 })
         }
 
+    }
+
+    func fetch<T: Object, KeyType>(ofType type: T.Type,
+                                   forPrimaryKey key: KeyType) -> T? {
+        return realm.object(ofType: type, forPrimaryKey: key)
     }
 
 }
