@@ -27,16 +27,29 @@ final class RepositoryService {
 
     func fetchFavorites(completion: @escaping ([Repository]) -> Void) {
         let predicate = NSPredicate(format: "isFavorite = true")
-        realmService.fetch(Repository.self, predicate: predicate, completion: completion)
+        let completionHandle: ([Repository]) -> Void = { repositories in
+            completion(repositories.compactMap { $0.copy() as? Repository})
+        }
+        realmService.fetch(Repository.self, predicate: predicate, completion: completionHandle)
     }
 
     func toggleFavorite(_ repository: Repository) {
-        realmService.update {
-            repository.isFavorite = !repository.isFavorite
-        }
+        repository.isFavorite = !repository.isFavorite
 
         repository.isFavorite
-        ? realmService.save(repository)
-        : realmService.delete(repository)
+            ? saveRepository(repository)
+            : deleteRepository(repository)
+    }
+
+    func saveRepository(_ repository: Repository) {
+        if let newRepository = repository.copy() as? Repository {
+            realmService.save(newRepository)
+        }
+    }
+
+    func deleteRepository(_ repository: Repository) {
+        if let object = realmService.fetch(ofType: Repository.self, forPrimaryKey: repository.fullName) {
+            realmService.delete(object)
+        }
     }
 }

@@ -81,4 +81,9 @@ extension RealmService {
 
     }
 
+    func fetch<T: Object, KeyType>(ofType type: T.Type,
+                                   forPrimaryKey key: KeyType) -> T? {
+        return realm.object(ofType: type, forPrimaryKey: key)
+    }
+
 }

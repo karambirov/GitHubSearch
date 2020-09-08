@@ -53,3 +53,16 @@ extension Repository {
     }
 
 }
+
+// MARK: - NSCopying
+extension Repository: NSCopying {
+    func copy(with zone: NSZone? = nil) -> Any {
+        let repository = Repository(fullName: self.fullName,
+                                    repoDescription: self.repoDescription ?? "",
+                                    language: self.language ?? "",
+                                    isFavorite: self.isFavorite,
+                                    owner: self.owner?.copy() as? Owner ??
+                                        Owner(login: "", email: ""))
+        return repository
+    }
+}

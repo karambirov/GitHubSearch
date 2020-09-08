@@ -37,3 +37,14 @@ extension Owner {
     }
 
 }
+
+// MARK: - NSCopying
+extension Owner: NSCopying {
+
+    func copy(with zone: NSZone? = nil) -> Any {
+        let owner = Owner(login: self.login,
+                          email: self.email ?? "",
+                          avatarURL: self.avatarURL)
+        return owner
+    }
+}
