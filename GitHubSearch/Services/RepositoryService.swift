@@ -49,6 +49,9 @@ final class RepositoryService {
 
     func deleteRepository(_ repository: Repository) {
         if let object = realmService.fetch(ofType: Repository.self, forPrimaryKey: repository.fullName) {
+            if let owner = object.owner {
+                realmService.delete(owner)
+            }
             realmService.delete(object)
         }
     }
