@@ -13,11 +13,14 @@
 		510C0FC724FD178A003E22CE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 510C0FC624FD178A003E22CE /* RealmSwift */; };
 		510C0FCA24FD17D5003E22CE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 510C0FC924FD17D5003E22CE /* Kingfisher */; };
 		510C0FCD24FD1807003E22CE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 510C0FCC24FD1807003E22CE /* SnapKit */; };
+		51FA87DC251C6AF0004BCF82 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA87DB251C6AF0004BCF82 /* RootViewController.swift */; };
+		51FA87DF251C6D87004BCF82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA87DE251C6D87004BCF82 /* SceneDelegate.swift */; };
+		51FA87E2251C6EEC004BCF82 /* ModulesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA87E1251C6EEC004BCF82 /* ModulesFactory.swift */; };
+		51FA87E4251C6F86004BCF82 /* RootAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA87E3251C6F86004BCF82 /* RootAssembly.swift */; };
 		AA00CD4C21F32FAE0046B9A4 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD4B21F32FAE0046B9A4 /* Repository.swift */; };
 		AA00CD4E21F330D10046B9A4 /* Describable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD4D21F330D10046B9A4 /* Describable.swift */; };
 		AA00CD5021F3311F0046B9A4 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD4F21F3311F0046B9A4 /* UITableView+Extensions.swift */; };
 		AA00CD5221F344D90046B9A4 /* RepositoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD5121F344D90046B9A4 /* RepositoryCellViewModel.swift */; };
-		AA00CD5421F4CC650046B9A4 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD5321F4CC650046B9A4 /* UITableViewCell+Extensions.swift */; };
 		AA00CD5B21F86D080046B9A4 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD5A21F86D080046B9A4 /* GitHub.swift */; };
 		AA00CD5D21F876A30046B9A4 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD5C21F876A30046B9A4 /* String+Extensions.swift */; };
 		AA00CD5F21F87BDA0046B9A4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD5E21F87BDA0046B9A4 /* NetworkService.swift */; };
@@ -46,14 +49,11 @@
 		AAC6356821D4EC2000A5E63C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AAC6356721D4EC2000A5E63C /* .swiftlint.yml */; };
 		AAC6356D21D6057B00A5E63C /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6356B21D6057B00A5E63C /* RepositoryCell.swift */; };
 		AAC6357621D6074E00A5E63C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAC6357821D6074E00A5E63C /* Localizable.strings */; };
-		AACFDF5322035BC10057121B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5222035BC10057121B /* TabBarController.swift */; };
-		AACFDF5522035C850057121B /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5422035C850057121B /* TabBarViewModel.swift */; };
 		AACFDF5822035CAD0057121B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5722035CAD0057121B /* FavoritesViewController.swift */; };
 		AACFDF5A22035CBA0057121B /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5922035CBA0057121B /* FavoritesViewModel.swift */; };
 		AACFDF5C220437B10057121B /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5B220437B10057121B /* TableViewDataSource.swift */; };
 		AAD1AEE0220D63F000B6B0DB /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD1AEDF220D63F000B6B0DB /* RealmService.swift */; };
 		AADED01C21D60B9B00CE305B /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADED01B21D60B9B00CE305B /* Configs.swift */; };
-		AADED02421D61CDA00CE305B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADED02321D61CDA00CE305B /* UIView+Extensions.swift */; };
 		AADED02A21D626FD00CE305B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADED02921D626FD00CE305B /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,11 +75,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		51FA87DB251C6AF0004BCF82 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		51FA87DE251C6D87004BCF82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		51FA87E1251C6EEC004BCF82 /* ModulesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesFactory.swift; sourceTree = "<group>"; };
+		51FA87E3251C6F86004BCF82 /* RootAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAssembly.swift; sourceTree = "<group>"; };
 		AA00CD4B21F32FAE0046B9A4 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		AA00CD4D21F330D10046B9A4 /* Describable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Describable.swift; sourceTree = "<group>"; };
 		AA00CD4F21F3311F0046B9A4 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		AA00CD5121F344D90046B9A4 /* RepositoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewModel.swift; sourceTree = "<group>"; };
-		AA00CD5321F4CC650046B9A4 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		AA00CD5A21F86D080046B9A4 /* GitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		AA00CD5C21F876A30046B9A4 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		AA00CD5E21F87BDA0046B9A4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -116,14 +119,11 @@
 		AAC6356B21D6057B00A5E63C /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		AAC6357721D6074E00A5E63C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AAC6357921D6075100A5E63C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		AACFDF5222035BC10057121B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		AACFDF5422035C850057121B /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		AACFDF5722035CAD0057121B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		AACFDF5922035CBA0057121B /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		AACFDF5B220437B10057121B /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		AAD1AEDF220D63F000B6B0DB /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		AADED01B21D60B9B00CE305B /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
-		AADED02321D61CDA00CE305B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		AADED02921D626FD00CE305B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +158,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51FA87DD251C6AF5004BCF82 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				51FA87E3251C6F86004BCF82 /* RootAssembly.swift */,
+				51FA87DB251C6AF0004BCF82 /* RootViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		AA00CD4A21F32F910046B9A4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +193,7 @@
 			children = (
 				AA27BE502204703600D4779F /* DetailsViewController.swift */,
 				AA27BE522204705A00D4779F /* DetailsViewModel.swift */,
+				AAC6356F21D605AB00A5E63C /* Views */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -253,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				AAA8A9E621D4CCED004A7E89 /* AppDelegate.swift */,
+				51FA87DE251C6D87004BCF82 /* SceneDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -280,9 +291,12 @@
 		AAC6353221D4CE6B00A5E63C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				51FA87E1251C6EEC004BCF82 /* ModulesFactory.swift */,
+				51FA87DD251C6AF5004BCF82 /* Root */,
+				AAC6356921D50FD300A5E63C /* Search */,
+				AACFDF5622035C980057121B /* Favorites */,
+				AA27BE4F2204700600D4779F /* Details */,
 				AAC6353521D4D00600A5E63C /* Cells */,
-				AAC6353621D4D00C00A5E63C /* Controllers */,
-				AAC6356F21D605AB00A5E63C /* Views */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -290,9 +304,7 @@
 		AAC6353321D4CE7200A5E63C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AADED02321D61CDA00CE305B /* UIView+Extensions.swift */,
 				AA00CD4F21F3311F0046B9A4 /* UITableView+Extensions.swift */,
-				AA00CD5321F4CC650046B9A4 /* UITableViewCell+Extensions.swift */,
 				AA00CD5C21F876A30046B9A4 /* String+Extensions.swift */,
 			);
 			path = Extensions;
@@ -316,17 +328,6 @@
 				AAC6356A21D6055600A5E63C /* RepositoryCell */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		AAC6353621D4D00C00A5E63C /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				AACFDF5122035B940057121B /* TabBar */,
-				AAC6356921D50FD300A5E63C /* Search */,
-				AACFDF5622035C980057121B /* Favorites */,
-				AA27BE4F2204700600D4779F /* Details */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		AAC6353721D4DECF00A5E63C /* Protocols */ = {
@@ -384,15 +385,6 @@
 				AABD746A2216B7F700F9C648 /* DetailsStackView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		AACFDF5122035B940057121B /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				AACFDF5222035BC10057121B /* TabBarController.swift */,
-				AACFDF5422035C850057121B /* TabBarViewModel.swift */,
-			);
-			path = TabBar;
 			sourceTree = "<group>";
 		};
 		AACFDF5622035C980057121B /* Favorites */ = {
@@ -492,10 +484,12 @@
 					};
 					AAC6354E21D4EA5400A5E63C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1140;
 						TestTargetID = AAA8A9E221D4CCED004A7E89;
 					};
 					AAC6355C21D4EA7A00A5E63C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1140;
 						TestTargetID = AAA8A9E221D4CCED004A7E89;
 					};
 				};
@@ -591,9 +585,9 @@
 				AABD746B2216B7F700F9C648 /* DetailsStackView.swift in Sources */,
 				AAA8A9E721D4CCED004A7E89 /* AppDelegate.swift in Sources */,
 				AA00CD6121F89FEF0046B9A4 /* RepositoryService.swift in Sources */,
-				AA00CD5421F4CC650046B9A4 /* UITableViewCell+Extensions.swift in Sources */,
 				AACFDF5822035CAD0057121B /* FavoritesViewController.swift in Sources */,
-				AADED02421D61CDA00CE305B /* UIView+Extensions.swift in Sources */,
+				51FA87DC251C6AF0004BCF82 /* RootViewController.swift in Sources */,
+				51FA87DF251C6D87004BCF82 /* SceneDelegate.swift in Sources */,
 				AA00CD4C21F32FAE0046B9A4 /* Repository.swift in Sources */,
 				AADED02A21D626FD00CE305B /* SearchViewModel.swift in Sources */,
 				AA00CD5021F3311F0046B9A4 /* UITableView+Extensions.swift in Sources */,
@@ -603,18 +597,18 @@
 				AA23C02E220445E60091B663 /* RepositoryInfoView.swift in Sources */,
 				AAD1AEE0220D63F000B6B0DB /* RealmService.swift in Sources */,
 				AA00CD5D21F876A30046B9A4 /* String+Extensions.swift in Sources */,
-				AACFDF5322035BC10057121B /* TabBarController.swift in Sources */,
 				AA27BE5A220477B000D4779F /* ModalTransition.swift in Sources */,
 				AA00CD5221F344D90046B9A4 /* RepositoryCellViewModel.swift in Sources */,
 				AA00CD4E21F330D10046B9A4 /* Describable.swift in Sources */,
 				AA00CD6321F8A4420046B9A4 /* Owner.swift in Sources */,
 				AACFDF5C220437B10057121B /* TableViewDataSource.swift in Sources */,
+				51FA87E4251C6F86004BCF82 /* RootAssembly.swift in Sources */,
 				AAC6356D21D6057B00A5E63C /* RepositoryCell.swift in Sources */,
 				AA00CD6521F8A8DD0046B9A4 /* SearchResults.swift in Sources */,
 				AA27BE5E22047B7B00D4779F /* PushTransition.swift in Sources */,
 				AACFDF5A22035CBA0057121B /* FavoritesViewModel.swift in Sources */,
+				51FA87E2251C6EEC004BCF82 /* ModulesFactory.swift in Sources */,
 				AA27BE552204767900D4779F /* Router.swift in Sources */,
-				AACFDF5522035C850057121B /* TabBarViewModel.swift in Sources */,
 				AA392968236DBDEE00F4508F /* Sorted.swift in Sources */,
 				AADED01C21D60B9B00CE305B /* Configs.swift in Sources */,
 				AA27BE532204705A00D4779F /* DetailsViewModel.swift in Sources */,
@@ -726,7 +720,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -783,7 +777,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -801,7 +795,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TDR3533VJS;
 				INFOPLIST_FILE = "$(SRCROOT)/GitHubSearch/Other/Config/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -820,7 +814,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TDR3533VJS;
 				INFOPLIST_FILE = "$(SRCROOT)/GitHubSearch/Other/Config/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -839,7 +833,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TDR3533VJS;
 				INFOPLIST_FILE = GitHubSearchTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -847,7 +841,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.karambirov.GitHubSearchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitHubSearch.app/GitHubSearch";
 			};
@@ -860,7 +854,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TDR3533VJS;
 				INFOPLIST_FILE = GitHubSearchTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -868,7 +862,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.karambirov.GitHubSearchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitHubSearch.app/GitHubSearch";
 			};
@@ -880,7 +874,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TDR3533VJS;
 				INFOPLIST_FILE = GitHubSearchUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -888,7 +882,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.karambirov.GitHubSearchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = GitHubSearch;
 			};
@@ -900,7 +894,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TDR3533VJS;
 				INFOPLIST_FILE = GitHubSearchUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -908,7 +902,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.karambirov.GitHubSearchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = GitHubSearch;
 			};

@@ -13,14 +13,9 @@ final class DetailsStackView: UIStackView {
 
     convenience init(repository: Repository) {
         self.init()
-        _ = setupArrangedSubviews(with: repository)
-            .map { self.addArrangedSubview($0) }
+		setupStackView()
+        _ = setupArrangedSubviews(with: repository).map { self.addArrangedSubview($0) }
     }
-
-    override func didMoveToSuperview() {
-        setupStackView()
-    }
-
 }
 
 // MARK: - Setup views
@@ -49,5 +44,4 @@ private extension DetailsStackView {
 
         return [repositoryInfoView, ownerInfoView]
     }
-
 }

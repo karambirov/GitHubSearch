@@ -34,3 +34,5 @@ extension Describable where Self: NSObjectProtocol {
     }
 
 }
+
+extension UITableViewCell: Describable {}

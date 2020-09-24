@@ -11,26 +11,28 @@ import RealmSwift
 
 struct RealmService {
 
-    private let realmConfig = Realm.Configuration(schemaVersion: 1)
+	private var config: Realm.Configuration {
+		didSet {
+			Realm.Configuration.defaultConfiguration = config
+		}
+	}
 
-    init() {
-        Realm.Configuration.defaultConfiguration = realmConfig
+	init(config: Realm.Configuration = .init(schemaVersion: 1)) {
+		self.config = config
     }
 
     private var realm: Realm {
         do {
-            let realm = try Realm()
-            return realm
+            return try Realm()
         } catch {
             fatalError("Can't get realm")
         }
     }
 
-    private func write(_ block: (Realm) -> Void) {
-        let realm = self.realm
+    private func write(_ closure: (Realm) -> Void) {
         do {
-            try realm.write {
-                block(realm)
+			try self.realm.write {
+                closure(realm)
             }
         } catch {
             assertionFailure("Can't write to realm")
@@ -46,10 +48,8 @@ extension RealmService {
         write { $0.add(object) }
     }
 
-    func update(_ block: @escaping () -> Void) {
-        write { _ in
-            block()
-        }
+    func update(_ closure: @escaping () -> Void) {
+		write { _ in closure() }
     }
 
     func delete(_ object: Object) {

@@ -40,7 +40,10 @@ extension GitHub: TargetType {
     var task: Task {
         switch self {
         case .searchRepo(let query):
-            return .requestParameters(parameters: ["q": query.URLEscapedString], encoding: URLEncoding.default)
+            return .requestParameters(
+				parameters: ["q": query.urlEscapedString],
+				encoding: URLEncoding.default
+			)
         }
     }
 

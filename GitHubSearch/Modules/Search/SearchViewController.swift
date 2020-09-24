@@ -12,9 +12,9 @@ import SnapKit
 final class SearchViewController: UIViewController {
 
     // MARK: - Properties
-    fileprivate let viewModel: SearchViewModel
-    fileprivate lazy var searchController = UISearchController(searchResultsController: nil)
-    fileprivate lazy var tableView = UITableView()
+    private let viewModel: SearchViewModel
+    private lazy var searchController = UISearchController(searchResultsController: nil)
+    private lazy var tableView = UITableView()
 
     // MARK: - View Controller's life cycle
     init(viewModel: SearchViewModel) {
@@ -92,10 +92,9 @@ private extension SearchViewController {
 
     func setupSearchController() {
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.dimsBackgroundDuringPresentation     = false
         searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.placeholder                = "Search"
-        searchController.searchBar.delegate                   = self
+        searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.delegate = self
     }
 
     func setupTableView() {
