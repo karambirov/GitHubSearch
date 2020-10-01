@@ -9,11 +9,11 @@
 import Foundation
 import Moya
 
-enum GitHub {
+enum GitHubAPI {
     case searchRepo(query: String)
 }
 
-extension GitHub: TargetType {
+extension GitHubAPI: TargetType {
 
     var baseURL: URL {
         guard let url = URL(string: "https://api.github.com") else {
