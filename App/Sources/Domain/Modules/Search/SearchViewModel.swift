@@ -15,7 +15,7 @@ final class SearchRouter: Router<SearchViewController>, SearchRouter.Routes {
 final class SearchViewModel {
 
     // MARK: - Private
-    private let repositoryService = RepositoryService()
+    private let repositoryDataProvider = RepositoryDataProvider()
 
     // MARK: - Properties
     var repositories: [Repository]?
@@ -28,14 +28,12 @@ final class SearchViewModel {
 
     // MARK: - Methods
     func searchRepositories(with query: String, completion: @escaping () -> Void) {
-
-        repositoryService.search(with: query) { [weak self] repositories in
+        repositoryDataProvider.search(with: query) { [weak self] repositories in
             self?.repositoriesDidLoad(repositories)
             DispatchQueue.main.async {
                 completion()
             }
         }
-
     }
 
     func repository(for indexPath: IndexPath) -> Repository? {

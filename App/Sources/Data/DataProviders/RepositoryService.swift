@@ -1,5 +1,5 @@
 //
-//  RepositoryService.swift
+//  RepositoryDataProvider.swift
 //  GitHubSearch
 //
 //  Created by Eugene Karambirov on 23/01/2019.
@@ -8,18 +8,18 @@
 
 import Foundation
 
-final class RepositoryService {
+final class RepositoryDataProvider {
 
-    private var networkService: NetworkService
+    private var networkingService: NetworkingService
     private var realmService: RealmService
 
-    init(networkService: NetworkService = .init(), realmService: RealmService = .init()) {
-        self.networkService = networkService
+    init(networkingService: NetworkingService = .init(), realmService: RealmService = .init()) {
+        self.networkingService = networkingService
         self.realmService = realmService
     }
 
     func search(with query: String, completion: @escaping ([Repository]) -> Void) {
-        networkService.searchRepositories(with: query) { repositories in
+		networkingService.searchRepositories(with: query) { repositories in
             guard let repositories = repositories else { return }
             completion(repositories)
         }

@@ -16,7 +16,7 @@ final class FavoritesRouter: Router<FavoritesViewController>, FavoritesRouter.Ro
 final class FavoritesViewModel {
 
     // MARK: - Private
-    private let repositoryService = RepositoryService()
+    private let repositoryDataProvider = RepositoryDataProvider()
 
     // MARK: - Properties
     var favoriteRepositories: [Repository]?
@@ -29,14 +29,12 @@ final class FavoritesViewModel {
 
     // MARK: - Methods
     func fetchFavoriteRepositories(_ completion: @escaping () -> Void) {
-
-        repositoryService.fetchFavorites { [weak self] repositories in
+        repositoryDataProvider.fetchFavorites { [weak self] repositories in
             self?.repositoriesDidLoad(repositories)
             DispatchQueue.main.async {
                 completion()
             }
         }
-
     }
 
     func repository(for indexPath: IndexPath) -> Repository? {

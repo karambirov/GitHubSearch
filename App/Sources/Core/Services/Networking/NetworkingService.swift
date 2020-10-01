@@ -9,11 +9,11 @@
 import Foundation
 import Moya
 
-final class NetworkService {
+final class NetworkingService {
 
-    private var provider: MoyaProvider<GitHub>?
+    private var provider: MoyaProvider<GitHubAPI>?
 
-    init(provider: MoyaProvider<GitHub> = .init()) {
+    init(provider: MoyaProvider<GitHubAPI> = .init()) {
         self.provider = provider
     }
 
