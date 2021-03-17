@@ -13,6 +13,13 @@
 		510C0FC724FD178A003E22CE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 510C0FC624FD178A003E22CE /* RealmSwift */; };
 		510C0FCA24FD17D5003E22CE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 510C0FC924FD17D5003E22CE /* Kingfisher */; };
 		510C0FCD24FD1807003E22CE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 510C0FCC24FD1807003E22CE /* SnapKit */; };
+		5115B05E26012C430060A82E /* Constrainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115B05D26012C430060A82E /* Constrainable.swift */; };
+		5115B06326012E100060A82E /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115B06226012E100060A82E /* Constraints.swift */; };
+		5115B06826012FC40060A82E /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115B06726012FC40060A82E /* Stack.swift */; };
+		5115B06D260135850060A82E /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115B06C260135850060A82E /* Layout.swift */; };
+		5115B07226013CFD0060A82E /* LayoutEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115B07126013CFD0060A82E /* LayoutEdge.swift */; };
+		5115B07726013E940060A82E /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115B07626013E940060A82E /* EdgeInsets.swift */; };
+		5128C6432602255300F6FFD7 /* Layout+Superview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5128C6422602255300F6FFD7 /* Layout+Superview.swift */; };
 		519BC6102526259D00D05BCB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 519BC60F2526259D00D05BCB /* .swiftlint.yml */; };
 		519BC615252625B600D05BCB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 519BC614252625B600D05BCB /* .gitignore */; };
 		51A6C4012523B33C0012C342 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAC6355321D4EA5400A5E63C /* Info.plist */; };
@@ -78,6 +85,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5115B05D26012C430060A82E /* Constrainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constrainable.swift; sourceTree = "<group>"; };
+		5115B06226012E100060A82E /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		5115B06726012FC40060A82E /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		5115B06C260135850060A82E /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		5115B07126013CFD0060A82E /* LayoutEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutEdge.swift; sourceTree = "<group>"; };
+		5115B07626013E940060A82E /* EdgeInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeInsets.swift; sourceTree = "<group>"; };
+		5128C6422602255300F6FFD7 /* Layout+Superview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Layout+Superview.swift"; sourceTree = "<group>"; };
 		516498222523CBFA00BAE513 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		519BC60F2526259D00D05BCB /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		519BC614252625B600D05BCB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
@@ -162,6 +176,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5115B05C26012BB00060A82E /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				5115B05D26012C430060A82E /* Constrainable.swift */,
+				5115B06226012E100060A82E /* Constraints.swift */,
+				5115B06726012FC40060A82E /* Stack.swift */,
+				5115B06C260135850060A82E /* Layout.swift */,
+				5128C6422602255300F6FFD7 /* Layout+Superview.swift */,
+				5115B07126013CFD0060A82E /* LayoutEdge.swift */,
+				5115B07626013E940060A82E /* EdgeInsets.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
 		5116A2692523AC240037C1CE /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +398,7 @@
 		AAC6353421D4CE7C00A5E63C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5115B05C26012BB00060A82E /* Layout */,
 				AA00CD5921F86CEF0046B9A4 /* Networking */,
 				AA27BE582204775F00D4779F /* Router */,
 				AAD1AEDF220D63F000B6B0DB /* RealmService.swift */,
@@ -625,9 +654,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAA423C72216A7CF00B8FA60 /* OwnerInfoView.swift in Sources */,
+				5115B06826012FC40060A82E /* Stack.swift in Sources */,
 				AA27BE5C2204788600D4779F /* Animator.swift in Sources */,
 				AA00CD6721FB63980046B9A4 /* Observable.swift in Sources */,
 				AA00CD5F21F87BDA0046B9A4 /* NetworkingService.swift in Sources */,
+				5115B06326012E100060A82E /* Constraints.swift in Sources */,
 				AAA8A9E921D4CCED004A7E89 /* SearchViewController.swift in Sources */,
 				AA27BE612204827500D4779F /* DetailsRoute.swift in Sources */,
 				AABD746B2216B7F700F9C648 /* DetailsStackView.swift in Sources */,
@@ -639,6 +670,7 @@
 				AA00CD4C21F32FAE0046B9A4 /* Repository.swift in Sources */,
 				AADED02A21D626FD00CE305B /* SearchViewModel.swift in Sources */,
 				AA00CD5021F3311F0046B9A4 /* UITableView+Extensions.swift in Sources */,
+				5115B05E26012C430060A82E /* Constrainable.swift in Sources */,
 				AA27BE572204769F00D4779F /* Transition.swift in Sources */,
 				AA27BE512204703600D4779F /* DetailsViewController.swift in Sources */,
 				AA00CD5B21F86D080046B9A4 /* GitHubAPI.swift in Sources */,
@@ -653,11 +685,15 @@
 				51FA87E4251C6F86004BCF82 /* RootAssembly.swift in Sources */,
 				AAC6356D21D6057B00A5E63C /* RepositoryCell.swift in Sources */,
 				AA00CD6521F8A8DD0046B9A4 /* SearchResults.swift in Sources */,
+				5115B07226013CFD0060A82E /* LayoutEdge.swift in Sources */,
 				AA27BE5E22047B7B00D4779F /* PushTransition.swift in Sources */,
 				AACFDF5A22035CBA0057121B /* FavoritesViewModel.swift in Sources */,
 				51FA87E2251C6EEC004BCF82 /* ModulesFactory.swift in Sources */,
 				AA27BE552204767900D4779F /* Router.swift in Sources */,
+				5115B07726013E940060A82E /* EdgeInsets.swift in Sources */,
+				5128C6432602255300F6FFD7 /* Layout+Superview.swift in Sources */,
 				AA392968236DBDEE00F4508F /* Sorted.swift in Sources */,
+				5115B06D260135850060A82E /* Layout.swift in Sources */,
 				AADED01C21D60B9B00CE305B /* Configs.swift in Sources */,
 				AA27BE532204705A00D4779F /* DetailsViewModel.swift in Sources */,
 			);
