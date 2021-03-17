@@ -23,24 +23,24 @@ final class RootViewController: UIViewController {
 	}
 
 	override func loadView() {
-	  let view = UIView(frame: .zero)
-	  installChild(mainTabBarController, in: view)
-	  self.view = view
+		let view = UIView(frame: .zero)
+		addChild(mainTabBarController, in: view)
+		self.view = view
 	}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+	override func viewDidLoad() {
+		super.viewDidLoad()
+	}
 }
 
 private extension RootViewController {
 
-	func installChild(_ controller: UIViewController, in host: UIView) {
-	  addChild(controller)
-	  controller.view.frame = host.bounds
-	  controller.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-	  host.addSubview(controller.view)
-	  controller.didMove(toParent: self)
+	func addChild(_ controller: UIViewController, in host: UIView) {
+		addChild(controller)
+		controller.view.frame = host.bounds
+		controller.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+		host.addSubview(controller.view)
+		controller.didMove(toParent: self)
 	}
 
 }
