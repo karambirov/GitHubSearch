@@ -22,6 +22,7 @@
 		5128C6432602255300F6FFD7 /* Layout+Superview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5128C6422602255300F6FFD7 /* Layout+Superview.swift */; };
 		5128C6522602349300F6FFD7 /* NSLayoutDimension+ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5128C6512602349300F6FFD7 /* NSLayoutDimension+ConstraintRelation.swift */; };
 		5128C657260234A100F6FFD7 /* NSLayoutAxisAnchor+ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5128C656260234A100F6FFD7 /* NSLayoutAxisAnchor+ConstraintRelation.swift */; };
+		5128C65C2602380B00F6FFD7 /* Layout+Margin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5128C65B2602380B00F6FFD7 /* Layout+Margin.swift */; };
 		519BC6102526259D00D05BCB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 519BC60F2526259D00D05BCB /* .swiftlint.yml */; };
 		519BC615252625B600D05BCB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 519BC614252625B600D05BCB /* .gitignore */; };
 		51A6C4012523B33C0012C342 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAC6355321D4EA5400A5E63C /* Info.plist */; };
@@ -96,6 +97,7 @@
 		5128C6422602255300F6FFD7 /* Layout+Superview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Layout+Superview.swift"; sourceTree = "<group>"; };
 		5128C6512602349300F6FFD7 /* NSLayoutDimension+ConstraintRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutDimension+ConstraintRelation.swift"; sourceTree = "<group>"; };
 		5128C656260234A100F6FFD7 /* NSLayoutAxisAnchor+ConstraintRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutAxisAnchor+ConstraintRelation.swift"; sourceTree = "<group>"; };
+		5128C65B2602380B00F6FFD7 /* Layout+Margin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Layout+Margin.swift"; sourceTree = "<group>"; };
 		516498222523CBFA00BAE513 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		519BC60F2526259D00D05BCB /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		519BC614252625B600D05BCB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
@@ -188,6 +190,7 @@
 				5115B06726012FC40060A82E /* Stack.swift */,
 				5115B06C260135850060A82E /* Layout.swift */,
 				5128C6422602255300F6FFD7 /* Layout+Superview.swift */,
+				5128C65B2602380B00F6FFD7 /* Layout+Margin.swift */,
 				5115B07126013CFD0060A82E /* LayoutEdge.swift */,
 				5115B07626013E940060A82E /* EdgeInsets.swift */,
 				5128C6512602349300F6FFD7 /* NSLayoutDimension+ConstraintRelation.swift */,
@@ -676,6 +679,7 @@
 				51FA87DF251C6D87004BCF82 /* SceneDelegate.swift in Sources */,
 				AA00CD4C21F32FAE0046B9A4 /* Repository.swift in Sources */,
 				AADED02A21D626FD00CE305B /* SearchViewModel.swift in Sources */,
+				5128C65C2602380B00F6FFD7 /* Layout+Margin.swift in Sources */,
 				AA00CD5021F3311F0046B9A4 /* UITableView+Extensions.swift in Sources */,
 				5115B05E26012C430060A82E /* Constrainable.swift in Sources */,
 				AA27BE572204769F00D4779F /* Transition.swift in Sources */,
