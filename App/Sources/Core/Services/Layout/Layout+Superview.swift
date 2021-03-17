@@ -128,7 +128,7 @@ extension UIView {
 			)
 		} else {
 			return trailing(
-				to: constrainable,
+				to: safeAreaLayoutGuide,
 				anchor,
 				offset: -offset,
 				relation: relation,
@@ -394,7 +394,15 @@ extension UIView {
 	) -> Constraint {
 
 		let constrainable = safeConstrainable(for: superview, usingSafeArea: usingSafeArea)
-		return width(to: constrainable, dimension, multiplier: multiplier, offset: offset, relation: relation, priority: priority, isActive: isActive)
+		return width(
+			to: constrainable,
+			dimension,
+			multiplier: multiplier,
+			offset: offset,
+			relation: relation,
+			priority: priority,
+			isActive: isActive
+		)
 	}
 }
 
@@ -412,7 +420,15 @@ extension UIView {
 	) -> Constraint {
 
 		let constrainable = safeConstrainable(for: superview, usingSafeArea: usingSafeArea)
-		return height(to: constrainable, dimension, multiplier: multiplier, offset: offset, relation: relation, priority: priority, isActive: isActive)
+		return height(
+			to: constrainable,
+			dimension,
+			multiplier: multiplier,
+			offset: offset,
+			relation: relation,
+			priority: priority,
+			isActive: isActive
+		)
 	}
 }
 
