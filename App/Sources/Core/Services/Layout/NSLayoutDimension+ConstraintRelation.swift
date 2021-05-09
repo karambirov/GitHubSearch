@@ -25,7 +25,6 @@ extension NSLayoutDimension {
 	}
 
 	func constraint(toConstant constant: CGFloat, relation: ConstraintRelation) -> NSLayoutConstraint {
-
 		switch relation {
 		case .equal: return constraint(equalToConstant: constant)
 		case .equalOrLess: return constraint(lessThanOrEqualToConstant: constant)

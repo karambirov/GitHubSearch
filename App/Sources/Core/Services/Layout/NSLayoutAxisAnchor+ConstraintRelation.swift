@@ -10,24 +10,30 @@ import UIKit
 
 extension NSLayoutXAxisAnchor {
 
-	func constraint(to anchor: NSLayoutXAxisAnchor, relation: ConstraintRelation) -> NSLayoutConstraint {
-		
+	func constraint(
+		to anchor: NSLayoutXAxisAnchor,
+		offset: CGFloat,
+		relation: ConstraintRelation
+	) -> NSLayoutConstraint {
 		switch relation {
-		case .equal: return constraint(equalTo: anchor)
-		case .equalOrLess: return constraint(lessThanOrEqualTo: anchor)
-		case .equalOrGreater: return constraint(greaterThanOrEqualTo: anchor)
+		case .equal: return constraint(equalTo: anchor, constant: offset)
+		case .equalOrLess: return constraint(lessThanOrEqualTo: anchor, constant: offset)
+		case .equalOrGreater: return constraint(greaterThanOrEqualTo: anchor, constant: offset)
 		}
 	}
 }
 
 extension NSLayoutYAxisAnchor {
 
-	func constraint(to anchor: NSLayoutYAxisAnchor, relation: ConstraintRelation) -> NSLayoutConstraint {
-
+	func constraint(
+		to anchor: NSLayoutYAxisAnchor,
+		offset: CGFloat,
+		relation: ConstraintRelation
+	) -> NSLayoutConstraint {
 		switch relation {
-		case .equal: return constraint(equalTo: anchor)
-		case .equalOrLess: return constraint(lessThanOrEqualTo: anchor)
-		case .equalOrGreater: return constraint(greaterThanOrEqualTo: anchor)
+		case .equal: return constraint(equalTo: anchor, constant: offset)
+		case .equalOrLess: return constraint(lessThanOrEqualTo: anchor, constant: offset)
+		case .equalOrGreater: return constraint(greaterThanOrEqualTo: anchor, constant: offset)
 		}
 	}
 }

@@ -9,7 +9,6 @@
 import UIKit
 
 protocol Constrainable {
-	
 	var topAnchor: NSLayoutYAxisAnchor { get }
 	var bottomAnchor: NSLayoutYAxisAnchor { get }
 	var leftAnchor: NSLayoutXAxisAnchor { get }
@@ -28,7 +27,6 @@ protocol Constrainable {
 }
 
 extension UIView: Constrainable {
-
 	@discardableResult
 	func prepareForLayout() -> Self {
 		translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +35,6 @@ extension UIView: Constrainable {
 }
 
 extension UILayoutGuide: Constrainable {
-
 	@discardableResult
 	func prepareForLayout() -> Self {
 		return self

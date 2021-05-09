@@ -7,12 +7,10 @@
 //
 
 struct LayoutEdge: OptionSet {
-
 	let rawValue: UInt8
 }
 
 extension LayoutEdge {
-
 	static let top = LayoutEdge(rawValue: 1 << 0)
 	static let bottom = LayoutEdge(rawValue: 1 << 1)
 	static let trailing = LayoutEdge(rawValue: 1 << 2)
@@ -21,4 +19,3 @@ extension LayoutEdge {
 	static let right = LayoutEdge(rawValue: 1 << 5)
 	static let none = LayoutEdge(rawValue: 1 << 6)
 }
-

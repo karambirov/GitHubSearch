@@ -12,7 +12,6 @@ typealias Constraint = NSLayoutConstraint
 typealias Constraints = [NSLayoutConstraint]
 
 enum ConstraintRelation: Int {
-	
 	case equal = 0
 	case equalOrLess = -1
 	case equalOrGreater = 1
@@ -34,10 +33,9 @@ extension Collection where Iterator.Element == Constraint {
 }
 
 extension Constraint {
-
 	@objc
-	func with(_ p: UILayoutPriority) -> Self {
-		priority = p
+	func with(_ priority: UILayoutPriority) -> Self {
+		self.priority = priority
 		return self
 	}
 
