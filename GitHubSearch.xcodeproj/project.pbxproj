@@ -15,6 +15,21 @@
 		5115B06326012E100060A82E /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115B06226012E100060A82E /* Constraints.swift */; };
 		5115B06D260135850060A82E /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115B06C260135850060A82E /* Layout.swift */; };
 		5115B07726013E940060A82E /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115B07626013E940060A82E /* EdgeInsets.swift */; };
+		51266FEB264C27FB008F18C8 /* ViewControllersTreeBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51266FE0264C273D008F18C8 /* ViewControllersTreeBuilderTests.swift */; };
+		51266FEF264C2801008F18C8 /* UIViewController+AddChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51266FD7264C2682008F18C8 /* UIViewController+AddChild.swift */; };
+		51267002264C28CF008F18C8 /* ViewControllersStackGrouperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51266FFA264C2897008F18C8 /* ViewControllersStackGrouperTests.swift */; };
+		5126700B264C2919008F18C8 /* GroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5126700A264C2919008F18C8 /* GroupTests.swift */; };
+		51267013264C2957008F18C8 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51267012264C2957008F18C8 /* TreeTests.swift */; };
+		5126701B264C2A4F008F18C8 /* ModuleMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5126701A264C2A4F008F18C8 /* ModuleMock.swift */; };
+		51267023264C2A68008F18C8 /* NavigationSeedMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51267022264C2A68008F18C8 /* NavigationSeedMock.swift */; };
+		51267028264C2AC7008F18C8 /* NavigationTagHolderVCMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51267027264C2AC7008F18C8 /* NavigationTagHolderVCMock.swift */; };
+		5126702D264C2AF5008F18C8 /* RouteMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5126702C264C2AF5008F18C8 /* RouteMock.swift */; };
+		51267033264C2B48008F18C8 /* NavigationItemsRegistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51267032264C2B48008F18C8 /* NavigationItemsRegistryTests.swift */; };
+		51267042264C3150008F18C8 /* RoutableModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5126703A264C3127008F18C8 /* RoutableModule.swift */; };
+		51267048264C331E008F18C8 /* NavigationStateListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51267047264C331E008F18C8 /* NavigationStateListener.swift */; };
+		51267050264C3381008F18C8 /* NavigationStateNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5126704F264C3381008F18C8 /* NavigationStateNotifier.swift */; };
+		51267055264C339D008F18C8 /* WeakThreadSafeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51267054264C339D008F18C8 /* WeakThreadSafeSet.swift */; };
+		5126705A264C347F008F18C8 /* NavigationStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51267059264C347F008F18C8 /* NavigationStateProvider.swift */; };
 		5128C6432602255300F6FFD7 /* Layout+Superview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5128C6422602255300F6FFD7 /* Layout+Superview.swift */; };
 		5128C6522602349300F6FFD7 /* NSLayoutDimension+ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5128C6512602349300F6FFD7 /* NSLayoutDimension+ConstraintRelation.swift */; };
 		5128C657260234A100F6FFD7 /* NSLayoutAxisAnchor+ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5128C656260234A100F6FFD7 /* NSLayoutAxisAnchor+ConstraintRelation.swift */; };
@@ -83,7 +98,6 @@
 		AAA8A9EE21D4CCF0004A7E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA8A9ED21D4CCF0004A7E89 /* Assets.xcassets */; };
 		AAA8A9F121D4CCF0004A7E89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAA8A9EF21D4CCF0004A7E89 /* LaunchScreen.storyboard */; };
 		AABD746B2216B7F700F9C648 /* DetailsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD746A2216B7F700F9C648 /* DetailsStackView.swift */; };
-		AAC6355221D4EA5400A5E63C /* GitHubSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6355121D4EA5400A5E63C /* GitHubSearchTests.swift */; };
 		AAC6356021D4EA7A00A5E63C /* GitHubSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6355F21D4EA7A00A5E63C /* GitHubSearchUITests.swift */; };
 		AAC6356D21D6057B00A5E63C /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6356B21D6057B00A5E63C /* RepositoryCell.swift */; };
 		AAC6357621D6074E00A5E63C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAC6357821D6074E00A5E63C /* Localizable.strings */; };
@@ -118,6 +132,21 @@
 		5115B06C260135850060A82E /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		5115B07126013CFD0060A82E /* LayoutEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutEdge.swift; sourceTree = "<group>"; };
 		5115B07626013E940060A82E /* EdgeInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeInsets.swift; sourceTree = "<group>"; };
+		51266FD7264C2682008F18C8 /* UIViewController+AddChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddChild.swift"; sourceTree = "<group>"; };
+		51266FE0264C273D008F18C8 /* ViewControllersTreeBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersTreeBuilderTests.swift; sourceTree = "<group>"; };
+		51266FFA264C2897008F18C8 /* ViewControllersStackGrouperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersStackGrouperTests.swift; sourceTree = "<group>"; };
+		5126700A264C2919008F18C8 /* GroupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTests.swift; sourceTree = "<group>"; };
+		51267012264C2957008F18C8 /* TreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeTests.swift; sourceTree = "<group>"; };
+		5126701A264C2A4F008F18C8 /* ModuleMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleMock.swift; sourceTree = "<group>"; };
+		51267022264C2A68008F18C8 /* NavigationSeedMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSeedMock.swift; sourceTree = "<group>"; };
+		51267027264C2AC7008F18C8 /* NavigationTagHolderVCMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTagHolderVCMock.swift; sourceTree = "<group>"; };
+		5126702C264C2AF5008F18C8 /* RouteMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteMock.swift; sourceTree = "<group>"; };
+		51267032264C2B48008F18C8 /* NavigationItemsRegistryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemsRegistryTests.swift; sourceTree = "<group>"; };
+		5126703A264C3127008F18C8 /* RoutableModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutableModule.swift; sourceTree = "<group>"; };
+		51267047264C331E008F18C8 /* NavigationStateListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStateListener.swift; sourceTree = "<group>"; };
+		5126704F264C3381008F18C8 /* NavigationStateNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStateNotifier.swift; sourceTree = "<group>"; };
+		51267054264C339D008F18C8 /* WeakThreadSafeSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakThreadSafeSet.swift; sourceTree = "<group>"; };
+		51267059264C347F008F18C8 /* NavigationStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStateProvider.swift; sourceTree = "<group>"; };
 		5128C6422602255300F6FFD7 /* Layout+Superview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Layout+Superview.swift"; sourceTree = "<group>"; };
 		5128C6512602349300F6FFD7 /* NSLayoutDimension+ConstraintRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutDimension+ConstraintRelation.swift"; sourceTree = "<group>"; };
 		5128C656260234A100F6FFD7 /* NSLayoutAxisAnchor+ConstraintRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutAxisAnchor+ConstraintRelation.swift"; sourceTree = "<group>"; };
@@ -187,7 +216,6 @@
 		AABD746A2216B7F700F9C648 /* DetailsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsStackView.swift; sourceTree = "<group>"; };
 		AAC6353821D4DF6D00A5E63C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		AAC6354F21D4EA5400A5E63C /* GitHubSearchUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubSearchUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAC6355121D4EA5400A5E63C /* GitHubSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchTests.swift; sourceTree = "<group>"; };
 		AAC6355321D4EA5400A5E63C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAC6355D21D4EA7A00A5E63C /* GitHubSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC6355F21D4EA7A00A5E63C /* GitHubSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchUITests.swift; sourceTree = "<group>"; };
@@ -269,6 +297,103 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		51266FD4264C261F008F18C8 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				51267031264C2B31008F18C8 /* Registry */,
+				51266FF9264C288B008F18C8 /* NavigationStack */,
+				51266FDF264C272C008F18C8 /* NavigationDriver */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		51266FD5264C264A008F18C8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				51266FD6264C267A008F18C8 /* Extensions */,
+				51266FD4264C261F008F18C8 /* Routing */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		51266FD6264C267A008F18C8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				51266FD7264C2682008F18C8 /* UIViewController+AddChild.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		51266FDF264C272C008F18C8 /* NavigationDriver */ = {
+			isa = PBXGroup;
+			children = (
+				51266FE0264C273D008F18C8 /* ViewControllersTreeBuilderTests.swift */,
+			);
+			path = NavigationDriver;
+			sourceTree = "<group>";
+		};
+		51266FF9264C288B008F18C8 /* NavigationStack */ = {
+			isa = PBXGroup;
+			children = (
+				51266FFA264C2897008F18C8 /* ViewControllersStackGrouperTests.swift */,
+			);
+			path = NavigationStack;
+			sourceTree = "<group>";
+		};
+		51267009264C2901008F18C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5126700A264C2919008F18C8 /* GroupTests.swift */,
+				51267012264C2957008F18C8 /* TreeTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		51267017264C2A19008F18C8 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				51267018264C2A31008F18C8 /* Core */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		51267018264C2A31008F18C8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				51267019264C2A45008F18C8 /* Routing */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		51267019264C2A45008F18C8 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				5126701A264C2A4F008F18C8 /* ModuleMock.swift */,
+				51267022264C2A68008F18C8 /* NavigationSeedMock.swift */,
+				51267027264C2AC7008F18C8 /* NavigationTagHolderVCMock.swift */,
+				5126702C264C2AF5008F18C8 /* RouteMock.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		51267031264C2B31008F18C8 /* Registry */ = {
+			isa = PBXGroup;
+			children = (
+				51267032264C2B48008F18C8 /* NavigationItemsRegistryTests.swift */,
+			);
+			path = Registry;
+			sourceTree = "<group>";
+		};
+		51267046264C3301008F18C8 /* NavigationState */ = {
+			isa = PBXGroup;
+			children = (
+				51267047264C331E008F18C8 /* NavigationStateListener.swift */,
+				5126704F264C3381008F18C8 /* NavigationStateNotifier.swift */,
+				51267059264C347F008F18C8 /* NavigationStateProvider.swift */,
+			);
+			path = NavigationState;
+			sourceTree = "<group>";
+		};
 		5141004D264AD5C4001C1A29 /* NavigationDriver */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,12 +450,14 @@
 		51435319264ACBA30063D993 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
+				51267046264C3301008F18C8 /* NavigationState */,
 				514100B2264B0C73001C1A29 /* NavigationStack */,
 				5141008F264AF360001C1A29 /* Registry */,
 				5141004E264AD5CC001C1A29 /* NavigationSeed */,
 				5141004D264AD5C4001C1A29 /* NavigationDriver */,
 				AA27BE582204775F00D4779F /* Router */,
 				51410048264AD5B7001C1A29 /* Navigator.swift */,
+				5126703A264C3127008F18C8 /* RoutableModule.swift */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -385,6 +512,7 @@
 				5141006B264AEC9F001C1A29 /* Weak.swift */,
 				5141007B264AEF12001C1A29 /* Group.swift */,
 				51410085264AF202001C1A29 /* Tree.swift */,
+				51267054264C339D008F18C8 /* WeakThreadSafeSet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -542,7 +670,9 @@
 		AAC6355021D4EA5400A5E63C /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				AAC6355121D4EA5400A5E63C /* GitHubSearchTests.swift */,
+				51267017264C2A19008F18C8 /* Mocks */,
+				51267009264C2901008F18C8 /* Models */,
+				51266FD5264C264A008F18C8 /* Core */,
 				AAC6355321D4EA5400A5E63C /* Info.plist */,
 			);
 			path = UnitTests;
@@ -775,7 +905,9 @@
 				514100CB264B1B7B001C1A29 /* NavigationItemsRegistryProtocol.swift in Sources */,
 				AA00CD5F21F87BDA0046B9A4 /* NetworkingService.swift in Sources */,
 				514100B4264B0C89001C1A29 /* NavigationStack.swift in Sources */,
+				51267055264C339D008F18C8 /* WeakThreadSafeSet.swift in Sources */,
 				5115B06326012E100060A82E /* Constraints.swift in Sources */,
+				51267048264C331E008F18C8 /* NavigationStateListener.swift in Sources */,
 				AAA8A9E921D4CCED004A7E89 /* SearchViewController.swift in Sources */,
 				AA27BE612204827500D4779F /* DetailsRoute.swift in Sources */,
 				5128C6522602349300F6FFD7 /* NSLayoutDimension+ConstraintRelation.swift in Sources */,
@@ -788,6 +920,7 @@
 				5141005D264AEA63001C1A29 /* NavigationTagHolder.swift in Sources */,
 				AAA8A9E721D4CCED004A7E89 /* AppDelegate.swift in Sources */,
 				AA00CD6121F89FEF0046B9A4 /* RepositoryDataProvider.swift in Sources */,
+				51267042264C3150008F18C8 /* RoutableModule.swift in Sources */,
 				514352C5264AB1590063D993 /* DependencyContainer.swift in Sources */,
 				AACFDF5822035CAD0057121B /* FavoritesViewController.swift in Sources */,
 				51410091264AF368001C1A29 /* RegistryError.swift in Sources */,
@@ -808,6 +941,7 @@
 				AA23C02E220445E60091B663 /* RepositoryInfoView.swift in Sources */,
 				AAD1AEE0220D63F000B6B0DB /* RealmService.swift in Sources */,
 				AA00CD5D21F876A30046B9A4 /* String+UrlEscapedString.swift in Sources */,
+				5126705A264C347F008F18C8 /* NavigationStateProvider.swift in Sources */,
 				514352FE264ABAFF0063D993 /* FavoritesAssembly.swift in Sources */,
 				514100BC264B0D3C001C1A29 /* ViewControllersStackGrouper.swift in Sources */,
 				AA27BE5A220477B000D4779F /* ModalTransition.swift in Sources */,
@@ -822,6 +956,7 @@
 				51FA87E4251C6F86004BCF82 /* RootAssembly.swift in Sources */,
 				AAC6356D21D6057B00A5E63C /* RepositoryCell.swift in Sources */,
 				AA00CD6521F8A8DD0046B9A4 /* SearchResults.swift in Sources */,
+				51267050264C3381008F18C8 /* NavigationStateNotifier.swift in Sources */,
 				51435309264AC5F40063D993 /* DetailsAssembly.swift in Sources */,
 				51410044264AD57E001C1A29 /* UIViewController+PresentationStyle.swift in Sources */,
 				5141008B264AF338001C1A29 /* NavigationError.swift in Sources */,
@@ -847,7 +982,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAC6355221D4EA5400A5E63C /* GitHubSearchTests.swift in Sources */,
+				51267002264C28CF008F18C8 /* ViewControllersStackGrouperTests.swift in Sources */,
+				5126701B264C2A4F008F18C8 /* ModuleMock.swift in Sources */,
+				51266FEB264C27FB008F18C8 /* ViewControllersTreeBuilderTests.swift in Sources */,
+				51267013264C2957008F18C8 /* TreeTests.swift in Sources */,
+				5126702D264C2AF5008F18C8 /* RouteMock.swift in Sources */,
+				51267023264C2A68008F18C8 /* NavigationSeedMock.swift in Sources */,
+				51266FEF264C2801008F18C8 /* UIViewController+AddChild.swift in Sources */,
+				51267033264C2B48008F18C8 /* NavigationItemsRegistryTests.swift in Sources */,
+				5126700B264C2919008F18C8 /* GroupTests.swift in Sources */,
+				51267028264C2AC7008F18C8 /* NavigationTagHolderVCMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
