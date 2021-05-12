@@ -5,7 +5,7 @@ GitHub iOS client written in Swift using MVVM architecture with Router (without 
 - [x] Searching for repositories using GitHub API.
 - [x] Saving info about favorite repositories on disk, so a user can see them offline.
 
-## Technologies
+## Technologies (outdated)
 - [x] Separate layer for routing between screens.
 - [x] Networking REST API v3 ([Moya](https://github.com/Moya/Moya)).
 - [x] Programmatically UI ([SnapKit](https://github.com/SnapKit/SnapKit)).
