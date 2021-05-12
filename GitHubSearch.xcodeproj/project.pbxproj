@@ -19,6 +19,31 @@
 		5128C6522602349300F6FFD7 /* NSLayoutDimension+ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5128C6512602349300F6FFD7 /* NSLayoutDimension+ConstraintRelation.swift */; };
 		5128C657260234A100F6FFD7 /* NSLayoutAxisAnchor+ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5128C656260234A100F6FFD7 /* NSLayoutAxisAnchor+ConstraintRelation.swift */; };
 		5128C65C2602380B00F6FFD7 /* Layout+Margin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5128C65B2602380B00F6FFD7 /* Layout+Margin.swift */; };
+		51410036264AD44B001C1A29 /* UIViewController+OnlyChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51410035264AD44B001C1A29 /* UIViewController+OnlyChild.swift */; };
+		51410044264AD57E001C1A29 /* UIViewController+PresentationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51410043264AD57E001C1A29 /* UIViewController+PresentationStyle.swift */; };
+		51410049264AD5B7001C1A29 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51410048264AD5B7001C1A29 /* Navigator.swift */; };
+		51410053264AE9CC001C1A29 /* NavigationSeedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51410052264AE9CC001C1A29 /* NavigationSeedProtocol.swift */; };
+		51410058264AEA2E001C1A29 /* NavigationTagProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51410057264AEA2E001C1A29 /* NavigationTagProtocol.swift */; };
+		5141005D264AEA63001C1A29 /* NavigationTagHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141005C264AEA63001C1A29 /* NavigationTagHolder.swift */; };
+		51410062264AEB5C001C1A29 /* ViewControllerPresentationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51410061264AEB5C001C1A29 /* ViewControllerPresentationStyle.swift */; };
+		51410067264AEB79001C1A29 /* NavigationSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51410066264AEB79001C1A29 /* NavigationSeed.swift */; };
+		5141006C264AEC9F001C1A29 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141006B264AEC9F001C1A29 /* Weak.swift */; };
+		51410074264AEE16001C1A29 /* NavigationDriverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51410073264AEE16001C1A29 /* NavigationDriverProtocol.swift */; };
+		5141007C264AEF12001C1A29 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141007B264AEF12001C1A29 /* Group.swift */; };
+		51410081264AF09B001C1A29 /* Result+OperationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51410080264AF09B001C1A29 /* Result+OperationStatus.swift */; };
+		51410086264AF202001C1A29 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51410085264AF202001C1A29 /* Tree.swift */; };
+		5141008B264AF338001C1A29 /* NavigationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141008A264AF338001C1A29 /* NavigationError.swift */; };
+		51410091264AF368001C1A29 /* RegistryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51410090264AF368001C1A29 /* RegistryError.swift */; };
+		51410096264AF640001C1A29 /* NavigationIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51410095264AF640001C1A29 /* NavigationIndex.swift */; };
+		5141009B264AF670001C1A29 /* RootViewControllerHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141009A264AF670001C1A29 /* RootViewControllerHolder.swift */; };
+		514100A0264AF8ED001C1A29 /* NavigationTreeDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141009F264AF8ED001C1A29 /* NavigationTreeDriver.swift */; };
+		514100AB264AFA6E001C1A29 /* ViewControllerTreeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514100AA264AFA6E001C1A29 /* ViewControllerTreeBuilder.swift */; };
+		514100B4264B0C89001C1A29 /* NavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514100B3264B0C89001C1A29 /* NavigationStack.swift */; };
+		514100BC264B0D3C001C1A29 /* ViewControllersStackGrouper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514100BB264B0D3C001C1A29 /* ViewControllersStackGrouper.swift */; };
+		514100C1264B1A70001C1A29 /* RegistryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514100C0264B1A70001C1A29 /* RegistryItem.swift */; };
+		514100C6264B1AC8001C1A29 /* NavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514100C5264B1AC8001C1A29 /* NavigationItem.swift */; };
+		514100CB264B1B7B001C1A29 /* NavigationItemsRegistryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514100CA264B1B7B001C1A29 /* NavigationItemsRegistryProtocol.swift */; };
+		514100D0264B1B81001C1A29 /* NavigationItemsRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514100CF264B1B81001C1A29 /* NavigationItemsRegistry.swift */; };
 		51435271264819530063D993 /* LayoutEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115B07126013CFD0060A82E /* LayoutEdge.swift */; };
 		514352C5264AB1590063D993 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514352C4264AB1590063D993 /* DependencyContainer.swift */; };
 		514352F9264AB8FE0063D993 /* SearchAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514352F8264AB8FE0063D993 /* SearchAssembly.swift */; };
@@ -97,6 +122,31 @@
 		5128C6512602349300F6FFD7 /* NSLayoutDimension+ConstraintRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutDimension+ConstraintRelation.swift"; sourceTree = "<group>"; };
 		5128C656260234A100F6FFD7 /* NSLayoutAxisAnchor+ConstraintRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutAxisAnchor+ConstraintRelation.swift"; sourceTree = "<group>"; };
 		5128C65B2602380B00F6FFD7 /* Layout+Margin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Layout+Margin.swift"; sourceTree = "<group>"; };
+		51410035264AD44B001C1A29 /* UIViewController+OnlyChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+OnlyChild.swift"; sourceTree = "<group>"; };
+		51410043264AD57E001C1A29 /* UIViewController+PresentationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+PresentationStyle.swift"; sourceTree = "<group>"; };
+		51410048264AD5B7001C1A29 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		51410052264AE9CC001C1A29 /* NavigationSeedProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSeedProtocol.swift; sourceTree = "<group>"; };
+		51410057264AEA2E001C1A29 /* NavigationTagProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTagProtocol.swift; sourceTree = "<group>"; };
+		5141005C264AEA63001C1A29 /* NavigationTagHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTagHolder.swift; sourceTree = "<group>"; };
+		51410061264AEB5C001C1A29 /* ViewControllerPresentationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresentationStyle.swift; sourceTree = "<group>"; };
+		51410066264AEB79001C1A29 /* NavigationSeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSeed.swift; sourceTree = "<group>"; };
+		5141006B264AEC9F001C1A29 /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
+		51410073264AEE16001C1A29 /* NavigationDriverProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDriverProtocol.swift; sourceTree = "<group>"; };
+		5141007B264AEF12001C1A29 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		51410080264AF09B001C1A29 /* Result+OperationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+OperationStatus.swift"; sourceTree = "<group>"; };
+		51410085264AF202001C1A29 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		5141008A264AF338001C1A29 /* NavigationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationError.swift; sourceTree = "<group>"; };
+		51410090264AF368001C1A29 /* RegistryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryError.swift; sourceTree = "<group>"; };
+		51410095264AF640001C1A29 /* NavigationIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationIndex.swift; sourceTree = "<group>"; };
+		5141009A264AF670001C1A29 /* RootViewControllerHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewControllerHolder.swift; sourceTree = "<group>"; };
+		5141009F264AF8ED001C1A29 /* NavigationTreeDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTreeDriver.swift; sourceTree = "<group>"; };
+		514100AA264AFA6E001C1A29 /* ViewControllerTreeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTreeBuilder.swift; sourceTree = "<group>"; };
+		514100B3264B0C89001C1A29 /* NavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStack.swift; sourceTree = "<group>"; };
+		514100BB264B0D3C001C1A29 /* ViewControllersStackGrouper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersStackGrouper.swift; sourceTree = "<group>"; };
+		514100C0264B1A70001C1A29 /* RegistryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryItem.swift; sourceTree = "<group>"; };
+		514100C5264B1AC8001C1A29 /* NavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItem.swift; sourceTree = "<group>"; };
+		514100CA264B1B7B001C1A29 /* NavigationItemsRegistryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemsRegistryProtocol.swift; sourceTree = "<group>"; };
+		514100CF264B1B81001C1A29 /* NavigationItemsRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemsRegistry.swift; sourceTree = "<group>"; };
 		514352C4264AB1590063D993 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		514352F8264AB8FE0063D993 /* SearchAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAssembly.swift; sourceTree = "<group>"; };
 		514352FD264ABAFF0063D993 /* FavoritesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAssembly.swift; sourceTree = "<group>"; };
@@ -219,34 +269,70 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		51AD91CF2523B0B500D205D1 /* Core */ = {
+		5141004D264AD5C4001C1A29 /* NavigationDriver */ = {
 			isa = PBXGroup;
 			children = (
-				AAC6353321D4CE7200A5E63C /* Extensions */,
-				AAC6353721D4DECF00A5E63C /* Protocols */,
-				AAC6353421D4CE7C00A5E63C /* Services */,
+				51410073264AEE16001C1A29 /* NavigationDriverProtocol.swift */,
+				5141008A264AF338001C1A29 /* NavigationError.swift */,
+				51410095264AF640001C1A29 /* NavigationIndex.swift */,
+				5141009F264AF8ED001C1A29 /* NavigationTreeDriver.swift */,
+				5141009A264AF670001C1A29 /* RootViewControllerHolder.swift */,
+				514100AA264AFA6E001C1A29 /* ViewControllerTreeBuilder.swift */,
 			);
-			path = Core;
+			path = NavigationDriver;
 			sourceTree = "<group>";
 		};
-		51AD91D82523B0E900D205D1 /* Data */ = {
+		5141004E264AD5CC001C1A29 /* NavigationSeed */ = {
 			isa = PBXGroup;
 			children = (
-				AA00CD4A21F32F910046B9A4 /* Models */,
-				51AD91DA2523B11B00D205D1 /* DataProviders */,
+				51410066264AEB79001C1A29 /* NavigationSeed.swift */,
+				51410052264AE9CC001C1A29 /* NavigationSeedProtocol.swift */,
+				5141005C264AEA63001C1A29 /* NavigationTagHolder.swift */,
+				51410057264AEA2E001C1A29 /* NavigationTagProtocol.swift */,
+				51410061264AEB5C001C1A29 /* ViewControllerPresentationStyle.swift */,
 			);
-			path = Data;
+			path = NavigationSeed;
 			sourceTree = "<group>";
 		};
-		51AD91D92523B0F100D205D1 /* Domain */ = {
+		5141008F264AF360001C1A29 /* Registry */ = {
 			isa = PBXGroup;
 			children = (
-				AAC6353221D4CE6B00A5E63C /* Modules */,
+				51410090264AF368001C1A29 /* RegistryError.swift */,
+				514100C0264B1A70001C1A29 /* RegistryItem.swift */,
+				514100C5264B1AC8001C1A29 /* NavigationItem.swift */,
+				514100CA264B1B7B001C1A29 /* NavigationItemsRegistryProtocol.swift */,
+				514100CF264B1B81001C1A29 /* NavigationItemsRegistry.swift */,
+			);
+			path = Registry;
+			sourceTree = "<group>";
+		};
+		514100B2264B0C73001C1A29 /* NavigationStack */ = {
+			isa = PBXGroup;
+			children = (
+				514100B3264B0C89001C1A29 /* NavigationStack.swift */,
+				514100BB264B0D3C001C1A29 /* ViewControllersStackGrouper.swift */,
+			);
+			path = NavigationStack;
+			sourceTree = "<group>";
+		};
 		51435318264ACB670063D993 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		51435319264ACBA30063D993 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				514100B2264B0C73001C1A29 /* NavigationStack */,
+				5141008F264AF360001C1A29 /* Registry */,
+				5141004E264AD5CC001C1A29 /* NavigationSeed */,
+				5141004D264AD5C4001C1A29 /* NavigationDriver */,
+				AA27BE582204775F00D4779F /* Router */,
+				51410048264AD5B7001C1A29 /* Navigator.swift */,
+			);
+			path = Routing;
 			sourceTree = "<group>";
 		};
 		5143531A264ACBAB0063D993 /* Storage */ = {
@@ -296,6 +382,9 @@
 				AA00CD6221F8A4420046B9A4 /* Owner.swift */,
 				AA00CD6421F8A8DD0046B9A4 /* SearchResults.swift */,
 				AA00CD6621FB63980046B9A4 /* Observable.swift */,
+				5141006B264AEC9F001C1A29 /* Weak.swift */,
+				5141007B264AEF12001C1A29 /* Group.swift */,
+				51410085264AF202001C1A29 /* Tree.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -427,6 +516,9 @@
 			children = (
 				AA00CD4F21F3311F0046B9A4 /* UITableView+DequeueCell.swift */,
 				AA00CD5C21F876A30046B9A4 /* String+UrlEscapedString.swift */,
+				51410035264AD44B001C1A29 /* UIViewController+OnlyChild.swift */,
+				51410043264AD57E001C1A29 /* UIViewController+PresentationStyle.swift */,
+				51410080264AF09B001C1A29 /* Result+OperationStatus.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -676,28 +768,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAA423C72216A7CF00B8FA60 /* OwnerInfoView.swift in Sources */,
-				5115B06826012FC40060A82E /* Stack.swift in Sources */,
+				514100A0264AF8ED001C1A29 /* NavigationTreeDriver.swift in Sources */,
 				AA27BE5C2204788600D4779F /* Animator.swift in Sources */,
+				5141006C264AEC9F001C1A29 /* Weak.swift in Sources */,
 				AA00CD6721FB63980046B9A4 /* Observable.swift in Sources */,
+				514100CB264B1B7B001C1A29 /* NavigationItemsRegistryProtocol.swift in Sources */,
 				AA00CD5F21F87BDA0046B9A4 /* NetworkingService.swift in Sources */,
+				514100B4264B0C89001C1A29 /* NavigationStack.swift in Sources */,
 				5115B06326012E100060A82E /* Constraints.swift in Sources */,
 				AAA8A9E921D4CCED004A7E89 /* SearchViewController.swift in Sources */,
 				AA27BE612204827500D4779F /* DetailsRoute.swift in Sources */,
 				5128C6522602349300F6FFD7 /* NSLayoutDimension+ConstraintRelation.swift in Sources */,
+				514100C1264B1A70001C1A29 /* RegistryItem.swift in Sources */,
 				AABD746B2216B7F700F9C648 /* DetailsStackView.swift in Sources */,
 				51435271264819530063D993 /* LayoutEdge.swift in Sources */,
+				51410086264AF202001C1A29 /* Tree.swift in Sources */,
+				51410058264AEA2E001C1A29 /* NavigationTagProtocol.swift in Sources */,
+				51410053264AE9CC001C1A29 /* NavigationSeedProtocol.swift in Sources */,
+				5141005D264AEA63001C1A29 /* NavigationTagHolder.swift in Sources */,
 				AAA8A9E721D4CCED004A7E89 /* AppDelegate.swift in Sources */,
 				AA00CD6121F89FEF0046B9A4 /* RepositoryDataProvider.swift in Sources */,
 				514352C5264AB1590063D993 /* DependencyContainer.swift in Sources */,
 				AACFDF5822035CAD0057121B /* FavoritesViewController.swift in Sources */,
+				51410091264AF368001C1A29 /* RegistryError.swift in Sources */,
 				51FA87DC251C6AF0004BCF82 /* RootViewController.swift in Sources */,
+				51410074264AEE16001C1A29 /* NavigationDriverProtocol.swift in Sources */,
 				51FA87DF251C6D87004BCF82 /* SceneDelegate.swift in Sources */,
 				AA00CD4C21F32FAE0046B9A4 /* Repository.swift in Sources */,
 				AADED02A21D626FD00CE305B /* SearchViewModel.swift in Sources */,
 				5128C65C2602380B00F6FFD7 /* Layout+Margin.swift in Sources */,
 				AA00CD5021F3311F0046B9A4 /* UITableView+DequeueCell.swift in Sources */,
 				5115B05E26012C430060A82E /* Constrainable.swift in Sources */,
+				51410067264AEB79001C1A29 /* NavigationSeed.swift in Sources */,
 				514352F9264AB8FE0063D993 /* SearchAssembly.swift in Sources */,
+				5141007C264AEF12001C1A29 /* Group.swift in Sources */,
 				AA27BE572204769F00D4779F /* Transition.swift in Sources */,
 				AA27BE512204703600D4779F /* DetailsViewController.swift in Sources */,
 				AA00CD5B21F86D080046B9A4 /* GitHubAPI.swift in Sources */,
@@ -705,24 +809,36 @@
 				AAD1AEE0220D63F000B6B0DB /* RealmService.swift in Sources */,
 				AA00CD5D21F876A30046B9A4 /* String+UrlEscapedString.swift in Sources */,
 				514352FE264ABAFF0063D993 /* FavoritesAssembly.swift in Sources */,
+				514100BC264B0D3C001C1A29 /* ViewControllersStackGrouper.swift in Sources */,
 				AA27BE5A220477B000D4779F /* ModalTransition.swift in Sources */,
 				AA00CD5221F344D90046B9A4 /* RepositoryCellViewModel.swift in Sources */,
 				AA00CD4E21F330D10046B9A4 /* Describable.swift in Sources */,
 				AA00CD6321F8A4420046B9A4 /* Owner.swift in Sources */,
+				51410036264AD44B001C1A29 /* UIViewController+OnlyChild.swift in Sources */,
 				AACFDF5C220437B10057121B /* TableViewDataSource.swift in Sources */,
+				51410049264AD5B7001C1A29 /* Navigator.swift in Sources */,
 				5128C657260234A100F6FFD7 /* NSLayoutAxisAnchor+ConstraintRelation.swift in Sources */,
+				514100AB264AFA6E001C1A29 /* ViewControllerTreeBuilder.swift in Sources */,
 				51FA87E4251C6F86004BCF82 /* RootAssembly.swift in Sources */,
 				AAC6356D21D6057B00A5E63C /* RepositoryCell.swift in Sources */,
 				AA00CD6521F8A8DD0046B9A4 /* SearchResults.swift in Sources */,
 				51435309264AC5F40063D993 /* DetailsAssembly.swift in Sources */,
+				51410044264AD57E001C1A29 /* UIViewController+PresentationStyle.swift in Sources */,
+				5141008B264AF338001C1A29 /* NavigationError.swift in Sources */,
+				514100C6264B1AC8001C1A29 /* NavigationItem.swift in Sources */,
 				AA27BE5E22047B7B00D4779F /* PushTransition.swift in Sources */,
+				51410081264AF09B001C1A29 /* Result+OperationStatus.swift in Sources */,
 				AACFDF5A22035CBA0057121B /* FavoritesViewModel.swift in Sources */,
 				51FA87E2251C6EEC004BCF82 /* ModulesFactory.swift in Sources */,
+				51410096264AF640001C1A29 /* NavigationIndex.swift in Sources */,
 				AA27BE552204767900D4779F /* Router.swift in Sources */,
 				5115B07726013E940060A82E /* EdgeInsets.swift in Sources */,
+				51410062264AEB5C001C1A29 /* ViewControllerPresentationStyle.swift in Sources */,
 				5128C6432602255300F6FFD7 /* Layout+Superview.swift in Sources */,
 				5115B06D260135850060A82E /* Layout.swift in Sources */,
 				AADED01C21D60B9B00CE305B /* Configs.swift in Sources */,
+				514100D0264B1B81001C1A29 /* NavigationItemsRegistry.swift in Sources */,
+				5141009B264AF670001C1A29 /* RootViewControllerHolder.swift in Sources */,
 				AA27BE532204705A00D4779F /* DetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
