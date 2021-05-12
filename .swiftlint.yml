@@ -46,10 +46,6 @@ file_length:
   warning: 1000
   error: 2000
 
-cyclomatic_complexity:
-  - 15 # warning
-  - 30 # error
-
 # naming rules can set warnings/errors for min_length and max_length
 # additionally they can set excluded names
 type_name:
@@ -71,3 +67,4 @@ identifier_name:
     - kf
     - x
     - y
+    - to

@@ -12,7 +12,8 @@ import AlamofireNetworkActivityIndicator
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	var window: UIWindow?
-	lazy var modulesFactory = ModulesFactory()
+	lazy var dependencyContainer = DependencyContainer()
+	lazy var modulesFactory = ModulesFactory(dependencyContainer: dependencyContainer)
 
 	func scene(
 		_ scene: UIScene,
