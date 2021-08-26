@@ -486,13 +486,6 @@
 			path = Routing;
 			sourceTree = "<group>";
 		};
-		5143531A264ACBAB0063D993 /* Storage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Storage;
-			sourceTree = "<group>";
-		};
 		51AD91CF2523B0B500D205D1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,7 +494,6 @@
 				AA00CD5921F86CEF0046B9A4 /* Networking */,
 				AAC6353721D4DECF00A5E63C /* Protocols */,
 				51435319264ACBA30063D993 /* Routing */,
-				5143531A264ACBAB0063D993 /* Storage */,
 				51435318264ACB670063D993 /* UIComponents */,
 				5102540526CF8F0E00B0379A /* Utilities */,
 			);
