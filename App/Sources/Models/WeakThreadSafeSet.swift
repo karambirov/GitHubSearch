@@ -8,10 +8,9 @@
 
 import Foundation
 
-final class WeakThreadSafeSet<T>
-{
-	private struct WeakWrapper
-	{
+final class WeakThreadSafeSet<T> {
+
+	private struct WeakWrapper {
 		weak var value: AnyObject?
 	}
 
@@ -24,7 +23,7 @@ final class WeakThreadSafeSet<T>
 
 	func add(_ object: T) {
 		let object = object as AnyObject
-		self.queue.async(flags: .barrier) { [weak object] in
+		queue.async(flags: .barrier) { [weak object] in
 			if self.array.contains(where: { $0.value === object }) == false {
 				self.array.append(WeakWrapper(value: object))
 			}
@@ -33,7 +32,7 @@ final class WeakThreadSafeSet<T>
 
 	func remove(_ object: T) {
 		let object = object as AnyObject
-		self.queue.async(flags: .barrier) { [weak object] in
+		queue.async(flags: .barrier) { [weak object] in
 			self.array.removeAll {
 				guard let value = $0.value else { return true }
 				return value === object
@@ -42,13 +41,13 @@ final class WeakThreadSafeSet<T>
 	}
 
 	func forEach(_ body: (T) -> Void) {
-		self.queue.sync {
+		queue.sync {
 			return self.array.compactMap { $0.value as? T }.forEach(body)
 		}
 	}
 
 	func contains(_ object: T) -> Bool {
-		return self.queue.sync {
+		return queue.sync {
 			return self.array.contains {
 				return $0.value === object as AnyObject
 			}
@@ -56,7 +55,7 @@ final class WeakThreadSafeSet<T>
 	}
 
 	func count() -> Int {
-		return self.queue.sync {
+		return queue.sync {
 			return self.array.compactMap { $0.value as? T }.count
 		}
 	}
@@ -67,4 +66,3 @@ final class WeakThreadSafeSet<T>
 		}
 	}
 }
-

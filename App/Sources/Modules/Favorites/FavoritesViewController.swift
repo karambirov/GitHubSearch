@@ -8,15 +8,15 @@
 
 import UIKit
 
-final class FavoritesViewController: UIViewController {
+protocol FavoritesViewControllerProtocol: AnyObject { }
 
-    // MARK: - Properties
-    private let viewModel: FavoritesViewModel
-    private lazy var tableView = UITableView()
+final class FavoritesViewController: UIViewController, FavoritesViewControllerProtocol {
 
-    // MARK: - View Controller's life cycle
-    init(viewModel: FavoritesViewModel) {
-        self.viewModel = viewModel
+	private let presenter: FavoritesPresenterProtocol
+	private let contentView = FavoritesView()
+
+    init(presenter: FavoritesPresenterProtocol) {
+        self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -25,64 +25,13 @@ final class FavoritesViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+	override func loadView() {
+		self.view = contentView
+	}
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        initialSetup()
+		title = "Favorites"
+		presenter.viewDidLoad(self.contentView)
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        viewModel.fetchFavoriteRepositories { [weak self] in
-            guard let self = self else { return }
-            self.tableView.dataSource = self.viewModel.dataSource
-            self.tableView.reloadData()
-        }
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        clearSelectionForCell()
-        super.viewDidAppear(animated)
-    }
-}
-
-// MARK: - Table View
-extension FavoritesViewController: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let repository = viewModel.repository(for: indexPath) else { return }
-        viewModel.router.openDetails(for: repository)
-    }
-}
-
-// MARK: - Setup
-private extension FavoritesViewController {
-
-    func initialSetup() {
-        view.backgroundColor = .white
-        setupNavigationBar()
-        setupTableView()
-        setupViews()
-    }
-
-    func setupNavigationBar() {
-        title = "Favorites"
-    }
-
-    func setupTableView() {
-        tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.typeName)
-        tableView.delegate   = self
-        tableView.tableFooterView = UIView()
-    }
-
-    func setupViews() {
-        view.addSubview(tableView)
-		tableView.edgesToSuperview()
-    }
-
-    func clearSelectionForCell() {
-        guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
-        tableView.deselectRow(at: selectedIndexPath, animated: true)
-    }
-
 }

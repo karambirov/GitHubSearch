@@ -8,29 +8,17 @@
 
 import UIKit
 
-final class SearchRouter: Router<SearchViewController>, SearchRouter.Routes {
-    typealias Routes = DetailsRoute
-}
-
 final class SearchViewModel {
 
-    // MARK: - Private
 	private let repositoryDataProvider: RepositoryDataProvider
 
-    // MARK: - Properties
     var repositories: [Repository]?
     var dataSource: TableViewDataSource<Repository, RepositoryCell>?
-    let router: SearchRouter.Routes
 
-    init(
-		repositoryDataProvider: RepositoryDataProvider,
-		router: SearchRouter.Routes
-	) {
+    init(repositoryDataProvider: RepositoryDataProvider) {
 		self.repositoryDataProvider = repositoryDataProvider
-        self.router = router
     }
 
-    // MARK: - Methods
     func searchRepositories(with query: String, completion: @escaping () -> Void) {
         repositoryDataProvider.search(with: query) { [weak self] repositories in
             self?.repositoriesDidLoad(repositories)

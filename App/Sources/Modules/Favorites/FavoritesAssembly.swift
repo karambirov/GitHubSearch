@@ -11,21 +11,17 @@ import UIKit
 enum FavoritesAssembly {
 
 	struct Dependencies {
+		let navigator: Navigator
 		let repositoryDataProvider: RepositoryDataProvider
 	}
 
 	static func makeModule(dependencies: Dependencies) -> UIViewController {
-		let router = FavoritesRouter()
+		let router = FavoritesRouter(navigator: dependencies.navigator)
+		let interactor = FavoritesInteractor(repositoryDataProvider: dependencies.repositoryDataProvider)
+		let presenter = FavoritesPresenter(router: router, interactor: interactor)
 
-		let viewModel = FavoritesViewModel(
-			repositoryDataProvider: dependencies.repositoryDataProvider,
-			router: router
-		)
-
-		let viewController = FavoritesViewController(viewModel: viewModel)
+		let viewController = FavoritesViewController(presenter: presenter)
 		viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
-
-		router.viewController = viewController
 
 		return viewController
 	}

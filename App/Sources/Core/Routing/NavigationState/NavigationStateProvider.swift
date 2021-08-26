@@ -14,8 +14,8 @@ protocol NavigationStateProviderProtocol: AnyObject {
 	func unregister(stateListener: NavigationStateListener)
 }
 
-final class NavigationStateProvider: NSObject, NavigationStateProviderProtocol, NavigationStateNotifier
-{
+final class NavigationStateProvider: NSObject, NavigationStateProviderProtocol, NavigationStateNotifier {
+
 	let listeners = WeakThreadSafeSet<NavigationStateListener>()
 
 	func register(stateListener: NavigationStateListener) {

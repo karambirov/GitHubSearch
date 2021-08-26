@@ -11,6 +11,7 @@ import UIKit
 enum DetailsAssembly {
 
 	struct Dependencies {
+		let navigator: Navigator
 		let repositoryDataProvider: RepositoryDataProvider
 	}
 
@@ -19,14 +20,10 @@ enum DetailsAssembly {
 	}
 
 	static func makeModule(dependencies: Dependencies, parameters: Parameters) -> UIViewController {
-		let router = DetailsRouter()
-		let viewModel = DetailsViewModel(
-			repositoryDataProvider: dependencies.repositoryDataProvider,
-			router: router,
-			repository: parameters.repository
-		)
-		let viewController = DetailsViewController(viewModel: viewModel)
+		let router = DetailsRouter(navigator: dependencies.navigator)
+		let interactor = DetailsInteractor(repositoryDataProvider: dependencies.repositoryDataProvider)
+		let presenter = DetailsPresenter(router: router, interactor: interactor, repository: parameters.repository)
+		let viewController = DetailsViewController(presenter: presenter)
 		return viewController
 	}
-
 }

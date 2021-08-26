@@ -7,24 +7,53 @@
 //
 
 import class Moya.MoyaProvider
-import RealmSwift
+import class UIKit.UIWindow
+import class UIKit.UIScreen
+import class UIKit.UIColor
 
 final class DependencyContainer {
-
-	lazy var networkingService: NetworkingService = {
-		let provider = MoyaProvider<GitHubAPI>()
-		return NetworkingService(provider: provider)
+	lazy var window: UIWindow = {
+		let window = UIWindow(frame: UIScreen.main.bounds)
+		window.backgroundColor = .systemBackground
+		window.rootViewController = rootViewController
+		return window
 	}()
 
-	lazy var realmService: RealmService = {
-		let config = Realm.Configuration(schemaVersion: 1)
-		return RealmService(config: config)
+	lazy var rootViewController: RootViewController = {
+		let rootViewContoller = RootViewController()
+		rootViewContoller.rootViewController = modulesFactory.makeTabBarModule()
+		return rootViewContoller
+	}()
+
+	lazy var gitHubApiProvider: MoyaProvider<GitHubAPI> = {
+		MoyaProvider<GitHubAPI>()
+	}()
+
+	lazy var networkingService: NetworkingService = {
+		NetworkingService(provider: gitHubApiProvider)
 	}()
 
 	lazy var repositoryDataProvider: RepositoryDataProvider = {
-		RepositoryDataProvider(
-			networkingService: self.networkingService,
-			realmService: self.realmService
-		)
+		RepositoryDataProvider(networkingService: networkingService)
+	}()
+
+	lazy var navigationRegistry: NavigationRegistry = {
+		NavigationRegistry()
+	}()
+
+	lazy var navigationDriver: NavigationDriver = {
+		NavigationDriver(rootHolder: rootViewController, debug: false)
+	}()
+
+	lazy var navigator: NavigationAssistant = {
+		NavigationAssistant(driver: navigationDriver, registry: navigationRegistry)
+	}()
+
+	lazy var modulesFactory: ModulesFactory = {
+		ModulesFactory(navigator: navigator, repositoryDataProvider: repositoryDataProvider)
+	}()
+
+	lazy var routesRegistry: RoutesRegistry = {
+		RoutesRegistry(registrar: navigationRegistry, modulesFactory: modulesFactory)
 	}()
 }
