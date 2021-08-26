@@ -8,62 +8,36 @@
 
 import UIKit
 
-final class DetailsViewController: UIViewController {
+protocol DetailsViewControllerProtocol: AnyObject {
 
-    var viewModel: DetailsViewModel
+	var dismissHandler: (() -> Void)? { get set }
+}
 
-    init(viewModel: DetailsViewModel) {
-        self.viewModel = viewModel
+final class DetailsViewController: UIViewController, DetailsViewControllerProtocol {
+
+	var dismissHandler: (() -> Void)?
+
+    private let presenter: DetailsPresenterProtocol
+	private let contentView: DetailsViewProtocol
+
+    init(presenter: DetailsPresenterProtocol) {
+        self.presenter = presenter
+		self.contentView = DetailsView()
         super.init(nibName: nil, bundle: nil)
     }
 
+	@available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+	override func loadView() {
+		self.view = contentView
+	}
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        initialSetup()
+		title = "About repository"
+		presenter.viewDidLoad(self.contentView, vc: self)
     }
-
-}
-
-// MARK: - Setup views
-private extension DetailsViewController {
-
-    func initialSetup() {
-        view.backgroundColor = .white
-        title = "About repository"
-        setupViews()
-        setupNavigationBarRightButton()
-    }
-
-    func setupViews() {
-        let detailsStackView = DetailsStackView(repository: viewModel.repository)
-        view.addSubview(detailsStackView)
-		detailsStackView.edgesToSuperview(
-			excluding: .bottom,
-			insets: .uniform(16),
-			usingSafeArea: true
-		)
-		detailsStackView.bottomToSuperview(offset: 16, relation: .equalOrLess, usingSafeArea: true)
-    }
-
-    func setupNavigationBarRightButton() {
-        let title = viewModel.repository.isFavorite ? "Unfavorite" : "Favorite"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(favoriteButtonTapped))
-    }
-
-    @objc func favoriteButtonTapped() {
-        if !viewModel.repository.isFavorite {
-            print("Favorite")
-            viewModel.toggleFavorite()
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Unfavorite", style: .plain, target: self, action: #selector(favoriteButtonTapped))
-        } else {
-            print("Delete from Favorite")
-            viewModel.toggleFavorite()
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorite", style: .plain, target: self, action: #selector(favoriteButtonTapped))
-        }
-    }
-
 }

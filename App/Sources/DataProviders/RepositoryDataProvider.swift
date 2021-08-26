@@ -11,11 +11,9 @@ import Foundation
 final class RepositoryDataProvider {
 
     private var networkingService: NetworkingService
-    private var realmService: RealmService
 
-    init(networkingService: NetworkingService, realmService: RealmService) {
+    init(networkingService: NetworkingService) {
         self.networkingService = networkingService
-        self.realmService = realmService
     }
 
     func search(with query: String, completion: @escaping ([Repository]) -> Void) {
@@ -26,33 +24,34 @@ final class RepositoryDataProvider {
     }
 
     func fetchFavorites(completion: @escaping ([Repository]) -> Void) {
-        let predicate = NSPredicate(format: "isFavorite = true")
-        let completion: ([Repository]) -> Void = { repositories in
-            completion(repositories.compactMap { $0.copy() as? Repository})
-        }
-        realmService.fetch(Repository.self, predicate: predicate, completion: completion)
+//        let predicate = NSPredicate(format: "isFavorite = true")
+//        let completion: ([Repository]) -> Void = { repositories in
+//            completion(repositories.compactMap { $0.copy() as? Repository})
+//        }
+//        realmService.fetch(Repository.self, predicate: predicate, completion: completion)
     }
 
     func toggleFavorite(_ repository: Repository) {
-        repository.isFavorite = !repository.isFavorite
-
-        repository.isFavorite
-            ? saveRepository(repository)
-            : deleteRepository(repository)
+//		repository.isFavorite.toggle()
+//
+//        repository.isFavorite
+//            ? saveRepository(repository)
+//            : deleteRepository(repository)
     }
 
+	// FIXME: Поддержать сохранение и удаление в Storage
     func saveRepository(_ repository: Repository) {
-        if let newRepository = repository.copy() as? Repository {
-            realmService.save(newRepository)
-        }
+//        if let newRepository = repository.copy() as? Repository {
+//            realmService.save(newRepository)
+//        }
     }
 
     func deleteRepository(_ repository: Repository) {
-        if let object = realmService.fetch(ofType: Repository.self, forPrimaryKey: repository.fullName) {
-            if let owner = object.owner {
-                realmService.delete(owner)
-            }
-            realmService.delete(object)
-        }
+//        if let object = realmService.fetch(ofType: Repository.self, forPrimaryKey: repository.fullName) {
+//            if let owner = object.owner {
+//                realmService.delete(owner)
+//            }
+//            realmService.delete(object)
+//        }
     }
 }

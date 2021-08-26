@@ -158,12 +158,7 @@ private extension NavigationTreeDriver {
 	}
 
 	func tag(for viewController: UIViewController?) -> NavigationTag? {
-		guard
-			let navigationTagHolder = viewController as? NavigationTagHolder,
-			let navigationTag = navigationTagHolder.navigationTag
-		else {
-			return nil
-		}
+		guard let navigationTag = viewController?.navigationTag else { return nil }
 		return NavigationTag(value: navigationTag)
 	}
 

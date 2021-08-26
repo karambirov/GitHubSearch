@@ -7,13 +7,11 @@
 //
 
 import UIKit
-import AlamofireNetworkActivityIndicator
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	var window: UIWindow?
 	lazy var dependencyContainer = DependencyContainer()
-	lazy var modulesFactory = ModulesFactory(dependencyContainer: dependencyContainer)
 
 	func scene(
 		_ scene: UIScene,
@@ -23,9 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		guard let windowScene = (scene as? UIWindowScene) else { return }
 
 		window = UIWindow(windowScene: windowScene)
-		window?.rootViewController = modulesFactory.makeRootModule()
+		window?.rootViewController = dependencyContainer.rootViewController
 		window?.makeKeyAndVisible()
-
-		NetworkActivityIndicatorManager.shared.isEnabled = true
 	}
 }

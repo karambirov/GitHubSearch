@@ -8,16 +8,18 @@
 
 import UIKit
 
-final class SearchViewController: UIViewController {
+protocol SearchViewControllerProtocol: AnyObject { }
 
-    // MARK: - Properties
-    private let viewModel: SearchViewModel
+final class SearchViewController: UIViewController, SearchViewControllerProtocol {
+
+	private let presenter: SearchPresenterProtocol
+	private let contentView = SearchView()
+
     private lazy var searchController = UISearchController(searchResultsController: nil)
     private lazy var tableView = UITableView()
 
-    // MARK: - View Controller's life cycle
-    init(viewModel: SearchViewModel) {
-        self.viewModel = viewModel
+    init(presenter: SearchPresenterProtocol) {
+        self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -25,6 +27,10 @@ final class SearchViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+	override func loadView() {
+		self.view = contentView
+	}
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +53,8 @@ final class SearchViewController: UIViewController {
 extension SearchViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let repository = viewModel.repository(for: indexPath) else { return }
-        viewModel.router.openDetails(for: repository)
+//        guard let repository = viewModel.repository(for: indexPath) else { return }
+//        viewModel.router.openDetails(for: repository)
     }
 }
 
@@ -56,17 +62,17 @@ extension SearchViewController: UITableViewDelegate {
 extension SearchViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let query = searchBar.text, query.count > 2 else { return }
-        viewModel.searchRepositories(with: query) { [weak self] in
-            guard let self = self else { return }
-            self.tableView.dataSource = self.viewModel.dataSource
-            self.tableView.reloadData()
-        }
+//        guard let query = searchBar.text, query.count > 2 else { return }
+//        viewModel.searchRepositories(with: query) { [weak self] in
+//            guard let self = self else { return }
+//            self.tableView.dataSource = self.viewModel.dataSource
+//            self.tableView.reloadData()
+//        }
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.deleteLoadedRepositories()
-        tableView.reloadData()
+//        viewModel.deleteLoadedRepositories()
+//        tableView.reloadData()
     }
 }
 
@@ -96,7 +102,7 @@ private extension SearchViewController {
 
     func setupTableView() {
         tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.typeName)
-        tableView.dataSource = viewModel.dataSource
+//        tableView.dataSource = viewModel.dataSource
         tableView.delegate = self
         tableView.tableFooterView = UIView()
 		tableView.rowHeight = UITableView.automaticDimension

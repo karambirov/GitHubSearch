@@ -11,21 +11,17 @@ import UIKit
 enum SearchAssembly {
 
 	struct Dependencies {
+		let navigator: Navigator
 		let repositoryDataProvider: RepositoryDataProvider
 	}
 
 	static func makeModule(dependencies: Dependencies) -> UIViewController {
-		let router = SearchRouter()
+		let router = SearchRouter(navigator: dependencies.navigator)
+		let interactor = SearchInteractor(repositoryDataProvider: dependencies.repositoryDataProvider)
+		let presenter = SearchPresenter(router: router, interactor: interactor)
 
-		let viewModel = SearchViewModel(
-			repositoryDataProvider: dependencies.repositoryDataProvider,
-			router: router
-		)
-
-		let viewController = SearchViewController(viewModel: viewModel)
+		let viewController = SearchViewController(presenter: presenter)
 		viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
-
-		router.viewController = viewController
 
 		return viewController
 	}

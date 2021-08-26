@@ -6,45 +6,24 @@
 //  Copyright © 2019 Eugene Karambirov. All rights reserved.
 //
 
-import Foundation
-import RealmSwift
+struct Owner {
 
-@objcMembers
-final class Owner: Object, Codable {
-
-    dynamic var login = ""
-    dynamic var email: String?
-    dynamic var avatarURL: String?
-
-    enum CodingKeys: String, CodingKey {
-        case login, email
-        case avatarURL = "avatar_url"
-    }
-
+	let login: String
+	let email: String?
+	let avatarURL: String?
 }
 
-// MARK: - Initialization
 extension Owner {
 
-    convenience init(login: String,
-                     email: String,
-                     avatarURL: String? = nil) {
-
-        self.init()
-        self.login     = login
-        self.email     = email
-        self.avatarURL = avatarURL
-    }
-
+	init() {
+		self.init(login: String(), email: nil, avatarURL: nil)
+	}
 }
 
-// MARK: - NSCopying
-extension Owner: NSCopying {
+extension Owner: Codable {
 
-    func copy(with zone: NSZone? = nil) -> Any {
-        let owner = Owner(login: self.login,
-                          email: self.email ?? "",
-                          avatarURL: self.avatarURL)
-        return owner
-    }
+	enum CodingKeys: String, CodingKey {
+		case login, email
+		case avatarURL = "avatar_url"
+	}
 }

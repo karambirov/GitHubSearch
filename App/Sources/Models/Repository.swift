@@ -6,62 +6,34 @@
 //  Copyright © 2019 Eugene Karambirov. All rights reserved.
 //
 
-import Foundation
-import RealmSwift
+struct Repository {
 
-@objcMembers
-final class Repository: Object, Codable {
+	let fullName: String
+	let repoDescription: String?
+	let language: String?
+	let owner: Owner
 
-    dynamic var fullName = ""
-    dynamic var repoDescription: String?
-    dynamic var language: String?
-    dynamic var owner: Owner?
-
-    dynamic var isFavorite = false
-
-    enum CodingKeys: String, CodingKey {
-        case owner, language
-        case fullName = "full_name"
-        case repoDescription = "description"
-    }
-
-    public override static func indexedProperties() -> [String] {
-        return ["isFavorite"]
-    }
-
-    override public class func primaryKey() -> String {
-        return "fullName"
-    }
-
+	var isFavorite = false
 }
 
-// MARK: - Initialization
 extension Repository {
 
-    convenience init(fullName: String,
-                     repoDescription: String,
-                     language: String,
-                     isFavorite: Bool,
-                     owner: Owner) {
-
-        self.init()
-        self.fullName = fullName
-        self.repoDescription = repoDescription
-        self.language = language
-        self.isFavorite = isFavorite
-        self.owner = owner
-    }
+	init() {
+		self.init(
+			fullName: String(),
+			repoDescription: nil,
+			language: nil,
+			owner: Owner(),
+			isFavorite: false
+		)
+	}
 }
 
-// MARK: - NSCopying
-extension Repository: NSCopying {
-    func copy(with zone: NSZone? = nil) -> Any {
-        let repository = Repository(fullName: self.fullName,
-                                    repoDescription: self.repoDescription ?? "",
-                                    language: self.language ?? "",
-                                    isFavorite: self.isFavorite,
-                                    owner: self.owner?.copy() as? Owner ??
-                                        Owner(login: "", email: ""))
-        return repository
-    }
+extension Repository: Codable {
+
+	enum CodingKeys: String, CodingKey {
+		case owner, language
+		case fullName = "full_name"
+		case repoDescription = "description"
+	}
 }

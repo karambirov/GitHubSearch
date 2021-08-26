@@ -27,8 +27,8 @@ final class OwnerInfoView: UIStackView {
 
 extension OwnerInfoView {
 	func update(with repository: Repository) {
-		userNameLabel.text = "Username: \(repository.owner?.login ?? "n/a")"
-		emailLabel.text = "Email: \(repository.owner?.email ?? "n/a")"
+		userNameLabel.text = "Username: \(repository.owner.login)"
+		emailLabel.text = "Email: \(repository.owner.email ?? "n/a")"
 	}
 }
 

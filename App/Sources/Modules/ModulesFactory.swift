@@ -10,28 +10,33 @@ import UIKit
 
 final class ModulesFactory {
 
-	private let dependencyContainer: DependencyContainer
+	private let navigator: Navigator
+	private let repositoryDataProvider: RepositoryDataProvider
 
-	init(dependencyContainer: DependencyContainer) {
-		self.dependencyContainer = dependencyContainer
+	init(
+		navigator: Navigator,
+		repositoryDataProvider: RepositoryDataProvider
+	) {
+		self.navigator = navigator
+		self.repositoryDataProvider = repositoryDataProvider
 	}
 }
 
 extension ModulesFactory {
 
-	func makeRootModule() -> UIViewController {
+	func makeTabBarModule() -> UIViewController {
 		let tabBarController = UITabBarController()
 		tabBarController.viewControllers = [
 			makeSearchModule(),
 			makeFavoritesModule()
 		]
-		let parameters = RootAssembly.Parameters(tabBarController: tabBarController)
-		return RootAssembly.makeModule(parameters: parameters)
+		return tabBarController
 	}
 
 	func makeSearchModule() -> UIViewController {
 		let dependencies = SearchAssembly.Dependencies(
-			repositoryDataProvider: dependencyContainer.repositoryDataProvider
+			navigator: navigator,
+			repositoryDataProvider: repositoryDataProvider
 		)
 		let viewController = SearchAssembly.makeModule(dependencies: dependencies)
 		return UINavigationController(rootViewController: viewController)
@@ -39,7 +44,8 @@ extension ModulesFactory {
 
 	func makeFavoritesModule() -> UIViewController {
 		let dependencies = FavoritesAssembly.Dependencies(
-			repositoryDataProvider: dependencyContainer.repositoryDataProvider
+			navigator: navigator,
+			repositoryDataProvider: repositoryDataProvider
 		)
 		let viewController = FavoritesAssembly.makeModule(dependencies: dependencies)
 		return UINavigationController(rootViewController: viewController)
@@ -47,7 +53,8 @@ extension ModulesFactory {
 
 	func makeDetailsModule(parameters: DetailsAssembly.Parameters) -> UIViewController {
 		let dependencies = DetailsAssembly.Dependencies(
-			repositoryDataProvider: dependencyContainer.repositoryDataProvider
+			navigator: navigator,
+			repositoryDataProvider: repositoryDataProvider
 		)
 		return DetailsAssembly.makeModule(dependencies: dependencies, parameters: parameters)
 	}

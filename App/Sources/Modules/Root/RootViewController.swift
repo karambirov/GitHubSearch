@@ -8,39 +8,33 @@
 
 import UIKit
 
-final class RootViewController: UIViewController {
+final class RootViewController: UIViewController, RootViewControllerHolder {
 
-	private let mainTabBarController: UITabBarController
-
-	init(tabBarController: UITabBarController) {
-		self.mainTabBarController = tabBarController
-		super.init(nibName: nil, bundle: nil)
-	}
-
-	@available(*, unavailable)
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
-
-	override func loadView() {
-		let view = UIView(frame: .zero)
-		addChild(mainTabBarController, in: view)
-		self.view = view
-	}
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
+	var rootViewController: UIViewController? {
+		didSet {
+			self.removeViewController(oldValue)
+			self.addViewController(self.rootViewController)
+		}
 	}
 }
 
 private extension RootViewController {
 
-	func addChild(_ controller: UIViewController, in host: UIView) {
-		addChild(controller)
-		controller.view.frame = host.bounds
-		controller.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-		host.addSubview(controller.view)
-		controller.didMove(toParent: self)
+	func addViewController(_ viewController: UIViewController?) {
+		guard let viewController = viewController else { return }
+
+		self.addChild(viewController)
+		self.view.addSubview(viewController.view)
+		viewController.didMove(toParent: self)
+
+		viewController.view.edgesToSuperview()
 	}
 
+	func removeViewController(_ viewController: UIViewController?) {
+		guard let viewController = viewController else { return }
+
+		viewController.willMove(toParent: nil)
+		viewController.view.removeFromSuperview()
+		viewController.removeFromParent()
+	}
 }

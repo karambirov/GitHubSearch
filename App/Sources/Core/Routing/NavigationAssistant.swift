@@ -1,12 +1,12 @@
 //
-//  Navigator.swift
+//  NavigationAssistant.swift
 //  GitHubSearch
 //
 //  Created by Карамбиров Евгений on 11.05.2021.
 //  Copyright © 2021 Eugene Karambirov. All rights reserved.
 //
 
-final class Navigator<NavigationDriver: NavigationDriverProtocol, Registry: NavigationItemsRegistryProtocol> where
+final class NavigationAssistant<NavigationDriver: NavigationDriverProtocol, Registry: NavigationItemsRegistryProtocol> where
 	NavigationDriver.NavigationTag == Registry.NavigationTag,
 	NavigationDriver.NavigationSeed == Registry.NavigationSeed {
 
@@ -23,7 +23,7 @@ final class Navigator<NavigationDriver: NavigationDriverProtocol, Registry: Navi
 }
 
 // MARK: - Checks
-extension Navigator {
+extension NavigationAssistant {
 
 	/// Возвращает тэг текущего экрана или nil, если у текущего экрана нет тэга.
 	var currentTag: NavigationTag? { driver.currentTag }
@@ -46,14 +46,14 @@ extension Navigator {
 }
 
 // MARK: - Forward
-extension Navigator {
+extension NavigationAssistant {
 
 	/// Создает новый экран с соответствующим тэгом и открывает его.
 	func forward<Parameters>(
 		to tag: NavigationTag,
 		with parameters: Parameters,
 		animated: Bool = true,
-		completion: @escaping NavigationCompletion
+		completion: (() -> Void)? = nil
 	) {
 		let _: Weak<Any>? = forward(to: tag, with: parameters, animated: animated, completion: completion)
 	}
@@ -62,7 +62,7 @@ extension Navigator {
 	func forward(
 		to tag: NavigationTag,
 		animated: Bool = true,
-		completion: @escaping NavigationCompletion
+		completion: (() -> Void)? = nil
 	) {
 		let _:Weak<Any>? = forward(to: tag, animated: animated, completion: completion)
 	}
@@ -74,11 +74,12 @@ extension Navigator {
 		to tag: NavigationTag,
 		with parameters: Parameters,
 		animated: Bool = true,
-		completion: @escaping NavigationCompletion
+		completion: (() -> Void)? = nil
 	) -> Weak<Module>? {
 
 		let itemsResult = registry.makeItem(for: tag, with: parameters, module: Module.self)
-		return navigate(with: driver.forward, itemResult: itemsResult, animated: animated, completion: completion)
+		let completionHandler = makeCompletionWithErrorHandler(from: completion)
+		return navigate(with: driver.forward, itemResult: itemsResult, animated: animated, completion: completionHandler)
 	}
 
 	/// Создает новый экран с соответствующим тэгом и открывает его.
@@ -87,23 +88,24 @@ extension Navigator {
 	func forward<Module>(
 		to tag: NavigationTag,
 		animated: Bool = true,
-		completion: @escaping NavigationCompletion
+		completion: (() -> Void)? = nil
 	) -> Weak<Module>? {
 
 		let itemsResult = registry.makeItem(for: tag, module: Module.self)
-		return navigate(with: driver.forward, itemResult: itemsResult, animated: animated, completion: completion)
+		let completionHandler = makeCompletionWithErrorHandler(from: completion)
+		return navigate(with: driver.forward, itemResult: itemsResult, animated: animated, completion: completionHandler)
 	}
 }
 
 // MARK: - Replace
-extension Navigator {
+extension NavigationAssistant {
 
 	/// Создает новый экран с соответствующим тэгом и заменяет текущий на него.
 	func replace<Parameters>(
 		with tag: NavigationTag,
 		parameters: Parameters,
 		animated: Bool = true,
-		completion: @escaping NavigationCompletion
+		completion: (() -> Void)? = nil
 	) {
 		let _: Weak<Any>? = replace(with: tag, parameters: parameters, animated: animated, completion: completion)
 	}
@@ -112,7 +114,7 @@ extension Navigator {
 	func replace(
 		with tag: NavigationTag,
 		animated: Bool = true,
-		completion: @escaping NavigationCompletion
+		completion: (() -> Void)? = nil
 	) {
 		let _: Weak<Any>? = replace(with: tag, animated: animated, completion: completion)
 	}
@@ -124,11 +126,12 @@ extension Navigator {
 		with tag: NavigationTag,
 		parameters: Parameters,
 		animated: Bool = true,
-		completion: @escaping NavigationCompletion
+		completion: (() -> Void)? = nil
 	) -> Weak<Module>? {
 
 		let itemResult = registry.makeItem(for: tag, with: parameters, module: Module.self)
-		return navigate(with: driver.replace, itemResult: itemResult, animated: animated, completion: completion)
+		let completionHandler = makeCompletionWithErrorHandler(from: completion)
+		return navigate(with: driver.replace, itemResult: itemResult, animated: animated, completion: completionHandler)
 	}
 
 	/// Создает новый экран с соответствующим тэгом и заменяет текущий на него.
@@ -137,53 +140,60 @@ extension Navigator {
 	func replace<Module>(
 		with tag: NavigationTag,
 		animated: Bool = true,
-		completion: @escaping NavigationCompletion
+		completion: (() -> Void)? = nil
 	) -> Weak<Module>? {
 
 		let itemResult = registry.makeItem(for: tag, module: Module.self)
-		return navigate(with: driver.replace, itemResult: itemResult, animated: animated, completion: completion)
+		let completionHandler = makeCompletionWithErrorHandler(from: completion)
+		return navigate(with: driver.replace, itemResult: itemResult, animated: animated, completion: completionHandler)
 	}
 }
 
 // MARK: - Back
-extension Navigator {
+extension NavigationAssistant {
 
 	/// Возврат на один экран назад.
-	func back(animated: Bool = true, completion: @escaping NavigationCompletion) {
-		driver.back(animated: animated, completion: completion)
+	func back(animated: Bool = true, completion: (() -> Void)? = nil) {
+		let completionHandler = makeCompletionWithErrorHandler(from: completion)
+		driver.back(animated: animated, completion: completionHandler)
 	}
 
 	/// Возврат к экрану с соответствующим тегом.
-	func back(to tag: NavigationTag, animated: Bool = true, completion: @escaping NavigationCompletion) {
-		driver.back(to: tag, animated: animated, completion: completion)
+	func back(to tag: NavigationTag, animated: Bool = true, completion: (() -> Void)? = nil) {
+		let completionHandler = makeCompletionWithErrorHandler(from: completion)
+		driver.back(to: tag, animated: animated, completion: completionHandler)
 	}
 
 	/// Возврат на экран по индексу.
-	func back(to index: NavigationIndex, animated: Bool = true, completion: @escaping NavigationCompletion) {
-		driver.back(to: index, animated: animated, completion: completion)
+	func back(to index: NavigationIndex, animated: Bool = true, completion: (() -> Void)? = nil) {
+		let completionHandler = makeCompletionWithErrorHandler(from: completion)
+		driver.back(to: index, animated: animated, completion: completionHandler)
 	}
 
 	/// Переход назад с конкретного экрана. Полезно, когда надо перейти назад с экрана,
 	/// не находящегося на вершине иерархии VC (например, если поверх экрана открыт UISearchController).
-	func back(from tag: NavigationTag, animated: Bool = true, completion: @escaping NavigationCompletion) {
-		driver.back(from: tag, animated: animated, completion: completion)
+	func back(from tag: NavigationTag, animated: Bool = true, completion: (() -> Void)? = nil) {
+		let completionHandler = makeCompletionWithErrorHandler(from: completion)
+		driver.back(from: tag, animated: animated, completion: completionHandler)
 	}
 
 	/// Возврат к корню дерева (первому экрану).
-	func backToRoot(animated: Bool = true, completion: @escaping NavigationCompletion) {
-		driver.backToRoot(animated: animated, completion: completion)
+	func backToRoot(animated: Bool = true, completion: (() -> Void)? = nil) {
+		let completionHandler = makeCompletionWithErrorHandler(from: completion)
+		driver.backToRoot(animated: animated, completion: completionHandler)
 	}
 
 	/// Переход на первый экран текущего UINavigationController-а.
 	@available(*, deprecated,
 		message: "Редко применим из-за возможной потери контроля над флоу. Используйте back(to: NavigationIndex).")
-	func backToFlowRoot(animated: Bool = true, completion: @escaping NavigationCompletion) {
-		driver.backToFlowRoot(animated: animated, completion: completion)
+	func backToFlowRoot(animated: Bool = true, completion: (() -> Void)? = nil) {
+		let completionHandler = makeCompletionWithErrorHandler(from: completion)
+		driver.backToFlowRoot(animated: animated, completion: completionHandler)
 	}
 }
 
 // MARK: - Private Helpers
-private extension Navigator {
+private extension NavigationAssistant {
 
 	typealias NavigationMethod =
 		(_ seed: NavigationSeed, _ animated: Bool, _ completion: @escaping NavigationCompletion) -> Void
@@ -205,6 +215,18 @@ private extension Navigator {
 		case .none:
 			completion(.success(.noOperation))
 			return nil
+		}
+	}
+
+	func makeCompletionWithErrorHandler(from completion: (() -> Void)?) -> ((NavigationResult) -> Void) {
+		return { result in
+			switch result {
+			case .failure(let error):
+				assertionFailure(error.localizedDescription)
+			case .success: break
+			}
+
+			completion?()
 		}
 	}
 }
