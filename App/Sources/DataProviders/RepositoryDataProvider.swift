@@ -10,17 +10,14 @@ import Foundation
 
 final class RepositoryDataProvider {
 
-    private var networkingService: NetworkingService
+    private let networkingService: NetworkingServiceProtocol
 
-    init(networkingService: NetworkingService) {
+    init(networkingService: NetworkingServiceProtocol) {
         self.networkingService = networkingService
     }
 
     func search(with query: String, completion: @escaping ([Repository]) -> Void) {
-		networkingService.searchRepositories(with: query) { repositories in
-            guard let repositories = repositories else { return }
-            completion(repositories)
-        }
+		networkingService.searchRepositories(with: query, completionHandler: completion)
     }
 
     func fetchFavorites(completion: @escaping ([Repository]) -> Void) {

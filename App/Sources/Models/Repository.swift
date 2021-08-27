@@ -6,8 +6,9 @@
 //  Copyright © 2019 Eugene Karambirov. All rights reserved.
 //
 
-struct Repository {
+struct Repository: Hashable {
 
+	let id: Int
 	let fullName: String
 	let repoDescription: String?
 	let language: String?
@@ -20,6 +21,7 @@ extension Repository {
 
 	init() {
 		self.init(
+			id: 0,
 			fullName: String(),
 			repoDescription: nil,
 			language: nil,
@@ -32,7 +34,7 @@ extension Repository {
 extension Repository: Codable {
 
 	enum CodingKeys: String, CodingKey {
-		case owner, language
+		case id, owner, language
 		case fullName = "full_name"
 		case repoDescription = "description"
 	}

@@ -6,7 +6,13 @@
 //  Copyright © 2021 Eugene Karambirov. All rights reserved.
 //
 
-protocol SearchInteractorProtocol: AnyObject { }
+protocol SearchInteractorProtocol: AnyObject {
+
+	func searchRepositories(
+		with query: String,
+		completion: @escaping ([Repository]) -> Void
+	)
+}
 
 final class SearchInteractor {
 
@@ -17,4 +23,9 @@ final class SearchInteractor {
 	}
 }
 
-extension SearchInteractor: SearchInteractorProtocol { }
+extension SearchInteractor: SearchInteractorProtocol {
+
+	func searchRepositories(with query: String, completion: @escaping ([Repository]) -> Void) {
+		repositoryDataProvider.search(with: query, completion: completion)
+	}
+}

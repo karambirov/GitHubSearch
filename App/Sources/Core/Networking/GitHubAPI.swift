@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 enum GitHubAPI {
-    case searchRepo(query: String)
+	case searchRepo(query: String, itemsCount: Int = 100)
 }
 
 extension GitHubAPI: TargetType {
@@ -30,7 +30,10 @@ extension GitHubAPI: TargetType {
     }
 
     var method: Moya.Method {
-        return .get
+		switch self {
+		case .searchRepo:
+			return .get
+		}
     }
 
     var sampleData: Data {
@@ -39,9 +42,9 @@ extension GitHubAPI: TargetType {
 
     var task: Task {
         switch self {
-        case .searchRepo(let query):
+        case .searchRepo(let query, let itemsCount):
             return .requestParameters(
-				parameters: ["q": query.urlEscapedString],
+				parameters: ["q": query.urlEscapedString, "per_page": itemsCount],
 				encoding: URLEncoding.default
 			)
         }

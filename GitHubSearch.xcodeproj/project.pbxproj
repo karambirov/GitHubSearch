@@ -69,6 +69,7 @@
 		514352F9264AB8FE0063D993 /* SearchAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514352F8264AB8FE0063D993 /* SearchAssembly.swift */; };
 		514352FE264ABAFF0063D993 /* FavoritesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514352FD264ABAFF0063D993 /* FavoritesAssembly.swift */; };
 		51435309264AC5F40063D993 /* DetailsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51435308264AC5F40063D993 /* DetailsAssembly.swift */; };
+		5177876B26D94D5500BFF87B /* UICollectionView.CellRegistration+cellProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5177876A26D94D5500BFF87B /* UICollectionView.CellRegistration+cellProvider.swift */; };
 		519BC6102526259D00D05BCB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 519BC60F2526259D00D05BCB /* .swiftlint.yml */; };
 		519BC615252625B600D05BCB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 519BC614252625B600D05BCB /* .gitignore */; };
 		51A6C4012523B33C0012C342 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAC6355321D4EA5400A5E63C /* Info.plist */; };
@@ -88,7 +89,6 @@
 		51FA87E2251C6EEC004BCF82 /* ModulesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA87E1251C6EEC004BCF82 /* ModulesFactory.swift */; };
 		AA00CD4C21F32FAE0046B9A4 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD4B21F32FAE0046B9A4 /* Repository.swift */; };
 		AA00CD4E21F330D10046B9A4 /* Describable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD4D21F330D10046B9A4 /* Describable.swift */; };
-		AA00CD5021F3311F0046B9A4 /* UITableView+DequeueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD4F21F3311F0046B9A4 /* UITableView+DequeueCell.swift */; };
 		AA00CD5221F344D90046B9A4 /* RepositoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD5121F344D90046B9A4 /* RepositoryCellViewModel.swift */; };
 		AA00CD5B21F86D080046B9A4 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD5A21F86D080046B9A4 /* GitHubAPI.swift */; };
 		AA00CD5D21F876A30046B9A4 /* String+UrlEscapedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CD5C21F876A30046B9A4 /* String+UrlEscapedString.swift */; };
@@ -109,10 +109,7 @@
 		AAC6356D21D6057B00A5E63C /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6356B21D6057B00A5E63C /* RepositoryCell.swift */; };
 		AAC6357621D6074E00A5E63C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAC6357821D6074E00A5E63C /* Localizable.strings */; };
 		AACFDF5822035CAD0057121B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5722035CAD0057121B /* FavoritesViewController.swift */; };
-		AACFDF5A22035CBA0057121B /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5922035CBA0057121B /* FavoritesViewModel.swift */; };
-		AACFDF5C220437B10057121B /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDF5B220437B10057121B /* TableViewDataSource.swift */; };
 		AADED01C21D60B9B00CE305B /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADED01B21D60B9B00CE305B /* Configs.swift */; };
-		AADED02A21D626FD00CE305B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADED02921D626FD00CE305B /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,6 +192,7 @@
 		514352FD264ABAFF0063D993 /* FavoritesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAssembly.swift; sourceTree = "<group>"; };
 		51435308264AC5F40063D993 /* DetailsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsAssembly.swift; sourceTree = "<group>"; };
 		516498222523CBFA00BAE513 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5177876A26D94D5500BFF87B /* UICollectionView.CellRegistration+cellProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView.CellRegistration+cellProvider.swift"; sourceTree = "<group>"; };
 		519BC60F2526259D00D05BCB /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		519BC614252625B600D05BCB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		51AB700B26CBEB3A00772B78 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
@@ -212,7 +210,6 @@
 		51FA87E1251C6EEC004BCF82 /* ModulesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesFactory.swift; sourceTree = "<group>"; };
 		AA00CD4B21F32FAE0046B9A4 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		AA00CD4D21F330D10046B9A4 /* Describable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Describable.swift; sourceTree = "<group>"; };
-		AA00CD4F21F3311F0046B9A4 /* UITableView+DequeueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+DequeueCell.swift"; sourceTree = "<group>"; };
 		AA00CD5121F344D90046B9A4 /* RepositoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewModel.swift; sourceTree = "<group>"; };
 		AA00CD5A21F86D080046B9A4 /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
 		AA00CD5C21F876A30046B9A4 /* String+UrlEscapedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UrlEscapedString.swift"; sourceTree = "<group>"; };
@@ -240,10 +237,7 @@
 		AAC6357721D6074E00A5E63C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AAC6357921D6075100A5E63C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AACFDF5722035CAD0057121B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		AACFDF5922035CBA0057121B /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
-		AACFDF5B220437B10057121B /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		AADED01B21D60B9B00CE305B /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
-		AADED02921D626FD00CE305B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +269,7 @@
 		5102540526CF8F0E00B0379A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				AA00CD4D21F330D10046B9A4 /* Describable.swift */,
 				51AB702126CC16AA00772B78 /* Debouncer.swift */,
 			);
 			path = Utilities;
@@ -299,10 +294,10 @@
 		5116A2692523AC240037C1CE /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				AAC6353221D4CE6B00A5E63C /* Modules */,
-				AA00CD4A21F32F910046B9A4 /* Models */,
-				51AD91DA2523B11B00D205D1 /* DataProviders */,
 				51AD91CF2523B0B500D205D1 /* Core */,
+				51AD91DA2523B11B00D205D1 /* DataProviders */,
+				AA00CD4A21F32F910046B9A4 /* Models */,
+				AAC6353221D4CE6B00A5E63C /* Modules */,
 				AAC6352E21D4CDF600A5E63C /* Other */,
 			);
 			path = Sources;
@@ -492,7 +487,6 @@
 				AAC6353321D4CE7200A5E63C /* Extensions */,
 				5115B05C26012BB00060A82E /* Layout */,
 				AA00CD5921F86CEF0046B9A4 /* Networking */,
-				AAC6353721D4DECF00A5E63C /* Protocols */,
 				51435319264ACBA30063D993 /* Routing */,
 				51435318264ACB670063D993 /* UIComponents */,
 				5102540526CF8F0E00B0379A /* Utilities */,
@@ -503,7 +497,6 @@
 		51AD91DA2523B11B00D205D1 /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
-				AACFDF5B220437B10057121B /* TableViewDataSource.swift */,
 				AA00CD6021F89FEF0046B9A4 /* RepositoryDataProvider.swift */,
 			);
 			path = DataProviders;
@@ -545,11 +538,11 @@
 			isa = PBXGroup;
 			children = (
 				51435308264AC5F40063D993 /* DetailsAssembly.swift */,
-				AA27BE502204703600D4779F /* DetailsViewController.swift */,
-				510253FD26CF80FB00B0379A /* DetailsView.swift */,
-				510253FF26CF811C00B0379A /* DetailsPresenter.swift */,
 				5102540126CF813D00B0379A /* DetailsInteractor.swift */,
+				510253FF26CF811C00B0379A /* DetailsPresenter.swift */,
 				5102540326CF816D00B0379A /* DetailsRouter.swift */,
+				510253FD26CF80FB00B0379A /* DetailsView.swift */,
+				AA27BE502204703600D4779F /* DetailsViewController.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -638,12 +631,12 @@
 		AAC6353321D4CE7200A5E63C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AA00CD4F21F3311F0046B9A4 /* UITableView+DequeueCell.swift */,
 				AA00CD5C21F876A30046B9A4 /* String+UrlEscapedString.swift */,
 				51410035264AD44B001C1A29 /* UIViewController+OnlyChild.swift */,
 				51410043264AD57E001C1A29 /* UIViewController+PresentationStyle.swift */,
 				51410080264AF09B001C1A29 /* Result+OperationStatus.swift */,
 				51AB701E26CBFAC300772B78 /* UIViewController+NavigationTagHolder.swift */,
+				5177876A26D94D5500BFF87B /* UICollectionView.CellRegistration+cellProvider.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -654,14 +647,6 @@
 				AAC6356A21D6055600A5E63C /* RepositoryCell */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		AAC6353721D4DECF00A5E63C /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				AA00CD4D21F330D10046B9A4 /* Describable.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		AAC6355021D4EA5400A5E63C /* UnitTests */ = {
@@ -688,12 +673,11 @@
 			isa = PBXGroup;
 			children = (
 				514352F8264AB8FE0063D993 /* SearchAssembly.swift */,
-				AAA8A9E821D4CCED004A7E89 /* SearchViewController.swift */,
-				AADED02921D626FD00CE305B /* SearchViewModel.swift */,
+				51AB701226CBEB9B00772B78 /* SearchInteractor.swift */,
 				51AB700B26CBEB3A00772B78 /* SearchPresenter.swift */,
 				51AB700D26CBEB4500772B78 /* SearchRouter.swift */,
-				51AB701226CBEB9B00772B78 /* SearchInteractor.swift */,
 				51AB701426CBEBA800772B78 /* SearchView.swift */,
+				AAA8A9E821D4CCED004A7E89 /* SearchViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -721,12 +705,11 @@
 			isa = PBXGroup;
 			children = (
 				514352FD264ABAFF0063D993 /* FavoritesAssembly.swift */,
-				AACFDF5722035CAD0057121B /* FavoritesViewController.swift */,
-				AACFDF5922035CBA0057121B /* FavoritesViewModel.swift */,
+				510253FB26CF809B00B0379A /* FavoritesInteractor.swift */,
 				510253F526CF7FCC00B0379A /* FavoritesPresenter.swift */,
 				510253F726CF7FEC00B0379A /* FavoritesRouter.swift */,
 				510253F926CF800600B0379A /* FavoritesView.swift */,
-				510253FB26CF809B00B0379A /* FavoritesInteractor.swift */,
+				AACFDF5722035CAD0057121B /* FavoritesViewController.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -898,6 +881,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAA423C72216A7CF00B8FA60 /* OwnerInfoView.swift in Sources */,
+				5177876B26D94D5500BFF87B /* UICollectionView.CellRegistration+cellProvider.swift in Sources */,
 				514100A0264AF8ED001C1A29 /* NavigationTreeDriver.swift in Sources */,
 				51AB701F26CBFAC300772B78 /* UIViewController+NavigationTagHolder.swift in Sources */,
 				51AB701726CBEDAE00772B78 /* Route.swift in Sources */,
@@ -935,9 +919,7 @@
 				51AB701326CBEB9B00772B78 /* SearchInteractor.swift in Sources */,
 				51FA87DF251C6D87004BCF82 /* SceneDelegate.swift in Sources */,
 				AA00CD4C21F32FAE0046B9A4 /* Repository.swift in Sources */,
-				AADED02A21D626FD00CE305B /* SearchViewModel.swift in Sources */,
 				5128C65C2602380B00F6FFD7 /* Layout+Margin.swift in Sources */,
-				AA00CD5021F3311F0046B9A4 /* UITableView+DequeueCell.swift in Sources */,
 				51AB701926CBEE7200772B78 /* RoutesRegistry.swift in Sources */,
 				5115B05E26012C430060A82E /* Constrainable.swift in Sources */,
 				5102540426CF816D00B0379A /* DetailsRouter.swift in Sources */,
@@ -957,7 +939,6 @@
 				AA00CD6321F8A4420046B9A4 /* Owner.swift in Sources */,
 				51410036264AD44B001C1A29 /* UIViewController+OnlyChild.swift in Sources */,
 				51AB701126CBEB7800772B78 /* AppCoordinator.swift in Sources */,
-				AACFDF5C220437B10057121B /* TableViewDataSource.swift in Sources */,
 				51410049264AD5B7001C1A29 /* NavigationAssistant.swift in Sources */,
 				5128C657260234A100F6FFD7 /* NSLayoutAxisAnchor+ConstraintRelation.swift in Sources */,
 				514100AB264AFA6E001C1A29 /* ViewControllerTreeBuilder.swift in Sources */,
@@ -972,7 +953,6 @@
 				5141008B264AF338001C1A29 /* NavigationError.swift in Sources */,
 				514100C6264B1AC8001C1A29 /* NavigationItem.swift in Sources */,
 				51410081264AF09B001C1A29 /* Result+OperationStatus.swift in Sources */,
-				AACFDF5A22035CBA0057121B /* FavoritesViewModel.swift in Sources */,
 				51FA87E2251C6EEC004BCF82 /* ModulesFactory.swift in Sources */,
 				51410096264AF640001C1A29 /* NavigationIndex.swift in Sources */,
 				5115B07726013E940060A82E /* EdgeInsets.swift in Sources */,
@@ -1178,7 +1158,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TDR3533VJS;
 				INFOPLIST_FILE = "$(SRCROOT)/App/Sources/Other/Config/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1197,7 +1177,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TDR3533VJS;
 				INFOPLIST_FILE = "$(SRCROOT)/App/Sources/Other/Config/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
