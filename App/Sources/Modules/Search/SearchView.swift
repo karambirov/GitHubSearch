@@ -17,7 +17,7 @@ protocol SearchViewProtocol: AnyObject {
 	func setRepositories(_ repositories: [Repository])
 }
 
-final class SearchView: UIView {
+final class SearchView: ProgrammaticView {
 
 	private typealias Cell = UICollectionViewListCell
 	private typealias CellRegistration = UICollectionView.CellRegistration<Cell, Repository>
@@ -36,15 +36,17 @@ final class SearchView: UIView {
 	private lazy var collectionView = makeCollectionView()
 	private lazy var dataSource = makeDataSource()
 
-	override init(frame: CGRect) {
+	init() {
 		super.init(frame: .zero)
-		setupView()
 		applySnapshot()
 	}
 
-	@available(*, unavailable)
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
+	override func configure() {
+		self.addSubview(collectionView)
+	}
+
+	override func constrain() {
+		collectionView.edgesToSuperview()
 	}
 }
 
@@ -88,11 +90,6 @@ extension SearchView {
 		let collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: layout)
 		collectionView.delegate = self
 		return collectionView
-	}
-
-	private func setupView() {
-		self.addSubview(collectionView)
-		collectionView.edgesToSuperview()
 	}
 
 	private func makeCellRegistration() -> CellRegistration {

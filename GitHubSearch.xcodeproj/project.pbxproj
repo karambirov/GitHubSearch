@@ -70,6 +70,7 @@
 		514352FE264ABAFF0063D993 /* FavoritesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514352FD264ABAFF0063D993 /* FavoritesAssembly.swift */; };
 		51435309264AC5F40063D993 /* DetailsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51435308264AC5F40063D993 /* DetailsAssembly.swift */; };
 		5177876B26D94D5500BFF87B /* UICollectionView.CellRegistration+cellProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5177876A26D94D5500BFF87B /* UICollectionView.CellRegistration+cellProvider.swift */; };
+		5177876D26D95CA000BFF87B /* ProgrammaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5177876C26D95CA000BFF87B /* ProgrammaticView.swift */; };
 		519BC6102526259D00D05BCB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 519BC60F2526259D00D05BCB /* .swiftlint.yml */; };
 		519BC615252625B600D05BCB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 519BC614252625B600D05BCB /* .gitignore */; };
 		51A6C4012523B33C0012C342 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAC6355321D4EA5400A5E63C /* Info.plist */; };
@@ -193,6 +194,7 @@
 		51435308264AC5F40063D993 /* DetailsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsAssembly.swift; sourceTree = "<group>"; };
 		516498222523CBFA00BAE513 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5177876A26D94D5500BFF87B /* UICollectionView.CellRegistration+cellProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView.CellRegistration+cellProvider.swift"; sourceTree = "<group>"; };
+		5177876C26D95CA000BFF87B /* ProgrammaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammaticView.swift; sourceTree = "<group>"; };
 		519BC60F2526259D00D05BCB /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		519BC614252625B600D05BCB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		51AB700B26CBEB3A00772B78 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
@@ -697,6 +699,7 @@
 				AA23C02D220445E60091B663 /* RepositoryInfoView.swift */,
 				AAA423C62216A7CF00B8FA60 /* OwnerInfoView.swift */,
 				AABD746A2216B7F700F9C648 /* DetailsStackView.swift */,
+				5177876C26D95CA000BFF87B /* ProgrammaticView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -920,6 +923,7 @@
 				51FA87DF251C6D87004BCF82 /* SceneDelegate.swift in Sources */,
 				AA00CD4C21F32FAE0046B9A4 /* Repository.swift in Sources */,
 				5128C65C2602380B00F6FFD7 /* Layout+Margin.swift in Sources */,
+				5177876D26D95CA000BFF87B /* ProgrammaticView.swift in Sources */,
 				51AB701926CBEE7200772B78 /* RoutesRegistry.swift in Sources */,
 				5115B05E26012C430060A82E /* Constrainable.swift in Sources */,
 				5102540426CF816D00B0379A /* DetailsRouter.swift in Sources */,
