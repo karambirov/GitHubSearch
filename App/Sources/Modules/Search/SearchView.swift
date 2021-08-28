@@ -19,8 +19,6 @@ protocol SearchViewProtocol: AnyObject {
 
 final class SearchView: ProgrammaticView {
 
-	private typealias Cell = UICollectionViewListCell
-	private typealias CellRegistration = UICollectionView.CellRegistration<Cell, Repository>
 	private typealias DataSource = UICollectionViewDiffableDataSource<Section, Repository>
 	private typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Repository>
 
@@ -41,11 +39,8 @@ final class SearchView: ProgrammaticView {
 		applySnapshot()
 	}
 
-	override func configure() {
-		self.addSubview(collectionView)
-	}
-
 	override func constrain() {
+		addSubview(collectionView)
 		collectionView.edgesToSuperview()
 	}
 }
@@ -92,18 +87,8 @@ extension SearchView {
 		return collectionView
 	}
 
-	private func makeCellRegistration() -> CellRegistration {
-		CellRegistration { cell, indexPath, repository in
-			var content = cell.defaultContentConfiguration()
-			// TODO: Заменить на кастомную ячейку
-			content.text = repository.fullName
-			content.secondaryText = repository.repoDescription
-			cell.contentConfiguration = content
-		}
-	}
-
 	private func makeDataSource() -> DataSource {
-		let cellRegistration = makeCellRegistration()
+		let cellRegistration = RepositoryCell.registration()
 		return DataSource(collectionView: collectionView, cellProvider: cellRegistration.cellProvider)
 	}
 

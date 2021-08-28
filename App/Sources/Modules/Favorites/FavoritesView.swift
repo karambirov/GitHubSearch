@@ -37,11 +37,8 @@ final class FavoritesView: ProgrammaticView {
 		applySnapshot()
 	}
 
-	override func configure() {
-		self.addSubview(collectionView)
-	}
-
 	override func constrain() {
+		addSubview(collectionView)
 		collectionView.edgesToSuperview()
 	}
 }
