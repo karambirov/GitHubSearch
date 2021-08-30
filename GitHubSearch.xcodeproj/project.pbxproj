@@ -94,6 +94,7 @@
 		51AB701F26CBFAC300772B78 /* UIViewController+NavigationTagHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AB701E26CBFAC300772B78 /* UIViewController+NavigationTagHolder.swift */; };
 		51AB702226CC16AA00772B78 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AB702126CC16AA00772B78 /* Debouncer.swift */; };
 		51E9F58526DD61C1006D64A2 /* Int+shorted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E9F58426DD61C1006D64A2 /* Int+shorted.swift */; };
+		51E9F58726DD63E3006D64A2 /* UIImage+SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E9F58626DD63E3006D64A2 /* UIImage+SFSymbols.swift */; };
 		51FA87DC251C6AF0004BCF82 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA87DB251C6AF0004BCF82 /* RootViewController.swift */; };
 		51FA87DF251C6D87004BCF82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA87DE251C6D87004BCF82 /* SceneDelegate.swift */; };
 		51FA87E2251C6EEC004BCF82 /* ModulesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA87E1251C6EEC004BCF82 /* ModulesFactory.swift */; };
@@ -219,6 +220,7 @@
 		51AB701E26CBFAC300772B78 /* UIViewController+NavigationTagHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationTagHolder.swift"; sourceTree = "<group>"; };
 		51AB702126CC16AA00772B78 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		51E9F58426DD61C1006D64A2 /* Int+shorted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+shorted.swift"; sourceTree = "<group>"; };
+		51E9F58626DD63E3006D64A2 /* UIImage+SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+SFSymbols.swift"; sourceTree = "<group>"; };
 		51FA87DB251C6AF0004BCF82 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		51FA87DE251C6D87004BCF82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		51FA87E1251C6EEC004BCF82 /* ModulesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesFactory.swift; sourceTree = "<group>"; };
@@ -646,19 +648,20 @@
 		AAC6353321D4CE7200A5E63C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AA00CD5C21F876A30046B9A4 /* String+UrlEscapedString.swift */,
-				51410035264AD44B001C1A29 /* UIViewController+OnlyChild.swift */,
-				51410043264AD57E001C1A29 /* UIViewController+PresentationStyle.swift */,
-				51410080264AF09B001C1A29 /* Result+OperationStatus.swift */,
-				51AB701E26CBFAC300772B78 /* UIViewController+NavigationTagHolder.swift */,
-				5177876A26D94D5500BFF87B /* UICollectionView.CellRegistration+cellProvider.swift */,
-				5177877226D965DA00BFF87B /* UIFont+Custom.swift */,
-				5177877426D9675A00BFF87B /* UIStackView+addArrangedSubviews.swift */,
-				5177877626D9678900BFF87B /* UIView+addSubviews.swift */,
 				5141EF3426DD4E2D0022EDEE /* CGFloat+Spacing.swift */,
+				51E9F58426DD61C1006D64A2 /* Int+shorted.swift */,
+				51410080264AF09B001C1A29 /* Result+OperationStatus.swift */,
+				AA00CD5C21F876A30046B9A4 /* String+UrlEscapedString.swift */,
+				5177876A26D94D5500BFF87B /* UICollectionView.CellRegistration+cellProvider.swift */,
 				5141EF3826DD50E60022EDEE /* UIColor+GitHub.swift */,
 				5141EF3A26DD518C0022EDEE /* UIColor+Hex.swift */,
-				51E9F58426DD61C1006D64A2 /* Int+shorted.swift */,
+				5177877226D965DA00BFF87B /* UIFont+Custom.swift */,
+				51E9F58626DD63E3006D64A2 /* UIImage+SFSymbols.swift */,
+				5177877426D9675A00BFF87B /* UIStackView+addArrangedSubviews.swift */,
+				5177877626D9678900BFF87B /* UIView+addSubviews.swift */,
+				51AB701E26CBFAC300772B78 /* UIViewController+NavigationTagHolder.swift */,
+				51410035264AD44B001C1A29 /* UIViewController+OnlyChild.swift */,
+				51410043264AD57E001C1A29 /* UIViewController+PresentationStyle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -944,6 +947,7 @@
 				5141EF3B26DD518C0022EDEE /* UIColor+Hex.swift in Sources */,
 				5141007C264AEF12001C1A29 /* Group.swift in Sources */,
 				AA27BE512204703600D4779F /* DetailsViewController.swift in Sources */,
+				51E9F58726DD63E3006D64A2 /* UIImage+SFSymbols.swift in Sources */,
 				AA00CD5B21F86D080046B9A4 /* GitHubAPI.swift in Sources */,
 				AA00CD5D21F876A30046B9A4 /* String+UrlEscapedString.swift in Sources */,
 				5126705A264C347F008F18C8 /* NavigationStateProvider.swift in Sources */,

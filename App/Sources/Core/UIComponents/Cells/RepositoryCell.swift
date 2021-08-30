@@ -15,9 +15,6 @@ final class RepositoryView: ProgrammaticView {
 	private enum Metrics {
 		static let starsIconSize = CGSize(width: 14, height: 14)
 		static let languageIconSize = CGSize(width: 12, height: 12)
-		static let defaultVerticalOffset: CGFloat = 8.0
-		static let defaultHorizontalOffset: CGFloat = 16.0
-		static let offsetBetweenIconAndLabel: CGFloat = 4.0
 	}
 
 	private let titleLabel = UILabel()
@@ -36,12 +33,12 @@ final class RepositoryView: ProgrammaticView {
 		descriptionLabel.numberOfLines = 3
 		descriptionLabel.lineBreakMode = .byTruncatingTail
 
-		starsIcon.image = UIImage(systemName: "star")?.withRenderingMode(.alwaysOriginal)
+		starsIcon.image = .sfSymbol(.star)?.withRenderingMode(.alwaysOriginal)
 
 		starsLabel.font = .custom(style: .regular)
 		starsLabel.textColor = .secondaryLabel
 
-		languageIcon.image = UIImage(systemName: "circle.fill")?.withRenderingMode(.alwaysTemplate)
+		languageIcon.image = .sfSymbol(.circleFill)?.withRenderingMode(.alwaysTemplate)
 
 		languageLabel.font = .custom(style: .regular)
 		languageLabel.textColor = .secondaryLabel
