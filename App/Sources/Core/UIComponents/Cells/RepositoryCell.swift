@@ -41,8 +41,7 @@ final class RepositoryView: ProgrammaticView {
 		starsLabel.font = .custom(style: .regular)
 		starsLabel.textColor = .secondaryLabel
 
-		// TODO: Добавить установку цвета языка программирования
-		languageIcon.image = UIImage(systemName: "circle.fill")?.withRenderingMode(.alwaysOriginal)
+		languageIcon.image = UIImage(systemName: "circle.fill")?.withRenderingMode(.alwaysTemplate)
 
 		languageLabel.font = .custom(style: .regular)
 		languageLabel.textColor = .secondaryLabel
@@ -55,22 +54,22 @@ final class RepositoryView: ProgrammaticView {
 
 		titleLabel.edgesToSuperview(excluding: .bottom)
 
-		descriptionLabel.topToBottom(of: titleLabel, offset: Metrics.defaultVerticalOffset)
+		descriptionLabel.topToBottom(of: titleLabel, offset: .offset8)
 		descriptionLabel.horizontalToSuperview()
 
 		starsIcon.size(Metrics.starsIconSize)
-		starsIcon.topToBottom(of: descriptionLabel, offset: Metrics.defaultVerticalOffset)
+		starsIcon.topToBottom(of: descriptionLabel, offset: .offset8)
 		starsIcon.leadingToSuperview()
 		starsIcon.bottomToSuperview()
 
-		starsLabel.leadingToTrailing(of: starsIcon, offset: Metrics.offsetBetweenIconAndLabel)
+		starsLabel.leadingToTrailing(of: starsIcon, offset: .offset4)
 		starsLabel.centerY(to: starsIcon)
 
 		languageIcon.size(Metrics.languageIconSize)
-		languageIcon.leadingToTrailing(of: starsLabel, offset: Metrics.defaultHorizontalOffset)
+		languageIcon.leadingToTrailing(of: starsLabel, offset: .offset16)
 		languageIcon.centerY(to: starsLabel)
 
-		languageLabel.leadingToTrailing(of: languageIcon, offset: Metrics.offsetBetweenIconAndLabel)
+		languageLabel.leadingToTrailing(of: languageIcon, offset: .offset4)
 		languageLabel.centerY(to: languageIcon)
 		languageLabel.trailingToSuperview()
 	}
@@ -80,8 +79,9 @@ extension RepositoryView: RepositoryConfiguringView {
 
 	func configure(with repository: Repository) {
 		titleLabel.text = repository.fullName
-		descriptionLabel.text = repository.repoDescription ?? "No description provided."
-		starsLabel.text = String(repository.starsCount)
-		languageLabel.text = repository.language ?? "No language"
+		descriptionLabel.text = repository.repoDescription ?? Localization.noDescription
+		starsLabel.text = repository.starsCount.shorted()
+		languageLabel.text = repository.language ?? Localization.noLanguage
+		languageIcon.tintColor = UIColor(language: repository.language)
 	}
 }

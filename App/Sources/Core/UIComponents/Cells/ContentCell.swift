@@ -49,5 +49,5 @@ extension ContentCell {
 }
 
 private enum Metrics {
-	static let contentInsets = UIEdgeInsets(top: 16, left: 20, bottom: 16, right: 16)
+	static let contentInsets = UIEdgeInsets(top: .offset16, left: .offset20, bottom: .offset16, right: .offset16)
 }
