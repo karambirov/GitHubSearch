@@ -45,18 +45,9 @@ extension ContentCell {
 	private func constrain() {
 		addSubview(view)
 		view.edgesToSuperview(insets: Metrics.contentInsets)
-
-//		view.topToSuperview(offset: Metrics.offset)
-//		view.leadingToSuperview(offset: Metrics.offset)
-//		view.trailingToSuperview(offset: Metrics.offset)
-//		view.bottomToSuperview(
-//			offset: Metrics.offset,
-//			priority: UILayoutPriority(UILayoutPriority.defaultHigh.rawValue - 1)
-//		)
 	}
 }
 
 private enum Metrics {
-	static let offset: CGFloat = 16.0
-	static let contentInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+	static let contentInsets = UIEdgeInsets(top: 16, left: 20, bottom: 16, right: 16)
 }

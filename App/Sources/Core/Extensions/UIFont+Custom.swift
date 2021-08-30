@@ -12,12 +12,12 @@ extension UIFont {
 
 	private static var regular: UIFont {
 		UIFontMetrics(forTextStyle: .body)
-			.scaledFont(for: .systemFont(ofSize: 14, weight: .regular))
+			.scaledFont(for: .systemFont(ofSize: 15, weight: .regular))
 	}
 
 	private static var headline: UIFont {
 		UIFontMetrics(forTextStyle: .headline)
-			.scaledFont(for: .systemFont(ofSize: 14, weight: .semibold))
+			.scaledFont(for: .systemFont(ofSize: 15, weight: .semibold))
 	}
 }
 
