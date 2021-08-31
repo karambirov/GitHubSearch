@@ -22,6 +22,7 @@ enum SearchAssembly {
 
 		let viewController = SearchViewController(presenter: presenter)
 		viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+		viewController.navigationTag = Route.search.rawValue
 
 		return viewController
 	}

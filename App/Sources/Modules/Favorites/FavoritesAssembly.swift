@@ -22,6 +22,7 @@ enum FavoritesAssembly {
 
 		let viewController = FavoritesViewController(presenter: presenter)
 		viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+		viewController.navigationTag = Route.favorites.rawValue
 
 		return viewController
 	}

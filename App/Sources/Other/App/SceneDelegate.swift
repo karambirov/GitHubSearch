@@ -25,6 +25,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 		window = UIWindow(windowScene: windowScene)
 		window?.rootViewController = rootViewController
+
+		dependencyContainer.routesRegistry.register()
+
 		window?.makeKeyAndVisible()
 	}
 }

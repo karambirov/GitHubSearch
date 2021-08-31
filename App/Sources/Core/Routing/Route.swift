@@ -10,6 +10,5 @@ enum Route: String, NavigationTagProtocol {
 
 	case search
 	case favorites
-	case downloads
 	case details
 }

@@ -13,8 +13,6 @@ protocol SearchRouterProtocol: AnyObject {
 
 final class SearchRouter {
 
-	var completionHandler: ((Repository) -> Void)?
-
 	private let navigator: Navigator
 
 	init(navigator: Navigator) {
@@ -25,7 +23,6 @@ final class SearchRouter {
 extension SearchRouter: SearchRouterProtocol {
 
 	func next(with repository: Repository) {
-//		completionHandler?(repository)
 		let parameters = DetailsAssembly.Parameters(repository: repository)
 		navigator.forward(to: .details, with: parameters)
 	}

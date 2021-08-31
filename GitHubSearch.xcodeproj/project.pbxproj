@@ -19,7 +19,7 @@
 		5115B05E26012C430060A82E /* Constrainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115B05D26012C430060A82E /* Constrainable.swift */; };
 		5115B06326012E100060A82E /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115B06226012E100060A82E /* Constraints.swift */; };
 		5115B06D260135850060A82E /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115B06C260135850060A82E /* Layout.swift */; };
-		5115B07726013E940060A82E /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115B07626013E940060A82E /* EdgeInsets.swift */; };
+		5115B07726013E940060A82E /* UIEdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115B07626013E940060A82E /* UIEdgeInsets+Extensions.swift */; };
 		51266FEB264C27FB008F18C8 /* ViewControllersTreeBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51266FE0264C273D008F18C8 /* ViewControllersTreeBuilderTests.swift */; };
 		51266FEF264C2801008F18C8 /* UIViewController+AddChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51266FD7264C2682008F18C8 /* UIViewController+AddChild.swift */; };
 		51267002264C28CF008F18C8 /* ViewControllersStackGrouperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51266FFA264C2897008F18C8 /* ViewControllersStackGrouperTests.swift */; };
@@ -147,7 +147,7 @@
 		5115B06226012E100060A82E /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		5115B06C260135850060A82E /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		5115B07126013CFD0060A82E /* LayoutEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutEdge.swift; sourceTree = "<group>"; };
-		5115B07626013E940060A82E /* EdgeInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeInsets.swift; sourceTree = "<group>"; };
+		5115B07626013E940060A82E /* UIEdgeInsets+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Extensions.swift"; sourceTree = "<group>"; };
 		51266FD7264C2682008F18C8 /* UIViewController+AddChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddChild.swift"; sourceTree = "<group>"; };
 		51266FE0264C273D008F18C8 /* ViewControllersTreeBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersTreeBuilderTests.swift; sourceTree = "<group>"; };
 		51266FFA264C2897008F18C8 /* ViewControllersStackGrouperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersStackGrouperTests.swift; sourceTree = "<group>"; };
@@ -294,7 +294,6 @@
 				5128C6422602255300F6FFD7 /* Layout+Superview.swift */,
 				5128C65B2602380B00F6FFD7 /* Layout+Margin.swift */,
 				5115B07126013CFD0060A82E /* LayoutEdge.swift */,
-				5115B07626013E940060A82E /* EdgeInsets.swift */,
 				5128C6512602349300F6FFD7 /* NSLayoutDimension+ConstraintRelation.swift */,
 				5128C656260234A100F6FFD7 /* NSLayoutAxisAnchor+ConstraintRelation.swift */,
 			);
@@ -648,6 +647,7 @@
 		AAC6353321D4CE7200A5E63C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5115B07626013E940060A82E /* UIEdgeInsets+Extensions.swift */,
 				5141EF3426DD4E2D0022EDEE /* CGFloat+Spacing.swift */,
 				51E9F58426DD61C1006D64A2 /* Int+shorted.swift */,
 				51410080264AF09B001C1A29 /* Result+OperationStatus.swift */,
@@ -975,7 +975,7 @@
 				51410081264AF09B001C1A29 /* Result+OperationStatus.swift in Sources */,
 				51FA87E2251C6EEC004BCF82 /* ModulesFactory.swift in Sources */,
 				51410096264AF640001C1A29 /* NavigationIndex.swift in Sources */,
-				5115B07726013E940060A82E /* EdgeInsets.swift in Sources */,
+				5115B07726013E940060A82E /* UIEdgeInsets+Extensions.swift in Sources */,
 				51410062264AEB5C001C1A29 /* ViewControllerPresentationStyle.swift in Sources */,
 				5102540226CF813D00B0379A /* DetailsInteractor.swift in Sources */,
 				5128C6432602255300F6FFD7 /* Layout+Superview.swift in Sources */,

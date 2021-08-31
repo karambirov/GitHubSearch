@@ -43,9 +43,7 @@ extension SearchPresenter: SearchPresenterProtocol {
 		}
 
 		view.selectItemHandler = { [weak self] repository in
-			// TODO: Реализовать переход на экран подробности
-			fatalError("Навигация на экран подробностей не реализована")
-//			self?.router.next(with: repository)
+			self?.router.next(with: repository)
 		}
 	}
 }
