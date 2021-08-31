@@ -8,23 +8,23 @@
 
 import UIKit
 
-enum Section: CaseIterable {
+enum DetailsSection: CaseIterable {
 	case summary
 	case info
 }
 
-enum Item: Hashable {
+enum DetailsItem: Hashable {
 	case summary(Repository)
 	case infoItem(text: String, value: String)
 }
 
-final class DetailsDataSource: UICollectionViewDiffableDataSource<Section, Item> {
+final class DetailsDataSource: UICollectionViewDiffableDataSource<DetailsSection, DetailsItem> {
 
-	private typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Item>
+	private typealias Snapshot = NSDiffableDataSourceSnapshot<DetailsSection, DetailsItem>
 
 	convenience init(collectionView: UICollectionView) {
 		self.init(collectionView: collectionView) { collectionView, indexPath, item in
-			let section = Section.allCases[indexPath.section]
+			let section = DetailsSection.allCases[indexPath.section]
 			switch section {
 			case .summary:
 				return Self.summaryCell(in: collectionView, for: item, at: indexPath)
@@ -34,7 +34,7 @@ final class DetailsDataSource: UICollectionViewDiffableDataSource<Section, Item>
 		}
 
 		self.supplementaryViewProvider = { collectionView, _, indexPath in
-			let section = Section.allCases[indexPath.section]
+			let section = DetailsSection.allCases[indexPath.section]
 			switch section {
 			case .summary:
 				return nil
@@ -50,10 +50,10 @@ extension DetailsDataSource {
 
 	func applySnapshot(with repository: Repository, animatingDifferences: Bool = true) {
 		var snapshot = Snapshot()
-		snapshot.appendSections(Section.allCases)
+		snapshot.appendSections(DetailsSection.allCases)
 		snapshot.appendItems([.summary(repository)], toSection: .summary)
 
-		let items: [Item] = [
+		let items: [DetailsItem] = [
 			.infoItem(text: Localization.ownerEmail, value: repository.owner.email ?? Localization.notAvailable),
 			.infoItem(text: Localization.issues, value: "\(repository.openIssuesCount)"),
 			.infoItem(text: Localization.license, value: repository.license?.name ?? Localization.notAvailable)
@@ -68,7 +68,7 @@ extension DetailsDataSource {
 
 	private static func summaryCell(
 		in collectionView: UICollectionView,
-		for item: Item,
+		for item: DetailsItem,
 		at indexPath: IndexPath
 	) -> UICollectionViewCell {
 
@@ -77,20 +77,20 @@ extension DetailsDataSource {
 			let registration = RepositoryCell.registration()
 			return collectionView.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: repository)
 		case .infoItem:
-			let registration = ListCellRegistration.defaultListCellRegistration()
+			let registration = ListCellRegistration<DetailsItem>.defaultListCellRegistration()
 			return collectionView.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: item)
 		}
 	}
 
 	private static func infoCell(
 		in collectionView: UICollectionView,
-		for item: Item,
+		for item: DetailsItem,
 		at indexPath: IndexPath
 	) -> UICollectionViewCell {
 
 		switch item {
 		case .summary:
-			let registration = ListCellRegistration.defaultListCellRegistration()
+			let registration = ListCellRegistration<DetailsItem>.defaultListCellRegistration()
 			return collectionView.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: item)
 		case .infoItem(let text, let value):
 			let registration = RepositoryInfoCell.infoCellRegistration(text: text, secondaryText: value)

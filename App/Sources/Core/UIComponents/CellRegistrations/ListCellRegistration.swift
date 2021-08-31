@@ -1,5 +1,5 @@
 //
-//  UICollectionView.CellRegistration+defaultListCellRegistration.swift
+//  ListCellRegistration.swift
 //  GitHubSearch
 //
 //  Created by Карамбиров Евгений on 31.08.2021.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-typealias ListCellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Item>
+typealias ListCellRegistration<Item> = UICollectionView.CellRegistration<UICollectionViewListCell, Item>
 
 extension ListCellRegistration {
 
-	static func defaultListCellRegistration() -> ListCellRegistration {
+	static func defaultListCellRegistration() -> ListCellRegistration<Item> {
 		ListCellRegistration { cell, _, _ in
 			cell.contentConfiguration = cell.defaultContentConfiguration()
 		}
