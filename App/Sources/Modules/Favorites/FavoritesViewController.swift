@@ -31,7 +31,7 @@ final class FavoritesViewController: UIViewController, FavoritesViewControllerPr
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		title = "Favorites"
+		title = Localization.favorites
 		presenter.viewDidLoad(self.contentView)
     }
 }

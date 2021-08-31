@@ -8,10 +8,7 @@
 
 protocol SearchInteractorProtocol: AnyObject {
 
-	func searchRepositories(
-		with query: String,
-		completion: @escaping ([Repository]) -> Void
-	)
+	func searchRepositories(with query: String, completion: @escaping ([Repository]) -> Void)
 }
 
 final class SearchInteractor {

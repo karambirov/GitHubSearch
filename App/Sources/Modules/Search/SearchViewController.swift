@@ -52,13 +52,13 @@ final class SearchViewController: UIViewController, SearchViewControllerProtocol
 private extension SearchViewController {
 
     func setupNavigationBar() {
-		title = "Search"
+		title = Localization.search
         navigationItem.searchController = searchController
     }
 
     func setupSearchController() {
 		definesPresentationContext = true
-		searchController.searchBar.placeholder = "Search"
+		searchController.searchBar.placeholder = Localization.search
 		searchController.searchBar.delegate = contentView
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false

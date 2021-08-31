@@ -11,10 +11,7 @@ import Moya
 
 protocol NetworkingServiceProtocol {
 
-	func searchRepositories(
-		with query: String,
-		completionHandler: @escaping ([Repository]) -> Void
-	)
+	func searchRepositories(with query: String, completionHandler: @escaping ([Repository]) -> Void)
 }
 
 final class NetworkingService {

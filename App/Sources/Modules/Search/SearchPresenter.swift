@@ -17,8 +17,6 @@ final class SearchPresenter {
 
 	private weak var view: SearchViewProtocol?
 
-	private var repositories: [Repository] = []
-
 	private let router: SearchRouterProtocol
 	private let interactor: SearchInteractorProtocol
 
@@ -45,6 +43,7 @@ extension SearchPresenter: SearchPresenterProtocol {
 		}
 
 		view.selectItemHandler = { [weak self] repository in
+			// TODO: Реализовать переход на экран подробности
 			fatalError("Навигация на экран подробностей не реализована")
 //			self?.router.next(with: repository)
 		}

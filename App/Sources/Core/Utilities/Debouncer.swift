@@ -30,11 +30,7 @@ extension Debouncer: DebouncerProtocol {
 
 	public func debounce(_ action: @escaping () -> Void) {
 		workItem.cancel()
-
-		workItem = DispatchWorkItem {
-			action()
-		}
-
+		workItem = DispatchWorkItem { action() }
 		queue.asyncAfter(deadline: .now() + delay, execute: self.workItem)
 	}
 

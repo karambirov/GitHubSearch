@@ -9,6 +9,8 @@
 // Implement localization
 enum Localization {
 
+	static let search = "Search"
+	static let favorites = "Favorites"
 	static let noDescription = "No description provided."
 	static let noLanguage = "No language"
 }

@@ -486,14 +486,14 @@
 		51435319264ACBA30063D993 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
-				51267046264C3301008F18C8 /* NavigationState */,
-				514100B2264B0C73001C1A29 /* NavigationStack */,
-				5141008F264AF360001C1A29 /* Registry */,
-				5141004E264AD5CC001C1A29 /* NavigationSeed */,
 				5141004D264AD5C4001C1A29 /* NavigationDriver */,
+				5141004E264AD5CC001C1A29 /* NavigationSeed */,
+				514100B2264B0C73001C1A29 /* NavigationStack */,
+				51267046264C3301008F18C8 /* NavigationState */,
+				5141008F264AF360001C1A29 /* Registry */,
 				51410048264AD5B7001C1A29 /* NavigationAssistant.swift */,
-				5126703A264C3127008F18C8 /* RoutableModule.swift */,
 				51AB701A26CBEEF500772B78 /* NavigatorAliases.swift */,
+				5126703A264C3127008F18C8 /* RoutableModule.swift */,
 				51AB701626CBEDAE00772B78 /* Route.swift */,
 				51AB701826CBEE7200772B78 /* RoutesRegistry.swift */,
 			);
