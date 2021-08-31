@@ -21,7 +21,6 @@ enum Item: Hashable {
 final class DetailsDataSource: UICollectionViewDiffableDataSource<Section, Item> {
 
 	private typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Item>
-	private typealias ListCellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Item>
 
 	convenience init(collectionView: UICollectionView) {
 		self.init(collectionView: collectionView) { collectionView, indexPath, item in
@@ -40,7 +39,7 @@ final class DetailsDataSource: UICollectionViewDiffableDataSource<Section, Item>
 			case .summary:
 				return nil
 			case .info:
-				let registration = TextSectionHeader.registration(headerText: "Information")
+				let registration = TextSectionHeader.registration(headerText: Localization.information)
 				return collectionView.dequeueConfiguredReusableSupplementary(using: registration, for: indexPath)
 			}
 		}
@@ -55,9 +54,9 @@ extension DetailsDataSource {
 		snapshot.appendItems([.summary(repository)], toSection: .summary)
 
 		let items: [Item] = [
-			.infoItem(text: "Owner's email", value: repository.owner.email ?? "N/A"),
-			.infoItem(text: "Issues", value: "\(repository.openIssuesCount)"),
-			.infoItem(text: "License", value: repository.license?.name ?? "N/A")
+			.infoItem(text: Localization.ownerEmail, value: repository.owner.email ?? Localization.notAvailable),
+			.infoItem(text: Localization.issues, value: "\(repository.openIssuesCount)"),
+			.infoItem(text: Localization.license, value: repository.license?.name ?? Localization.notAvailable)
 		]
 		snapshot.appendItems(items, toSection: .info)
 
@@ -78,7 +77,7 @@ extension DetailsDataSource {
 			let registration = RepositoryCell.registration()
 			return collectionView.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: repository)
 		case .infoItem:
-			let registration = self.defaultCellRegistration()
+			let registration = ListCellRegistration.defaultListCellRegistration()
 			return collectionView.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: item)
 		}
 	}
@@ -91,29 +90,11 @@ extension DetailsDataSource {
 
 		switch item {
 		case .summary:
-			let registration = self.defaultCellRegistration()
+			let registration = ListCellRegistration.defaultListCellRegistration()
 			return collectionView.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: item)
 		case .infoItem(let text, let value):
-			let registration = self.infoCellRegistration(text: text, secondaryText: value)
+			let registration = RepositoryInfoCell.infoCellRegistration(text: text, secondaryText: value)
 			return collectionView.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: item)
-		}
-	}
-}
-
-extension DetailsDataSource {
-
-	private static func infoCellRegistration(text: String, secondaryText: String) -> ListCellRegistration {
-		ListCellRegistration { cell, indexPath, infoItem in
-			var content = UIListContentConfiguration.valueCell()
-			content.text = text
-			content.secondaryText = secondaryText
-			cell.contentConfiguration = content
-		}
-	}
-
-	private static func defaultCellRegistration() -> ListCellRegistration {
-		ListCellRegistration { cell, _, _ in
-			cell.contentConfiguration = cell.defaultContentConfiguration()
 		}
 	}
 }
