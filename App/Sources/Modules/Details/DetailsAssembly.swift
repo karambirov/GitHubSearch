@@ -24,6 +24,7 @@ enum DetailsAssembly {
 		let interactor = DetailsInteractor(repositoryDataProvider: dependencies.repositoryDataProvider)
 		let presenter = DetailsPresenter(router: router, interactor: interactor, repository: parameters.repository)
 		let viewController = DetailsViewController(presenter: presenter)
+		viewController.navigationTag = Route.details.rawValue
 		return viewController
 	}
 }

@@ -36,6 +36,8 @@ extension DetailsPresenter: DetailsPresenterProtocol {
 	func viewDidLoad(_ view: DetailsViewProtocol, vc: DetailsViewControllerProtocol) {
 		self.view = view
 
+		self.view?.setRepository(repository)
+
 		view.favoriteTapHandler = { [weak self] in
 			guard let self = self else { return }
 			self.interactor.toggleFavorite(self.repository)
