@@ -27,7 +27,7 @@ final class RepositoryView: ProgrammaticView {
 	private let languageLabel = UILabel()
 
 	override func configure() {
-		titleLabel.font = .custom(style: .headline)
+		titleLabel.font = .custom(style: .subheadline)
 
 		descriptionLabel.font = .custom(style: .regular)
 		descriptionLabel.numberOfLines = 3

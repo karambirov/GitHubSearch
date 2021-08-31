@@ -19,38 +19,39 @@ final class DetailsView: ProgrammaticView {
 
 	var favoriteTapHandler: (() -> Void)?
 
-	private let titleLabel = UILabel()
-	private let descriptionLabel = UILabel()
+	private lazy var collectionView = makeCollectionView()
+	private lazy var dataSource = DetailsDataSource(collectionView: collectionView)
 
 	init() {
 		super.init(frame: .zero)
-		backgroundColor = .systemBackground
-	}
-
-	override func configure() {
-		titleLabel.font = .custom(style: .headline)
-
-		descriptionLabel.font = .custom(style: .regular)
-		descriptionLabel.numberOfLines = 3
-		descriptionLabel.lineBreakMode = .byTruncatingTail
 	}
 
 	override func constrain() {
-		addSubviews(titleLabel, descriptionLabel)
-
-		titleLabel.edgesToSuperview(excluding: .bottom, insets: .uniform(.offset24), usingSafeArea: true)
-
-		descriptionLabel.topToBottom(of: titleLabel, offset: .offset8)
-		descriptionLabel.horizontalToSuperview(insets: .horizontal(.offset24))
+		addSubview(collectionView)
+		collectionView.edgesToSuperview()
 	}
 }
 
 extension DetailsView: DetailsViewProtocol {
 
 	func setRepository(_ repository: Repository) {
-		titleLabel.text = repository.fullName
-		descriptionLabel.text = repository.repoDescription ?? Localization.noDescription
+		dataSource.applySnapshot(with: repository)
 	}
 }
 
-private extension DetailsView { }
+extension DetailsView: UICollectionViewDelegate {
+
+	func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+		return false
+	}
+}
+
+private extension DetailsView {
+
+	private func makeCollectionView() -> UICollectionView {
+		let layout = UICollectionViewCompositionalLayout.list(using: .init(appearance: .insetGrouped))
+		let collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: layout)
+		collectionView.delegate = self
+		return collectionView
+	}
+}

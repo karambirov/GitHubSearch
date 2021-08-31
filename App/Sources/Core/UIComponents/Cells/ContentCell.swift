@@ -21,6 +21,7 @@ final class ContentCell<View: RepositoryConfiguringView>: UICollectionViewCell {
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
+		backgroundColor = .systemBackground
 		constrain()
 	}
 
@@ -43,8 +44,8 @@ final class ContentCell<View: RepositoryConfiguringView>: UICollectionViewCell {
 extension ContentCell {
 
 	private func constrain() {
-		addSubview(view)
-		view.edgesToSuperview(insets: Metrics.contentInsets)
+		contentView.addSubview(view)
+		view.edges(to: contentView, insets: Metrics.contentInsets)
 	}
 }
 

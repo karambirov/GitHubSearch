@@ -17,8 +17,6 @@ protocol FavoritesViewProtocol: UIView {
 
 final class FavoritesView: ProgrammaticView {
 
-	private typealias Cell = UICollectionViewListCell
-	private typealias CellRegistration = UICollectionView.CellRegistration<Cell, Repository>
 	private typealias DataSource = UICollectionViewDiffableDataSource<Section, Repository>
 	private typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Repository>
 
@@ -29,6 +27,7 @@ final class FavoritesView: ProgrammaticView {
 	var selectItemHandler: ((Repository) -> Void)?
 
 	private var repositories: [Repository] = []
+
 	private lazy var collectionView = makeCollectionView()
 	private lazy var dataSource = makeDataSource()
 
@@ -73,18 +72,8 @@ extension FavoritesView {
 		return collectionView
 	}
 
-	private func makeCellRegistration() -> CellRegistration {
-		CellRegistration { cell, indexPath, repository in
-			var content = cell.defaultContentConfiguration()
-			// TODO: Заменить на кастомную ячейку
-			content.text = repository.fullName
-			content.secondaryText = repository.repoDescription
-			cell.contentConfiguration = content
-		}
-	}
-
 	private func makeDataSource() -> DataSource {
-		let cellRegistration = makeCellRegistration()
+		let cellRegistration = RepositoryCell.registration()
 		return DataSource(collectionView: collectionView, cellProvider: cellRegistration.cellProvider)
 	}
 
