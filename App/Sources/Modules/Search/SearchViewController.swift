@@ -12,11 +12,10 @@ protocol SearchViewControllerProtocol: AnyObject { }
 
 final class SearchViewController: UIViewController, SearchViewControllerProtocol {
 
-	private let presenter: SearchPresenterProtocol
+	private let searchController = UISearchController(searchResultsController: nil)
 	private let contentView = SearchView()
 
-    private lazy var searchController = UISearchController(searchResultsController: nil)
-    private lazy var tableView = UITableView()
+	private let presenter: SearchPresenterProtocol
 
     init(presenter: SearchPresenterProtocol) {
         self.presenter = presenter
@@ -34,7 +33,9 @@ final class SearchViewController: UIViewController, SearchViewControllerProtocol
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        initialSetup()
+		presenter.viewDidLoad(contentView)
+		setupNavigationBar()
+		setupSearchController()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -44,79 +45,22 @@ final class SearchViewController: UIViewController, SearchViewControllerProtocol
 
     override func viewDidAppear(_ animated: Bool) {
         navigationItem.hidesSearchBarWhenScrolling = true
-        clearSelectionForCell()
         super.viewDidAppear(animated)
     }
 }
 
-// MARK: - Table View
-extension SearchViewController: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let repository = viewModel.repository(for: indexPath) else { return }
-//        viewModel.router.openDetails(for: repository)
-    }
-}
-
-// MARK: - Search
-extension SearchViewController: UISearchBarDelegate {
-
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        guard let query = searchBar.text, query.count > 2 else { return }
-//        viewModel.searchRepositories(with: query) { [weak self] in
-//            guard let self = self else { return }
-//            self.tableView.dataSource = self.viewModel.dataSource
-//            self.tableView.reloadData()
-//        }
-    }
-
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        viewModel.deleteLoadedRepositories()
-//        tableView.reloadData()
-    }
-}
-
-// MARK: - Setup
 private extension SearchViewController {
 
-    func initialSetup() {
-        view.backgroundColor = .white
-        definesPresentationContext = true
-        setupNavigationBar()
-        setupSearchController()
-        setupTableView()
-        setupViews()
-    }
-
     func setupNavigationBar() {
+		title = Localization.search
         navigationItem.searchController = searchController
-        title = "Search"
     }
 
     func setupSearchController() {
+		definesPresentationContext = true
+		searchController.searchBar.placeholder = Localization.search
+		searchController.searchBar.delegate = contentView
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.placeholder = "Search"
-        searchController.searchBar.delegate = self
     }
-
-    func setupTableView() {
-        tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.typeName)
-//        tableView.dataSource = viewModel.dataSource
-        tableView.delegate = self
-        tableView.tableFooterView = UIView()
-		tableView.rowHeight = UITableView.automaticDimension
-		tableView.estimatedRowHeight = 100
-    }
-
-    func setupViews() {
-        view.addSubview(tableView)
-		tableView.edgesToSuperview(usingSafeArea: true)
-    }
-
-    func clearSelectionForCell() {
-        guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
-        tableView.deselectRow(at: selectedIndexPath, animated: true)
-    }
-
 }

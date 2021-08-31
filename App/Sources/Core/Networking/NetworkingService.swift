@@ -9,24 +9,34 @@
 import Foundation
 import Moya
 
+protocol NetworkingServiceProtocol {
+
+	func searchRepositories(with query: String, completionHandler: @escaping ([Repository]) -> Void)
+}
+
 final class NetworkingService {
 
-    private var provider: MoyaProvider<GitHubAPI>?
+    private let provider: MoyaProvider<GitHubAPI>
 
     init(provider: MoyaProvider<GitHubAPI>) {
         self.provider = provider
     }
+}
 
-    func searchRepositories(with query: String,
-                            completionHandler: @escaping ([Repository]?) -> Void) {
+extension NetworkingService: NetworkingServiceProtocol {
 
-        provider?.request(.searchRepo(query: query)) { result in
+    func searchRepositories(
+		with query: String,
+		completionHandler: @escaping ([Repository]) -> Void
+	) {
+
+        provider.request(.searchRepo(query: query)) { result in
             switch result {
             case .success(let response):
                 do {
-                    let repositories = try response.map(SearchResults<Repository>.self)
+					let repositories = try response.map(SearchResults<Repository>.self).items
 					DispatchQueue.main.async {
-						completionHandler(repositories.items)
+						completionHandler(repositories)
 					}
                 } catch {
 					DispatchQueue.main.async {
@@ -40,7 +50,5 @@ final class NetworkingService {
 				}
             }
         }
-
     }
-
 }

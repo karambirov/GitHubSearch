@@ -12,6 +12,7 @@ import class UIKit.UIScreen
 import class UIKit.UIColor
 
 final class DependencyContainer {
+
 	lazy var window: UIWindow = {
 		let window = UIWindow(frame: UIScreen.main.bounds)
 		window.backgroundColor = .systemBackground
@@ -21,7 +22,6 @@ final class DependencyContainer {
 
 	lazy var rootViewController: RootViewController = {
 		let rootViewContoller = RootViewController()
-		rootViewContoller.rootViewController = modulesFactory.makeTabBarModule()
 		return rootViewContoller
 	}()
 
@@ -29,7 +29,7 @@ final class DependencyContainer {
 		MoyaProvider<GitHubAPI>()
 	}()
 
-	lazy var networkingService: NetworkingService = {
+	lazy var networkingService: NetworkingServiceProtocol = {
 		NetworkingService(provider: gitHubApiProvider)
 	}()
 

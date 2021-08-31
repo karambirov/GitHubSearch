@@ -37,7 +37,6 @@ final class DetailsViewController: UIViewController, DetailsViewControllerProtoc
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		title = "About repository"
 		presenter.viewDidLoad(self.contentView, vc: self)
     }
 }

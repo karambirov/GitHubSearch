@@ -20,8 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	) {
 		guard let windowScene = (scene as? UIWindowScene) else { return }
 
+		let rootViewController = dependencyContainer.rootViewController
+		rootViewController.rootViewController = dependencyContainer.modulesFactory.makeTabBarModule()
+
 		window = UIWindow(windowScene: windowScene)
-		window?.rootViewController = dependencyContainer.rootViewController
+		window?.rootViewController = rootViewController
 		window?.makeKeyAndVisible()
 	}
 }

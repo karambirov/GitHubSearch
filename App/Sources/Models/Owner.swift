@@ -6,8 +6,9 @@
 //  Copyright © 2019 Eugene Karambirov. All rights reserved.
 //
 
-struct Owner {
+struct Owner: Hashable {
 
+	let id: Int
 	let login: String
 	let email: String?
 	let avatarURL: String?
@@ -16,14 +17,14 @@ struct Owner {
 extension Owner {
 
 	init() {
-		self.init(login: String(), email: nil, avatarURL: nil)
+		self.init(id: 0, login: String(), email: nil, avatarURL: nil)
 	}
 }
 
 extension Owner: Codable {
 
 	enum CodingKeys: String, CodingKey {
-		case login, email
+		case id, login, email
 		case avatarURL = "avatar_url"
 	}
 }

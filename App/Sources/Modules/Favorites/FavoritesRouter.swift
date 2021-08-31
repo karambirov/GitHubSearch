@@ -13,6 +13,8 @@ protocol FavoritesRouterProtocol: AnyObject {
 
 final class FavoritesRouter {
 
+	var completionHandler: ((Repository) -> Void)?
+
 	private let navigator: Navigator
 
 	init(navigator: Navigator) {
@@ -23,6 +25,7 @@ final class FavoritesRouter {
 extension FavoritesRouter: FavoritesRouterProtocol {
 
 	func next(with repository: Repository) {
+//		completionHandler?(repository)
 		let parameters = DetailsAssembly.Parameters(repository: repository)
 		navigator.forward(to: .details, with: parameters)
 	}
