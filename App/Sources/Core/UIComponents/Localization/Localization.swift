@@ -15,7 +15,6 @@ enum Localization {
 	static let noLanguage = "No language"
 	static let information = "Information"
 	static let notAvailable = "–"
-	static let ownerEmail = "Owner's email"
 	static let issues = "Issues"
 	static let license = "License"
 }

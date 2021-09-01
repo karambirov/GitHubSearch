@@ -695,8 +695,8 @@
 			children = (
 				5177877026D95F2400BFF87B /* ContentCell.swift */,
 				AAC6356B21D6057B00A5E63C /* RepositoryCell.swift */,
-				51E9F58C26DE6B68006D64A2 /* SectionHeader.swift */,
 				51E9F59226DEAF84006D64A2 /* RepositoryInfoCell.swift */,
+				51E9F58C26DE6B68006D64A2 /* SectionHeader.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";

@@ -49,9 +49,24 @@ extension DetailsView: UICollectionViewDelegate {
 private extension DetailsView {
 
 	private func makeCollectionView() -> UICollectionView {
-		let layout = UICollectionViewCompositionalLayout.list(using: .init(appearance: .insetGrouped))
-		let collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: layout)
+		let layout = makeLayout()
+		let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
 		collectionView.delegate = self
 		return collectionView
+	}
+
+	private func makeLayout() -> UICollectionViewCompositionalLayout {
+		UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
+			let section = DetailsSection.allCases[sectionIndex]
+			switch section {
+			case .summary:
+				let configuration = UICollectionLayoutListConfiguration(appearance: .plain)
+				return NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
+			case .info:
+				var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+				configuration.headerMode = .supplementary
+				return NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
+			}
+		}
 	}
 }

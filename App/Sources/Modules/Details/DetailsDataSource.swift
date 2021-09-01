@@ -54,7 +54,6 @@ extension DetailsDataSource {
 		snapshot.appendItems([.summary(repository)], toSection: .summary)
 
 		let items: [DetailsItem] = [
-			.infoItem(text: Localization.ownerEmail, value: repository.owner.email ?? Localization.notAvailable),
 			.infoItem(text: Localization.issues, value: "\(repository.openIssuesCount)"),
 			.infoItem(text: Localization.license, value: repository.license?.name ?? Localization.notAvailable)
 		]
