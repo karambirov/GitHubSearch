@@ -317,8 +317,11 @@
 			children = (
 				51AD91CF2523B0B500D205D1 /* Core */,
 				51AD91DA2523B11B00D205D1 /* DataProviders */,
+				AAC6353321D4CE7200A5E63C /* Extensions */,
 				AA00CD4A21F32F910046B9A4 /* Models */,
 				AAC6353221D4CE6B00A5E63C /* Modules */,
+				51435318264ACB670063D993 /* UIComponents */,
+				5102540526CF8F0E00B0379A /* Utilities */,
 				AAC6352E21D4CDF600A5E63C /* Other */,
 			);
 			path = Sources;
@@ -490,7 +493,6 @@
 				51E9F59626DEB542006D64A2 /* CellRegistrations */,
 				AAC6353521D4D00600A5E63C /* Cells */,
 				AAC6356F21D605AB00A5E63C /* CustomViews */,
-				5141EF3326DD4D7F0022EDEE /* Localization */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -515,12 +517,9 @@
 		51AD91CF2523B0B500D205D1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				AAC6353321D4CE7200A5E63C /* Extensions */,
 				5115B05C26012BB00060A82E /* Layout */,
 				AA00CD5921F86CEF0046B9A4 /* Networking */,
 				51435319264ACBA30063D993 /* Routing */,
-				51435318264ACB670063D993 /* UIComponents */,
-				5102540526CF8F0E00B0379A /* Utilities */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -636,6 +635,7 @@
 		AAC6353021D4CE1500A5E63C /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				5141EF3326DD4D7F0022EDEE /* Localization */,
 				519BC60F2526259D00D05BCB /* .swiftlint.yml */,
 				519BC614252625B600D05BCB /* .gitignore */,
 				516498222523CBFA00BAE513 /* Info.plist */,
