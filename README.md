@@ -9,7 +9,7 @@ GitHub iOS client which is written in Swift using Clean-ish architecture with mi
 - Navigation to screens uses custom routing mechanics.
 
 ## Screenshots
-![GitHubSearchPreview](https://user-images.githubusercontent.com/6949755/131858556-b02c0a54-c824-4e43-ad62-6ec2346aba90.png)
+![GitHubSearchPreview](https://user-images.githubusercontent.com/6949755/131861836-9d883527-a259-4d8e-951f-9b23b1be01a7.png)
 
 ## License
 MIT License. See [LICENSE](https://github.com/Karambirov/GitHubSearch/blob/develop/LICENSE).
