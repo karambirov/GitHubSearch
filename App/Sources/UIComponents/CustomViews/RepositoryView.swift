@@ -1,14 +1,17 @@
 //
-//  RepositoryCell.swift
+//  RepositoryView.swift
 //  GitHubSearch
 //
-//  Created by Eugene Karambirov on 28/12/2018.
-//  Copyright © 2018 Eugene Karambirov. All rights reserved.
+//  Created by Карамбиров Евгений on 02.09.2021.
+//  Copyright © 2021 Eugene Karambirov. All rights reserved.
 //
 
 import UIKit
 
-typealias RepositoryCell = ContentCell<RepositoryView>
+protocol RepositoryViewProtocol: UIView {
+
+	func configure(with repository: Repository)
+}
 
 final class RepositoryView: ProgrammaticView {
 
@@ -27,7 +30,7 @@ final class RepositoryView: ProgrammaticView {
 	private let languageLabel = UILabel()
 
 	override func configure() {
-		titleLabel.font = .custom(style: .headline)
+		titleLabel.font = .custom(style: .subheadline)
 
 		descriptionLabel.font = .custom(style: .regular)
 		descriptionLabel.numberOfLines = 3
@@ -72,7 +75,7 @@ final class RepositoryView: ProgrammaticView {
 	}
 }
 
-extension RepositoryView: RepositoryConfiguringView {
+extension RepositoryView: RepositoryViewProtocol {
 
 	func configure(with repository: Repository) {
 		titleLabel.text = repository.fullName

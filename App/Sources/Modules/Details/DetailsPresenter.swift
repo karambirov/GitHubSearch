@@ -42,9 +42,5 @@ extension DetailsPresenter: DetailsPresenterProtocol {
 			guard let self = self else { return }
 			self.interactor.toggleFavorite(self.repository)
 		}
-
-		vc.dismissHandler = { [weak self] in
-			self?.router.back()
-		}
 	}
 }

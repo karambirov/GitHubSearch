@@ -31,6 +31,7 @@ final class SearchView: ProgrammaticView {
 	var selectItemHandler: ((Repository) -> Void)?
 
 	private var repositories: [Repository] = []
+
 	private lazy var collectionView = makeCollectionView()
 	private lazy var dataSource = makeDataSource()
 

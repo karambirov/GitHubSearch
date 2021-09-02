@@ -8,95 +8,29 @@
 
 import UIKit
 
-protocol FavoritesViewProtocol: UIView {
-
-	var selectItemHandler: ((Repository) -> Void)? { get set }
-
-	func setRepositories(_ repositories: [Repository])
-}
+protocol FavoritesViewProtocol: UIView { }
 
 final class FavoritesView: ProgrammaticView {
 
-	private typealias Cell = UICollectionViewListCell
-	private typealias CellRegistration = UICollectionView.CellRegistration<Cell, Repository>
-	private typealias DataSource = UICollectionViewDiffableDataSource<Section, Repository>
-	private typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Repository>
-
-	enum Section {
-		case main
-	}
-
-	var selectItemHandler: ((Repository) -> Void)?
-
-	private var repositories: [Repository] = []
-	private lazy var collectionView = makeCollectionView()
-	private lazy var dataSource = makeDataSource()
+	private let label = UILabel()
 
 	init() {
 		super.init(frame: .zero)
-		applySnapshot()
+	}
+
+	override func configure() {
+		backgroundColor = .systemBackground
+		label.text = "Saving repositories will be available in future updates"
+		label.numberOfLines = 0
+		label.textAlignment = .center
+		label.font = .custom(style: .headline)
 	}
 
 	override func constrain() {
-		addSubview(collectionView)
-		collectionView.edgesToSuperview()
+		addSubview(label)
+		label.width(250)
+		label.center(in: self)
 	}
 }
 
-extension FavoritesView: FavoritesViewProtocol {
-
-	func setRepositories(_ repositories: [Repository]) {
-		self.repositories = repositories
-		applySnapshot()
-	}
-}
-
-extension FavoritesView: UICollectionViewDelegate {
-
-	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		clearSelectionForCell()
-		guard !repositories.isEmpty else { return }
-		selectItemHandler?(repositories[indexPath.row])
-	}
-
-	func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-		collectionView.deselectItem(at: indexPath, animated: true)
-	}
-}
-
-extension FavoritesView {
-
-	private func makeCollectionView() -> UICollectionView {
-		let layout = UICollectionViewCompositionalLayout.list(using: .init(appearance: .grouped))
-		let collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: layout)
-		collectionView.delegate = self
-		return collectionView
-	}
-
-	private func makeCellRegistration() -> CellRegistration {
-		CellRegistration { cell, indexPath, repository in
-			var content = cell.defaultContentConfiguration()
-			// TODO: Заменить на кастомную ячейку
-			content.text = repository.fullName
-			content.secondaryText = repository.repoDescription
-			cell.contentConfiguration = content
-		}
-	}
-
-	private func makeDataSource() -> DataSource {
-		let cellRegistration = makeCellRegistration()
-		return DataSource(collectionView: collectionView, cellProvider: cellRegistration.cellProvider)
-	}
-
-	private func applySnapshot(animatingDifferences: Bool = true) {
-		var snapshot = Snapshot()
-		snapshot.appendSections([.main])
-		snapshot.appendItems(repositories)
-		dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
-	}
-
-	private func clearSelectionForCell() {
-		guard let indexPathsForSelectedItems = collectionView.indexPathsForSelectedItems else { return }
-		indexPathsForSelectedItems.forEach { collectionView.deselectItem(at: $0, animated: true) }
-	}
-}
+extension FavoritesView: FavoritesViewProtocol { }
