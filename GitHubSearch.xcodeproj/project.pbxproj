@@ -84,7 +84,6 @@
 		51A6C4022523B3410012C342 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAC6356121D4EA7A00A5E63C /* Info.plist */; };
 		51AB700C26CBEB3A00772B78 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AB700B26CBEB3A00772B78 /* SearchPresenter.swift */; };
 		51AB700E26CBEB4500772B78 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AB700D26CBEB4500772B78 /* SearchRouter.swift */; };
-		51AB701126CBEB7800772B78 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AB701026CBEB7800772B78 /* AppCoordinator.swift */; };
 		51AB701326CBEB9B00772B78 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AB701226CBEB9B00772B78 /* SearchInteractor.swift */; };
 		51AB701526CBEBA800772B78 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AB701426CBEBA800772B78 /* SearchView.swift */; };
 		51AB701726CBEDAE00772B78 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AB701626CBEDAE00772B78 /* Route.swift */; };
@@ -220,7 +219,6 @@
 		519BC614252625B600D05BCB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		51AB700B26CBEB3A00772B78 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		51AB700D26CBEB4500772B78 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
-		51AB701026CBEB7800772B78 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		51AB701226CBEB9B00772B78 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		51AB701426CBEBA800772B78 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		51AB701626CBEDAE00772B78 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -664,7 +662,6 @@
 		AAC6353221D4CE6B00A5E63C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				51AB701026CBEB7800772B78 /* AppCoordinator.swift */,
 				514352C4264AB1590063D993 /* DependencyContainer.swift */,
 				51FA87E1251C6EEC004BCF82 /* ModulesFactory.swift */,
 				AA27BE4F2204700600D4779F /* Details */,
@@ -1003,7 +1000,6 @@
 				AA00CD4E21F330D10046B9A4 /* Describable.swift in Sources */,
 				AA00CD6321F8A4420046B9A4 /* Owner.swift in Sources */,
 				51410036264AD44B001C1A29 /* UIViewController+OnlyChild.swift in Sources */,
-				51AB701126CBEB7800772B78 /* AppCoordinator.swift in Sources */,
 				51410049264AD5B7001C1A29 /* NavigationAssistant.swift in Sources */,
 				5128C657260234A100F6FFD7 /* NSLayoutAxisAnchor+ConstraintRelation.swift in Sources */,
 				514100AB264AFA6E001C1A29 /* ViewControllerTreeBuilder.swift in Sources */,

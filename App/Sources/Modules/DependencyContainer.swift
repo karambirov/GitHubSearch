@@ -7,18 +7,8 @@
 //
 
 import class Moya.MoyaProvider
-import class UIKit.UIWindow
-import class UIKit.UIScreen
-import class UIKit.UIColor
 
 final class DependencyContainer {
-
-	lazy var window: UIWindow = {
-		let window = UIWindow(frame: UIScreen.main.bounds)
-		window.backgroundColor = .systemBackground
-		window.rootViewController = rootViewController
-		return window
-	}()
 
 	lazy var rootViewController: RootViewController = {
 		let rootViewContoller = RootViewController()
