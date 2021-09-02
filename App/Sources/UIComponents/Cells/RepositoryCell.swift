@@ -8,77 +8,45 @@
 
 import UIKit
 
-typealias RepositoryCell = ContentCell<RepositoryView>
-
-final class RepositoryView: ProgrammaticView {
+final class RepositoryCell: UICollectionViewCell {
 
 	private enum Metrics {
-		static let starsIconSize = CGSize(width: 14, height: 14)
-		static let languageIconSize = CGSize(width: 12, height: 12)
+		static let contentInsets = UIEdgeInsets(top: .offset16, left: .offset20, bottom: .offset16, right: .offset16)
 	}
 
-	private let titleLabel = UILabel()
-	private let descriptionLabel = UILabel()
+	private let view: RepositoryViewProtocol = RepositoryView()
 
-	private let starsIcon = UIImageView()
-	private let starsLabel = UILabel()
-
-	private let languageIcon = UIImageView()
-	private let languageLabel = UILabel()
-
-	override func configure() {
-		titleLabel.font = .custom(style: .subheadline)
-
-		descriptionLabel.font = .custom(style: .regular)
-		descriptionLabel.numberOfLines = 3
-		descriptionLabel.lineBreakMode = .byTruncatingTail
-
-		starsIcon.image = .sfSymbol(.star)?.withRenderingMode(.alwaysOriginal)
-
-		starsLabel.font = .custom(style: .regular)
-		starsLabel.textColor = .secondaryLabel
-
-		languageIcon.image = .sfSymbol(.circleFill)?.withRenderingMode(.alwaysTemplate)
-
-		languageLabel.font = .custom(style: .regular)
-		languageLabel.textColor = .secondaryLabel
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		backgroundColor = .systemBackground
+		constrain()
 	}
 
-	override func constrain() {
-		addSubviews(titleLabel, descriptionLabel)
-		addSubviews(starsIcon, starsLabel)
-		addSubviews(languageIcon, languageLabel)
+	@available(*, unavailable)
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 
-		titleLabel.edgesToSuperview(excluding: .bottom)
-
-		descriptionLabel.topToBottom(of: titleLabel, offset: .offset8)
-		descriptionLabel.horizontalToSuperview()
-
-		starsIcon.size(Metrics.starsIconSize)
-		starsIcon.topToBottom(of: descriptionLabel, offset: .offset8)
-		starsIcon.leadingToSuperview()
-		starsIcon.bottomToSuperview()
-
-		starsLabel.leadingToTrailing(of: starsIcon, offset: .offset4)
-		starsLabel.centerY(to: starsIcon)
-
-		languageIcon.size(Metrics.languageIconSize)
-		languageIcon.leadingToTrailing(of: starsLabel, offset: .offset16)
-		languageIcon.centerY(to: starsLabel)
-
-		languageLabel.leadingToTrailing(of: languageIcon, offset: .offset4)
-		languageLabel.centerY(to: languageIcon)
-		languageLabel.trailingToSuperview()
+	func configure(with repository: Repository) {
+		view.configure(with: repository)
 	}
 }
 
-extension RepositoryView: RepositoryConfiguringView {
+extension RepositoryCell {
 
-	func configure(with repository: Repository) {
-		titleLabel.text = repository.fullName
-		descriptionLabel.text = repository.repoDescription ?? Localization.noDescription
-		starsLabel.text = repository.starsCount.shorted()
-		languageLabel.text = repository.language ?? Localization.noLanguage
-		languageIcon.tintColor = UIColor(language: repository.language)
+	typealias CellRegistration = UICollectionView.CellRegistration<RepositoryCell, Repository>
+
+	static func registration() -> CellRegistration {
+		CellRegistration { cell, _, repository in
+			cell.configure(with: repository)
+		}
+	}
+}
+
+extension RepositoryCell {
+
+	private func constrain() {
+		contentView.addSubview(view)
+		view.edges(to: contentView, insets: Metrics.contentInsets)
 	}
 }

@@ -13,7 +13,7 @@ typealias RepositoryInfoCell = UICollectionViewListCell
 extension RepositoryInfoCell {
 
 	static func infoCellRegistration(text: String, secondaryText: String) -> ListCellRegistration<DetailsItem> {
-		ListCellRegistration { cell, indexPath, infoItem in
+		ListCellRegistration { cell, _, _ in
 			var content = UIListContentConfiguration.valueCell()
 			content.text = text
 			content.secondaryText = secondaryText

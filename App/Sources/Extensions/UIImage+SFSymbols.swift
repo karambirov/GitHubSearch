@@ -13,6 +13,10 @@ extension UIImage {
 	static func sfSymbol(_ symbol: SFSymbol) -> UIImage? {
 		UIImage(systemName: symbol.rawValue)
 	}
+
+	static func sfSymbol(_ symbol: SFSymbol, with configuration: UIImage.SymbolConfiguration) -> UIImage? {
+		UIImage(systemName: symbol.rawValue, withConfiguration: configuration)
+	}
 }
 
 extension UIImage {

@@ -59,8 +59,9 @@ private extension DetailsView {
 		UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
 			let section = DetailsSection.allCases[sectionIndex]
 			switch section {
-			case .summary:
-				let configuration = UICollectionLayoutListConfiguration(appearance: .plain)
+			case .summary, .favoriteButton:
+				var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+				configuration.showsSeparators = false
 				return NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
 			case .info:
 				var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)

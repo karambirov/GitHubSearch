@@ -10,11 +10,13 @@ import UIKit
 
 enum DetailsSection: CaseIterable {
 	case summary
+	case favoriteButton
 	case info
 }
 
 enum DetailsItem: Hashable {
 	case summary(Repository)
+	case favoriteButton(FavoriteButtonType)
 	case infoItem(text: String, value: String)
 }
 
@@ -28,6 +30,8 @@ final class DetailsDataSource: UICollectionViewDiffableDataSource<DetailsSection
 			switch section {
 			case .summary:
 				return Self.summaryCell(in: collectionView, for: item, at: indexPath)
+			case .favoriteButton:
+				return Self.favoriteButtonCell(in: collectionView, for: item, at: indexPath)
 			case .info:
 				return Self.infoCell(in: collectionView, for: item, at: indexPath)
 			}
@@ -36,7 +40,7 @@ final class DetailsDataSource: UICollectionViewDiffableDataSource<DetailsSection
 		self.supplementaryViewProvider = { collectionView, _, indexPath in
 			let section = DetailsSection.allCases[indexPath.section]
 			switch section {
-			case .summary:
+			case .summary, .favoriteButton:
 				return nil
 			case .info:
 				let registration = TextSectionHeader.registration(headerText: Localization.information)
@@ -52,6 +56,9 @@ extension DetailsDataSource {
 		var snapshot = Snapshot()
 		snapshot.appendSections(DetailsSection.allCases)
 		snapshot.appendItems([.summary(repository)], toSection: .summary)
+
+		let type: FavoriteButtonType = repository.isFavorite ? .unfavorite : .favorite
+		snapshot.appendItems([.favoriteButton(type)], toSection: .favoriteButton)
 
 		let items: [DetailsItem] = [
 			.infoItem(text: Localization.issues, value: "\(repository.openIssuesCount)"),
@@ -75,7 +82,23 @@ extension DetailsDataSource {
 		case .summary(let repository):
 			let registration = RepositoryCell.registration()
 			return collectionView.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: repository)
-		case .infoItem:
+		case .infoItem, .favoriteButton:
+			let registration = ListCellRegistration<DetailsItem>.defaultListCellRegistration()
+			return collectionView.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: item)
+		}
+	}
+
+	private static func favoriteButtonCell(
+		in collectionView: UICollectionView,
+		for item: DetailsItem,
+		at indexPath: IndexPath
+	) -> UICollectionViewCell {
+
+		switch item {
+		case .favoriteButton(let type):
+			let registration = FavoriteButtonCell.registration()
+			return collectionView.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: type)
+		case .infoItem, .summary:
 			let registration = ListCellRegistration<DetailsItem>.defaultListCellRegistration()
 			return collectionView.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: item)
 		}
@@ -88,7 +111,7 @@ extension DetailsDataSource {
 	) -> UICollectionViewCell {
 
 		switch item {
-		case .summary:
+		case .summary, .favoriteButton:
 			let registration = ListCellRegistration<DetailsItem>.defaultListCellRegistration()
 			return collectionView.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: item)
 		case .infoItem(let text, let value):

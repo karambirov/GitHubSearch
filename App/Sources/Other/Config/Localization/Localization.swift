@@ -6,7 +6,7 @@
 //  Copyright © 2021 Eugene Karambirov. All rights reserved.
 //
 
-// Implement localization
+// TODO: Implement localization
 enum Localization {
 
 	static let search = "Search"
@@ -17,4 +17,12 @@ enum Localization {
 	static let notAvailable = "–"
 	static let issues = "Issues"
 	static let license = "License"
+}
+
+extension Localization {
+
+	enum Button: String {
+		case favorite = "Favorite"
+		case unfavorite = "Unfavorite"
+	}
 }
