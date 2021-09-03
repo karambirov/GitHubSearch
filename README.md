@@ -1,5 +1,7 @@
 # GitHubSearch
-GitHub iOS client which is written in Swift using Clean-ish architecture with minimum third-party dependencies. The app allows for searching for repositories using GitHub API. The next release will be available to save info about repositories in local storage, so a user can see them offline.
+GitHub iOS client which is written in Swift using Clean-ish architecture with minimum third-party dependencies. The app allows for searching for repositories using GitHub API. 
+
+🔜 In the **next release** will be possible to save info about repositories in local storage, so a user can see them offline.
 
 ## Features
 - Each part of the screen modules was separated by its responsibilities into Assembly, Presenter, Interactor, View, and ViewController.
