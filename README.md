@@ -4,7 +4,7 @@ GitHub iOS client which is written in Swift using Clean-ish architecture with mi
 🔜 In the **next release** will be possible to save info about repositories in local storage, so a user can see them offline.
 
 ## Features
-- Each part of the screen modules was separated by its responsibilities into Assembly, Presenter, Interactor, View, and ViewController.
+- Each part of the screen modules was separated by its responsibilities into Assembly, Presenter, Router, Interactor, View, and ViewController.
 - Screen layout was done fully programmatically with Auto Layout and `UICollectionViewCompositionalLayout`.
 - All dependencies built in Dependency Container and injected as needed.
 - The networking layer uses [Moya](https://github.com/Moya/Moya).
